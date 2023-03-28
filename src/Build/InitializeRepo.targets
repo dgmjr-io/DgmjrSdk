@@ -14,8 +14,7 @@
   <Target Name="InitializeRepo" DependsOnTargets="GitInfo">
     <PropertyGroup>
       <InitializeRepoScript>
-      Import-Module $(MSBuildThisFileDirectory)../Scripts/initialize-repo.ps1; 
-      initialize-repo -environment:$(Configuration) -gitRoot:$(_GitRoot);
+      pwsh -NoExit -File $(MSBuildThisFileDirectory)../Scripts/initialize-repo.ps1 -environment:$(Configuration) -gitRoot:$(_GitRoot);
       Import-Module $(MSBuildThisFileDirectory)../Scripts/Invoke-Build.ps1;
       </InitializeRepoScript>
     </PropertyGroup>
