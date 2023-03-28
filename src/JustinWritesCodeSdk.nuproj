@@ -11,33 +11,43 @@
 -->
 
 <Project Sdk="Microsoft.Build.NoTargets">
-  <Import Project="./Build/ADefaultBuildConfiguration.props" />
-  <Import Project="./Build/BuildConfigurations.props" />
-  <Import Project="./Build/Authors-Owners.props" />
-  <Import Project="./Build/CentralPackagesFile.props" />
-  <Import Project="./Build/CentralPackageVersions.props" />
-  <Import Project="./Build/EnablePreviewFeatures.props" />
-  <Import Project="./Build/EmitNuspec.props" />
-  <Import Project="./Build/MinVer.props" />
-  <Import Project="./Build/NoWarn.props" />
-  <Import Project="./Build/NuGetizer.props" />
-  <Import Project="./Build/SlnGen.props" />
-  <Import Project="./Build/PackageProjectUrl.props" />
-  <Import Project="./Build/PackageIcon.props" />
-  <Import Project="./Build/PackageReadme.props" />
-  <Import Project="./build/PackageVersionOverride.props" />
-  <Import Project="./Build/TestingLocal.props" />
-  <Import Project="./Build/PackageMetadata.props" />
-  <Import Project="./Build/GlobalUsings.props" />
-  <PropertyGroup>
-      <TargetFramework>netstandard2.0</TargetFramework>
-      <PackageId>$(MSbuildProjectName)</PackageId>
-      <LangVersion>preview</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
-    <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
-    <PackageFile Include="./ContentFiles/*" PackagePath="ContentFiles/%(Filename)%(Extension)" />
-  </ItemGroup>
-  <Import Project="./Build/*.targets" />
+    <Import Project="./Build/ADefaultBuildConfiguration.props" />
+    <Import Project="./Build/BuildConfigurations.props" />
+    <Import Project="./Build/Authors-Owners.props" />
+    <Import Project="./Build/CentralPackagesFile.props" />
+    <Import Project="./Build/CentralPackageVersions.props" />
+    <Import Project="./Build/EnablePreviewFeatures.props" />
+    <Import Project="./Build/EmitNuspec.props" />
+    <Import Project="./Build/MinVer.props" />
+    <Import Project="./Build/NoWarn.props" />
+    <Import Project="./Build/NuGetizer.props" />
+    <Import Project="./Build/SlnGen.props" />
+    <Import Project="./Build/PackageProjectUrl.props" />
+    <Import Project="./Build/PackageIcon.props" />
+    <Import Project="./Build/PackageReadme.props" />
+    <Import Project="./build/PackageVersionOverride.props" />
+    <Import Project="./Build/TestingLocal.props" />
+    <Import Project="./Build/PackageMetadata.props" />
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>$(MSbuildProjectName)</PackageId>
+        <LangVersion>preview</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+        <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
+        <PackageFile Include="./ContentFiles/*" PackagePath="ContentFiles/%(Filename)%(Extension)" />
+    </ItemGroup>
+    <Import Project="./Build/Authors-Owners.targets" />
+    <Import Project="./Build/CentralPackageVersions.targets" />
+    <Import Project="./Build/MinVer.targets" />
+    <Import Project="./Build/NuGetizer.targets" />
+    <Import Project="./Build/PackageProjectUrl.targets" />
+    <Import Project="./Build/PackageReadme.targets" />
+    <Import Project="./Build/PackageMetadata.targets" />
+    <Import Project="./Build/PackageDescription.targets" />
+    <Import Project="./build/PackageVersionOverride.targets" />
+    <Import Project="./Build/TestingLocal.targets" />
+    <Import Project="./Build/NuGetPush.targets" />
+    <Import Project="./Build/DoNotCleanCachedPackageId.targets" />
 </Project>

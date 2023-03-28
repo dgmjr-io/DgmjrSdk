@@ -1,25 +1,29 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "JustinWritesCodeSdk", "JustinWritesCodeSdk.nuproj", "{6AF1F978-92CC-4B28-BCC7-96B02B773194}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JustinWritesCodeSdk", "JustinWritesCodeSdk.csproj", "{15E43E56-14DF-4780-86D0-8598B21837C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Local|Any CPU = Local|Any CPU
 		Debug|Any CPU = Debug|Any CPU
-		Staging|Any CPU = Staging|Any CPU
+		Local|Any CPU = Local|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Staging|Any CPU = Staging|Any CPU
 		Testing|Any CPU = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Local|Any CPU.ActiveCfg = Local|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Local|Any CPU.Build.0 = Local|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Staging|Any CPU.Build.0 = Staging|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
-		{6AF1F978-92CC-4B28-BCC7-96B02B773194}.Testing|Any CPU.Build.0 = Testing|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Local|Any CPU.Build.0 = Local|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+		{15E43E56-14DF-4780-86D0-8598B21837C8}.Testing|Any CPU.Build.0 = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
