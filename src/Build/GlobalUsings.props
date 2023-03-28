@@ -2,10 +2,10 @@
   <PropertyGroup>
     <IsCompilingFromCode>@(Compile->Count()) &gt; 0</IsCompilingFromCode>
   </PropertyGroup>
-  <ItemGroup>s
-    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj' And @(Compile->Count()) &gt; 0" />
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'DgmjrSdk' And '$(MSBuildProjectExtension)' == '.csproj'" />
   </ItemGroup>
-  <ItemGroup Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj' And @(Compile->Count()) &gt; 0">
+  <ItemGroup Condition="'$(MSBuildProjectName)' != 'DgmjrSdk' And '$(MSBuildProjectExtension)' == '.csproj' And @(Compile->Count()) &gt; 0">
     <Using Include="System" />
     <Using Include="System.Array" Static="true" />
     <Using Include="System.BitConverter" Static="true" />

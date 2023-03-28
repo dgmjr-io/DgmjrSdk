@@ -11,7 +11,6 @@
     "JustInTimeVersioningSdk": "0.0.1-Local",
     "NuGetPush": "0.0.1-Local",
     "MetapackageSdk": "0.0.1-Local",
-    "DgmjrSdk": "0.0.1-Local",
-    "JwcRepoInitSdk": "0.0.1-Local"
+    "DgmjrSdk": "0.0.1-Local"
   }
 }

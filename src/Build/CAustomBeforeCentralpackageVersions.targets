@@ -13,7 +13,11 @@
 <Project>
   <!-- Transforms <SourceGenerator /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
-    <PackageReference Include="@(SourceGenerator)" IncludeAssets="Analyzers;Build" ExcludeAssets="Compile;Runtime;ContentFiles;Native" PrivateAssets="All" />
+    <PackageReference Include="@(SourceGenerator)">
+      <IncludeAssets>Analyzers;Build</IncludeAssets>
+      <ExcludeAssets>Runtime;ContentFiles;Native</ExcludeAssets>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
     <SourceGenerator Remove="@(SourceGenerator)" />
   </ItemGroup>
-<Project>
+</Project>
