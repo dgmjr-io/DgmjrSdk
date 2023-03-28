@@ -1,5 +1,7 @@
 <Project>
   <ItemGroup>
     <Using Include="JustinWritesCode" Alias="JWC" />
+    <Using Include="JustinWritesCode" Alias="Jwc" />
+    <Compile Include="$(MSBuildThisFileDirectory)JustinWritesCodeNamespaceDeclaration.cs" />
   </ItemGroup>
 </Project>

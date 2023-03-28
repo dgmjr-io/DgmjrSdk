@@ -1,8 +1,7 @@
 <Project InialTargets="EnsureReadmeExists">
-	<Target Name="EnsureReadmeExists">
-			<Warning Condition="!Exists('$(MSBuildProjectDirectory)/README.md')"
-				Code="README.MD_NOT_FOUND"
-				File="$(MSBuildProjectDirectory)/README.md" 
-				Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
-	</Target>
+  <PropertyGroup>
+    <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
+    <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
+    <GeneratedPackageReadmeFileHintPath>$(IntermediateOutputPath)/README.md</GeneratedPackageReadmeFileHintPath>
+  </PropertyGroup>
 </Project>

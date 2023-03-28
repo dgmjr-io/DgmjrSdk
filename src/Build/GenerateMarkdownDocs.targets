@@ -18,8 +18,9 @@
     <DocsParameter Include="generate-doc" />
     <DocsParameter Include="'$(SolutionPath)'" />
     <DocsParameter Include="--additional-xml-documentation './**/*.xml'" /> 
-    <!-- <DocsParameter Include="-file-log '$(FileLog)'" />  -->
-    <!-- <DocsParameter Include="-file-log-verbosity diag" />  -->
+    <DocsParameter Include="-file-log '$(FileLog)'" /> 
+    <DocsParameter Include="-file-log-verbosity diag" /> 
+    <DocsParameter Include="--files-layout flat-namespaces" />
     <DocsParameter Include="--group-by-common-namespace" /> 
     <DocsParameter Include="--heading '$(Title)'" /> 
     <DocsParameter Include="--host github" /> 
