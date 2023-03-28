@@ -43,7 +43,8 @@
 		</PropertyGroup>
 
 		<ItemGroup>
-			<Content Include="$(PackageReadmeFilePath)" PackagePath="README.md" Condition="Exists($(PackageReadmeFilePath))" />
+      <!-- <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" /> -->
+			<Content Include="$(PackageReadmeFilePath)" PackagePath="README.md" Condition="Exists($(PackageReadmeFilePath)) And @(Content->WithMetadataValue('PackagePath', 'README.md')->Count()) == 0" />
 		</ItemGroup>
 
     <PropertyGroup>

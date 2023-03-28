@@ -2,6 +2,6 @@
   <PropertyGroup>
     <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
     <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
-    <GeneratedPackageReadmeFileHintPath>$(IntermediateOutputPath)/README.md</GeneratedPackageReadmeFileHintPath>
+    <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/README.md</GeneratedPackageReadmeFileHintPath>
   </PropertyGroup>
 </Project>

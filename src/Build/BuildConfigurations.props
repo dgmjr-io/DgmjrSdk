@@ -46,6 +46,9 @@
     <Optimize>true</Optimize>
 		<DefineDebug>false</DefineDebug>
 		<DefineTrace>false</DefineTrace>
+    <BuildRelease>true</BuildRelease>
+    <PackRelease>true</PackRelease>
+    <PublishRelease>true</PublishRelease>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)' == 'Release' " Label="Production / Release Configuration">
 		<DefineConstants>$(DefineConstants);RELEASE;PRODUCTION</DefineConstants>
@@ -53,5 +56,8 @@
     <Optimize>true</Optimize>
 		<DefineDebug>false</DefineDebug>
 		<DefineTrace>false</DefineTrace>
+    <BuildRelease>true</BuildRelease>
+    <PackRelease>true</PackRelease>
+    <PublishRelease>true</PublishRelease>
 	</PropertyGroup>
 </Project>

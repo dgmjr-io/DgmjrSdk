@@ -10,7 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Microsoft.Build.NoTargets">
+<Project Sdk="Microsoft.Build.NoTargets/3.5.6">
   <Import Project="./Build/ADefaultBuildConfiguration.props" />
   <Import Project="./Build/BuildConfigurations.props" />
   <Import Project="./Build/Authors-Owners.props" />

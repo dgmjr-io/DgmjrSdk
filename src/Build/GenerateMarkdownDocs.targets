@@ -16,10 +16,11 @@
   </PropertyGroup>
   <ItemGroup>
     <DocsParameter Include="generate-doc" />
-    <DocsParameter Include="'$(SolutionPath)'" />
+    <DocsParameter Include="'$(MSBuildProjectFullPath)'" />
     <DocsParameter Include="--additional-xml-documentation './**/*.xml'" /> 
     <DocsParameter Include="--file-log '$(FileLog)'" /> 
-    <DocsParameter Include="--file-log-verbosity diag" /> 
+    <DocsParameter Include="--file-log-verbosity detailed" /> 
+    <DocsParameter Include="--verbosity detailed" /> 
     <DocsParameter Include="--files-layout flat-namespaces" />
     <DocsParameter Include="--group-by-common-namespace" /> 
     <DocsParameter Include="--no-delete" /> 
@@ -37,8 +38,8 @@
   <Target Name="GenDocs">
     <MakeDir Directories="$(DocsDir)" />
     <MakeDir Directories="$(DocsDir)/logs" />
-    <Exec Command="roslynator @(DocsParameter, ' ')" Condition="'$(SolutionPath)' != '' And Exists($(SolutionPath))" />
-    <Error Condition="'$(SolutionPath)' == ''" Text="You must specify a solution path to generate markdown docs." />
-    <Error Condition="!Exists($(SolutionPath))" Text="The solution file '$(SolutionPath)' does not exist." />
+    <Exec Command="roslynator @(DocsParameter, ' ')" Condition="'$(MSBuildProjectFullPath)' != '' And Exists($(MSBuildProjectFullPath))" />
+    <Error Condition="'$(MSBuildProjectFullPath)' == ''" Text="You must specify a project to generate markdown docs." />
+    <Error Condition="!Exists($(MSBuildProjectFullPath))" Text="The project file '$(MSBuildProjectFullPath)' does not exist." />
   </Target>
 </Project>

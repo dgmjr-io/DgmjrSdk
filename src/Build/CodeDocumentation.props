@@ -15,5 +15,8 @@
    <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
    <GenerateDocumentationFile>true</GenerateDocumentationFile>
    <DocumentationFile>$(OutputPath)$(MSBuildProjectName).xml</DocumentationFile>
+   <PublishDocumentationFiles>true</PublishDocumentationFiles>
+   <PublishDocumentationFile>true</PublishDocumentationFile>
+   <PublishReferencesDocumentationFiles>true</PublishReferencesDocumentationFiles>
   </PropertyGroup>
 </Project>
