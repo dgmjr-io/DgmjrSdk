@@ -12,7 +12,7 @@
 
 <Project>
   <PropertyGroup>
-    <_GitRoot>$(MSBuildThisFileDirectory)/../</_GitRoot>
-    <!-- <_GitRoot Condition="'$(_GitRoot)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), ".git"))</_GitRoot> -->
+    <!-- <_GitRoot>$(MSBuildThisFileDirectory)/../</_GitRoot> -->
+    <_GitRoot Condition="'$(_GitRoot)' == ''">$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), ".git"))</_GitRoot>
   </PropertyGroup>
 </Project>

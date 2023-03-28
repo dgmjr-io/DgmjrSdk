@@ -30,9 +30,12 @@
       <PackageReadmeFilePath>$(IntermediateOutputPath)/README.md</PackageReadmeFilePath>
 		</PropertyGroup>
 
+		<ItemGroup>
+			<Content Include="$(PackageReadmeFilePath)" PackagePath="README.md" Condition="Exists($(PackageReadmeFilePath))" />
+		</ItemGroup>
 
-		<!-- <ItemGroup>
-			<Content Include="$(PackageReadmeFilePath)" PackagePath="README.md" />
-		</ItemGroup> -->
+    <PropertyGroup>
+      <PackageReadmeFile Condition="Exists($(PackageReadmeFilePath))">README.md</PackageReadmeFile>
+    </PropertyGroup>
   </Target> 
 </Project>

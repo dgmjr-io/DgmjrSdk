@@ -12,7 +12,7 @@
 
 <Project>
   <PropertyGroup>
-    <DocsDir Condition="'$(DocsDir)' == ''">$(MSBuildProjectDirectory)/../docs</DocsDir>
+    <DocsDir Condition="'$(DocsDir)' == ''">$(MSBuildProjectDirectory)/docs</DocsDir>
     <FileLog>$([System.IO.Path]::Combine($(DocsDir), "logs", $([System.DateTime]::Now.ToString("yyyy-MM-dd-hh:mm:ss.'log'"))))</FileLog>
   </PropertyGroup>
 </Project>

@@ -24,11 +24,11 @@
   <Import Project="./Build/PackageProjectUrl.props" />
   <Import Project="./Build/PackageIcon.props" />
   <Import Project="./Build/PackageReadme.props" />
+  <Import Project="./Build/PackageVersionOverride.props" />
   <Import Project="./Build/TestingLocal.props" />
   <PropertyGroup>
       <TargetFramework>netstandard2.0</TargetFramework>
       <PackageId>$(MSBuildProjectName)</PackageId>
-      <MinVerTagPrefix>sdk-v</MinVerTagPrefix>
   </PropertyGroup>
   <ItemGroup>
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
