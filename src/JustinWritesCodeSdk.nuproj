@@ -28,6 +28,7 @@
   <PropertyGroup>
       <TargetFramework>netstandard2.0</TargetFramework>
       <PackageId>$(MSBuildProjectName)</PackageId>
+      <MinVerTagPrefix>sdk-v</MinVerTagPrefix>
   </PropertyGroup>
   <ItemGroup>
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
