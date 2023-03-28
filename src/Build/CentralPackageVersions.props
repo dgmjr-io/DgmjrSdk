@@ -11,6 +11,7 @@
 -->
 
 <Project>
+  <Import Project="Sdk.props" Sdk="Microsoft.Build.CentralPackageVersions" Condition="'$(CentralPackageVersionsProps)' == '' And '$(UsingMicrosoftCentralPackageVersionsSdk)' == ''" />
   <PropertyGroup>
     <CentralPackageVersionsProps>$(MSBuildThisFileDirectory)Imported</CentralPackageVersionsProps>
     <EnableCentralPackageVersions>true</EnableCentralPackageVersions>
