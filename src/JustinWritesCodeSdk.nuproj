@@ -11,6 +11,7 @@
 -->
 
 <Project Sdk="Microsoft.Build.NoTargets">
+  <Import Project="./Build/ADefaultBuildConfiguration.props" />
   <Import Project="./Build/BuildConfigurations.props" />
   <Import Project="./Build/Authors-Owners.props" />
   <Import Project="./Build/CentralPackagesFile.props" />
