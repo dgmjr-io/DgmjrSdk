@@ -23,6 +23,7 @@
     <DebugType>portable</DebugType>
     <IsPackagingFile>true</IsPackagingFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <EmitNuspec>true</EmitNuspec>
   </PropertyGroup>
   <PropertyGroup>
     <GetPackageMetadataDependsOn>
