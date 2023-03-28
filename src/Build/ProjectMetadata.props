@@ -24,6 +24,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseJustinWritesCodeNamespace Condition="'$(UseJustinWritesCodeNamespace)' == ''">true</UseJustinWritesCodeNamespace>
-    <UsePackageReferencesForLocalDependencies>false</UsePackageReferencesForLocalDependencies>
+    <!-- <UsePackageReferencesForLocalDependencies>false</UsePackageReferencesForLocalDependencies> -->
   </PropertyGroup>
 </Project>

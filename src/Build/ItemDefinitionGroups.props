@@ -18,7 +18,8 @@
     <PackageReference>
     	<!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
 			<GeneratePathProperty>true</GeneratePathProperty>
-			<IncludeAssets>Compile; Runime; Build; BuildMultitargeting; BuildTransitive; Analyzers; Native</IncludeAssets>
+      <CopyLocal>true</CopyLocal>
+			<IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Analyzers; Native</IncludeAssets>
 			<ExcludeAssets>ContentFiles</ExcludeAssets>
 		</PackageReference>
   </ItemDefinitionGroup>

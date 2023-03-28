@@ -2,6 +2,39 @@
   <ItemGroup>
     <!-- <Using Include="JustinWritesCode" Alias="JWC" />
     <Using Include="JustinWritesCode" Alias="Jwc" /> -->
-    <Compile Include="$(MSBuildThisFileDirectory)JustinWritesCodeNamespaceDeclaration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk'" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Array" Static="true" />
+    <Using Include="System.BitConverter" Static="true" />
+    <Using Include="System.Collections.Generic" />
+    <Using Include="System.Collections.Generic.Dictionary&lt;string, string&gt;" Alias="StringDictionary" />
+    <Using Include="System.Collections.Generic.IDictionary&lt;string, string&gt;" Alias="IStringDictionary" />
+    <Using Include="System.Collections.Generic.KeyValuePair&lt;string, string&gt;" Alias="StrKvp" />
+    <Using Include="System.Console" Static="true" />
+    <Using Include="System.Convert" Static="true" />
+    <Using Include="System.DateTime" Static="true" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+    <Using Include="System.Guid" Alias="@guid" />
+    <Using Include="System.Int128" Alias="vlong" Condition="$(TargetFramework.Contains('net7'))" />
+    <Using Include="System.IO" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Linq.Expressions" />
+    <Using Include="System.Math" Static="true" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.String" Static="true" />
+    <Using Include="System.StringComparison" Static="true" />
+    <!-- <Using Include="System.Text.Encoding" Static="true" /> -->
+    <Using Include="System.Threading" />
+    <Using Include="System.Threading.Tasks" />
+    <Using Include="System.Type" Alias="@type" />
+    <Using Include="System.UInt128" Alias="uvlong" Condition="$(TargetFramework.Contains('net7'))" />
+    <Using Include="System.UriKind" Static="true" />
+    <Using Include="System.Convert" Alias="Convert" />
+    <!-- <Using Include="JustinWritesCode" Alias="JWC" /> -->
+    <!-- <Using Include="JustinWritesCode" Alias="Jwc" /> -->
   </ItemGroup>
 </Project>

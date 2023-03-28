@@ -14,26 +14,24 @@
 
   <Target Name="SetPackageOwnersAndAuthors" BeforeTargets="GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun">
     <ItemGroup>
-      <DistinctAuthors Include="@(Author->Distinct())" KeepMetadata="Email" />
-      <DistinctOwners Include="@(Owner->Distinct())" KeepMetadata="Email" />
-      <DistinctAuthorsWithEmails Include="@(DistinctAuthors->HasMetadata('Email'))" KeepMetadata="Email" />
-      <DistinctOwnersWithEmails Include="@(DistinctAuthors->HasMetadata('Email'))" KeepMetadata="Email" />
-      <DistinctAuthors Remove="@(DistinctAuthorsWithEmails)" />
-      <DistinctOwners Remove="@(DistinctOwnersWithEmails)" />
-      <DistinctOwnersFinal Include="@(DistinctOwnersWithEmails->'%(Identity) &lt;%(Email)&gt;');@(DistinctOwners)" />
-      <DistinctAuthorsFinal Include="@(DistincAuthorsWithEmails->'%(Identity) &lt;%(Email)&gt;');@(DistincAuthors)" />
+      <DistinctAuthorsWithEmail Include="@(Author->HasMetadata('Email')->Distinct())" />
+      <DistinctOwnersWithEmail Include="@(Owner->HasMetadata('Email')->Distinct())" />
+      <DistinctAuthorsNoEmail Remove="@(DistinctAuthorsWithEmail)" />
+      <DistinctOwnersNoEmail Remove="@(DistinctOwnersWithEmail)" />
+      <DistinctAuthorsFinal Include="@(DistinctAuthorsWithEmail->'%(Identity) &lt;%(Email)&gt;');@(DistinctAuthorsNoEmail)" />
+      <DistinctOwnersFinal Include="@(DistinctOwnersWithEmail->'%(Identity) &lt;%(Email)&gt;');@(DistinctOwnersNoEmail)" />
     </ItemGroup>
     <PropertyGroup>
       <Authors>@(DistinctAuthorsFinal, ', ')</Authors> 
       <Owners>@(DistinctOwnersFinal, ', ')</Owners> 
     </PropertyGroup>
-    <Message Text="@(DistinctOwnersFinal)" />
-    <Message Text="@(DistinctAuthorsFinal)" />
+    <Message Text="DistinctOwnersFinal: @(DistinctOwnersFinal)" />
+    <Message Text="DistinctAuthorsFinal: @(DistinctAuthorsFinal)" />
     <ItemGroup>
-      <DistinctAuthors Remove="@(DistinctAuthors)" />
+      <!-- <DistinctAuthors Remove="@(DistinctAuthors)" />
       <DistinctOwners Remove="@(DistinctOwners)" />
       <DistinctAuthorsWithEmails Remove="@(DistinctAuthorsWithEmails)" />
-      <DistinctOwnersWithEmails Remove="@(DistinctOwnersWithEmails)" />
+      <DistinctOwnersWithEmails Remove="@(DistinctOwnersWithEmails)" /> -->
     </ItemGroup>
   </Target>
 

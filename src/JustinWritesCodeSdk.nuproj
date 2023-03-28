@@ -10,13 +10,14 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Microsoft.Build.NoTargets/3.5.6">
+<Project Sdk="Microsoft.Build.NoTargets">
   <Import Project="./Build/ADefaultBuildConfiguration.props" />
   <Import Project="./Build/BuildConfigurations.props" />
   <Import Project="./Build/Authors-Owners.props" />
   <Import Project="./Build/CentralPackagesFile.props" />
   <Import Project="./Build/CentralPackageVersions.props" />
   <Import Project="./Build/EnablePreviewFeatures.props" />
+  <Import Project="./Build/EmitNuspec.props" />
   <Import Project="./Build/MinVer.props" />
   <Import Project="./Build/NoWarn.props" />
   <Import Project="./Build/NuGetizer.props" />
@@ -24,11 +25,14 @@
   <Import Project="./Build/PackageProjectUrl.props" />
   <Import Project="./Build/PackageIcon.props" />
   <Import Project="./Build/PackageReadme.props" />
-  <Import Project="./Build/PackageVersionOverride.props" />
+  <Import Project="./build/PackageVersionOverride.props" />
   <Import Project="./Build/TestingLocal.props" />
+  <Import Project="./Build/PackageMetadata.props" />
+  <Import Project="./Build/GlobalUsings.props" />
   <PropertyGroup>
       <TargetFramework>netstandard2.0</TargetFramework>
-      <PackageId>$(MSBuildProjectName)</PackageId>
+      <PackageId>$(MSbuildProjectName)</PackageId>
+      <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />

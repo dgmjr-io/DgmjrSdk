@@ -1,7 +1,37 @@
-<Project InialTargets="EnsureReadmeExists">
+<Project>
   <PropertyGroup>
     <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
     <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
-    <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/README.md</GeneratedPackageReadmeFileHintPath>
+    <PackageReadmeFile>$(MSBuildProjectName).README.md</PackageReadmeFile>
+    <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
+    <GeneratedPackageReadmeFileContents>
+      ---;
+      title: $(MSBuildProjectName) README;
+      lastmod: $(Date:yyyy-MM-dd-HH:mm:ss); 
+      created: $(Date:yyyy-MM-dd-HH:mm:ss);
+      license: $(PackageLicenseExpression);
+      categories:;
+        - documentation;
+        - readme;
+      description: A README file for the $(MSBuildProjectName) package.;
+      slug: $(MSBuildProjectName)-readme;
+      tags:;
+        - readme;
+        - $(MSBuildProjectName);
+        @(PackageTag->'- %(Identity)');
+      keywords:;
+        - $(MSBuildProjectName);
+        @(PackageTag->'- %(Identity)');
+      ---;
+      ;
+      # $(MSBuildProjectName) README;
+      ;
+      This file is generated from the contents of the project file.;
+      ;
+      ## Package Description;
+      ;
+      $(Description);
+
+    </GeneratedPackageReadmeFileContents>
   </PropertyGroup>
 </Project>

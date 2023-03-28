@@ -19,7 +19,7 @@
     <CustomBeforeCentralPackageVersionsProps>$(CustomBeforeCentralPackageVersionsProps);$(VersionsPropsFile)</CustomBeforeCentralPackageVersionsProps>
 	</PropertyGroup>  
 	<Target Name="CustomAfterCentralPackageVersions" BeforeTargets="CheckPackageReferences">
-    <Message Text="CentralPackagesFile: $(CentralPackagesFile)" Importance="High" />
-    <Message Text="Build Configuration: $(Configuration)"  Importance="High" />
+    <Message Text="CentralPackagesFile: $(CentralPackagesFile)" />
+    <Message Text="Build Configuration: $(Configuration)" />
   </Target>
 </Project>

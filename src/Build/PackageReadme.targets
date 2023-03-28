@@ -11,44 +11,47 @@
 -->
 
 <Project>
+
 	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme">
-			<Warning Condition="!Exists('$(PackageReadmeFileHintPath)')"
-				Code="README.MD_NOT_FOUND"
-				File="$(MSBuildProjectDirectory)/README.md" 
-				Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
+  
+    <Warning Condition="!Exists('$(PackageReadmeFileHintPath)')"
+      Code="README.MD_NOT_FOUND"
+      File="$(MSBuildProjectDirectory)/README.md" 
+      Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
 	</Target>
 
   <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;CheckReadmeExists;SetPackageDescription">
     <!-- Fallback to using the package's description as the README.md contents -->
     <ItemGroup Condition="!Exists('$(PackageReadmeFileHintPath)')">
-      <ReadmeFileContents Include="# $(PackageId)" />
-      <ReadmeFileContents Include="$(Description)" />
+      <ReadmeFileContents Include="$(GeneratedPackageReadmeFileContents);$(BuildMessage)" />
     </ItemGroup>
 
-    <!-- Read the contents from the package README file -->
-    <ItemGroup Condition="Exists('$(PackageReadmeFileHintPath)')">
-      <ReadLinesFromFile File="$(PackageReadmeFileHintPath)" />
-    </ItemGroup>
+    <!-- Read the contents from the package README file, if it exists -->
+    <!-- <ItemGroup Condition="Exists('$(PackageReadmeFileHintPath)')">
+      <ReadLinesFromFile File="$(PackageReadmeFileHintPath)">
+        <Output TaskParameter="Lines" ItemName="ReadmeFileContents" />
+      </ReadLinesFromFile>
+    </ItemGroup> -->
 
-    <ItemGroup>
+    <!-- <ItemGroup>
       <ReadmeFileContents Include="$(BuildMessage)" Condition="Exists('$(PackageReadmeFileHintPath)')" />
-    </ItemGroup>
+    </ItemGroup> -->
 
     <!-- Write it to the "obj/" directory -->
-    <WriteLinesToFile File="$(GeneratedPackageReadmeFileHintPath)" Lines="@(ReadmeFileContents)" Overwrite="true" />
+    <WriteLinesToFile File="$(GeneratedPackageReadmeFileHintPath)" Lines="@(ReadmeFileContents)" Overwrite="true" Condition="!Exists('$(PackageReadmeFileHintPath)')" />
+    <Copy SourceFiles="$(PackageReadmeFileHintPath)" DestinationFiles="$(GeneratedPackageReadmeFileHintPath)" Condition="Exists('$(PackageReadmeFileHintPath)')" />
     
     <PropertyGroup>
       <PackageReadmeFilePath>$(GeneratedPackageReadmeFileHintPath)</PackageReadmeFilePath>
-      <PackageReadme Condition="Exists($(PackageReadmeFilePath))">$(GeneratedPackageReadmeFileHintPath)</PackageReadme>
+      <!-- <PackageReadme Condition="Exists($(GeneratedPackageReadmeFileHintPath))">$(GeneratedPackageReadmeFileHintPath)</PackageReadme> -->
 		</PropertyGroup>
 
 		<ItemGroup>
       <!-- <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" /> -->
-			<Content Include="$(PackageReadmeFilePath)" PackagePath="README.md" Condition="Exists($(PackageReadmeFilePath)) And @(Content->WithMetadataValue('PackagePath', 'README.md')->Count()) == 0" />
+			<PackageFile Include="$(GeneratedPackageReadmeFileHintPath)" PackagePath="$(PackageReadmeFile)" Condition="Exists($(GeneratedPackageReadmeFileHintPath))" />
 		</ItemGroup>
 
     <PropertyGroup>
-      <PackageReadmeFile Condition="Exists($(PackageReadmeFilePath))">README.md</PackageReadmeFile>
     </PropertyGroup>
   </Target> 
 </Project>

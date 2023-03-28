@@ -1,0 +1,17 @@
+<!--
+ * EmitNuspec.props
+ * 
+ *   Created: 2023-01-13-03:16:35
+ *   Modified: 2023-01-13-03:16:35
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <EmitNuspec>true</EmitNuspec>
+  </PropertyGroup>
+</Project>
