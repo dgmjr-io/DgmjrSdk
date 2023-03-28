@@ -10,4 +10,4 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="JustInTimeVersioningSdk/0.0.3" Condition="'$(PackageId)' != 'JustInTimeVersioningSdk' And '$(PackageId)' != 'JustInTimeVersioning'" />
+<Project Sdk="JustInTimeVersioningSdk" Condition="'$(PackageId)' != 'JustInTimeVersioningSdk' And '$(PackageId)' != 'JustInTimeVersioning'" />
