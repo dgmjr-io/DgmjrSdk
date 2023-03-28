@@ -10,4 +10,4 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="NuGetPush" />
+<Project Sdk="NuGetPush/0.0.4" />
