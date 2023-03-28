@@ -10,8 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <Import Project="Sdk.targets" Sdk="Microsoft.Build.CentralPackageVersions" Condition="'$(CentralPackageVersionsTargets)' == ''" />
+<Project Sdk="Microsoft.Build.CentralPackageVersions">
   <PropertyGroup>
     <CentralPackageVersionsTargets>$(MSBuildThisFileDirectory)Imported</CentralPackageVersionsTargets>
   </PropertyGroup>
