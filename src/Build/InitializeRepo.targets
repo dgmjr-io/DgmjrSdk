@@ -11,24 +11,23 @@
 -->
 
 <Project>
-  <Target Name="InitializeRepo" BeforeTargets="Build" Condition="$(IsAtRoot)">
+  <Target Name="InitializeRepo">
     <Exec Command="dotnet tool install -g dotnet-file" IgnoreExitCode="true" />
-    <Exec Command="dotnet file add 'https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/Init.proj'" 
-          IgnoreExitCode="true" />
-    <Exec Command="dotnet file sync" 
-          IgnoreExitCode="true" />
-    <MSBuild Projects="Init.proj" Targets="Restore" Condition="Exists('Init.proj')"  />
+    <Exec Command="dotnet file add 'https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/Init.proj'" IgnoreExitCode="true" WorkingDirectory="$(_GitRoot)" />
+    <Exec Command="dotnet file add 'https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/global.json'" IgnoreExitCode="true"  WorkingDirectory="$(_GitRoot)" />
+    <Exec Command="dotnet file sync" IgnoreExitCode="true"  WorkingDirectory="$(_GitRoot)" />
+    <MSBuild Projects="$(_GitRoot)/Init.proj" Targets="Restore" Condition="Exists('Init.proj')"  />
   </Target>
 
-  <ItemGroup Condition="$(IsAtRoot)">
-    <SlnGenSolutionItem Include="./Init.proj" />
-    <SlnGenSolutionItem Include="./.github/**/*" />
-    <SlnGenSolutionItem Include="./.scripts/**/*" />
-    <SlnGenSolutionItem Include="./.config/**/*" />
-    <SlnGenSolutionItem Include="./global.json" />
-    <SlnGenSolutionItem Include="./README.md" Condition="Exists('README.md')" />
-    <SlnGenSolutionItem Include="./.gitignore" />
-    <SlnGenSolutionItem Include="./Directory.Build.*" />
-    <SlnGenSolutionItem Include="./NuGet.config" />
+  <ItemGroup>
+    <SlnGenSolutionItem Include="$(_GitRoot)/Init.proj" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/.github/**/*" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/.scripts/**/*" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/.config/**/*" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/global.json" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/README.md" Condition="Exists('README.md')" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/.gitignore" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/Directory.Build.*" />
+    <SlnGenSolutionItem Include="$(_GitRoot)/NuGet.config" />
   </ItemGroup>
 </Project>

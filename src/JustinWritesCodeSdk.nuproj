@@ -29,7 +29,7 @@
     <Import Project="./Build/TestingLocal.props" />
     <Import Project="./Build/PackageMetadata.props" />
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard1.0</TargetFramework>
         <PackageId>$(MSbuildProjectName)</PackageId>
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
