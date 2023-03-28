@@ -39,7 +39,7 @@
     
     <PropertyGroup>
       <PackageReadmeFilePath>$(GeneratedPackageReadmeFileHintPath)</PackageReadmeFilePath>
-      <PackageReadme>$(GeneratedPackageReadmeFileHintPath)</PackageReadme>
+      <PackageReadme Condition="Exists($(PackageReadmeFilePath))">$(GeneratedPackageReadmeFileHintPath)</PackageReadme>
 		</PropertyGroup>
 
 		<ItemGroup>
