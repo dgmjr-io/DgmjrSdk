@@ -10,7 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Microsoft.Build.CentralPackageVersions/2.1.3">
+<Project Sdk="Microsoft.Build.CentralPackageVersions">
   <PropertyGroup>
     <CentralPackageVersionsTargets>$(MSBuildThisFileDirectory)Imported</CentralPackageVersionsTargets>
   </PropertyGroup>
