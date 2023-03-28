@@ -11,15 +11,13 @@
 -->
 
 <Project>
-  <Target Name="InitializeRepo" BeforeTargets="Build">
-    <Exec Command="dotnet tool install -g dotnet-file" IgnoreExitCode="true" Condition="$(IsAtRoot)" />
+  <Target Name="InitializeRepo" BeforeTargets="Build" Condition="$(IsAtRoot)">
+    <Exec Command="dotnet tool install -g dotnet-file" IgnoreExitCode="true" />
     <Exec Command="dotnet file add 'https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/Init.proj'" 
-          Condition="$(IsAtRoot)"
           IgnoreExitCode="true" />
     <Exec Command="dotnet file sync" 
-          Condition="$(IsAtRoot)"
           IgnoreExitCode="true" />
-    <MSBuild Projects="Init.proj" Targets="Restore" Condition="Exists('Init.proj') And $(IsAtRoot)"  />
+    <MSBuild Projects="Init.proj" Targets="Restore" Condition="Exists('Init.proj')"  />
   </Target>
 
   <ItemGroup Condition="$(IsAtRoot)">
@@ -28,7 +26,7 @@
     <SlnGenSolutionItem Include="./.scripts/**/*" />
     <SlnGenSolutionItem Include="./.config/**/*" />
     <SlnGenSolutionItem Include="./global.json" />
-    <SlnGenSolutionItem Include="./README.md" />
+    <SlnGenSolutionItem Include="./README.md" Condition="Exists('README.md')" />
     <SlnGenSolutionItem Include="./.gitignore" />
     <SlnGenSolutionItem Include="./Directory.Build.*" />
     <SlnGenSolutionItem Include="./NuGet.config" />
