@@ -32,7 +32,6 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>$(MSbuildProjectName)</PackageId>
         <LangVersion>preview</LangVersion>
-        <IsAtRoot>true</IsAtRoot>
     </PropertyGroup>
     <ItemGroup>
         <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
@@ -51,5 +50,4 @@
     <Import Project="./Build/TestingLocal.targets" />
     <Import Project="./Build/NuGetPush.targets" />
     <Import Project="./Build/DoNotCleanCachedPackageId.targets" />
-    <Import Project="./Build/InitializeRepo.targets" />
 </Project>
