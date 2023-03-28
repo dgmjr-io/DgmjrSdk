@@ -36,6 +36,7 @@
     <ItemGroup>
         <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
         <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
+        <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
         <PackageFile Include="./ContentFiles/*" PackagePath="ContentFiles/%(Filename)%(Extension)" />
     </ItemGroup>
     <Import Project="./Build/Authors-Owners.targets" />

@@ -1,0 +1,15 @@
+[file "Invoke-Build.ps1"]
+	url = https://github.com/justinwritescode/InvokeBuild/blob/main/Invoke-Build.ps1
+	sha = 463dc4e0f0efb5176e760b63c150890c6cea98ac
+	etag = 5631dd45ee88e7da47e67327bc2bf8a886f2bf8387388cd7be79cca5bd2125d2
+	weak
+[file "Init.proj"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/Init.proj
+	sha = 84e3932f0f94865381de98310e1750a30aaf9f73
+	etag = 8df8995836e1219d18fb9ae0ef4b024c6d2f57a0700b0fe97c6a11dc453b8786
+	weak
+[file "global.json"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/global.json
+	sha = 04e06925be069f31a1523bcc870e0b3dd1603033
+	etag = 6e338994a7293e2392440d5cb037d48a82daffbf6e8d37ad07c953538265609a
+	weak

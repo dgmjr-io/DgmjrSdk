@@ -1,0 +1,24 @@
+<!--
+ * PackageIcon.targets
+ * 
+ *   Created: 2023-01-24-02:07:11
+ *   Modified: 2023-01-24-02:07:11
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageContents">
+    <PropertyGroup>
+      <PackageIconIsNotThere>$([System.String]::IsNullOrEmpty('$(PackageIcon)'))</PackageIconIsNotThere>
+      <PackageIcon Condition="$(PackageIconIsNotThere)">icon.png</PackageIcon>
+      <FallbackPackageIcon>$(MSBuildThisFileDirectory)../ContentFiles/icon.png</FallbackPackageIcon>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageIconFile Include="$(PackageIcon)" Condition="$(PackageIconIsNotThere)" PackagePath="icon.png" />
+    </ItemGroup>
+  </Target>
+</Project>

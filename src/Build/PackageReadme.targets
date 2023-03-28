@@ -23,7 +23,7 @@
   <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;CheckReadmeExists;SetPackageDescription">
     <!-- Fallback to using the package's description as the README.md contents -->
     <ItemGroup Condition="!Exists('$(PackageReadmeFileHintPath)')">
-      <ReadmeFileContents Include="$(GeneratedPackageReadmeFileContents);$(BuildMessage)" />
+      <ReadmeFileContents Include="$(GeneratedPackageReadmeFileContents);$(BuildMessage)" Visible="false" />
     </ItemGroup>
 
     <!-- Read the contents from the package README file, if it exists -->
@@ -47,11 +47,9 @@
 		</PropertyGroup>
 
 		<ItemGroup>
+      <PackageReadmeFile Include="$(PackageReadmeFilePath)" Visible="true" Link="docs/README.md" />
       <!-- <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" /> -->
-			<PackageFile Include="$(GeneratedPackageReadmeFileHintPath)" PackagePath="$(PackageReadmeFile)" Condition="Exists($(GeneratedPackageReadmeFileHintPath))" />
+			<PackageFile Include="$(GeneratedPackageReadmeFileHintPath)" PackagePath="$(PackageReadmeFile)" Condition="Exists($(GeneratedPackageReadmeFileHintPath))" Visible="true" Link="docs/README.md" />
 		</ItemGroup>
-
-    <PropertyGroup>
-    </PropertyGroup>
   </Target> 
 </Project>

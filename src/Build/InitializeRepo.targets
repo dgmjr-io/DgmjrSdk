@@ -11,15 +11,23 @@
 -->
 
 <Project>
-  <Target Name="InitializeRepo">
-    <Exec Command="dotnet tool install -g dotnet-file" IgnoreExitCode="true" />
+  <Target Name="InitializeRepo" DependsOnTargets="GitInfo">
+    <PropertyGroup>
+      <InitializeRepoScript>
+      Import-Module $(MSBuildThisFileDirectory)../Scripts/initialize-repo.ps1; 
+      initialize-repo -environment:$(Configuration) -gitRoot:$(_GitRoot);
+      Import-Module $(MSBuildThisFileDirectory)../Scripts/Invoke-Build.ps1;
+      </InitializeRepoScript>
+    </PropertyGroup>
+    <Exec Command="$(InitializeRepoScript)" />
+    <!-- <Exec Command="dotnet tool install -g dotnet-file" IgnoreExitCode="true" />
     <Exec Command="dotnet file add 'https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/Init.proj'" IgnoreExitCode="true" WorkingDirectory="$(_GitRoot)" />
     <Exec Command="dotnet file add 'https://github.com/justinwritescode/JwcRepoInitSdk/blob/main/global.json'" IgnoreExitCode="true"  WorkingDirectory="$(_GitRoot)" />
     <Exec Command="dotnet file sync" IgnoreExitCode="true"  WorkingDirectory="$(_GitRoot)" />
-    <MSBuild Projects="$(_GitRoot)/Init.proj" Targets="Restore" Condition="Exists('Init.proj')"  />
+    <MSBuild Projects="$(_GitRoot)/Init.proj" Targets="Restore" Condition="Exists('Init.proj')"  /> -->
   </Target>
 
-  <ItemGroup>
+  <!-- <ItemGroup>
     <SlnGenSolutionItem Include="$(_GitRoot)/Init.proj" />
     <SlnGenSolutionItem Include="$(_GitRoot)/.github/**/*" />
     <SlnGenSolutionItem Include="$(_GitRoot)/.scripts/**/*" />
@@ -29,5 +37,5 @@
     <SlnGenSolutionItem Include="$(_GitRoot)/.gitignore" />
     <SlnGenSolutionItem Include="$(_GitRoot)/Directory.Build.*" />
     <SlnGenSolutionItem Include="$(_GitRoot)/NuGet.config" />
-  </ItemGroup>
+  </ItemGroup> -->
 </Project>

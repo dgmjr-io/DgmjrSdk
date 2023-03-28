@@ -1,25 +1,8 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "JustinWritesCodeSdk", "JustinWritesCodeSdk.nuproj", "{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Local|Any CPU = Local|Any CPU
-		Debug|Any CPU = Debug|Any CPU
-		Staging|Any CPU = Staging|Any CPU
-		Release|Any CPU = Release|Any CPU
-		Testing|Any CPU = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Local|Any CPU.ActiveCfg = Local|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Local|Any CPU.Build.0 = Local|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Staging|Any CPU.Build.0 = Staging|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
-		{8CE508CF-83AC-4EBF-9670-7EBD798D9ECD}.Testing|Any CPU.Build.0 = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

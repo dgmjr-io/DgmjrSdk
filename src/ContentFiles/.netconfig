@@ -1,0 +1,10 @@
+[file "logo.png"]
+	url = https://github.com/justinwritescode/Assets/blob/main/logo.png
+	sha = cd54dbf4c0d4e1b12cce2f4e9551d44939bd9ee6
+	etag = b10c2e3d4aca4e8b8d184b2fb87b7b2722e50aaa412a20284d0955c5ed69918f
+	weak
+[file "icon.png"]
+	url = https://github.com/justinwritescode/Assets/blob/main/icon.png
+	sha = e9734d8f5e5b29f7c5492a3e5601175870ee1e8b
+	etag = b10c2e3d4aca4e8b8d184b2fb87b7b2722e50aaa412a20284d0955c5ed69918f
+	weak
