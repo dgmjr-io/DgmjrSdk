@@ -21,4 +21,14 @@
           IgnoreExitCode="true" />
     <MSBuild Projects="Init.proj" Targets="Restore" Condition="Exists('Init.proj') And $(IsAtRoot)"  />
   </Target>
+  <ItemGroup Condition="$(IsAtRoot)">
+    <SlnGenSolutionItem Include="./Init.proj" />
+    <SlnGenSolutionItem Include="./.github/**/*" />
+    <SlnGenSolutionItem Include="./.scripts/**/*" />
+    <SlnGenSolutionItem Include="./.config/**/*" />
+    <SlnGenSolutionItem Include="./global.json" />
+    <SlnGenSolutionItem Include="./README.md" />
+    <SlnGenSolutionItem Include="./.gitignore" />
+    <SlnGenSolutionItem Include="./Directory.Build.*" />
+  </ItemGroup>
 </Project>
