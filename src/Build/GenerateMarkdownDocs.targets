@@ -19,12 +19,12 @@
     <DocsParameter Include="'$(MSBuildProjectFullPath)'" />
     <DocsParameter Include="--additional-xml-documentation './**/*.xml'" /> 
     <DocsParameter Include="--file-log '$(FileLog)'" /> 
-    <DocsParameter Include="--file-log-verbosity detailed" /> 
-    <DocsParameter Include="--verbosity detailed" /> 
+    <DocsParameter Include="--file-log-verbosity diagnostic" /> 
+    <DocsParameter Include="--verbosity diagnostic" /> 
     <DocsParameter Include="--files-layout flat-namespaces" />
     <DocsParameter Include="--group-by-common-namespace" /> 
-    <DocsParameter Include="--no-delete" /> 
     <DocsParameter Include="--heading '$(Title)'" /> 
+    <DocsParameter Include="--inheritance-style horizontal" /> 
     <DocsParameter Include="--host github" /> 
     <DocsParameter Include="--ignored-names 'ThisAssembly'" /> 
     <DocsParameter Include="--include-all-derived-types" /> 
