@@ -1,16 +1,3 @@
-<!--
- NoWarn.props
- 
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:48:01
- 
-   Author: Justin Chase <justin@justinwritescode.com>
-   
-   Copyright © 2022-2023 Justin Chase, All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
--->
-
-
 <Project>
   <PropertyGroup>
     <DisableMostAnnoyingWarnings>true</DisableMostAnnoyingWarnings>
@@ -81,6 +68,12 @@
     <NoWarn Include="NETSDK1080"
             Category=".NET"
             Reason="I don't know why the fuck this warning keeps popping up; I AM using a FrameworkReference!!" />
+    <NoWarn Include="CS1570"
+            Category="Documentation"
+            Reason="I don't fucking CARE that it has badly-formed XML; it still fucking WORKS!" />
+    <NoWarn Include="CS8618"
+            Category="Nulllability"
+            Reason="I don't fucking CARE that it doesn't have a fucking value set!" />
   </ItemGroup>
   <PropertyGroup Condition="'$(DisableMostAnnoyingWarnings)' != 'false'">
     <NoWarn>$(NoWarn);@(NoWarn->'%(Identity)');</NoWarn>
