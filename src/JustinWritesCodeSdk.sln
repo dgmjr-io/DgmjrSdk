@@ -3,14 +3,23 @@ Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "JustinWritesCodeSdk", "Just
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Local|Any CPU = Local|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		Staging|Any CPU = Staging|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Testing|Any CPU = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Local|Any CPU.Build.0 = Local|Any CPU
 		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Staging|Any CPU.Build.0 = Staging|Any CPU
 		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Testing|Any CPU.ActiveCfg = Testing|Any CPU
+		{F1F5535C-C509-48FE-BD62-6A747B62DC16}.Testing|Any CPU.Build.0 = Testing|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
