@@ -1,0 +1,17 @@
+<!--
+ * ImplicitUsings.props
+ * 
+ *   Created: 2023-01-06-02:57:58
+ *   Modified: 2023-01-06-02:57:58
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>

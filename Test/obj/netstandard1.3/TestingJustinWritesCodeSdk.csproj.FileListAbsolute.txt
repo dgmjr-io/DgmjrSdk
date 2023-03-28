@@ -1,0 +1,14 @@
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/GitInfo.cache
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.csproj.AssemblyReference.cache
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.GeneratedMSBuildEditorConfig.editorconfig
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.AssemblyInfoInputs.cache
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.AssemblyInfo.cs
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.csproj.CoreCompileInputs.cache
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.sourcelink.json
+/Users/david/.nuget/packages/justinwritescodesdk/0.0.1-local/artifacts/TestingJustinWritesCodeSdk/netstandard1.3/TestingJustinWritesCodeSdk.deps.json
+/Users/david/.nuget/packages/justinwritescodesdk/0.0.1-local/artifacts/TestingJustinWritesCodeSdk/netstandard1.3/TestingJustinWritesCodeSdk.dll
+/Users/david/.nuget/packages/justinwritescodesdk/0.0.1-local/artifacts/TestingJustinWritesCodeSdk/netstandard1.3/TestingJustinWritesCodeSdk.pdb
+/Users/david/.nuget/packages/justinwritescodesdk/0.0.1-local/artifacts/TestingJustinWritesCodeSdk/netstandard1.3/TestingJustinWritesCodeSdk.xml
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.csproj.CopyComplete
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.dll
+/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/obj/netstandard1.3/TestingJustinWritesCodeSdk.pdb

@@ -1,0 +1,40 @@
+<!--
+ Authors-Owners.targets
+ 
+   Created: 2022-10-21-11:40:42
+   Modified: 2022-10-29-02:46:38
+ 
+   Author: Justin Chase <justin@justinwritescode.com>
+   
+   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+
+  <Target Name="SetPackageOwnersAndAuthors" BeforeTargets="GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun">
+    <ItemGroup>
+      <DistinctAuthors Include="@(Author->Distinct())" KeepMetadata="Email" />
+      <DistinctOwners Include="@(Owner->Distinct())" KeepMetadata="Email" />
+      <DistinctAuthorsWithEmails Include="@(DistinctAuthors->HasMetadata('Email'))" KeepMetadata="Email" />
+      <DistinctOwnersWithEmails Include="@(DistinctAuthors->HasMetadata('Email'))" KeepMetadata="Email" />
+      <DistinctAuthors Remove="@(DistinctAuthorsWithEmails)" />
+      <DistinctOwners Remove="@(DistinctOwnersWithEmails)" />
+      <DistinctOwnersFinal Include="@(DistinctOwnersWithEmails->'%(Identity) &lt;%(Email)&gt;');@(DistinctOwners)" />
+      <DistinctAuthorsFinal Include="@(DistincAuthorsWithEmails->'%(Identity) &lt;%(Email)&gt;');@(DistincAuthors)" />
+    </ItemGroup>
+    <PropertyGroup>
+      <Authors>@(DistinctAuthorsFinal, ', ')</Authors> 
+      <Owners>@(DistinctOwnersFinal, ', ')</Owners> 
+    </PropertyGroup>
+    <Message Text="@(DistinctOwnersFinal)" />
+    <Message Text="@(DistinctAuthorsFinal)" />
+    <ItemGroup>
+      <DistinctAuthors Remove="@(DistinctAuthors)" />
+      <DistinctOwners Remove="@(DistinctOwners)" />
+      <DistinctAuthorsWithEmails Remove="@(DistinctAuthorsWithEmails)" />
+      <DistinctOwnersWithEmails Remove="@(DistinctOwnersWithEmails)" />
+    </ItemGroup>
+  </Target>
+
+</Project>

@@ -1,0 +1,38 @@
+<!--
+ * GenerateMarkdownDocs.targets
+ * 
+ *   Created: 2023-01-03-03:19:47
+ *   Modified: 2023-01-03-03:19:47
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <ProjectsToDocument>@(ProjectReference, ',')</ProjectsToDocument>
+  </PropertyGroup>
+  <ItemGroup>
+    <DocsParameter Include="generate-doc" />
+    <DocsParameter Include="." />
+    <DocsParameter Include="--additional-xml-documentation './**/*.xml'" /> 
+    <!-- <DocsParameter Include="-file-log '$(FileLog)'" />  -->
+    <!-- <DocsParameter Include="-file-log-verbosity diag" />  -->
+    <DocsParameter Include="--group-by-common-namespace" /> 
+    <DocsParameter Include="--heading '$(Title)'" /> 
+    <DocsParameter Include="--host github" /> 
+    <DocsParameter Include="--ignored-names 'ThisAssembly'" /> 
+    <DocsParameter Include="--include-all-derived-types" /> 
+    <DocsParameter Include="--include-containing-namespace all" /> 
+    <DocsParameter Include="--include-ienumerable" /> 
+    <DocsParameter Include="--include-inherited-interface-members" /> 
+    <DocsParameter Include="--include-system-namespace" /> 
+    <DocsParameter Include="--max-derived-types 100" /> 
+    <DocsParameter Include="--output '$(DocsDir)'" /> 
+  </ItemGroup>
+  <Target Name="GenDocs">
+    <Exec Command="roslynator @(DocsParameter, ' ')" />
+  </Target>
+</Project>

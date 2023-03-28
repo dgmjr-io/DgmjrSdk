@@ -1,0 +1,25 @@
+is_global = true
+build_property.PackageVersion = 
+build_property.Version = 1.0.0
+build_property.Version = 1.0.0
+build_property.Title = TestingJustinWritesCodeSdk
+build_property.Description = A package for TestingJustinWritesCodeSdk
+build_property.TermsOfServiceUrl = 
+build_property.Company = JustinWritesCode
+build_property.Owners = Justin Chase;
+build_property.Authors = Justin Chase;
+build_property.PackageLicenseExpression = MIT
+build_property.LicenseExpression = 
+build_property.ContactEmail = 
+build_property.PackageProjectUrl = https://github.com/justinwritescode/Shared.git
+build_property.PackageTags = justinwritescode
+build_property.RepositoryUrl = https://github.com/justinwritescode/Shared.git
+build_property.AssemblyVersion = 1.0.0
+build_property.FileVersion = 
+build_property.SwaggerTheme = 
+build_property.RootNamespace = TestingJustinWritesCodeSdk
+build_property.ProjectDir = /Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/
+
+[/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/Test/Justin Chase]
+build_metadata.Author.Email = justin@justinwritescode.com
+build_metadata.Author.Identity = Justin Chase

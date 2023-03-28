@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrmaeworkReference Include="Microsoft.AspNetCore.App" Condition="!$(TargetFrameework.Contains('netstandard'))" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Condition="$(TargetFrameework.Contains('netstandard'))" />
+    <PackageReference Include="JustinWritesCode.Identity.Models" />
+    <PackageReference Include="JustinWritesCode.Identity.EntityFrameworkCore" />
+    <PackageReference Include="System.ComponentModel.Usings" />
+  </ItemGroup>
+</Project>

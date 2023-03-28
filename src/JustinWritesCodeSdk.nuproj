@@ -1,0 +1,37 @@
+<!--
+ * JustinWritesCodeSdk.nuproj
+ * 
+ *   Created: 2023-01-08-11:51:57
+ *   Modified: 2023-01-08-11:51:57
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.Build.NoTargets">
+  <Import Project="./Build/BuildConfigurations.props" />
+  <Import Project="./Build/Authors-Owners.props" />
+  <Import Project="./Build/CentralPackagesFile.props" />
+  <Import Project="./Build/CentralPackageVersions.props" />
+  <Import Project="./Build/EnablePreviewFeatures.props" />
+  <Import Project="./Build/MinVer.props" />
+  <Import Project="./Build/NoWarn.props" />
+  <Import Project="./Build/NuGetizer.props" />
+  <Import Project="./Build/SlnGen.props" />
+  <Import Project="./Build/PackageProjectUrl.props" />
+  <Import Project="./Build/PackageIcon.props" />
+  <Import Project="./Build/PackageReadme.props" />
+  <Import Project="./Build/TestingLocal.props" />
+  <PropertyGroup>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <PackageId>$(MSBuildProjectName)</PackageId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./ContentFiles/*" PackagePath="ContentFiles/%(Filename)%(Extension)" />
+  </ItemGroup>
+  <Import Project="./Build/*.targets" />
+</Project>

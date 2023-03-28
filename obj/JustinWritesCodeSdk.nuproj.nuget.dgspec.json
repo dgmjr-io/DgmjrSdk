@@ -1,0 +1,106 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/JustinWritesCodeSdk.nuproj": {}
+  },
+  "projects": {
+    "/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/JustinWritesCodeSdk.nuproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/JustinWritesCodeSdk.nuproj",
+        "projectName": "JustinWritesCodeSdk",
+        "projectPath": "/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/JustinWritesCodeSdk.nuproj",
+        "packagesPath": "/Users/david/.nuget/packages/",
+        "outputPath": "/Users/justin/GitHub/justinwritescode/libs/Shared/src/JustinWritesCodeSdk/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/justin/GitHub/justinwritescode/libs/Shared/NuGet.Config",
+          "/Users/david/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "/Users/david/.nuget/packages": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/The-Backroom/index.json": {},
+          "https://nuget.pkg.github.com/justinwritescode/index.json": {},
+          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/justinwritescode/_packaging/justinwritescode/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU5128"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "GitInfo": {
+              "include": "Compile, Build, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Build.Tasks.Git": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Microsoft.VisualStudio.SlnGen": {
+              "include": "Build, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.5.17, )"
+            },
+            "MinVer": {
+              "include": "Runtime, Compile, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "NuGetizer": {
+              "include": "Compile, Build",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.9.1, )"
+            },
+            "Stef.Validation": {
+              "include": "Build, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<!--
+ * Directory.Build.targets
+ * - or -
+ * Sdk.targets
+ * 
+ *   Created: 2022-12-10-06:23:28
+ *   Modified: 2022-12-10-06:23:28
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <Import Project="../build/*.targets" />
+</Project>
