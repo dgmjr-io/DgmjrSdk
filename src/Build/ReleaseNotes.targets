@@ -1,0 +1,20 @@
+<!--
+ * ReleaseNotes.props
+ * 
+ *   Created: 2023-01-11-03:30:24
+ *   Modified: 2023-01-11-03:30:25
+ * 
+ *   Author: Justin Chase <justin@justinwritescode.com>
+ *   
+ *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <Target Name="SetReleaseNotesUrl" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="GitInfo">
+    <PropertyGroup>
+      <RepositoryName>$([System.IO.Path]::GetFileNameWithoutExtension('$(GitRepositoryUrl)'))</RepositoryName>
+      <PackageReleaseNotes>https://github.com/justinwritescode/$(RepositoryName)/releases/tag/v$(PackageVersion)</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
+</Project>

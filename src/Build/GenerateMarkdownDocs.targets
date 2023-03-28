@@ -18,10 +18,11 @@
     <DocsParameter Include="generate-doc" />
     <DocsParameter Include="'$(SolutionPath)'" />
     <DocsParameter Include="--additional-xml-documentation './**/*.xml'" /> 
-    <DocsParameter Include="-file-log '$(FileLog)'" /> 
-    <DocsParameter Include="-file-log-verbosity diag" /> 
+    <DocsParameter Include="--file-log '$(FileLog)'" /> 
+    <DocsParameter Include="--file-log-verbosity diag" /> 
     <DocsParameter Include="--files-layout flat-namespaces" />
     <DocsParameter Include="--group-by-common-namespace" /> 
+    <DocsParameter Include="--no-delete" /> 
     <DocsParameter Include="--heading '$(Title)'" /> 
     <DocsParameter Include="--host github" /> 
     <DocsParameter Include="--ignored-names 'ThisAssembly'" /> 
@@ -34,6 +35,8 @@
     <DocsParameter Include="--output '$(DocsDir)'" /> 
   </ItemGroup>
   <Target Name="GenDocs">
+    <MakeDir Directories="$(DocsDir)" />
+    <MakeDir Directories="$(DocsDir)/logs" />
     <Exec Command="roslynator @(DocsParameter, ' ')" Condition="'$(SolutionPath)' != '' And Exists($(SolutionPath))" />
     <Error Condition="'$(SolutionPath)' == ''" Text="You must specify a solution path to generate markdown docs." />
     <Error Condition="!Exists($(SolutionPath))" Text="The solution file '$(SolutionPath)' does not exist." />
