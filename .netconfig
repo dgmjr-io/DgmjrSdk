@@ -1,0 +1,117 @@
+[file]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/tree/Local
+[file ".config/dotnet-tools.json"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.config/dotnet-tools.json
+	sha = 0cbd502d36270945e635d95a27af882601f7b009
+	etag = 1f4460657329f7987b42ac72bd0547334473ca3ca9a38b269479046350dbbfde
+	weak
+[file ".github/CODEOWNERS"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/CODEOWNERS
+	sha = b73d85f76cfd18b4481ef4a5939e1b5020d16001
+	etag = c097699d0efd78c4c05479ba0cb54160ba5821272a0b4591b4d70556765e38cb
+	weak
+[file ".github/ISSUE_TEMPLATE/bug_report.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/ISSUE_TEMPLATE/bug_report.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = e02e0d11bcdf7a207e661887b04013c008cd8ab9f633a9943ce5dd03310e1841
+	weak
+[file ".github/ISSUE_TEMPLATE/config.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/ISSUE_TEMPLATE/config.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = bfd90df53e2e22f1f516693ee5a2adaeb3a46c32b459fba2e165554fbc1635bc
+	weak
+[file ".github/ISSUE_TEMPLATE/feature_request.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/ISSUE_TEMPLATE/feature_request.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = f7152a43f7663469b82742c32095ec0ec7e54a7b248ae0c463640c3520ab9266
+	weak
+[file ".github/ISSUE_TEMPLATE/security_report.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/ISSUE_TEMPLATE/security_report.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 5d942803dce65f2ca4ec0fc56ccf54e0ee6f674a045c04ad3aef52e15a4480a6
+	weak
+[file ".github/PULL_REQUEST_TEMPLATE.md"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/PULL_REQUEST_TEMPLATE.md
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 797cf2f5556a73cccb4936c3bcf98e6a29a3487297f5b3daa86d62bc92aa6972
+	weak
+[file ".github/pull_request_template.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/pull_request_template.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 575544f55f716d37c721dbe86791300dcfdf4d470ed8ec10b4c62869732f814d
+	weak
+[file ".github/workflows/build-ci.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/workflows/build-ci.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = ad884c528a12f387c36d2c8d9303a255d078f632396284c20bdbe589cdf0fc9d
+	weak
+[file ".github/workflows/docs-cd.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/workflows/docs-cd.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = ff61a8dd4320ad8b1fcd2ce522da3bc907e6986e93190588e237f040db0381f5
+	weak
+[file ".github/workflows/greetings.yml"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.github/workflows/greetings.yml
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 1d1b434e7fe3475751550402146043b296c44173f36109879ddd51f8d96b62f5
+	weak
+[file ".gitignore"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.gitignore
+	sha = 82df2b079f9e8b2f494f65dbaecabb5530cccbca
+	etag = 582146ee37501b783b5c71c036fa6bf200529c2e0ab1c42f5f9a9636fdccf84c
+	weak
+[file ".scripts/generate-docs"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.scripts/generate-docs
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 355385e6c7ebcb0d89f369ec74836d6802d5ef2ea6082d5fc70a8f5be4e0ec74
+	weak
+[file ".scripts/generate-pfx"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.scripts/generate-pfx
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = d3cf04145b7746784563b162b6d13f164893b27970b63c1f3a4145e6b6a4d330
+	weak
+[file ".scripts/git-submodule-push-all"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.scripts/git-submodule-push-all
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 18d5ba64cce40cf654885acc55deaf373309222ce5c117335322f94b619288cc
+	weak
+[file ".scripts/git-submodule-restore-all"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.scripts/git-submodule-restore-all
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 0ebac1a29ae641b1f9df4e052c61c248dad4394ba935ad98892829ea3c8621d1
+	weak
+[file ".scripts/git-submodule-status-all"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.scripts/git-submodule-status-all
+	sha = 05e085fdc8dfa58b2332994ae516afde0ef095c2
+	etag = 188d8d7758dcf03618b243ab0aa559c3020ab3460a62b318dc2b2d0b62357bea
+	weak
+[file ".scripts/initialize-repo-and-build"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/.scripts/initialize-repo-and-build
+	sha = b73d85f76cfd18b4481ef4a5939e1b5020d16001
+	etag = 9537970b7972ca26fa6b9421eacf0579fdeaf35fd6decb2cd401578bf1c1cd41
+	weak
+[file "Directory.Build.props"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/Directory.Build.props
+	sha = 5083fe73cd151d9cf6c137aa53b4bafd3228dced
+	etag = 4d2ce4e366d7d3b1c6970ff3b6fc5d0fa8519e4739fe6b88fc9690e82bd974ec
+	weak
+[file "Directory.Build.targets"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/Directory.Build.targets
+	sha = 5083fe73cd151d9cf6c137aa53b4bafd3228dced
+	etag = 5915db27eb1d4b09e757f4e646a35f4d7b865b8aa0597359c35514d0d9d9323c
+	weak
+[file "LICENSE.md"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/LICENSE.md
+	sha = 50d46b2a1f2150fe9eae1da173113e2229fac3d6
+	etag = dd3120576ad0c1fda701b0d9a30350393c85f1d97f03bb210fb774457f83a748
+	weak
+[file "NuGet.config"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/NuGet.config
+	sha = 8cb9ffbb6f141572bea12774844b3b7b31fab269
+	etag = 4b7ccad774e71feb2f39ebdab9b28887efeefc055993a414ceb420f496c4e2f2
+	weak
+[file "global.json"]
+	url = https://github.com/justinwritescode/JwcRepoInitSdk/blob/Local/global.json
+	sha = 04e06925be069f31a1523bcc870e0b3dd1603033
+	etag = 6e338994a7293e2392440d5cb037d48a82daffbf6e8d37ad07c953538265609a
+	weak

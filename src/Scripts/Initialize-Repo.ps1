@@ -23,7 +23,7 @@
 #>
 
 [CmdletBinding()]
-[Alias("init", "init-repo", "initrepo", "ir")]
+[Alias("init", "init-repo", "initrepo", "ir", "Initialize-Repo")]
 param(
     # The environment to initialize the repo for. Defaults to "Local".
     [Parameter(ValueFromPipeline = $true,
@@ -39,6 +39,10 @@ $env:ASPNETCORE_ENVIRONMENT = $environment
 
 Write-Output "Initializing repo at $gitRoot for $environment environment"
 
+Push-Location $PSScriptRoot
 Set-Location $gitRoot && dotnet file add https://github.com/justinwritescode/JwcRepoInitSdk/tree/$environment
+Pop-Location
 
 # Register-PSRepository -Name GitHubPS -SourceLocation https://nuget.pkg.github.com/justinwritescode/index.json -InstallationPolicy Trusted
+
+rm ./.netconfig;

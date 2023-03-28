@@ -13,10 +13,7 @@
 <Project>
   <Target Name="InitializeRepo" DependsOnTargets="GitInfo">
     <PropertyGroup>
-      <InitializeRepoScript>
-      pwsh -NoExit -File $(MSBuildThisFileDirectory)../Scripts/initialize-repo.ps1 -environment:$(Configuration) -gitRoot:$(_GitRoot);
-      Import-Module $(MSBuildThisFileDirectory)../Scripts/Invoke-Build.ps1;
-      </InitializeRepoScript>
+      <InitializeRepoScript>pwsh -NoExit -File $(MSBuildThisFileDirectory)../Scripts/Initialize-Repo.ps1 -environment:$(Configuration) -gitRoot:$(_GitRoot);</InitializeRepoScript>
     </PropertyGroup>
     <Exec Command="$(InitializeRepoScript)" />
     <!-- <Exec Command="dotnet tool install -g dotnet-file" IgnoreExitCode="true" />

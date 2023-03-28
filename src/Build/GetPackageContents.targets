@@ -13,9 +13,9 @@
 <Project>
 	<Target Name="_PreparePackageContents" BeforeTargets="GetPackageContents" Condition="'$(PackAllBinOutput)' != 'false'">
 		<ItemGroup>
-			<_PackageFile Include="$(OutputPath)**/*.dll" TargetFramework="%(RecursiveDir)/" />
+			<!-- <_PackageFile Include="$(OutputPath)**/*.dll" TargetFramework="%(RecursiveDir)/" />
 			<_PackageFile Include="$(OutputPath)**/*.xml" TargetFramework="%(RecursiveDir)/" />
-			<_PackageFile Include="$(OutputPath)**/*.pdb" TargetFramework="%(RecursiveDir)/" />
+			<_PackageFile Include="$(OutputPath)**/*.pdb" TargetFramework="%(RecursiveDir)/" /> -->
 			<!-- <_PackageFile Include="$(OutputPath)*.dll" />
 			<_PackageFile Include="$(OutputPath)*.xml" />
 			<_PackageFile Include="$(OutputPath)*.pdb" /> -->

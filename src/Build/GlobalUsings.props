@@ -2,9 +2,9 @@
   <ItemGroup>
     <!-- <Using Include="JustinWritesCode" Alias="JWC" />
     <Using Include="JustinWritesCode" Alias="Jwc" /> -->
-    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk'" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj'" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj'">
     <Using Include="System" />
     <Using Include="System.Array" Static="true" />
     <Using Include="System.BitConverter" Static="true" />
