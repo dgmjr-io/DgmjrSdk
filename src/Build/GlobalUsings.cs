@@ -10,9 +10,12 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
+<<<<<<< HEAD
 #pragma warning disable CD1607 // The file needs documentation headers.
 #pragma warning disable RCS1072 // Remove empty namespace declaration.
 
+=======
+>>>>>>> 9310e46 ("initial" commit -_-)
 namespace JustinWritesCode { }
 
 namespace System { }
@@ -28,6 +31,9 @@ namespace System.Threading { }
 namespace System.Threading.Tasks { }
 namespace System.Diagnostics.CodeAnalysis { }
 namespace System.Net.Http { }
+<<<<<<< HEAD
 
 #pragma warning restore CD1607 // The file needs documentation headers.
 #pragma warning restore RCS1072 // Remove empty namespace declaration.
+=======
+>>>>>>> 9310e46 ("initial" commit -_-)

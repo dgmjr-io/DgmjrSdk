@@ -21,6 +21,7 @@
           IgnoreExitCode="true" />
     <MSBuild Projects="Init.proj" Targets="Restore" Condition="Exists('Init.proj') And $(IsAtRoot)"  />
   </Target>
+<<<<<<< HEAD
   <ItemGroup Condition="$(IsAtRoot)">
     <SlnGenSolutionItem Include="./Init.proj" />
     <SlnGenSolutionItem Include="./.github/**/*" />
@@ -31,4 +32,6 @@
     <SlnGenSolutionItem Include="./.gitignore" />
     <SlnGenSolutionItem Include="./Directory.Build.*" />
   </ItemGroup>
+=======
+>>>>>>> 9310e46 ("initial" commit -_-)
 </Project>

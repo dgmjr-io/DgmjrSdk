@@ -1,8 +1,12 @@
 ﻿<Project>
+<<<<<<< HEAD
   <Target Name="DoNotCleanCachedPackageId" BeforeTargets="CleanCachedPackageId">
     <PropertyGroup>
       <PackageId>foo</PackageId>
     </PropertyGroup>
     <Message Text="Not cleaning cached package id" Importance="high" />
   </Target>
+=======
+  <Target Name="CleanCachedPackageId" />
+>>>>>>> 9310e46 ("initial" commit -_-)
 </Project>
