@@ -4,13 +4,49 @@
  *   Created: 2022-10-21-11:40:42
  *   Modified: 2022-11-12-03:55:06
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
+
+  <PropertyGroup>
+    <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
+    <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
+    <PackageReadmeFile>$(MSBuildProjectName).README.md</PackageReadmeFile>
+    <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
+    <GeneratedPackageReadmeFileContents>
+      ---;
+      title: $(MSBuildProjectName) README;
+      lastmod: $(Date:yyyy-MM-dd-HH:mm:ss); 
+      created: $(Date:yyyy-MM-dd-HH:mm:ss);
+      license: $(PackageLicenseExpression);
+      categories:;
+        - documentation;
+        - readme;
+      description: A README file for the $(MSBuildProjectName) package.;
+      slug: $(MSBuildProjectName)-readme;
+      tags:;
+        - readme;
+        - $(MSBuildProjectName);
+        @(PackageTag->'- %(Identity)');
+      keywords:;
+        - $(MSBuildProjectName);
+        @(PackageTag->'- %(Identity)');
+      ---;
+      ;
+      # $(MSBuildProjectName) README;
+      ;
+      This file is generated from the contents of the project file.;
+      ;
+      ## Package Description;
+      ;
+      $(Description);
+
+    </GeneratedPackageReadmeFileContents>
+  </PropertyGroup>
 
 	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme">
   

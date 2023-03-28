@@ -4,12 +4,12 @@
  *   Created: 2022-12-26-10:34:56
  *   Modified: 2022-12-26-10:34:56
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-
+<!-- This doesn't do anything right now, but the idea is to allow the programmer the option to buikd a project from its source code or use the NuGet package -->
 <Project>
   <PropertyGroup>
     <TempFile>$([System.IO.Path]::GetTempFileName())</TempFile>

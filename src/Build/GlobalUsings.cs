@@ -1,19 +1,19 @@
 /*
- * JustinWritesCodeNamespace.cs
+ * DgmjrNamespace.cs
  *
  *   Created: 2023-01-10-10:37:17
  *   Modified: 2023-01-10-10:37:17
  *
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
 #pragma warning disable CD1607 // The file needs documentation headers.
 #pragma warning disable RCS1072 // Remove empty namespace declaration.
 
-namespace JustinWritesCode { }
+namespace Dgmjr { }
 
 namespace System { }
 namespace System.Collections.Generic { }

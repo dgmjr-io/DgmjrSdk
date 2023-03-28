@@ -1,6 +1,6 @@
 ---
-author: Justin Chase
-author_email: justin@justinwritescode.com
+author: David G. Moore, Jr.
+author_email: david@dgmjr.io
 title: README.md
 modified: 2023-01-09-06:51:33
 created: 2023-01-09-06:51:31
@@ -10,18 +10,18 @@ categories:
   - msbuild
   - readme
   - sdk
-description: A README file for the JustinWritesCode SDK
+description: A README file for the Dgmjr SDK
 slug: readme-md
 keywords:
-  - justinwritescode
+  - Dgmjr
   - readme
   - sdk
   - msbuild
 ---
 
-# The JustinWritesCode SDK
+# The Dgmjr SDK
 
-The JustinWritesCode SDK is a collection of `.props` and `.targets` files that are used to build and package the Backroom projects.
+The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the Backroom projects.
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ Create a `Directory.Build.props` file in the root of your project and add the fo
 
 ```xml
 <Project>
-    <Import Project="Sdk.props" Sdk="JustinWritesCodeSdk" />
+    <Import Project="Sdk.props" Sdk="DgmjrSdk" />
 </Project>
 ```
 
@@ -37,7 +37,7 @@ Then create a `Directory.Build.targets` file in the same directory and add the f
 
 ```xml
 <Project>
-    <Import Project="Sdk.targets" Sdk="JustinWritesCodeSdk" />
+    <Import Project="Sdk.targets" Sdk="DgmjrSdk" />
 </Project>
 ```
 
@@ -46,9 +46,9 @@ Then create (or alter) your `global.json` file to include the following:
 ```json
 {
     "msbuild-sdks": {
-        "JustinWritesCodeSdk": "TheCurrentVersionOfTheJustinWritesCodeSdk"
+        "DgmjrSdk": "TheCurrentVersionOfTheDgmjrSdk"
     }
 }
 ```
 
-Then build your project.  It will have all of the JustinWritesCode SDK defaults.
+Then build your project.  It will have all of the Dgmjr SDK defaults.

@@ -4,15 +4,15 @@
  *   Created: 2022-12-19-01:17:17
  *   Modified: 2022-12-19-01:17:19
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Condition="'$(JustinWritesCodeSdkTargets)' == ''">
+<Project Condition="'$(DgmjrSdkTargets)' == ''">
   <PropertyGroup>
-    <JustinWritesCodeSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</JustinWritesCodeSdkTargets>
+    <DgmjrSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</DgmjrSdkTargets>
   </PropertyGroup>
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.targets" />
 </Project>

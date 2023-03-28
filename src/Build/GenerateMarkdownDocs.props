@@ -4,12 +4,13 @@
  *   Created: 2023-01-03-03:18:54
  *   Modified: 2023-01-03-03:18:54
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
+<!-- this doesn't fucking work.  try docdfx or something better -->
 <Project>
   <PropertyGroup>
     <DocsDir Condition="'$(DocsDir)' == ''">$(MSBuildProjectDirectory)/docs</DocsDir>

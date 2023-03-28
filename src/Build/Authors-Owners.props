@@ -4,16 +4,16 @@
    Created: 2022-10-21-11:40:42
    Modified: 2022-10-29-02:46:28
  
-   Author: Justin Chase <justin@justinwritescode.com>
+   Author: David G. Moore, Jr. <david@dgmjr.io>
    
-   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
   <ItemGroup>
-    <Author Include="Justin Chase" Email="justin@justinwritescode.com" />
-    <Owner Include="Justin Chase" Email="justin@justinwritescode.com" />
+    <Author Include="David G. Moore, Jr." Email="david@dgmjr.io" />
+    <Owner Include="David G. Moore, Jr." Email="david@dgmjr.io" />
   </ItemGroup>
 
   <PropertyGroup>

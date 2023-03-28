@@ -4,14 +4,30 @@
  *   Created: 2022-11-19-03:03:12
  *   Modified: 2022-11-19-03:03:12
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
     <PropertyGroup>
+      <NetStandardTargetFrameworks></NetStandardTargetFrameworks>
+      <NetStandard1TargetFrameworks>netstandard1.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6</NetStandard1TargetFrameworks>
+      <NetStandard2TargetFrameworks>netstandard2.0;netstandard2.1</NetStandard2TargetFrameworks>
+      <NetStandardTargetFrameworks>$(NetStandard1TargetFrameworks);$(NetStandard2TargetFrameworks)</NetStandardTargetFrameworks>
+      <NetCoreApp1TargetFrameworks>netcoreapp1.0;netcoreapp1.1</NetCoreApp1TargetFrameworks>
+      <NetCoreApp2TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2</NetCoreApp2TargetFrameworks>
+      <NetCoreApp3TargetFrameworks>netcoreapp3.0;netcoreapp3.1</NetCoreApp3TargetFrameworks>
+      <DotNetTargetFrameworks>net5.0;net6.0;net7.0</DotNetTargetFrameworks>
+
+      <TargetedNetStandard1Frameworks>netstandard1.3;netstandard1.5</TargetedNetStandard1Frameworks>
+      <TargetedNetStandard2Frameworks>netstandard2.0;netstandard2.1</TargetedNetStandard2Frameworks>
+      <TargetedNetStandardFrameworks>$(TargetedNetStandard1Frameworks);$(TargetedNetStandard2Frameworks)</TargetedNetStandardFrameworks>
+      <TargetedNetCoreAppFrameworks>netcoreapp3.1</TargetedNetCoreAppFrameworks>
+      <TargetedDotNetFrameworks>net6.0;net7.0</TargetedDotNetFrameworks>
+
+      <TargetedFrameworks>$(TargetedNetStandardFrameworks);$(TargetedNetCoreAppFrameworks);$(TargetedDotNetFrameworks)</TargetedFrameworks>
       <!-- <TargetFramework Condition="'$(TargetFramework)' == '' And '$(TargetFrameworks)' == ''">netstandard2.0</TargetFramework> -->
       <!-- <TargetFrameworks Condition="'$(TargetFrameworks)' == ''">$(TargetFramework)</TargetFrameworks> -->
     </PropertyGroup>

@@ -5,8 +5,8 @@
   <ItemGroup>
     <FrmaeworkReference Include="Microsoft.AspNetCore.App" Condition="!$(TargetFrameework.Contains('netstandard'))" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Condition="$(TargetFrameework.Contains('netstandard'))" />
-    <PackageReference Include="JustinWritesCode.Identity.Models" />
-    <PackageReference Include="JustinWritesCode.Identity.EntityFrameworkCore" />
+    <PackageReference Include="Dgmjr.Identity.Models" />
+    <PackageReference Include="Dgmjr.Identity.EntityFrameworkCore" />
     <PackageReference Include="System.ComponentModel.Usings" />
   </ItemGroup>
 </Project>

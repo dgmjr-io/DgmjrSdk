@@ -1,49 +1,49 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>TestingJustinWritesCodeSdk</name>
+        <name>TestingDgmjrSdk</name>
     </assembly>
     <members>
-        <member name="T:TestingJustinWritesCodeSdk.AClass">
+        <member name="T:TestingDgmjrSdk.AClass">
             <summary>This is a summary of the class.</summary>
         </member>
-        <member name="P:TestingJustinWritesCodeSdk.AClass.AProperty">
+        <member name="P:TestingDgmjrSdk.AClass.AProperty">
             <summary>This is a summary of the property.</summary>
             <value>The property's value.</value>
             <example>Foo!</example>
             <default>Bar!</default>
         </member>
-        <member name="F:TestingJustinWritesCodeSdk.AnEnum.EnumValue">
+        <member name="F:TestingDgmjrSdk.AnEnum.EnumValue">
             <summary>This is a summary of the enum value.</summary>
             <value>The enum value's value.</value>
             <example>Foo!</example>
             <default>Bar!</default>
         </member>
-        <member name="F:TestingJustinWritesCodeSdk.AnEnum.EnumValue2">
+        <member name="F:TestingDgmjrSdk.AnEnum.EnumValue2">
             <summary>This is a summary of the enum value.</summary>
             <value>The enum value's value.</value>
             <example>Foo!</example>
             <default>Bar!</default>
         </member>
-        <member name="F:TestingJustinWritesCodeSdk.AnEnum.EnumValue3">
+        <member name="F:TestingDgmjrSdk.AnEnum.EnumValue3">
             <summary>This is a summary of the enum value.</summary>
             <value>The enum value's value.</value>
             <example>Foo!</example>
             <default>Bar!</default>
         </member>
-        <member name="T:TestingJustinWritesCodeSdk.AnotherClass">
+        <member name="T:TestingDgmjrSdk.AnotherClass">
             <summary>This is a summary of the other class.</summary>
         </member>
-        <member name="P:TestingJustinWritesCodeSdk.AnotherClass.AProperty">
+        <member name="P:TestingDgmjrSdk.AnotherClass.AProperty">
             <summary>This is a summary of the property.</summary>
             <value>The property's value.</value>
             <example>Foo!</example>
             <default>Bar!</default>
         </member>
-        <member name="T:TestingJustinWritesCodeSdk.AStruct">
+        <member name="T:TestingDgmjrSdk.AStruct">
             <summary>This is a summary of the struct.</summary>
         </member>
-        <member name="P:TestingJustinWritesCodeSdk.AStruct.AProperty">
+        <member name="P:TestingDgmjrSdk.AStruct.AProperty">
             <summary>This is a summary of the property.</summary>
             <value>The property's value.</value>
             <example>Foo!</example>
@@ -62,7 +62,7 @@
             <summary>IsDirtyString: true</summary>
         </member>
         <member name="F:ThisAssembly.Git.RepositoryUrl">
-            <summary>Repository URL: https://github.com/justinwritescode/Shared.git</summary>
+            <summary>Repository URL: https://github.com/Dgmjr/Shared.git</summary>
         </member>
         <member name="F:ThisAssembly.Git.Branch">
             <summary>Branch: main</summary>
@@ -124,17 +124,17 @@
         <member name="T:TestingJwc.AnEnumeration.EnumValue">
             <summary>EnumValue</summary>
             <remarks>EnumValue</remarks>
-            <seealso cref="F:TestingJustinWritesCodeSdk.AnEnum.EnumValue">AnEnum</seealso>
+            <seealso cref="F:TestingDgmjrSdk.AnEnum.EnumValue">AnEnum</seealso>
         </member>
         <member name="T:TestingJwc.AnEnumeration.EnumValue2">
             <summary>EnumValue2</summary>
             <remarks>EnumValue2</remarks>
-            <seealso cref="F:TestingJustinWritesCodeSdk.AnEnum.EnumValue2">AnEnum</seealso>
+            <seealso cref="F:TestingDgmjrSdk.AnEnum.EnumValue2">AnEnum</seealso>
         </member>
         <member name="T:TestingJwc.AnEnumeration.EnumValue3">
             <summary>EnumValue3</summary>
             <remarks>EnumValue3</remarks>
-            <seealso cref="F:TestingJustinWritesCodeSdk.AnEnum.EnumValue3">AnEnum</seealso>
+            <seealso cref="F:TestingDgmjrSdk.AnEnum.EnumValue3">AnEnum</seealso>
         </member>
     </members>
 </doc>

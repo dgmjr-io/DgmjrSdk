@@ -1,10 +1,11 @@
 <Project>
-  <ItemGroup>
-    <!-- <Using Include="JustinWritesCode" Alias="JWC" />
-    <Using Include="JustinWritesCode" Alias="Jwc" /> -->
-    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj'" />
+  <PropertyGroup>
+    <IsCompilingFromCode>@(Compile->Count()) &gt; 0</IsCompilingFromCode>
+  </PropertyGroup>
+  <ItemGroup>s
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalUsings.cs" Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj' And @(Compile->Count()) &gt; 0" />
   </ItemGroup>
-  <ItemGroup Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj'">
+  <ItemGroup Condition="'$(MSBuildProjectName)' != 'JustinWritesCodeSdk' And '$(MSBuildProjectExtension)' == '.csproj' And @(Compile->Count()) &gt; 0">
     <Using Include="System" />
     <Using Include="System.Array" Static="true" />
     <Using Include="System.BitConverter" Static="true" />
@@ -27,14 +28,12 @@
     <Using Include="System.Runtime.CompilerServices" />
     <Using Include="System.String" Static="true" />
     <Using Include="System.StringComparison" Static="true" />
-    <!-- <Using Include="System.Text.Encoding" Static="true" /> -->
+    <Using Include="System.Text.Encoding" Static="true" />
     <Using Include="System.Threading" />
     <Using Include="System.Threading.Tasks" />
     <Using Include="System.Type" Alias="@type" />
     <Using Include="System.UInt128" Alias="uvlong" Condition="$(TargetFramework.Contains('net7'))" />
     <Using Include="System.UriKind" Static="true" />
     <Using Include="System.Convert" Alias="Convert" />
-    <!-- <Using Include="JustinWritesCode" Alias="JWC" /> -->
-    <!-- <Using Include="JustinWritesCode" Alias="Jwc" /> -->
   </ItemGroup>
 </Project>

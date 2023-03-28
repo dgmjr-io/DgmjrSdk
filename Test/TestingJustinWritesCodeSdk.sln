@@ -1,5 +1,5 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingJustinWritesCodeSdk", "TestingJustinWritesCodeSdk.csproj", "{5790F5F3-8F53-420E-A648-C463FAAA71FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingDgmjrSdk", "TestingDgmjrSdk.csproj", "{5790F5F3-8F53-420E-A648-C463FAAA71FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

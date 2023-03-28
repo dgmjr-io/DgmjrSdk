@@ -4,9 +4,9 @@
    Created: 2022-10-24-08:10:51
    Modified: 2022-10-29-02:47:46
 
-   Author: Justin Chase <justin@justinwritescode.com>
+   Author: David G. Moore, Jr. <david@dgmjr.io>
 
-   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
@@ -29,5 +29,8 @@
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 			<SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
 		</ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <SourceGenerator />
   </ItemDefinitionGroup>
 </Project>

@@ -4,12 +4,12 @@
  *   Created: 2022-12-19-11:45:28
  *   Modified: 2022-12-19-11:45:28
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
-  <Import Project="Sdk.targets" Sdk="JustinWritesCodeSdk" />
+  <Import Project="Sdk.targets" Sdk="DgmjrSdk" />
 </Project>

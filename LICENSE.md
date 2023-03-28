@@ -1,6 +1,6 @@
 ---
-author: Justin Chase
-author_email: justin@justinwritescode.com
+author: David G. Moore, Jr.
+author_email: david@dgmjr.io
 title: MIT License
 license: MIT
 created: 2023-01-09-07:05:28
@@ -26,7 +26,7 @@ slug: mit-license
 ---
 # MIT License
 
-Copyright (c) 2022-2023 [Justin Chase](mailto:justin@justinwritescode.com "Send Justin an email"), All Rights Reserved
+Copyright (c) 2022-2023 [David G. Moore, Jr.](mailto:david@dgmjr.io "Send Justin an email"), All Rights Reserved
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

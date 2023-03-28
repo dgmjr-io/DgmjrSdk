@@ -4,12 +4,12 @@
  *   Created: 2022-11-23-07:50:14
  *   Modified: 2022-11-23-07:50:14
  * 
- *   Author: Justin Chase <justin@justinwritescode.com>
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *   
- *   Copyright © 2022-2023 Justin Chase, All Rights Reserved
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-
+<!-- This locates the central packages file for the current configuration -->
 <Project>
 	<PropertyGroup>
 		<CentralPackagesFileName>Packages.$(Configuration).pkgs</CentralPackagesFileName>

@@ -1,4 +1,4 @@
-namespace TestingJustinWritesCodeSdk;
+namespace TestingDgmjrSdk;
 
 [GenerateEnumerationRecordStruct("AnEnumeration", "TestingJwc")]
 public enum AnEnum
