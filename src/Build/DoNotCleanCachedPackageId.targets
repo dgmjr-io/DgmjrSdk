@@ -1,3 +1,8 @@
 ﻿<Project>
-  <Target Name="CleanCachedPackageId" />
+  <Target Name="DoNotCleanCachedPackageId" BeforeTargets="CleanCachedPackageId">
+    <PropertyGroup>
+      <PackageId>foo</PackageId>
+    </PropertyGroup>
+    <Message Text="Not cleaning cached package id" Importance="high" />
+  </Target>
 </Project>
