@@ -20,4 +20,13 @@
     </PackageReference>
     <SourceGenerator Remove="@(SourceGenerator)" />
   </ItemGroup>
+  <!-- Transforms SourceCodeReferences into <PackageReference /> items with appropriate includes/excludes -->
+  <ItemGroup>
+    <PackageReference Include="@(SourceCodeReference)">
+      <IncludeAssets>ContentFiles;Build</IncludeAssets>
+      <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <SourceCodeReference Remove="@(SourceCodeReference)" />
+  </ItemGroup>
 </Project>

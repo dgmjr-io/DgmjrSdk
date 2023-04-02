@@ -10,15 +10,13 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 <!-- This locates the central packages file for the current configuration -->
-<Project>
+<Project InitialTargets="DisplayCentralPackagesFile">
 	<PropertyGroup>
-		<CentralPackagesFileName>Packages.$(Configuration).pkgs</CentralPackagesFileName>
-		<VersionsPropsFileName>Versions.props</VersionsPropsFileName>
+		<CentralPackagesFileName>Packages.pkgs</CentralPackagesFileName>
     <CentralPackagesFile>$([MSBuild]::GetDirectoryNameOfFileAbove("$(MSBuildProjectDirectory)", "Packages/$(CentralPackagesFileName)"))/Packages/$(CentralPackagesFileName)</CentralPackagesFile>
-    <VersionsPropsFile>$([MSBuild]::GetDirectoryNameOfFileAbove("$(MSBuildProjectDirectory)", "Packages/$(VersionsPropsFileName)"))/Packages/$(VersionsPropsFileName)</VersionsPropsFile>
-    <CustomBeforeCentralPackageVersionsProps>$(CustomBeforeCentralPackageVersionsProps);$(VersionsPropsFile)</CustomBeforeCentralPackageVersionsProps>
+    <CustomBeforeCentralPackageVersionsProps>$(CustomBeforeCentralPackageVersionsProps);</CustomBeforeCentralPackageVersionsProps>
 	</PropertyGroup>  
-	<Target Name="CustomAfterCentralPackageVersions" BeforeTargets="CheckPackageReferences" Condition="false">
+	<Target Name="DisplayCentralPackagesFile">
     <Message Text="CentralPackagesFile: $(CentralPackagesFile)" Importance="High" />
     <Message Text="Build Configuration: $(Configuration)" Importance="High" />
   </Target>

@@ -11,29 +11,29 @@
 -->
 <!-- this doesn't work right yet -->
 <Project>
-  <PropertyGroup>
+  <!-- <PropertyGroup>
     <ProjectsToDocument>@(ProjectReference, ',')</ProjectsToDocument>
   </PropertyGroup>
   <ItemGroup>
     <DocsParameter Include="generate-doc" />
     <DocsParameter Include="'$(MSBuildProjectFullPath)'" />
-    <DocsParameter Include="--additional-xml-documentation './**/*.xml'" /> 
-    <DocsParameter Include="--file-log '$(FileLog)'" /> 
-    <DocsParameter Include="--file-log-verbosity diagnostic" /> 
-    <DocsParameter Include="--verbosity diagnostic" /> 
-    <DocsParameter Include="--files-layout flat-namespaces" />
-    <DocsParameter Include="--group-by-common-namespace" /> 
-    <DocsParameter Include="--heading '$(Title)'" /> 
-    <DocsParameter Include="--inheritance-style horizontal" /> 
-    <DocsParameter Include="--host github" /> 
-    <DocsParameter Include="--ignored-names 'ThisAssembly'" /> 
-    <DocsParameter Include="--include-all-derived-types" /> 
-    <DocsParameter Include="--include-containing-namespace all" /> 
-    <DocsParameter Include="--include-ienumerable" /> 
-    <DocsParameter Include="--include-inherited-interface-members" /> 
-    <DocsParameter Include="--include-system-namespace" /> 
-    <DocsParameter Include="--max-derived-types 100" /> 
-    <DocsParameter Include="--output '$(DocsDir)'" /> 
+    <DocsParameter Include="==additional-xml-documentation './**/*.xml'" /> 
+    <DocsParameter Include="==file-log '$(FileLog)'" /> 
+    <DocsParameter Include="==file-log-verbosity diagnostic" /> 
+    <DocsParameter Include="==verbosity diagnostic" /> 
+    <DocsParameter Include="==files-layout flat-namespaces" />
+    <DocsParameter Include="==group-by-common-namespace" /> 
+    <DocsParameter Include="==heading '$(Title)'" /> 
+    <DocsParameter Include="==inheritance-style horizontal" /> 
+    <DocsParameter Include="==host github" /> 
+    <DocsParameter Include="==ignored-names 'ThisAssembly'" /> 
+    <DocsParameter Include="==include-all-derived-types" /> 
+    <DocsParameter Include="==include-containing-namespace all" /> 
+    <DocsParameter Include="==include-ienumerable" /> 
+    <DocsParameter Include="==include-inherited-interface-members" /> 
+    <DocsParameter Include="==include-system-namespace" /> 
+    <DocsParameter Include="==max-derived-types 100" /> 
+    <DocsParameter Include="==output '$(DocsDir)'" /> 
   </ItemGroup>
   <Target Name="GenDocs">
     <MakeDir Directories="$(DocsDir)" />
@@ -41,5 +41,5 @@
     <Exec Command="roslynator @(DocsParameter, ' ')" Condition="'$(MSBuildProjectFullPath)' != '' And Exists($(MSBuildProjectFullPath))" />
     <Error Condition="'$(MSBuildProjectFullPath)' == ''" Text="You must specify a project to generate markdown docs." />
     <Error Condition="!Exists($(MSBuildProjectFullPath))" Text="The project file '$(MSBuildProjectFullPath)' does not exist." />
-  </Target>
+  </Target> -->
 </Project>

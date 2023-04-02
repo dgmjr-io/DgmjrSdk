@@ -11,10 +11,10 @@
 -->
 
 <Project>
-  <Target Name="Format">
+  <!-- <Target Name="Format">
     <Message Importance="High" Text="Running csharpier..." />
     <Exec Command="dotnet csharpier $(MSBuildProjectDirectory)" />
     <Message Importance="High" Text="Running dotnet format..." />
     <Exec Command="dotnet format style $(MSBuildProjectFullPath)" />
-  </Target>
+  </Target> -->
 </Project>

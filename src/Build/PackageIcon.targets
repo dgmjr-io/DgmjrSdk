@@ -14,11 +14,10 @@
   <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageContents">
     <PropertyGroup>
       <PackageIconIsNotThere>$([System.String]::IsNullOrEmpty('$(PackageIcon)'))</PackageIconIsNotThere>
-      <PackageIcon Condition="$(PackageIconIsNotThere)">icon.png</PackageIcon>
       <FallbackPackageIcon>$(MSBuildThisFileDirectory)../ContentFiles/icon.png</FallbackPackageIcon>
     </PropertyGroup>
     <ItemGroup>
-      <PackageIconFile Include="$(PackageIcon)" Condition="$(PackageIconIsNotThere)" PackagePath="icon.png" />
+      <PackageFile Include="$(FallbackPackageIcon)" Condition="$(PackageIconIsNotThere) And Exists($(FallbackPackageIcon))" PackagePath="%(Filename)(%Extension)" Pack="true" />
     </ItemGroup>
   </Target>
 </Project>

@@ -10,37 +10,10 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Condition="'$(DgmjrSdkProps)' == ''" InitialTargets="OutputImUsingTheDGMJRSDK">
+<Project Condition="'$(DgmjrSdkProps)' == ''">
   <PropertyGroup>
     <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
   </PropertyGroup>
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.props" />
-
-  <Target Name="OutputImUsingTheDGMJRSDK" Condition="false">
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-    <Warning Text="I'm using the DGMJR SDK!!!!!!!!!!!" />
-  </Target>
 </Project>

@@ -14,5 +14,10 @@
   <PropertyGroup>
     <DgmjrSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</DgmjrSdkTargets>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
+    <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
+  </PropertyGroup>
+  <!-- <Import Project="$(MSBuildToolsPath)/Microsoft.Common.CrossTargeting.Targets" Condition="'$(ImportByWildcardBeforeMicrosoftCommonCrossTargetingTargets)' == '' And '$(IsCrossTargetingBuild)' == 'true'" />
+  <Import Project="$(MSBuildToolsPath)/Microsoft.Common.CurrentVersion.Targets" Condition="'$(ImportByWildcardBeforeMicrosoftCommonTargets)' == '' And '$(IsCrossTargetingBuild)' != 'true'" /> -->
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.targets" />
 </Project>
