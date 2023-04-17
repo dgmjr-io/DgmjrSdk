@@ -9,6 +9,7 @@
     <Using Include="System" />
     <Using Include="System.Array" Static="true" />
     <Using Include="System.BitConverter" Static="true" />
+    <Using Include="System.Numerics.BigInteger" Alias="bigint" />
     <Using Include="System.Collections.Generic" />
     <Using Include="System.Collections.Generic.Dictionary&lt;string, string&gt;" Alias="StringDictionary" />
     <Using Include="System.Collections.Generic.IDictionary&lt;string, string&gt;" Alias="IStringDictionary" />
@@ -28,7 +29,7 @@
     <Using Include="System.Runtime.CompilerServices" />
     <Using Include="System.String" Static="true" />
     <Using Include="System.StringComparison" Static="true" />
-    <Using Include="System.Text.Encoding" Static="true" />
+    <!-- <Using Include="System.Text.Encoding" Static="true" /> -->
     <Using Include="System.Threading" />
     <Using Include="System.Threading.Tasks" />
     <Using Include="System.Type" Alias="@type" />
