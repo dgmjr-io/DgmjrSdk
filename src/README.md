@@ -1,7 +1,7 @@
 ---
-author: David G. Moore, Jr.
-author_email: david@dgmjr.io
-title: README.md
+authors:
+  - dgmjr
+title: The DGMJR SDK
 modified: 2023-01-09-06:51:33
 created: 2023-01-09-06:51:31
 license: MIT
@@ -10,7 +10,7 @@ categories:
   - msbuild
   - readme
   - sdk
-description: A README file for the Dgmjr SDK
+description: The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
 slug: readme-md
 keywords:
   - Dgmjr
@@ -21,7 +21,7 @@ keywords:
 
 # The Dgmjr SDK
 
-The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the Backroom projects.
+The DGMJR SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
 
 ## Getting Started
 

@@ -11,11 +11,7 @@
 -->
 
 <Project>
-  <PropertyGroup>
-    <PackageIcon Condition="Exists('$(MSBuildProjectDirectory)/Icon.png') And '$(PackageIcon)' == ''">Icon.png</PackageIcon>
-    <PackageIcon Condition="Exists('$(MSBuildProjectDirectory)/Icon.jpg') And '$(PackageIcon)' == ''">Icon.jpg</PackageIcon>
-  </PropertyGroup>
+
   <ItemGroup>
-    <PackageFile Include="$(PackageIcon)" PackagePath="%(Filename)%(Extension)" Condition="Exists('$(PackageIcon)')" />
   </ItemGroup>
 </Project>
