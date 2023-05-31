@@ -1,11 +1,11 @@
 <!--
  * PackageIcon.targets
- * 
+ *
  *   Created: 2023-01-24-02:07:11
  *   Modified: 2023-01-24-02:07:11
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -13,11 +13,13 @@
 <Project>
   <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageContents">
     <PropertyGroup>
-      <PackageIconIsNotThere>$([System.String]::IsNullOrEmpty('$(PackageIcon)'))</PackageIconIsNotThere>
-      <FallbackPackageIcon>$(MSBuildThisFileDirectory)../ContentFiles/icon.png</FallbackPackageIcon>
+      <PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIcon>
+      <PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIcon>
+      <PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIcon>
+      <PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildThisFileDirectory)../Assets/icon.png')">$(MSBuildThisFileDirectory)../Assets/icon.png</PackageIcon>
     </PropertyGroup>
     <ItemGroup>
-      <PackageFile Include="$(FallbackPackageIcon)" Condition="$(PackageIconIsNotThere) And Exists($(FallbackPackageIcon))" PackagePath="%(Filename)(%Extension)" Pack="true" />
+      <PackageFile Include="$(PackageIcon)" Condition="Exists($(PackageIcon))" PackagePath="icon.png" Pack="true" />
     </ItemGroup>
   </Target>
 </Project>

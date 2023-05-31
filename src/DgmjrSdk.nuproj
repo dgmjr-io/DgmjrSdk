@@ -1,11 +1,11 @@
 <!--
  * DgmjrSdk.nuproj
- * 
+ *
  *   Created: 2023-01-08-11:51:57
  *   Modified: 2023-01-08-11:51:57
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -19,7 +19,6 @@
     <Import Project="./Build/EnablePreviewFeatures.props" />
     <Import Project="./Build/EmitNuspec.props" />
     <Import Project="./Build/MinVer.props" />
-    <Import Project="./Build/NoWarn.props" />
     <Import Project="./Build/NuGetizer.props" />
     <Import Project="./Build/SlnGen.props" />
     <Import Project="./Build/PackageProjectUrl.props" />
@@ -32,12 +31,13 @@
         <TargetFramework>netstandard1.0</TargetFramework>
         <PackageId>$(MSbuildProjectName)</PackageId>
         <LangVersion>preview</LangVersion>
+        <PackageType>MSBuildSdk</PackageType>
     </PropertyGroup>
     <ItemGroup>
         <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
         <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
         <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-        <PackageFile Include="./ContentFiles/*" PackagePath="ContentFiles/%(Filename)%(Extension)" />
+        <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     </ItemGroup>
     <Import Project="./Build/Authors-Owners.targets" />
     <Import Project="./Build/CentralPackageVersions.targets" />
@@ -51,4 +51,6 @@
     <Import Project="./Build/TestingLocal.targets" />
     <Import Project="./Build/NuGetPush.targets" />
     <Import Project="./Build/DoNotCleanCachedPackageId.targets" />
+    <Target Name="PrepareGitConstants" />
+    <Target Name="GitInfo" />
 </Project>

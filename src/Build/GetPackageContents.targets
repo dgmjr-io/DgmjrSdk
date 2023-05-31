@@ -1,11 +1,11 @@
 <!--
  * GetPackageContents.targets
- * 
+ *
  *   Created: 2022-11-22-06:30:31
  *   Modified: 2022-11-22-06:30:32
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -20,7 +20,7 @@
 			<_PackageFile Include="$(OutputPath)*.xml" />
 			<_PackageFile Include="$(OutputPath)*.pdb" /> -->
 			<PackageFile Include="@(_PackageFile)" PackagePath="lib/$(TargetFramework)/%(_PackageFile.RecursiveDir)%(_PackageFile.Filename)%(_PackageFile.Extension)" Condition="Exists(%(_PackageFile.Identity))" />
-      <_PackageFile Remove="@(_PackageFile)" />
+            <_PackageFile Remove="@(_PackageFile)" />
 		</ItemGroup>
 	</Target>
 	<!-- <PropertyGroup>

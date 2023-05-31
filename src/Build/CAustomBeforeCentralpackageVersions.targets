@@ -1,11 +1,11 @@
 <!--
  * CAustomBeforeCentralpackageVersions.targets
- * 
+ *
  *   Created: 2023-03-09-10:04:41
  *   Modified: 2023-03-09-10:04:41
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -14,13 +14,13 @@
   <!-- Transforms <SourceGenerator /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(SourceGenerator)">
-      <IncludeAssets>Analyzers;Build</IncludeAssets>
+      <IncludeAssets>Analyzers;Build;Compile</IncludeAssets>
       <ExcludeAssets>Runtime;ContentFiles;Native</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceGenerator Remove="@(SourceGenerator)" />
   </ItemGroup>
-  <!-- Transforms SourceCodeReferences into <PackageReference /> items with appropriate includes/excludes -->
+  <!-- Transforms <SourceCodeReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(SourceCodeReference)">
       <IncludeAssets>ContentFiles;Build</IncludeAssets>
@@ -28,5 +28,13 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceCodeReference Remove="@(SourceCodeReference)" />
+  </ItemGroup>
+  <!-- Transforms <UsingsPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <ItemGroup>
+    <PackageReference Include="@(UsingsPackageReference)">
+      <IncludeAssets>Build;BuildMultitargeting;BuildTransitive</IncludeAssets>
+      <ExcludeAssets>Runtime;ContentFiles;Native;Compile</ExcludeAssets>
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>
