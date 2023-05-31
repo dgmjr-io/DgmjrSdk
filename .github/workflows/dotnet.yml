@@ -32,7 +32,7 @@ jobs:
         # Source to scope the NuGet API Key to.
         nuget-api-key-source: ${{ env.GIT_NUGET_ENDPOINT }} # optional
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore src/DgmjrSdk.nuproj
     - name: Build
       run: dotnet build src/DgmjrSdk.nuproj --no-restore -c:Release
 #     - name: Test
