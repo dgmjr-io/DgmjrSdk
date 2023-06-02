@@ -1,0 +1,13 @@
+version = 1
+
+[[analyzers]]
+name = "csharp"
+
+[[analyzers]]
+name = "shell"
+
+[[analyzers]]
+name = "secrets"
+
+[[transformers]]
+name = "dotnet-format"
