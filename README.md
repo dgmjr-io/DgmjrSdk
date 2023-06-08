@@ -1,27 +1,27 @@
 ---
 authors:
-- dgmjr
+  - DGMJR-IO
 title: The DGMJR SDK
 modified: 2023-01-09-06:51:33
 created: 2023-01-09-06:51:31
 license: MIT
+description: The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
+slug: readme-md
+keywords:
+  - DGMJR-IO
+  - readme
+  - sdk
+  - msbuild
 categories:
   - documentation
   - msbuild
   - readme
   - sdk
-description: The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR-IO projects.
-slug: readme-md
-keywords:
-  - Dgmjr
-  - readme
-  - sdk
-  - msbuild
 ---
 
-# The DGMJR SDK
+# The Dgmjr SDK
 
-The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR-IO projects.
+The DGMJR SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
 
 ## Getting Started
 
