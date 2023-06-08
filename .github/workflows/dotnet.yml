@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: dgmjr-actions/download-global.json@v0.0.4
+    - uses: dgmjr-actions/download-global.json@latest
       name: Restore global.json
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
