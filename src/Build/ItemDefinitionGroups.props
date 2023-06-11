@@ -36,6 +36,12 @@
     <SourceGenerator />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
-    <UsingsPackageReference />
+    <UsingsPackageReference>
+      <Pack>true</Pack>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <CopyLocal>true</CopyLocal>
+      <IncludeAssets>Build; BuildMultitargeting; BuildTransitive;</IncludeAssets>
+      <ExcludeAssets>Compile; Runtime; Analyzers; Native; ContentFiles</ExcludeAssets>
+    </UsingsPackageReference>
   </ItemDefinitionGroup>
 </Project>

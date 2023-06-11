@@ -13,8 +13,8 @@
 <Project>
   <PropertyGroup>
     <PackageId Condition="'$(PackageId)' == ''">$(MSBuildProjectName)</PackageId>
-    <Company Condition="'$(Company)' == ''">Dgmjr</Company>
-    <Product Condition="'$(Product)' == ''">Dgmjr</Product>
+    <Company Condition="'$(Company)' == ''">DGMJR-IO</Company>
+    <Product Condition="'$(Product)' == ''">DGMJR-IO Core Libraries</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
