@@ -14,7 +14,6 @@
     <PropertyGroup>
         <ImoprtMinVer>true</ImoprtMinVer>
     </PropertyGroup>
-    <Import Project="./Build/*.props" />
     <PropertyGroup>
         <Title>The DGMJR-IO SDK</Title>
         <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
@@ -22,6 +21,8 @@
         <PackageId>$(MSbuildProjectName)</PackageId>
         <LangVersion>preview</LangVersion>
         <PackageType>MSBuildSdk</PackageType>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <IncludeInSolutionFile>true</IncludeInSolutionFile>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
@@ -29,7 +30,6 @@
         <Content Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
         <Content Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     </ItemGroup>
-    <Import Project="./Build/*.targets" />
     <Target Name="PrepareGitConstants" />
     <Target Name="GitInfo" />
 </Project>

@@ -10,4 +10,31 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project />
+<Project>
+    <Import Project="./Build/AAGitRoot.props" />
+    <Import Project="./Build/ADefaultBuildConfiguration.props" />
+    <Import Project="./Build/AssemblySigning.props" />
+    <Import Project="./Build/Authors-Owners.props" />
+    <Import Project="./Build/BuildConfigurations.props" />
+    <Import Project="./Build/CentralPackages.props" />
+    <Import Project="./Build/CentralPackagesFile.props" />
+    <Import Project="./Build/CentralPackageVersions.props" />
+    <Import Project="./Build/CompilerVisibleProperties.props" />
+    <Import Project="./Build/CopyLocalLockFileAssemblies.props" />
+    <Import Project="./Build/PackageIcon.props" />
+    <Import Project="./Build/PackageMetadata.props" />
+    <Import Project="./Build/Deterministic.props" />
+    <Import Project="./Build/EmbeddedResourcesStringExtensions.props" />
+    <Import Project="./Build/EmitNuspec.props" />
+    <Import Project="./Build/EnablePreviewFeatures.props" />
+    <Import Project="./Build/MinVer.props" />
+    <Import Project="./Build/ProjectMetadata.props" />
+    <Import Project="./Build/ProjectTypeInfo.props" />
+    <Import Project="./Build/SlnGen.props" />
+    <Import Project="./Build/SourceCodeReference.props" />
+    <Import Project="./Build/SourceLinkPatch.props" />
+    <!-- <Import Project="./Build/TargetFraneworks.props" /> -->
+    <Import Project="./Build/Testing.props" />
+    <Import Project="./Build/TestingLocal.props" />
+    <Import Project="./Build/UserSecrets.props" />
+</Project>

@@ -11,4 +11,6 @@
 -->
 
 
-<Project />
+<Project>
+    <Import Project="./Build/*.targets" />
+</Project>

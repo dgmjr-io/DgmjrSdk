@@ -37,8 +37,9 @@
     <SlnGenCustomProjectTypeGuid Include=".vfproj" ProjectTypeGuid="aab86bce-e4cc-4bb0-bbc5-83b1a081b6bb" />
     <SlnGenCustomProjectTypeGuid Include=".isproj" ProjectTypeGuid="f7c9b907-e976-47d6-8ade-5d8c208a472d" />
     <SlnGenCustomProjectTypeGuid Include=".xsproj" ProjectTypeGuid="60ca03d9-d475-4da7-85b4-dbe70d7f5ae1" />
-    <SlnGenCustomProjectTypeGuid Include=".mkdocsproj" ProjectTypeGuid="0728b154-4ff9-43e1-9619-5e7c5296484f" />
     <SlnGenCustomProjectTypeGuid Include=".psproj" ProjectTypeGuid="7d16f43b-ec0d-4b18-8613-2da11515d2d1" />
+    <SlnGenCustomProjectTypeGuid Include=".xcodeproj" ProjectTypeGuid="98925c4f-9b71-41de-bc6a-267f44ff1f4a" />
+    <SlnGenCustomProjectTypeGuid Include=".xcodeproj" ProjectTypeGuid="98925c4f-9b71-41de-bc6a-267f44ff1f4a" />
   </ItemGroup>
   <PropertyGroup>
     <SlnGenSolutionFolder Condition="'$(IsTestProject)' == 'true'">tests</SlnGenSolutionFolder>
