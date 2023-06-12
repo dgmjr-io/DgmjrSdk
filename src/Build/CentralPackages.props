@@ -1,0 +1,23 @@
+<!--
+ * CentralPackages.props
+ * 
+ *   Created: 2023-06-09-08:12:32
+ *   Modified: 2023-06-09-08:12:32
+ * 
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+    <ItemGroup>
+        <!-- <PackageReference Include="MinVer" PrivateAssets="All" />
+        <PackageReference Include="ThisAssembly.Git" IncludeAssets="build; analyzers;" PrivateAssets="All"  />
+        <PackageReference Include="MinVer" IncludeAssets="runtime; build; native; contentfiles; analyzers; compile;" PrivateAssets="All" Condition="'$(ImportMinVer)' != 'false'" />
+        <PackageReference Include="NuGetizer"  IncludeAssets="build; compile;" PrivateAssets="All"/>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive; compile;" PrivateAssets="All" /> -->
+        <!-- <GlobalPackageReference Include="GitInfo" Version="[2.3.0,)" PrivateAssets="All" IncludeAssets="build; analyzers; compile;" /> -->
+        <!-- <PackageReference Include="Microsoft.Build.Tasks.Git"  IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive; compile;" PrivateAssets="All" /> -->
+    </ItemGroup>
+</Project>
