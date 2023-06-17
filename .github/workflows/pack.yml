@@ -30,7 +30,7 @@ jobs:
         # NuGet API Key to configure.
         nuget-api-key: ${{ secrets.GITHUB_TOKEN }} # optional
         # Source to scope the NuGet API Key to.
-        nuget-api-key-source: ${{ env.GIT_NUGET_ENDPOINT }} # optional
+        nuget-api-key-source: ${{ variables.GIT_NUGET_ENDPOINT }} # optional
     - name: Restore dependencies
       run: dotnet restore src/DgmjrSdk.nuproj
     - name: Build
