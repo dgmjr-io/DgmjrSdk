@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Get global.json
-      uses: dgmjr-actions/download-global.json@v0.0.5
+      uses: dgmjr-actions/download-global.json/releases/latest
     - name: Setup NuGet.exe for use with actions
       # You may pin to the exact commit or the version.
       # uses: NuGet/setup-nuget@296fd3ccf8528660c91106efefe2364482f86d6f

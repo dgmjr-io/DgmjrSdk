@@ -1,11 +1,11 @@
 ---
 authors:
-  - DGMJR-IO
+  - dgmjr
 title: The DGMJR SDK
 modified: 2023-01-09-06:51:33
 created: 2023-01-09-06:51:31
 license: MIT
-description: The Dgmjr SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
+description: The DGMJR SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
 slug: readme-md
 keywords:
   - DGMJR-IO
@@ -19,9 +19,9 @@ categories:
   - sdk
 ---
 
-# The Dgmjr SDK
+# The DGMJR SDK
 
-The DGMJR SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.
+The DGMJR SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR-IO projects.
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ Then create (or alter) your `global.json` file to include the following:
 ```json
 {
     "msbuild-sdks": {
-        "DgmjrSdk": "TheCurrentVersionOfTheDgmjrSdk"
+        "DgmjrSdk": "1.5.0[or-the-current-version]"
     }
 }
 ```
