@@ -23,9 +23,6 @@
     <DebugType>portable</DebugType>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseJustinWritesCodeNamespace Condition="'$(UseJustinWritesCodeNamespace)' == ''">true</UseJustinWritesCodeNamespace>
-    <!-- <UsePackageReferencesForLocalDependencies>false</UsePackageReferencesForLocalDependencies> -->
     <IsPublishable>true</IsPublishable>
     <RollForward>LatestPatch</RollForward>
   </PropertyGroup>

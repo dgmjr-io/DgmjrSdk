@@ -12,9 +12,11 @@
 
 
 <Project>
-	<PropertyGroup>
-    <AssemblyVersion Condition="'$(Version)' != ''">$([System.Text.RegularExpressions.Regex]::Replace("$(Version)", "\-.*", ""))</AssemblyVersion>
-    <Version Condition="'$(Version)' != ''">$([System.Text.RegularExpressions.Regex]::Replace("$(Version)", "\-.*", ""))</Version>
+	<PropertyGroup Condition="'$(PackageVersionOverride)' != ''">
+      <MinVerVersionOverride>$(PackageVersionOverride)</MinVerVersionOverride>
+      <AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</AssemblyVersion>
+      <Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
+      <PackageVersion>$(PackageVersionOverride)</PackageVersion>
 	</PropertyGroup>
   <!-- <PropertyGroup>
     <GetPackageVersionDependsOn>

@@ -10,10 +10,11 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 <Project>
-  <Target Name="SetAssemblyVersion" AfterTargets="GetPackageVersion;MinVer" DependsOnTargets="GetPackageVersion;MinVer" BeforeTargets="CoreBuild;Build;CoreCompile;GetAssemblyVersion">
+  <Target Name="SetAssemblyVersion" AfterTargets="CoreGenerateAssemblyInfo" BeforeTargets="GetAssemblyVersion">
     <PropertyGroup>
       <AssemblyVersion Condition="'$(PackageVersion)' != ''">$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersion)", "\-.*", "")).0</AssemblyVersion>
       <Version Condition="'$(PackageVersion)' != ''">$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersion)", "\-.*", "")).0</Version>
     </PropertyGroup>
+    <Message Importance	="High" Text="AssemblyVersion: $(AssemblyVersion)" />
   </Target>
 </Project>

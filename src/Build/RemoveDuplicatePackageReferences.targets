@@ -12,7 +12,10 @@
 
 <!-- Gets rid of duplicate PackageReferences so we don't get that stupid warning any more -->
 <Project>
-	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="CollectPackageReferences">
+	<PropertyGroup>
+		<RestoreDependsOn>RemoveDuplicatePackageReferences;$(RestoreDependsOn)</RestoreDependsOn>
+	</PropertyGroup>
+	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="Restore">
 		<RemoveDuplicates Inputs="@(PackageReference)">
 			<Output TaskParameter="Filtered" ItemName="DistinctPackageReference" />
 		</RemoveDuplicates>
