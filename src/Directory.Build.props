@@ -1,45 +1,49 @@
 <!--
  * Directory.Build.props
- * 
+ *
  *   Created: 2023-01-02-07:50:16
  *   Modified: 2023-01-02-07:50:16
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
-    <PropertyGroup>
-        <NoWarn>
-            $(NoWarn);
-            MSB4011;
-        </NoWarn>
-    </PropertyGroup>
+    <!-- <Import Project="./Build/TargetFraneworks.props" /> -->
+    <Import Project="./Build/AIsMultiTargeting.props" />
     <Import Project="./Build/AAGitRoot.props" />
     <Import Project="./Build/ADefaultBuildConfiguration.props" />
     <Import Project="./Build/AssemblySigning.props" />
     <Import Project="./Build/Authors-Owners.props" />
     <Import Project="./Build/BuildConfigurations.props" />
+    <Import Project="./Build/BuildFromSource.props" />
     <Import Project="./Build/CentralPackages.props" />
     <Import Project="./Build/CentralPackagesFile.props" />
     <Import Project="./Build/CentralPackageVersions.props" />
     <Import Project="./Build/CompilerVisibleProperties.props" />
     <Import Project="./Build/CopyLocalLockFileAssemblies.props" />
-    <Import Project="./Build/PackageIcon.props" />
-    <Import Project="./Build/PackageMetadata.props" />
+    <Import Project="./Build/CustomBeforeAndAfterNoTargets.props" />
     <Import Project="./Build/Deterministic.props" />
+    <Import Project="./Build/EnsureLicense.props" />
     <Import Project="./Build/EmbeddedResourcesStringExtensions.props" />
     <Import Project="./Build/EmitNuspec.props" />
     <Import Project="./Build/EnablePreviewFeatures.props" />
     <Import Project="./Build/MinVer.props" />
+    <Import Project="./Build/NuGetizer.props" />
+    <Import Project="./Build/NuGetOutputs.props" />
+    <Import Project="./Build/PackageIcon.props" />
+    <Import Project="./Build/PackageMetadata.props" />
+    <Import Project="./Build/PackageProjectUrl.props" />
+    <Import Project="./Build/PackageReadme.props" />
+    <Import Project="./Build/PackageTags.props" />
+    <Import Project="./Build/PackageVersionOverride.props" />
     <Import Project="./Build/ProjectMetadata.props" />
     <Import Project="./Build/ProjectTypeInfo.props" />
     <Import Project="./Build/SlnGen.props" />
-    <Import Project="./Build/SourceCodeReference.props" />
     <Import Project="./Build/SourceLinkPatch.props" />
-    <!-- <Import Project="./Build/TargetFraneworks.props" /> -->
+    <Import Project="./Build/TargetFrameworks.props" />
     <Import Project="./Build/Testing.props" />
     <Import Project="./Build/TestingLocal.props" />
     <Import Project="./Build/UserSecrets.props" />

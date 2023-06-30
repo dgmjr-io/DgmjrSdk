@@ -11,6 +11,7 @@
 -->
 
 <Project>
+  <PropertyGroup><ReleaseNotes_targets>Imported</ReleaseNotes_targets></PropertyGroup>
   <Target Name="SetReleaseNotesUrl" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="GitInfo">
     <PropertyGroup>
       <RepositoryName>$([System.IO.Path]::GetFileNameWithoutExtension('$(GitRepositoryUrl)'))</RepositoryName>

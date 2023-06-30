@@ -1,20 +1,27 @@
 <!--
  * AssetTargetFallback.props
- * 
+ *
  *   Created: 2022-12-10-05:32:34
  *   Modified: 2022-12-10-05:32:34
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
   <PropertyGroup>
-    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net7.0'">net6.0;netstandard2.1;netstandard2.0;netstandard1.6;netstandard1.5;netstandard1.4;netstandard1.3;netstandard1.2;netstandard1.1;netstandard1.0</AssetTargetFallback>
-    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net6.0'">netstandard2.1;netstandard2.0;netstandard1.6;netstandard1.5;netstandard1.4;netstandard1.3;netstandard1.2;netstandard1.1;netstandard1.0</AssetTargetFallback>
-    <AssetTargetFallback Condition="'$(TargetFramework)' == 'netstandard2.1'">netstandard2.0;netstandard1.6;netstandard1.5;netstandard1.4;netstandard1.3;netstandard1.2;netstandard1.1;netstandard1.0</AssetTargetFallback>
-    <AssetTargetFallback Condition="'$(TargetFramework)' == 'netstandard2.0'">netstandard1.6;netstandard1.5;netstandard1.3;netstandard1.0;netstandard1.0</AssetTargetFallback>
+    <NetStd1TargetFrameworks>netstandard1.6;netstandard1.5;netstandard1.3;netstandard1.0;netstandard1.0</NetStd1TargetFrameworks>
+    <NetStd20TargetFrameworks>netstandard2.0;$(NetStd1TargetFrameworks)</NetStd20TargetFrameworks>
+    <NetStd21TargetFrameworks>netstandard2.1;$(NetStd20TargetFrameworks)</NetStd21TargetFrameworks>
+    <Net60TargetFrameworks>net6.0;$(NetStd21TargetFrameworks)</Net60TargetFrameworks>
+    <Net70TargetFrameworks>net7.0;$(Net60TargetFrameworks)</Net70TargetFrameworks>
+    <Net80TargetFrameworks>net8.0;$(Net70TargetFrameworks)</Net80TargetFrameworks>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net8.0'">$(Net70TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net7.0'">n(Net60TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net6.0'">$(NetStd21TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'netstandard2.1'">$(NetStd20TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'netstandard2.0'">$(NetStd1TargetFrameworks)</AssetTargetFallback>
   </PropertyGroup>
 </Project>

@@ -17,18 +17,36 @@
 namespace Dgmjr { }
 
 namespace System { }
+
 namespace System.Collections.Generic { }
+
 namespace System.Diagnostics { }
+
 namespace System.IO { }
+
 namespace System.Linq { }
+
 namespace System.Linq.Expressions { }
+
 namespace System.Reflection { }
+
 namespace System.Security.Claims { }
+
+namespace System.Security.Cryptography { }
+
 namespace System.Text.RegularExpressions { }
+
 namespace System.Threading { }
+
 namespace System.Threading.Tasks { }
+
 namespace System.Diagnostics.CodeAnalysis { }
+
 namespace System.Net.Http { }
+
+namespace System.ComponentModel { }
+
+namespace System.CodeDom.Compiler { }
 
 #pragma warning restore S3261 // Namespaces should not be empty
 #pragma warning restore CD1607 // The file needs documentation headers.

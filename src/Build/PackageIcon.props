@@ -1,17 +1,18 @@
 <!--
- PackageIcon.props
- 
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:48:27
- 
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-   
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * PackageIcon.targets
+ *
+ *   Created: 2023-01-24-02:07:11
+ *   Modified: 2023-01-24-02:07:11
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-
-  <ItemGroup>
-  </ItemGroup>
+<Project Condition="'$(PackageIcon_props)' == ''">
+    <PropertyGroup>
+        <PackageIcon_props>imported</PackageIcon_props>
+        <FallbackPackageIconFilePath Condition="Exists('$(MSBuildThisFileDirectory)../Assets/Icon.png)')">$(MSBuildThisFileDirectory)../Assets/Icon.png</FallbackPackageIconFilePath>
+    </PropertyGroup>
 </Project>

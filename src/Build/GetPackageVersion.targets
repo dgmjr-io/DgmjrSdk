@@ -11,8 +11,9 @@
 -->
 
 <Project>
-    <Target Name="GetPackageVersion" Outputs="PackageVersion" DependsOnTargets="GitInfo">
+    <Target Name="GetPackageVersion" Outputs="PackageVersion" DependsOnTargets="GitInfo" Condition="'$(GetPackageVersion_targets)' == ''">
         <PropertyGroup>
+            <GetPackageVersion_targets>Imported</GetPackageVersion_targets>
             <PackageVersion Condition="'$(PackageVersion)' == ''">$([System.Text.RegularExpressions.Regex]::Match($(GitVersionInformation), 'PackageVersion: (.*)').Groups[1].Value)</PackageVersion>
         </PropertyGroup>
     </Target>

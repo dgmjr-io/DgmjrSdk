@@ -11,7 +11,8 @@
 -->
 
 <Project>
-	<Target Name="_PreparePackageContents" BeforeTargets="GetPackageContents" Condition="'$(PackAllBinOutput)' != 'false'">
+	<Target Name="_PreparePackageContents" BeforeTargets="GetPackageContents" Condition="'$(PackAllBinOutput)' != 'false' And '$(GetPackageContents_targets)' == ''">
+		<PropertyGroup><GetPackageContents_targets>Imported</GetPackageContents_targets></PropertyGroup>
 		<ItemGroup>
 			<!-- <_PackageFile Include="$(OutputPath)**/*.dll" TargetFramework="%(RecursiveDir)/" />
 			<_PackageFile Include="$(OutputPath)**/*.xml" TargetFramework="%(RecursiveDir)/" />

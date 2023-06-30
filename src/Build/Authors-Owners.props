@@ -1,19 +1,19 @@
 <!--
- Authors-Owners.props
- 
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:46:28
- 
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-   
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * Authors-Owners.props
+ *
+ *   Created: 2022-10-21-11:40:42
+ *   Modified: 2023-10-12-08:26:35
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
   <ItemGroup>
-    <Author Include="David G. Moore, Jr." Email="david@dgmjr.io" />
-    <Owner Include="David G. Moore, Jr." Email="david@dgmjr.io" />
+    <Author Include="David G. Moore, Jr." Email="david@dgmjr.io" Initials="dgmjr" GitHubId="dgmjr" />
+    <Owner Include="David G. Moore, Jr." Email="david@dgmjr.io" Initials="dgmjr" GitHubId="dgmjr" />
   </ItemGroup>
 
   <PropertyGroup>

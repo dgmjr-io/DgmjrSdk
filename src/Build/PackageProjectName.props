@@ -1,20 +1,20 @@
 <!--
  * PackageBuildPropsFile.props
- * 
+ *
  *   Created: 2022-11-11-01:13:41
  *   Modified: 2022-11-12-02:09:27
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
+  <PropertyGroup>
+    <PackageProjectName_props>Imported</PackageProjectName_props>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageFile 
-      Include="$(MSBuildProjectDirectory)/$(MSBuildProjectName).props" 
-      PackagePath="build/$(MSBuildProjectName).props" 
-      Condition="Exists('$(MSBuildProjectDirectory)/$(MSBuildProjectName).props')" />
+    <PackageFile Include="$(MSBuildProjectDirectory)/$(MSBuildProjectName).props" PackagePath="build/$(MSBuildProjectName).props" Condition="Exists('$(MSBuildProjectDirectory)/$(MSBuildProjectName).props')" />
   </ItemGroup>
 </Project>

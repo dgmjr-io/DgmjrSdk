@@ -11,55 +11,19 @@
 -->
 
 <Project>
-	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme">
-    <PropertyGroup>
-      <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
-      <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
-      <PackageReadmeFile>$(MSBuildProjectName).README.md</PackageReadmeFile>
-      <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
-      <GeneratedPackageReadmeFileContents>
-        ---;
-        title: $(Title);
-        lastmod: $(Date:yyyy-MM-dd-HH:mm:ss);
-        date: $(Date:yyyy-MM-dd-HH:mm:ss);
-        license: $(PackageLicenseExpression);
-        slug: $(MSBuildProjectName)-readme;
-        version: $(PackageVersion);
-        type: readme;        authors:;
-          @(PackageAuthor->'  - %(Initials);');
-        description: $(Description);
-        categories:;
-          - documentation;
-          - readme;
-        tags:;
-          - readme;
-          - $(MSBuildProjectName);
-          @(PackageTag->'  - %(Identity)');
-        keywords:;
-          - $(MSBuildProjectName);
-          @(PackageTag->'  - %(Identity)');
-        ---;
-        ;
-        # $(MSBuildProjectName) README;
-        ;
-        This file is generated from the contents of the project file.;
-        ;
-        ## Package Description;
-        ;
-        $(Description);
+  <Import Project="./PackageReadme.props" Condition="'$(PackageReadme_props)' == ''" />
+  <PropertyGroup>
+    <PackageReadme_targets>imported</PackageReadme_targets>
+    <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
+    <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
+  </PropertyGroup>
+  <Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" Condition="'$(IsOuterBuild)' != 'false'">
+    <Warning Condition="!Exists('$(PackageReadmeFileHintPath)')" Code="READMENOTFOUND001" File="$(MSBuildProjectDirectory)/README.md" Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
+  </Target>
 
-      </GeneratedPackageReadmeFileContents>
-    </PropertyGroup>
-
-
-
-    <Warning Condition="!Exists('$(PackageReadmeFileHintPath)')"
-      Code="README.MD_NOT_FOUND"
-      File="$(MSBuildProjectDirectory)/README.md"
-      Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
-	</Target>
-
-  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;CheckReadmeExists;SetPackageDescription">
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;CheckReadmeExists;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false'">
     <!-- Fallback to using the package's description as the README.md contents -->
     <ItemGroup Condition="!Exists('$(PackageReadmeFileHintPath)')">
       <ReadmeFileContents Include="$(GeneratedPackageReadmeFileContents);$(BuildMessage)" Visible="false" />
@@ -83,12 +47,12 @@
     <PropertyGroup>
       <PackageReadmeFilePath>$(GeneratedPackageReadmeFileHintPath)</PackageReadmeFilePath>
       <!-- <PackageReadme Condition="Exists($(GeneratedPackageReadmeFileHintPath))">$(GeneratedPackageReadmeFileHintPath)</PackageReadme> -->
-		</PropertyGroup>
+    </PropertyGroup>
 
-		<ItemGroup>
+    <ItemGroup>
       <PackageReadmeFile Include="$(PackageReadmeFilePath)" Visible="true" Link="docs/README.md" />
-      <!-- <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" /> -->
-			<PackageFile Include="$(GeneratedPackageReadmeFileHintPath)" PackagePath="$(PackageReadmeFile)" Condition="Exists($(GeneratedPackageReadmeFileHintPath))" Visible="true" Link="docs/README.md" />
-		</ItemGroup>
+      <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" />
+      <PackageFile Include="$(GeneratedPackageReadmeFileHintPath)" PackagePath="$(PackageReadmeFile)" Condition="Exists($(GeneratedPackageReadmeFileHintPath))" Visible="true" Link="docs/README.md" />
+    </ItemGroup>
   </Target>
 </Project>

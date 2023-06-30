@@ -1,47 +1,78 @@
 <!--
- ItemDefinitionGroups.props
-
-   Created: 2022-10-24-08:10:51
-   Modified: 2022-10-29-02:47:46
-
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * ItemDefinitionGroups.props
+ *
+ *   Created: 2022-10-24-08:10:51
+ *   Modified: 2023-10-12-08:22:44
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
+  <PropertyGroup>
+    <ItemDefinitionGroups_props>imported</ItemDefinitionGroups_props>
+  </PropertyGroup>
   <ItemDefinitionGroup>
-      <Using Visible="false" />
+    <Using Visible="false" />
+    <PackageTag Visible="false" />
+    <Author Visible="false">
+      <Email />
+      <Initials />
+      <GitHub />
+    </Author>
+    <Owner Visible="false">
+      <Email />
+      <Initials />
+      <GitHub />
+    </Owner>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <PackageReference>
-    	<!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
       <Pack>true</Pack>
-			<GeneratePathProperty>true</GeneratePathProperty>
       <CopyLocal>true</CopyLocal>
-			<IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Analyzers; Native</IncludeAssets>
-			<ExcludeAssets>ContentFiles</ExcludeAssets>
-		</PackageReference>
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
+      <ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
+    </PackageReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <ProjectReference>
       <Pack>true</Pack>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
-			<SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
-		</ProjectReference>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup>
-    <SourceGenerator />
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup>
-    <UsingsPackageReference>
-      <Pack>true</Pack>
-      <GeneratePathProperty>true</GeneratePathProperty>
       <CopyLocal>true</CopyLocal>
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <OutputItemType>true</OutputItemType>
+      <Name>@(ProjectReference->'%(Filename)')</Name>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <SourceGenerator Visible="false" />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <SourceCode>
+      <Pack>true</Pack>
+      <CopyLocal>true</CopyLocal>
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>ContentFiles</IncludeAssets>
+      <IncludeAssets>ContentFiles</IncludeAssets>
+      <ExcludeAssets>Build; BuildMultitargeting; BuildTransitive; Compile; Runtime; Analyzers; Native</ExcludeAssets>
+    </SourceCodePackageReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <Usings>
+      <Pack>true</Pack>
+      <CopyLocal>true</CopyLocal>
+      <GeneratePathProperty>true</GeneratePathProperty>
       <IncludeAssets>Build; BuildMultitargeting; BuildTransitive;</IncludeAssets>
       <ExcludeAssets>Compile; Runtime; Analyzers; Native; ContentFiles</ExcludeAssets>
-    </UsingsPackageReference>
+    </Usings>
   </ItemDefinitionGroup>
 </Project>

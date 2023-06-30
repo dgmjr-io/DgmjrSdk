@@ -1,19 +1,27 @@
 <!--
  * BuildFromSource.targets
- * 
+ *
  *   Created: 2022-12-26-10:35:33
  *   Modified: 2022-12-26-10:35:33
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-<!-- This doesn't do anything right now, but the idea is to allow the programmer the option to buikd a project from its source code or use the NuGet package -->
-<Project>
-  <!-- <ItemGroup Condition="'$(BuildFromSource)' != 'true'">
-    <PackageReference Include="$([System.Text.RegularExpressions.Regex]::Replace((%(ProjectReference.Identity), '(?:.+[\/\\])+(.*)\.csproj', '$1'))" />
-    <PropsFile Include="$([System.String]::Copy(%(ProjectReference.Identity)).Replace('.csproj', '.props'))"  />
-    <TargetsFile Include="$([System.String]::Copy(%(ProjectReference.Identity)).Replace('.csproj', '.targets'))"  />
-  </ItemGroup> -->
+<Project InitialTargets="WritePropsAndTargetsFiles" Condition="'$(BuildFromSourceTargets)' == ''">
+  <PropertyGroup>
+    <BuildFromSourceTargets>imported</BuildFromSourceTargets>
+  </PropertyGroup>
+  <Target Name="WritePropsAndTargetsFiles" BeforeTargets="Build">
+    <WriteLinesToFile File="$(TempPropsFile)" Lines="@(PropsFile->'%(FullPath)')" Overwrite="true" />
+    <WriteLinesToFile File="$(TempTargetsFile)" Lines="@(TargetsFile->'%(FullPath)')" Overwrite="true" />
+  </Target>
+  <Import Project="$(TempPropsFile)" Condition="Exists($(TempPropsFile))" />
+  <Import Project="$(TempTargetsFile)" Condition="Exists($(TempTargetsFile))" />
+  <ItemGroup Condition="!$(BuildFromSource)">
+    <!-- remove all existing `ProjectReference`s and replace them with `PackageReference`s -->
+    <!-- <PackageReference Include="@(ProjectReference->'%(Filename)')" /> -->
+    <!-- <ProjectReference Remove="@(ProjectReference)" /> -->
+  </ItemGroup>
 </Project>
