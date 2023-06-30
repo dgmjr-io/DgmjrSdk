@@ -17,16 +17,18 @@
     <PropertyGroup>
         <Title>The DGMJR-IO SDK</Title>
         <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
-        <TargetFramework>netstandard1.0</TargetFramework>
+        <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks>
         <PackageId>$(MSbuildProjectName)</PackageId>
         <LangVersion>preview</LangVersion>
         <PackageType>MSBuildSdk</PackageType>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <IncludeInSolutionFile>true</IncludeInSolutionFile>
+        <DevelopmentDependency>true</DevelopmentDependency>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
         <Content Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
+        <Content Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
         <Content Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
         <Content Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     </ItemGroup>

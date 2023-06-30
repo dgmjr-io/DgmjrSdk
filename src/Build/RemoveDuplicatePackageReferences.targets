@@ -14,11 +14,13 @@
 <Project>
 	<PropertyGroup>
 		<RestoreDependsOn>RemoveDuplicatePackageReferences;$(RestoreDependsOn)</RestoreDependsOn>
+		<PackDependsOn>RemoveDuplicatePackageReferences;$(PackDependsOn)</PackDependsOn>
 	</PropertyGroup>
-	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="Restore">
+	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="Restore;Pack">
 		<RemoveDuplicates Inputs="@(PackageReference)">
 			<Output TaskParameter="Filtered" ItemName="DistinctPackageReference" />
 		</RemoveDuplicates>
+		<Message  Importance="High" Text="Removed the following duplicate package references: @(DistinctPackageReference)" />
 		<ItemGroup>
 			<PackageReference Remove="@(PackageReference)" />
 			<PackageReference Include="@(DistinctPackageReference)" />

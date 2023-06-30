@@ -12,6 +12,7 @@
 
 #pragma warning disable CD1607 // The file needs documentation headers.
 #pragma warning disable RCS1072 // Remove empty namespace declaration.
+#pragma warning disable S3261 // Namespaces should not be empty
 
 namespace Dgmjr { }
 
@@ -29,5 +30,6 @@ namespace System.Threading.Tasks { }
 namespace System.Diagnostics.CodeAnalysis { }
 namespace System.Net.Http { }
 
+#pragma warning restore S3261 // Namespaces should not be empty
 #pragma warning restore CD1607 // The file needs documentation headers.
 #pragma warning restore RCS1072 // Remove empty namespace declaration.
