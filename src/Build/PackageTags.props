@@ -1,24 +1,15 @@
 <!--
- PackageTags.props
-
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:48:55
-
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * PackageTags.props
+ * 
+ *   Created: 2023-06-30-09:41:55
+ *   Modified: 2023-06-30-09:42:38
+ * 
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
- <PropertyGroup>
-    <GetPackageMetadataDependsOn>
-      $(GetPackageMetadataDependsOn);
-      SetPackageTags
-    </GetPackageMetadataDependsOn>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageTag Include="dgmjr" />
-    <PackageTag Include="dgmjr-io" />
-  </ItemGroup>
+	<Import Project="../BuildMultiTargeting/PackageProjectUrl.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
 </Project>

@@ -1,0 +1,19 @@
+<!--
+ PackageProjectUrl.targets
+ 
+   Created: 2022-10-21-11:40:42
+   Modified: 2022-10-29-02:48:45
+ 
+   Author: David G. Moore, Jr. <david@dgmjr.io>
+   
+   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <Target Name="SetPackageProjectUrl" BeforeTargets="GetPackageMetadata" AfterTargets="PrepareGitConstants">
+    <PropertyGroup>
+      <PackageProjectUrl>https://docs.dgmjr.io/$([System.IO.Path]::GetFileNameWithoutExtension('$(RepositoryUrl)'))</PackageProjectUrl>
+    </PropertyGroup>
+  </Target>
+</Project>

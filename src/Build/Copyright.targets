@@ -1,25 +1,15 @@
 <!--
- Copyright.targets
- 
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:47:20
- 
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-   
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * Copyright.targets
+ * 
+ *   Created: 2023-06-30-09:31:22
+ *   Modified: 2023-06-30-09:32:54
+ * 
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project> 
- <PropertyGroup>
-    <GetPackageMetadataDependsOn>
-      $(GetPackageMetadataDependsOn);
-      SetPackageCopyright
-    </GetPackageMetadataDependsOn>
-  </PropertyGroup>
-  <Target Name="SetPackageCopyright" BeforeTargets="GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun" AfterTargets="SetPackageOwners">
-    <PropertyGroup>
-      <Copyright Condition="'$(Copyright)' == ''">© 2022-$([System.DateTime]::Now.Year) $(Owners), All Rights Reserved</Copyright>
-    </PropertyGroup>
-  </Target>
+  <Import Project="../BuildMultiTargeting/Copyright.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
 </Project>

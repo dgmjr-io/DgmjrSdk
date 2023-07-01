@@ -26,11 +26,11 @@
         <DevelopmentDependency>true</DevelopmentDependency>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
-        <Content Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
-        <Content Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
-        <Content Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-        <Content Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
+        <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+        <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
+        <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
+        <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
+        <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     </ItemGroup>
     <Target Name="PrepareGitConstants" />
     <Target Name="GitInfo" />

@@ -1,8 +1,8 @@
 <!--
- PackageProjectUrl.props
+ PackageIcon.props
  
    Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:48:43
+   Modified: 2022-10-29-02:48:27
  
    Author: David G. Moore, Jr. <david@dgmjr.io>
    
@@ -11,5 +11,6 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageProjectUrl.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+  <ItemGroup>
+  </ItemGroup>
 </Project>

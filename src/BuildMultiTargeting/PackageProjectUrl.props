@@ -11,5 +11,10 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageProjectUrl.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+  <PropertyGroup>
+    <GetPackageMetadataDependsOn>
+      $(GetPackageMetadataDependsOn);
+      SetPackageProjectUrl
+    </GetPackageMetadataDependsOn>
+  </PropertyGroup>
 </Project>

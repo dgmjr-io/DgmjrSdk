@@ -1,27 +1,16 @@
 <!--
- PackageVersionOverride.props
- 
-   Created: 2022-10-30-04:06:15
-   Modified: 2022-10-30-04:06:34
- 
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-   
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * PackageVersionOverride.props
+ * 
+ *   Created: 2023-06-30-09:44:03
+ *   Modified: 2023-06-30-09:44:27
+ * 
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
+
 <Project>
-	<PropertyGroup Condition="'$(PackageVersionOverride)' != ''">
-      <MinVerVersionOverride Condition="'$(MinVerVersionOverride)' == ''">$(PackageVersionOverride)</MinVerVersionOverride>
-      <AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</AssemblyVersion>
-      <Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
-      <PackageVersion>$(PackageVersionOverride)</PackageVersion>
-	</PropertyGroup>
-    <PropertyGroup>
-      <InjectThisAssemblyProjectDependsOn>
-        $(InjectThisAssemblyProjectDependsOn);
-        GetPackageVersion;
-        GetPackageMetadata;
-      </InjectThisAssemblyProjectDependsOn>
-    </PropertyGroup>
+	<Import Project="../BuildMultiTargeting/PackageVersionOverride.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
 </Project>

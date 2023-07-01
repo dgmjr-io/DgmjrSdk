@@ -1,19 +1,16 @@
 <!--
- PackageProjectUrl.targets
- 
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:48:45
- 
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-   
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * PackageProjectUrl.targets
+ * 
+ *   Created: 2023-06-30-09:39:47
+ *   Modified: 2023-06-30-09:42:25
+ * 
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
+
 <Project>
-  <Target Name="SetPackageProjectUrl" BeforeTargets="GetPackageMetadata" AfterTargets="PrepareGitConstants">
-    <PropertyGroup>
-      <PackageProjectUrl>https://docs.dgmjr.io/$([System.IO.Path]::GetFileNameWithoutExtension('$(RepositoryUrl)'))</PackageProjectUrl>
-    </PropertyGroup>
-  </Target>
+	<Import Project="../BuildMultiTargeting/PackageProjectUrl.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
 </Project>

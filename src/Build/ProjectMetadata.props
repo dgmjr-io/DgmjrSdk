@@ -11,19 +11,5 @@
 -->
 
 <Project>
-  <PropertyGroup>
-    <RootNamespace Condition="'$(RootNamespace)' == ''">$(MSBuildProjectName)</RootNamespace>
-    <AssemblyName Condition="'$(AssemblyName)' == ''">$(MSBuildProjectName)</AssemblyName>
-    <AssemblyTitle Condition="'$(AssemblyTitle)' == ''">$(MSBuildProjectName)</AssemblyTitle>
-    <Title Condition="'$(Title)' == ''">$(AssemblyTitle)</Title>
-    <DefaultLanguage>en</DefaultLanguage>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <LangVersion>preview</LangVersion>
-    <ServerGarbageCollection>true</ServerGarbageCollection>
-    <DebugType>portable</DebugType>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <IsPublishable>true</IsPublishable>
-    <RollForward>LatestPatch</RollForward>
-  </PropertyGroup>
+	<Import Project="../BuildMultiTargeting/ProjectMetadata.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
 </Project>
