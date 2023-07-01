@@ -11,5 +11,15 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageProjectUrl.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+ <PropertyGroup>
+    <PackageTags_props>Imported</PackageTags_props>
+    <GetPackageMetadataDependsOn>
+      $(GetPackageMetadataDependsOn);
+      SetPackageTags
+    </GetPackageMetadataDependsOn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageTag Include="dgmjr" />
+    <PackageTag Include="dgmjr-io" />
+  </ItemGroup>
 </Project>

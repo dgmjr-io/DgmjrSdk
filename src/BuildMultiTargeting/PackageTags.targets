@@ -11,10 +11,5 @@
 -->
 
 <Project>
-  <Target Name="SetPackageTags" BeforeTargets="GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun">
-    <PropertyGroup>
-      <PackageTags>@(PackageTag->Distinct(), ' ')</PackageTags>
-      <PackageTags>$(PackageTags.ToLower())</PackageTags>
-    </PropertyGroup>
-  </Target>
+
 </Project>

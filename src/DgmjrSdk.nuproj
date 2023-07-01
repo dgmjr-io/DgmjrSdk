@@ -24,6 +24,7 @@
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <IncludeInSolutionFile>true</IncludeInSolutionFile>
         <DevelopmentDependency>true</DevelopmentDependency>
+        <NoWarn>$(NoWarn);MSB4011</NoWarn>
     </PropertyGroup>
     <ItemGroup>
         <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />

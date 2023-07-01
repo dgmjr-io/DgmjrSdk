@@ -10,10 +10,6 @@
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <Target Name="SetPackageProjectUrl" BeforeTargets="GetPackageMetadata" AfterTargets="PrepareGitConstants">
-    <PropertyGroup>
-      <PackageProjectUrl>https://docs.dgmjr.io/$([System.IO.Path]::GetFileNameWithoutExtension('$(RepositoryUrl)'))</PackageProjectUrl>
-    </PropertyGroup>
-  </Target>
+<Project Condition="'$(PackageProjectUrl_targets)' == ''">
+
 </Project>

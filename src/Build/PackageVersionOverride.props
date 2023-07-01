@@ -12,5 +12,26 @@
 
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageVersionOverride.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+	<PropertyGroup Condition="'$(PackageVersionOverride)' != ''">
+		<PackageVersionOverride_props>Imported</PackageVersionOverride_props>
+		<MinVerVersionOverride Condition="'$(MinVerVersionOverride)' == ''">$(PackageVersionOverride)</MinVerVersionOverride>
+		<AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</AssemblyVersion>
+		<Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
+		<PackageVersion>$(PackageVersionOverride)</PackageVersion>
+	</PropertyGroup>
+    <PropertyGroup>
+		<GetPackageMetadataDependsOn>
+			$(GetPackageMetadataDependsOn);
+			GetPackageVersionOverride;
+		</GetPackageMetadataDependsOn>
+		<GetPackageVersionDependsOn>
+			$(GetPackageVersionDependsOn);
+			GetPackageVersionOverride;
+		</GetPackageVersionDependsOn>
+		<InjectThisAssemblyProjectDependsOn>
+			$(InjectThisAssemblyProjectDependsOn);
+			GetPackageVersion;
+			GetPackageMetadata;
+		</InjectThisAssemblyProjectDependsOn>
+    </PropertyGroup>
 </Project>

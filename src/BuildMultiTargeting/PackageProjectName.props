@@ -10,11 +10,6 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <ItemGroup>
-    <PackageFile 
-      Include="$(MSBuildProjectDirectory)/$(MSBuildProjectName).props" 
-      PackagePath="build/$(MSBuildProjectName).props" 
-      Condition="Exists('$(MSBuildProjectDirectory)/$(MSBuildProjectName).props')" />
-  </ItemGroup>
+<Project Condition="'$(x)' == ''">
+
 </Project>

@@ -14,6 +14,6 @@
 <Project>
 	<PropertyGroup>
 		<Configurations>Local;Debug;Staging;Release;Testing</Configurations>
-    <Configuration Condition="'$(Configuration)' == ''">Local</Configuration>
+        <Configuration Condition="'$(Configuration)' == ''">Local</Configuration>
 	</PropertyGroup>
 </Project>

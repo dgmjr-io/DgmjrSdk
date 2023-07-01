@@ -10,20 +10,6 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-	<PropertyGroup>
-		<Title Condition="'$(Title)' == ''">$(PackageId)</Title>
-    <Description Condition="'$(Description)' == ''">A package for $(PackageId)</Description>
-    <Summary Condition="'$(Summary)' == ''">$(Description)</Summary>
-	</PropertyGroup>
-	<Target Name="EnsureRepositoryUrl" AfterTargets="GetPackageMetadata">
-		<ItemGroup>
-			<PackageMetadata Update="$(PackageId)" RepositoryUrl="$(RepositoryUrl)" Condition="'%(PackageMetadata.RepositoryUrl)' == ''" />
-			<PackageMetadata Update="$(PackageId)" RepositoryUrl="$(GitRepositoryUrl)" Condition="'%(PackageMetadata.RepositoryUrl)' == ''" />
-		</ItemGroup>
-	</Target>
+<Project Condition="'$(PackageMetadata_targets)' == ''">
 
-  <Target Name="SetLastMinutePackageMetadata" BeforeTargets="GetPackageMetadata">
-
-  </Target>
 </Project>

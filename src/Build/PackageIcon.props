@@ -11,5 +11,5 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageIcon.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+	<Import Project="../BuildMultiTargeting/PackageIcon.props" Condition="('$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true') And '$(PackageIcon_props)' == ''" />
 </Project>

@@ -11,5 +11,25 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageMetadata.props" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+  <PropertyGroup>
+    <PackageMetadata_props>Imported</PackageMetadata_props>
+    <PackageId Condition="'$(PackageId)' == ''">$(MSBuildProjectName)</PackageId>
+    <Company Condition="'$(Company)' == ''">DGMJR-IO</Company>
+    <Product Condition="'$(Product)' == ''">DGMJR-IO Core Libraries</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <DebugType>portable</DebugType>
+    <IsPackagingFile>true</IsPackagingFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <EmitNuspec>true</EmitNuspec>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GetPackageMetadataDependsOn>
+      $(GetPackageMetadataDependsOn);
+      SetLastMinutePackageMetadata;
+    </GetPackageMetadataDependsOn>
+  </PropertyGroup>
 </Project>

@@ -11,12 +11,6 @@
 -->
 
 <Project>
-    <PropertyGroup>
-        <NoWarn>
-            $(NoWarn);
-            MSB4011;
-        </NoWarn>
-    </PropertyGroup>
     <Import Project="./Build/AAGitRoot.props" />
     <Import Project="./Build/ADefaultBuildConfiguration.props" />
     <Import Project="./Build/AssemblySigning.props" />

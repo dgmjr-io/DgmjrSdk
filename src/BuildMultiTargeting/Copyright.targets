@@ -10,8 +10,9 @@
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project> 
+<Project Condition="'$(Copyright_targets)' == ''">
  <PropertyGroup>
+    <Copyright_targets>Imported</Copyright_targets>
     <GetPackageMetadataDependsOn>
       $(GetPackageMetadataDependsOn);
       SetPackageCopyright

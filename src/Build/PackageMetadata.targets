@@ -11,5 +11,20 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageMetadata.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+	<PropertyGroup>
+		<PackageMetadata_targets>Imported</PackageMetadata_targets>
+		<Title Condition="'$(Title)' == ''">$(PackageId)</Title>
+		<Description Condition="'$(Description)' == ''">A package for $(PackageId)</Description>
+		<Summary Condition="'$(Summary)' == ''">$(Description)</Summary>
+	</PropertyGroup>
+	<Target Name="EnsureRepositoryUrl" AfterTargets="GetPackageMetadata">
+		<ItemGroup>
+			<PackageMetadata Update="$(PackageId)" RepositoryUrl="$(RepositoryUrl)" Condition="'%(PackageMetadata.RepositoryUrl)' == ''" />
+			<PackageMetadata Update="$(PackageId)" RepositoryUrl="$(GitRepositoryUrl)" Condition="'%(PackageMetadata.RepositoryUrl)' == ''" />
+		</ItemGroup>
+	</Target>
+
+  <Target Name="SetLastMinutePackageMetadata" BeforeTargets="GetPackageMetadata">
+
+  </Target>
 </Project>

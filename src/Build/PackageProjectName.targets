@@ -11,5 +11,11 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageProjectName.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+	<PropertyGroup><PackageProjectName_targets>Imported</PackageProjectName_targets></PropertyGroup>
+	<ItemGroup>
+	<PackageFile 
+		Include="$(MSBuildProjectDirectory)/$(MSBuildProjectName).targets" 
+		PackagePath="build/$(MSBuildProjectName).targets" 
+		Condition="Exists('$(MSBuildProjectDirectory)/$(MSBuildProjectName).targets')" />
+	</ItemGroup>
 </Project>

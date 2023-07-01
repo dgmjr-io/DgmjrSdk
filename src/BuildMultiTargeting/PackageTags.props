@@ -10,15 +10,6 @@
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
- <PropertyGroup>
-    <GetPackageMetadataDependsOn>
-      $(GetPackageMetadataDependsOn);
-      SetPackageTags
-    </GetPackageMetadataDependsOn>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageTag Include="dgmjr" />
-    <PackageTag Include="dgmjr-io" />
-  </ItemGroup>
+<Project Condition="'$(PackageTags_props)' == ''">
+
 </Project>

@@ -10,18 +10,6 @@
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-	<PropertyGroup Condition="'$(PackageVersionOverride)' != ''">
-      <MinVerVersionOverride Condition="'$(MinVerVersionOverride)' == ''">$(PackageVersionOverride)</MinVerVersionOverride>
-      <AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</AssemblyVersion>
-      <Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
-      <PackageVersion>$(PackageVersionOverride)</PackageVersion>
-	</PropertyGroup>
-    <PropertyGroup>
-      <InjectThisAssemblyProjectDependsOn>
-        $(InjectThisAssemblyProjectDependsOn);
-        GetPackageVersion;
-        GetPackageMetadata;
-      </InjectThisAssemblyProjectDependsOn>
-    </PropertyGroup>
+<Project Condition="'$(PackageVersionOverride_props)' == ''">
+
 </Project>

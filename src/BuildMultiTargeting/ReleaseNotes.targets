@@ -10,11 +10,6 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <Target Name="SetReleaseNotesUrl" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="GitInfo">
-    <PropertyGroup>
-      <RepositoryName>$([System.IO.Path]::GetFileNameWithoutExtension('$(GitRepositoryUrl)'))</RepositoryName>
-      <PackageReleaseNotes>https://github.com/dgmjr-io/$(RepositoryName)/releases/tag/v$(PackageVersion)</PackageReleaseNotes>
-    </PropertyGroup>
-  </Target>
+<Project Condition="'$(ReleaseNotes_targets)' == ''">
+
 </Project>

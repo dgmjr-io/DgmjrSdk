@@ -11,5 +11,16 @@
 -->
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageIcon.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+	<Target Name="EnsurePackageIcon" BeforeTargets="GetPackageContents" Condition="'$(IsInnerBuild)' == 'false' And' $(PackageIcon_targets)' == ''">
+	<PropertyGroup>
+		<PackageIcon_targets>Imported</PackageIcon_targets>
+		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIcon>
+		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIcon>
+		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIcon>
+		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildThisFileDirectory)../Assets/icon.png')">$(MSBuildThisFileDirectory)../Assets/icon.png</PackageIcon>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageFile Include="$(PackageIcon)" Condition="Exists($(PackageIcon))" PackagePath="icon.png" Pack="true" />
+	</ItemGroup>
+	</Target>
 </Project>

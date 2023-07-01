@@ -10,11 +10,6 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <ItemGroup>
-    <PackageFile 
-      Include="$(MSBuildProjectDirectory)/$(MSBuildProjectName).targets" 
-      PackagePath="build/$(MSBuildProjectName).targets" 
-      Condition="Exists('$(MSBuildProjectDirectory)/$(MSBuildProjectName).targets')" />
-  </ItemGroup>
+<Project Condition="'$(PackageProjectName_targets)' == ''">
+
 </Project>

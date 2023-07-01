@@ -10,11 +10,6 @@
       License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <PropertyGroup>
-    <GetPackageMetadataDependsOn>
-      $(GetPackageMetadataDependsOn);
-      SetPackageProjectUrl
-    </GetPackageMetadataDependsOn>
-  </PropertyGroup>
+<Project Condition="'$(PackageProjectUrl_props)' == ''">
+
 </Project>

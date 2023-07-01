@@ -12,5 +12,11 @@
 
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageTags.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+  <Target Name="SetPackageTags" BeforeTargets="GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun" Condition="'$(PackageTags_targets)' == ''">
+    <PropertyGroup>
+      <PackageTags_targets>Imported</PackageTags_targets>
+      <PackageTags>@(PackageTag->Distinct(), ' ')</PackageTags>
+      <PackageTags>$(PackageTags.ToLower())</PackageTags>
+    </PropertyGroup>
+  </Target>
 </Project>

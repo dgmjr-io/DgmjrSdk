@@ -12,5 +12,12 @@
 
 
 <Project>
-	<Import Project="../BuildMultiTargeting/PackageProjectUrl.targets" Condition="'$(IsMultiTargeting)' != 'true' Or '$(IsInnerBuild)' != 'true'" />
+  <PropertyGroup>
+    <PackageProjectUrl_targets>Imported</PackageProjectUrl_targets>
+  </PropertyGroup>
+  <Target Name="SetPackageProjectUrl" BeforeTargets="GetPackageMetadata" AfterTargets="PrepareGitConstants">
+    <PropertyGroup>
+      <PackageProjectUrl>https://docs.dgmjr.io/$([System.IO.Path]::GetFileNameWithoutExtension('$(RepositoryUrl)'))</PackageProjectUrl>
+    </PropertyGroup>
+  </Target>
 </Project>
