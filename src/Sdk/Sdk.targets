@@ -18,8 +18,5 @@
     <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
     <IsMultiTargeting>true</IsMultiTargeting>
   </PropertyGroup>
-  <!-- <Import Project="$(MSBuildToolsPath)/Microsoft.Common.CrossTargeting.Targets" Condition="'$(ImportByWildcardBeforeMicrosoftCommonCrossTargetingTargets)' == '' And '$(IsCrossTargetingBuild)' == 'true'" />
-  <Import Project="$(MSBuildToolsPath)/Microsoft.Common.CurrentVersion.Targets" Condition="'$(ImportByWildcardBeforeMicrosoftCommonTargets)' == '' And '$(IsCrossTargetingBuild)' != 'true'" /> -->
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.targets" />
-  <Import Project="$(MSBuildThisFileDirectory)/../BuildMultitargeting/*.targets" Condition="'$(IsInnerBuild)' != 'true' Or '$(IsMultiTargeting)' != 'true'" />
 </Project>

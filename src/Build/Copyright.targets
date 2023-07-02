@@ -11,7 +11,7 @@
 -->
 
 <Project> 
-  <PropertyGroup>
+ <PropertyGroup>
     <Copyright_targets>Imported</Copyright_targets>
     <GetPackageMetadataDependsOn>
       $(GetPackageMetadataDependsOn);
@@ -22,4 +22,5 @@
     <PropertyGroup>
       <Copyright Condition="'$(Copyright)' == ''">© 2022-$([System.DateTime]::Now.Year) $(Owners), All Rights Reserved</Copyright>
     </PropertyGroup>
-  </Target></Project>
+  </Target>
+</Project>

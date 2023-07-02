@@ -16,5 +16,4 @@
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
   </PropertyGroup>
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.props" />
-  <Import Project="$(MSBuildThisFileDirectory)/../BuildMultitargeting/*.props" />
 </Project>

@@ -11,15 +11,14 @@
 -->
 
 <Project>
-  <PropertyGroup>
-    <PackageReadme_targets>Imported</PackageReadme_targets>
-  </PropertyGroup>
-	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" >
-    <PropertyGroup>
+	<PropertyGroup>
       <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
       <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
       <PackageReadmeFile>$(MSBuildProjectName).README.md</PackageReadmeFile>
       <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
+	</PropertyGroup>
+	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" >
+    <PropertyGroup>
       <GeneratedPackageReadmeFileContents>
         ---;
         title: $(Title);
@@ -31,16 +30,10 @@
         type: readme;        authors:;
           @(PackageAuthor->'  - %(Initials);');
         description: $(Description);
-        categories:;
-          - documentation;
-          - readme;
-        tags:;
-          - readme;
-          - $(MSBuildProjectName);
-          @(PackageTag->'  - %(Identity)');
         keywords:;
           - $(MSBuildProjectName);
           @(PackageTag->'  - %(Identity)');
+        type: readme
         ---;
         ;
         # $(MSBuildProjectName) README;
