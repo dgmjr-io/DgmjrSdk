@@ -35,4 +35,9 @@
     </ItemGroup>
     <Target Name="PrepareGitConstants" />
     <Target Name="GitInfo" />
+    <ItemGroup>
+        <PackageTag Include="sdk" />
+        <PackageTag Include="build-defaults" />
+        <PackageTag Include="dgmjrsdk" />
+    </ItemGroup>
 </Project>

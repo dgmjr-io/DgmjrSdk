@@ -20,37 +20,46 @@
 	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" >
     <PropertyGroup>
       <GeneratedPackageReadmeFileContents>
-        ---;
-        title: $(Title);
-        lastmod: $(Date:yyyy-MM-dd-HH:mm:ss);
-        date: $(Date:yyyy-MM-dd-HH:mm:ss);
-        license: $(PackageLicenseExpression);
-        slug: $(MSBuildProjectName)-readme;
-        version: $(PackageVersion);
-        type: readme;        authors:;
-          @(PackageAuthor->'  - %(Initials);');
-        description: $(Description);
-        keywords:;
-          - $(MSBuildProjectName);
-          @(PackageTag->'  - %(Identity)');
-        type: readme
-        ---;
-        ;
-        # $(MSBuildProjectName) README;
-        ;
-        This file is generated from the contents of the project file.;
-        ;
-        ## Package Description;
-        ;
-        $(Description);
-
+---;
+title: $(Title);
+lastmod: $(Date:yyyy-MM-dd-HH:mm:ss);
+date: $(Date:yyyy-MM-dd-HH:mm:ss);
+license: $(PackageLicenseExpression);
+slug: $(MSBuildProjectName)-readme;
+version: $(PackageVersion);
+type: readme;        authors:;
+  @(PackageAuthor->'  - %(Initials);');
+description: $(Description);
+keywords:;
+  - $(MSBuildProjectName);
+  @(PackageTag->'  - %(Identity)');
+type: readme
+---;
+;
+# $(MSBuildProjectName) README;
+;
+This file is generated from the contents of the project file.;
+;
+## Package Description;
+;
+$(Description);
+;
+## Getting Started;
+;
+## Prerequisites;
+;
+## Installation;
+;
+## Usage;
+;
+## Contributing;
+;
+## Versioning;
       </GeneratedPackageReadmeFileContents>
     </PropertyGroup>
 
-
-
     <Warning Condition="!Exists('$(PackageReadmeFileHintPath)')"
-      Code="README.MD_NOT_FOUND"
+      Code="READMENOTFOUND001"
       File="$(MSBuildProjectDirectory)/README.md"
       Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
 	</Target>
@@ -83,7 +92,7 @@
 
 		<ItemGroup>
       <PackageReadmeFile Include="$(PackageReadmeFilePath)" Visible="true" Link="docs/README.md" />
-      <!-- <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" /> -->
+      <Content Remove="@(Content->WithMetadataValue('PackagePath', 'README.md'))" />
 			<PackageFile Include="$(GeneratedPackageReadmeFileHintPath)" PackagePath="$(PackageReadmeFile)" Condition="Exists($(GeneratedPackageReadmeFileHintPath))" Visible="true" Link="docs/README.md" />
 		</ItemGroup>
   </Target>

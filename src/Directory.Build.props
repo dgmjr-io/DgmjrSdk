@@ -23,6 +23,7 @@
     <Import Project="./Build/CopyLocalLockFileAssemblies.props" />
     <Import Project="./Build/PackageIcon.props" />
     <Import Project="./Build/PackageMetadata.props" />
+    <Import Project="./Build/PackageTags.props" />
     <Import Project="./Build/Deterministic.props" />
     <Import Project="./Build/EmbeddedResourcesStringExtensions.props" />
     <Import Project="./Build/EmitNuspec.props" />

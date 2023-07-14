@@ -14,12 +14,13 @@
 <Project>
 	<Target Name="GetPackageVersionOverride" BeforeTargets="GetPackageVersion;GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun">
 		<PropertyGroup>
-			<PackageVersionOverride_targets>Imported</PackageVersionOverride_targets></PropertyGroup>
-			<PropertyGroup Condition="'$(PackageVersionOverride)' != ''">
-				<MinVerVersionOverride>$(PackageVersionOverride)</MinVerVersionOverride>
-				<AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</AssemblyVersion>
-				<Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
-				<PackageVersion>$(PackageVersionOverride)</PackageVersion>
+			<PackageVersionOverride_targets>Imported</PackageVersionOverride_targets>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(PackageVersionOverride)' != ''">
+			<MinVerVersionOverride>$(PackageVersionOverride)</MinVerVersionOverride>
+			<AssemblyVersion>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</AssemblyVersion>
+			<Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
+			<PackageVersion>$(PackageVersionOverride)</PackageVersion>
 		</PropertyGroup>
 	</Target>
 	<!-- <PropertyGroup>

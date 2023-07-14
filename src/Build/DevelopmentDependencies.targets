@@ -18,7 +18,7 @@
       Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local')" 
       TreatAsPackageReference="true" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')" 
       IncludeAssets="Analyzers"

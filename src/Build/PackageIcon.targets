@@ -11,15 +11,20 @@
 -->
 
 <Project>
-	<Target Name="EnsurePackageIcon" BeforeTargets="GetPackageContents">
 	<PropertyGroup>
-		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIcon>
-		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIcon>
-		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIcon>
-		<PackageIcon Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildThisFileDirectory)../Assets/icon.png')">$(MSBuildThisFileDirectory)../Assets/icon.png</PackageIcon>
+		<PackageIconFile Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIconFile>
+		<PackageIconFile Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIconFile>
+		<PackageIconFile Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIconFile>
+		<PackageIconFile Condition="'$(PackageIcon)' == '' And !Exists($(PackageIcon)) And Exists('$(MSBuildThisFileDirectory)../Assets/icon.png')">$(MSBuildThisFileDirectory)../Assets/icon.png</PackageIconFile>
 	</PropertyGroup>
+	<Target Name="EnsurePackageIcon" BeforeTargets="GetPackageContents">
 	<ItemGroup>
-		<PackageFile Include="$(PackageIcon)" Condition="Exists($(PackageIcon))" PackagePath="Icon.png" Pack="true" />
+		<PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png'))" PackagePath="Icon.png" Pack="true" />
+		<PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg'))" PackagePath="Icon.jpeg" Pack="true" />
+		<PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg'))" PackagePath="Icon.jpg" Pack="true" />
 	</ItemGroup>
+	<PropertyGroup>
+		<PackageIconFile>@(PackageFile->'%(PackagePath)')</PackageIconFile>
+	</PropertyGroup>
 	</Target>
 </Project>
