@@ -1,7 +1,8 @@
 ---
+
 title: DGMJR-IO SDK
 authors:
-  - dgmjr
+- dgmjr
 type: readme
 slug: dgmjr-io-sdk
 project: shared
@@ -10,7 +11,7 @@ version: 0.0.1
 lastmod: 2023-07-14T07:49:58.705Z
 date: 2023-07-14T07:49:16.139Z
 license: MIT
----
+------------
 
 # DGMJR-IO SDK
 
