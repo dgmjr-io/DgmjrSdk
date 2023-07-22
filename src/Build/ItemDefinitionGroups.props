@@ -13,6 +13,9 @@
 <Project>
   <ItemDefinitionGroup>
       <Using Visible="false" />
+      <PackageTag Visible="false" />
+      <Author Visible="false" />
+      <Owner Visible="false" />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <PackageReference>
@@ -33,7 +36,7 @@
 		</ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
-    <SourceGenerator />
+    <SourceGenerator Visible="false" />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <UsingsPackageReference>

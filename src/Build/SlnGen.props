@@ -17,7 +17,7 @@
   <ItemGroup>
     <SlnGenCustomProjectTypeGuid Include=".aproj" ProjectTypeGuid="4cd4fd5b-0f23-4623-ba3f-b31cc4ab93ef" />
     <SlnGenCustomProjectTypeGuid Include=".cblproj" ProjectTypeGuid="06141aaa-2f82-4232-a3ef-dcb2027764fd" />
-    <SlnGenCustomProjectTypeGuid Include=".csproj" ProjectTypeGuid="9A19103F-16F7-4668-BE54-9A1E7A4F7556" />
+    <SlnGenCustomProjectTypeGuid Include=".csproj" ProjectTypeGuid="FAE04EC0-301F-11D3-BF4B-00C04F79EFBC" />
     <SlnGenCustomProjectTypeGuid Include=".cstestproj" ProjectTypeGuid="FAE04EC0-301F-11D3-BF4B-00C04F79EFBC" />
     <SlnGenCustomProjectTypeGuid Include=".dbproj" ProjectTypeGuid="ac2f40b5-b3bd-4227-938a-6ecfb8c6e06c" />
     <SlnGenCustomProjectTypeGuid Include=".dtproj" ProjectTypeGuid="64c8a15c-207e-459d-951d-ad7e7dac7bcf" />

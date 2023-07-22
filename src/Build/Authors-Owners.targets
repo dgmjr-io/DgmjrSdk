@@ -22,8 +22,8 @@
       <DistinctOwnersFinal Include="@(DistinctOwnersWithEmail->'%(Identity) &lt;%(Email)&gt;');@(DistinctOwnersNoEmail)" />
     </ItemGroup>
     <PropertyGroup>
-      <Authors>@(DistinctAuthorsFinal, @(DistinctAuthorsFinal->Count() == 2 ? ' & ' : ', '))</Authors> 
-      <Owners>@(DistinctOwnersFinal, @(DistinctOwnersFinal->Count() == 2 ? ' & ' : ', '))</Owners> 
+      <Authors>@(DistinctAuthorsFinal, @(DistinctAuthorsFinal->Count() == 2 ? ' %26 ' : ', '))</Authors>
+      <Owners>@(DistinctOwnersFinal, @(DistinctOwnersFinal->Count() == 2 ? ' %26 ' : ', '))</Owners>
     </PropertyGroup>
     <Message Text="DistinctOwnersFinal: @(DistinctOwnersFinal)" />
     <Message Text="DistinctAuthorsFinal: @(DistinctAuthorsFinal)" />
