@@ -22,17 +22,11 @@
       <DistinctOwnersFinal Include="@(DistinctOwnersWithEmail->'%(Identity) &lt;%(Email)&gt;');@(DistinctOwnersNoEmail)" />
     </ItemGroup>
     <PropertyGroup>
-      <Authors>@(DistinctAuthorsFinal, ', ')</Authors> 
-      <Owners>@(DistinctOwnersFinal, ', ')</Owners> 
+      <Authors>@(DistinctAuthorsFinal, @(DistinctAuthorsFinal->Count() == 2 ? ' & ' : ', '))</Authors> 
+      <Owners>@(DistinctOwnersFinal, @(DistinctOwnersFinal->Count() == 2 ? ' & ' : ', '))</Owners> 
     </PropertyGroup>
     <Message Text="DistinctOwnersFinal: @(DistinctOwnersFinal)" />
     <Message Text="DistinctAuthorsFinal: @(DistinctAuthorsFinal)" />
-    <ItemGroup>
-      <!-- <DistinctAuthors Remove="@(DistinctAuthors)" />
-      <DistinctOwners Remove="@(DistinctOwners)" />
-      <DistinctAuthorsWithEmails Remove="@(DistinctAuthorsWithEmails)" />
-      <DistinctOwnersWithEmails Remove="@(DistinctOwnersWithEmails)" /> -->
-    </ItemGroup>
   </Target>
 
 </Project>

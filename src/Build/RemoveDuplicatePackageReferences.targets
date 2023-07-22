@@ -15,8 +15,9 @@
 	<PropertyGroup>
 		<RestoreDependsOn>RemoveDuplicatePackageReferences;$(RestoreDependsOn)</RestoreDependsOn>
 		<PackDependsOn>RemoveDuplicatePackageReferences;$(PackDependsOn)</PackDependsOn>
+		<BuildDependsOn>RemoveDuplicatePackageReferences;$(BuildDependsOn)</BuildDependsOn>
 	</PropertyGroup>
-	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="Restore;Pack">
+	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="Build;Restore;Pack">
 		<RemoveDuplicates Inputs="@(PackageReference)">
 			<Output TaskParameter="Filtered" ItemName="DistinctPackageReference" />
 		</RemoveDuplicates>

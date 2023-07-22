@@ -20,14 +20,14 @@
     <Using Include="System.Convert" Static="true" />
     <Using Include="System.DateTime" Alias="datetime" />
     <Using Include="System.DateTime" Static="true" />
-    <Using Include="System.DateOnly" Alias="date" Condition="$(DefinedConstants.Contains('NET7_0_OR_GREATER'))" />
-    <Using Include="System.TimeOnly" Alias="time" Condition="$(DefinedConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.DateOnly" Alias="date" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.TimeOnly" Alias="time" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
     <Using Include="System.Diagnostics.CodeAnalysis" />
     <Using Include="System.Diagnostics" />
     <Using Include="System.Environment" Alias="env" />
     <Using Include="System.Environment" Static="true" />
     <Using Include="System.Guid" Alias="guid" />
-    <Using Include="System.Int128" Alias="vlong" Condition="$(DefinedConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Int128" Alias="vlong" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
     <Using Include="System.IO" />
     <Using Include="System.Linq.Expressions" />
     <Using Include="System.Linq" />
@@ -41,7 +41,7 @@
     <Using Include="System.Threading" />
     <Using Include="System.TimeSpan" Alias="duration" />
     <Using Include="System.Type" Alias="type" />
-    <Using Include="System.UInt128" Alias="uvlong" Condition="$(DefinedConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.UInt128" Alias="uvlong" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
     <Using Include="System.UriKind" Static="true" />
     <Using Include="System" />
   </ItemGroup>

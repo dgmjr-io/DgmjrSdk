@@ -17,7 +17,7 @@
       <PackageReadmeFile>$(MSBuildProjectName).README.md</PackageReadmeFile>
       <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(IntermediateOutputPath)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
 	</PropertyGroup>
-	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" >
+	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" Condition="'$(IsOuterBuild)' != 'false'">
     <PropertyGroup>
       <GeneratedPackageReadmeFileContents>
 ---;
@@ -64,7 +64,7 @@ $(Description);
       Text="No readme file exists for the package '$(MSBuildProjectName)'; using the generated backup README.md file." />
 	</Target>
 
-  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;CheckReadmeExists;SetPackageDescription">
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;CheckReadmeExists;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false'">
     <!-- Fallback to using the package's description as the README.md contents -->
     <ItemGroup Condition="!Exists('$(PackageReadmeFileHintPath)')">
       <ReadmeFileContents Include="$(GeneratedPackageReadmeFileContents);$(BuildMessage)" Visible="false" />

@@ -25,6 +25,7 @@
         <IncludeInSolutionFile>true</IncludeInSolutionFile>
         <DevelopmentDependency>true</DevelopmentDependency>
         <NoWarn>$(NoWarn);MSB4011</NoWarn>
+        <PackageIcon>Icon.png</PackageIcon>
     </PropertyGroup>
     <ItemGroup>
         <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />

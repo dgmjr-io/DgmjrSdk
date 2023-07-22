@@ -13,4 +13,5 @@
 
 <Project>
     <Import Project="./Build/*.targets" />
+	<Import Project="../../../../Build/PushToAzureBlobs.targets" />
 </Project>
