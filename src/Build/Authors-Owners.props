@@ -12,8 +12,8 @@
 
 <Project>
   <ItemGroup>
-    <Author Include="David G. Moore, Jr." Email="david@dgmjr.io" />
-    <Owner Include="David G. Moore, Jr." Email="david@dgmjr.io" />
+    <Author Include="David G. Moore, Jr." Email="david@dgmjr.io" Initials="dgmjr" />
+    <Owner Include="David G. Moore, Jr." Email="david@dgmjr.io" Initials="dgmjr" />
   </ItemGroup>
 
   <PropertyGroup>

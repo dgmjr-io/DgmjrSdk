@@ -27,7 +27,7 @@
     <Using Include="System.Environment" Alias="env" />
     <Using Include="System.Environment" Static="true" />
     <Using Include="System.Guid" Alias="guid" />
-    <Using Include="System.Int128" Alias="vlong" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Int128" Alias="vlong /* very long */" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
     <Using Include="System.IO" />
     <Using Include="System.Linq.Expressions" />
     <Using Include="System.Linq" />
@@ -41,8 +41,16 @@
     <Using Include="System.Threading" />
     <Using Include="System.TimeSpan" Alias="duration" />
     <Using Include="System.Type" Alias="type" />
-    <Using Include="System.UInt128" Alias="uvlong" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.UInt128" Alias="uvlong /* unsigned very long */" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
     <Using Include="System.UriKind" Static="true" />
     <Using Include="System" />
+    <Using Include="System.Text.RegularExpressions" />
+    <Using Include="System.Text.RegularExpressions.RegexOptions" Static="true" />
+    <Using Include="System.Text.RegularExpressions.Regex" Alias="REx" />
+    <Using Include="System.Text.RegularExpressions.Regex" Alias="Rx" />
+    <Using Include="System.Text.RegularExpressions.Regex" Alias="RegX" />
+    <Using Include="System.Text.RegularExpressions.Regex" Alias="Regx" />
+    <Using Include="System.Text.RegularExpressions.Regex" Static="true" />
+    <Using Include="System.Text.RegularExpressions.RegexOptions" Alias="Rxo" />
   </ItemGroup>
 </Project>
