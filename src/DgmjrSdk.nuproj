@@ -33,7 +33,8 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
-        <PackageFile Include="./Build/*" PackagePath="Build/%(Filename)%(Extension)" />
+        <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
+        <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
         <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
         <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
         <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
