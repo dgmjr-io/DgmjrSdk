@@ -1,7 +1,8 @@
 ---
+
 title: DGMJR-IO SDK
 authors:
-  - dgmjr
+- dgmjr
 type: readme
 slug: dgmjr-io-sdk
 project: shared
@@ -10,7 +11,7 @@ version: 0.0.1
 lastmod: 2023-07-14T07:49:58.705Z
 date: 2023-07-14T07:49:16.139Z
 license: MIT
----
+------------
 
 # DGMJR-IO SDK
 
@@ -39,6 +40,7 @@ And make sure to add the following to your `global.json` file:
 ```
 
 Then compile and run your project and it will have all the DGMJR-IO SDK defaults.  These include the following:
+
 ## Item Definitions
 
 * `Author` - with `Initials` and `Email` metadata, which populate the `Authors` property of the MSBuild (and NuGet) project
@@ -47,6 +49,7 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 * `SourceCodeReference`, which behaves just like a `PackageReference` only it just pulls the `ContentFiles` and `Build` assets from the package
 * `SourceGenerator`, which behaves just like a `PackageReference` only it just pulls the `Analyzers` and `Build` assets from the package
 * `NoWarn`, which adds all instances to the `NoWarn` property
+
 ## Targets
 
 * `EnsurePackageReadme`, which ensures the package contains a `README.md` file at the root; if not, it generates one from the `Title` and `Description` properties and embeds it into the NuGet package
@@ -56,6 +59,7 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 * `PackageProjectName.props` - a file that packages any file in the root directory named `[MSBuildProjectName].props` into the `build` folder of the NuGet package
 
 ## Properties
+
 * `PackageVersionOverride`, which allows you to override the package version calculated by `MinVer`
 * A default `UserSecrets` property
 
@@ -64,3 +68,4 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 * Assembly signing - ensures the assembly is signed by a key located in the `Assets` folder
 * TestingLocal - Overrides the `AssemblyVersion` attribute to always be `0.0.1-Local` when the `Configuration` is set to `Local`
 * 
+
