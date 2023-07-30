@@ -1,7 +1,8 @@
 ---
+
 title: DGMJR-IO SDK
 authors:
-  - dgmjr
+- dgmjr
 type: readme
 slug: dgmjr-io-sdk
 project: shared
@@ -11,12 +12,12 @@ lastmod: 2023-07-14T07:49:58.705Z
 date: 2023-07-14T07:49:16.139Z
 license: MIT
 keywords:
-  - dotnet
-  - sdk
-  - dgmjrsdk
-  - defaults
-  - default-values
----
+- dotnet
+- sdk
+- dgmjrsdk
+- defaults
+- default-values
+----------------
 
 # DGMJR-IO SDK
 
@@ -80,3 +81,4 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 * TestingLocal - Overrides the `AssemblyVersion` attribute to always be `0.0.1-Local` when the `Configuration` is set to `Local`
 * [`Icon.png`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/Icon.png), a default icon file, which will be applied to any package that doesn't have one.
 * [`NuGetizer`](https://github.com/devlooped/nugetizer) enabled by default
+
