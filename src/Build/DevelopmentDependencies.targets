@@ -11,36 +11,36 @@
 -->
 <Project>
   <ItemGroup>
-    <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')" 
+    <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')"
       Condition="('$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local')" />
-      
-    <ProjectReference Include="@(LocalCodeGenerator->'%(ProjectPath)')" 
-      Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local')" 
+
+    <ProjectReference Include="@(LocalCodeGenerator->'%(ProjectPath)')"
+      Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local')"
       TreatAsPackageReference="true" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')" 
+    <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')"
       IncludeAssets="Analyzers"
       PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')" 
+    <PackageReference Include="@(LocalCodeGenerator->'%(Identity)')"
       Condition="('$(Configuration)' != 'Testing' And '$(Configuration)' != 'Local')"
       IncludeAssets="Analyzers"
       PrivateAssets="All" />
-      
-    <ProjectReference Include="@(LocalCodeGenerator->'%(ProjectPath)')" 
-      Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local')" 
+
+    <ProjectReference Include="@(LocalCodeGenerator->'%(ProjectPath)')"
+      Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local')"
       TreatAsPackageReference="true"
-      OutputItemType="Analyzer" 
+      OutputItemType="Analyzer"
       ReferenceOutputAssembly="false"  />
   </ItemGroup>
 
       <!-- <ProjectReference Include="@(DevelopmentDependency)"
-      Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local') And '%(DevelopmentDependency.IsCodeGenerator)' == 'true'" 
-      TreatAsPackageReference="true" 
-      OutputItemType="Analyzer" 
+      Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local') And '%(DevelopmentDependency.IsCodeGenerator)' == 'true'"
+      TreatAsPackageReference="true"
+      OutputItemType="Analyzer"
       ReferenceOutputAssembly="false" /> -->
 </Project>

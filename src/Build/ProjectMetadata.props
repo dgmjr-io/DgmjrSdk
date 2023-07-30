@@ -17,7 +17,7 @@
     <AssemblyTitle Condition="'$(AssemblyTitle)' == ''">$(MSBuildProjectName)</AssemblyTitle>
     <Title Condition="'$(Title)' == ''">$(AssemblyTitle)</Title>
     <DefaultLanguage>en</DefaultLanguage>
-    <NeutralLanguage>en-US</NeutralLanguage>
+    <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>preview</LangVersion>
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <DebugType>portable</DebugType>

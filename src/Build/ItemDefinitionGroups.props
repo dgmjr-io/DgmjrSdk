@@ -19,7 +19,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <PackageReference>
-    	<!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
       <Pack>true</Pack>
 			<GeneratePathProperty>true</GeneratePathProperty>
       <CopyLocal>true</CopyLocal>
