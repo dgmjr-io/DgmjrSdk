@@ -15,7 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout the repository being compiled
+      uses: actions/checkout@v3
+    - name: Checkout the Packages repository alongside the one being compiled
+      uses: actions/checkout@v3
+      with:
+        repository: dgmjr-io/Packages
     - name: Run setup-dgmjrsdk
       uses: dgmjr-actions/setup-dgmjrsdk@main
       with:
@@ -26,6 +31,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore src/DgmjrSdk.nuproj
     - name: Build
-      run: dotnet build src/DgmjrSdk.nuproj --no-restore -c:Release
+      run: dotnet build src/DgmjrSdk.nuproj --no-restore -c:Release -t:PushGitHub
 #     - name: Test
 #       run: dotnet test --no-build --verbosity normal
