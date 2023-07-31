@@ -17,11 +17,13 @@ jobs:
     steps:
     - name: Checkout the repository being compiled
       uses: actions/checkout@v3
+      with:
+        path: Repo
     - name: Checkout the Packages repository alongside the one being compiled
       uses: actions/checkout@v3
       with:
         repository: dgmjr-io/Packages
-        path: ../../Packages
+        path: Packages
     - name: Run setup-dgmjrsdk
       uses: dgmjr-actions/setup-dgmjrsdk@main
       with:
@@ -30,8 +32,8 @@ jobs:
         git-nuget-endpoint: ${{ vars.GIT_NUGET_ENDPOINT }}
         private-nuget-endpoint: ${{ vars.DGMJR_IO_NUGET_ENDPOINT }}
     - name: Restore dependencies
-      run: dotnet restore src/DgmjrSdk.nuproj
+      run: dotnet restore Repo/src/DgmjrSdk.nuproj
     - name: Build
-      run: dotnet build src/DgmjrSdk.nuproj --no-restore -c:Release -t:PushGitHub
+      run: dotnet build Repo/src/DgmjrSdk.nuproj --no-restore -c:Release -t:PushGitHub
 #     - name: Test
 #       run: dotnet test --no-build --verbosity normal
