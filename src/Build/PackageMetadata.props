@@ -16,6 +16,7 @@
     <PackageId Condition="'$(PackageId)' == ''">$(MSBuildProjectName)</PackageId>
     <Company Condition="'$(Company)' == ''">DGMJR-IO</Company>
     <Product Condition="'$(Product)' == ''">DGMJR-IO Core Libraries</Product>
+    <ContactEmail>dev@dgmjr.io</ContactEmail>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

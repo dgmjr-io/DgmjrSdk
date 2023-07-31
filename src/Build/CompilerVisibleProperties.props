@@ -36,5 +36,7 @@
   <ItemGroup>
     <CompilerVisibleItemMetadata Include="Author" MetadataName="Email" />
     <CompilerVisibleItemMetadata Include="Author" MetadataName="Identity" />
+    <CompilerVisibleItemMetadata Include="Author" MetadataName="Initials" />
+    <CompilerVisibleItemMetadata Include="Author" MetadataName="GitHubId" />
   </ItemGroup>
 </Project>
