@@ -32,8 +32,8 @@
   <!-- Transforms <UsingsPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(UsingsPackageReference)">
-      <IncludeAssets>Build;BuildMultitargeting;BuildTransitive</IncludeAssets>
-      <ExcludeAssets>Runtime;ContentFiles;Native;Compile</ExcludeAssets>
+      <IncludeAssets>Build;BuildMultitargeting;Runtime</IncludeAssets>
+      <ExcludeAssets>ContentFiles;Native;Compile</ExcludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
   </ItemGroup>
