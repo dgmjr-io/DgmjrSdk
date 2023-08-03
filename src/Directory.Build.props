@@ -29,6 +29,7 @@
     <Import Project="./Build/EmitNuspec.props" />
     <Import Project="./Build/EnablePreviewFeatures.props" />
     <Import Project="./Build/MinVer.props" />
+    <Import Project="./Build/PackageVersionOverride.props" />
     <Import Project="./Build/ProjectMetadata.props" />
     <Import Project="./Build/ProjectTypeInfo.props" />
     <Import Project="./Build/SlnGen.props" />
