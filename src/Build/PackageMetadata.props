@@ -26,6 +26,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <EmitNuspec>true</EmitNuspec>
     <ImplicitUsings>enable</ImplicitUsings>
+    <SwaggerTheme>Monokai</SwaggerTheme>
   </PropertyGroup>
   <PropertyGroup>
     <GetPackageMetadataDependsOn>
