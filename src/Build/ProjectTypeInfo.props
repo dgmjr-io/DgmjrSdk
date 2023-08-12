@@ -11,8 +11,13 @@
 -->
 
 <Project>
-  <PropertyGroup>    
+  <PropertyGroup>
     <IsTestProject>@(PackageReference->AnyHaveMetadataValue("Identity", "Microsoft.NET.Test.Sdk"))</IsTestProject>
     <IsSourceProject Condition="'$(IsSourceProject)' == '' And $(MSBuildProjectFullPath.LastIndexOf('/src/')) > $(MSBuildProjectFullPath.LastIndexOf('/tests/'))">true</IsSourceProject>
   </PropertyGroup>
+  <ItemGroup Condition="$(IsTestProject)">
+    <Using Include="Xunit" />
+    <Using Include="FluentAssertions" />
+    <UsingsReference Include="FluentAssertions.Usings" />
+  </ItemGroup>
 </Project>
