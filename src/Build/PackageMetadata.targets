@@ -25,6 +25,7 @@
 			<Description Condition="'$(Description)' == ''">A package for $(PackageId)</Description>
 			<Summary Condition="'$(Summary)' == ''">$(Description)</Summary>
 			<ContactEmail Condition="'$(ContactEmail)' == ''">david@dgmjr.io</ContactEmail>
+			<LicenseExpression Condition="'$(LicenseExpression)' == '' And '$(PackageLicenseExpression)' != ''">$(PackageLicenseExpresion)</LicenseExpression>
 		</PropertyGroup>
 	</Target>
 </Project>
