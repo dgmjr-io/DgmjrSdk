@@ -12,7 +12,7 @@
 
 <Project>
     <!-- <Import Project="./Build/TargetFraneworks.props" /> -->
-    <Import Project="./Build/_aIsMultiTargeting.props" />
+    <Import Project="./Build/AIsMultiTargeting.props" />
     <Import Project="./Build/AAGitRoot.props" />
     <Import Project="./Build/ADefaultBuildConfiguration.props" />
     <Import Project="./Build/AssemblySigning.props" />
