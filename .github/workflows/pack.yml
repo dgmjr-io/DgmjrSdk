@@ -47,6 +47,7 @@ jobs:
         retention-days: 1
         
   push-nuget:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Run setup-dgmjrsdk
@@ -60,7 +61,8 @@ jobs:
       uses: actions/download-artifact@v2.1.1
       with:
         name: DgmjrSdk-NuGetPackage
-    - mame: Publish NuGet to GitHub
+    - name: Publish NuGet to GitHub
+      shell: bash
       run: dotnet nuget push *.nupkg -s:GitHub
 
   
