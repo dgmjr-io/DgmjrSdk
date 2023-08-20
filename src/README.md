@@ -40,7 +40,7 @@ And make sure to add the following to your `global.json` file:
 
 ```json
 "msbuild-sdks":{
-  "DgmjrSdk": "[the-current-version]"
+  "DgmjrSdk": "0.0.1" // (or the current package version)
 }
 ```
 
@@ -72,7 +72,6 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 * All `Include[Whatever]OutputGroup` properties set to `true`
 * [`JustInTimeVersioning`](https://github.com/dgmjr-io/JustInTimeVersioning) enabled
 * [`NuGetPush`](https://github.com/dgmjr-io/NuGetPush) enabled
-* 
 
 # Miscellaneous
 

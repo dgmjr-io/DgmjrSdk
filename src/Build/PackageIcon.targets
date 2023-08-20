@@ -11,11 +11,12 @@
 -->
 
 <Project>
+    <Import Project="PackageIcon.props"  Condition="'$(PackageIcon_props)' == ''" />
 	<PropertyGroup>
 		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIconFile>
 		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIconFile>
 		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIconFile>
-		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildThisFileDirectory)../Assets/Icon.png')">$(MSBuildThisFileDirectory)../Assets/Icon.png</PackageIconFile>
+		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists($(FallbackPackageIconFilePath))">$(FallbackPackageIconFilePath)</PackageIconFile>
 	</PropertyGroup>
 	<Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false'">
 		<!-- copy the icon file from wherever it is to ./Icon.(png/jpg/jpeg) -->
