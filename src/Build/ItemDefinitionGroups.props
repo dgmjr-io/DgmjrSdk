@@ -14,7 +14,10 @@
   <ItemDefinitionGroup>
       <Using Visible="false" />
       <PackageTag Visible="false" />
-      <Author Visible="false" />
+      <Author Visible="false">
+        <Email />
+        <Initials />
+        <GitHub />
       <Owner Visible="false" />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
@@ -23,8 +26,8 @@
       <Pack>true</Pack>
 			<GeneratePathProperty>true</GeneratePathProperty>
       <CopyLocal>true</CopyLocal>
-			<IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Analyzers; Native</IncludeAssets>
-			<ExcludeAssets>ContentFiles</ExcludeAssets>
+			<IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
+			<ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
 		</PackageReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
@@ -37,6 +40,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <SourceGenerator Visible="false" />
+    <IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
+    <ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <UsingsPackageReference>
