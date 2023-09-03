@@ -18,7 +18,12 @@
         <Email />
         <Initials />
         <GitHub />
-      <Owner Visible="false" />
+      </Author>
+      <Owner Visible="false">
+        <Email />
+        <Initials />
+        <GitHub />
+      </Owner>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <PackageReference>
