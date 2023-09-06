@@ -33,6 +33,6 @@
 			<PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg'))">Icon.jpg</PackageIcon>
 			<PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg'))">Icon.jpeg</PackageIcon>
 		</PropertyGroup>
-		<Warning Text="PackageIcon: $(PackageIconFile)" />
+		<Message Text="PackageIcon: $(PackageIconFile)" />
 	</Target>
 </Project>

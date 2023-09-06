@@ -29,8 +29,8 @@
     <PackageReference>
       <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
       <Pack>true</Pack>
-			<GeneratePathProperty>true</GeneratePathProperty>
       <CopyLocal>true</CopyLocal>
+			<GeneratePathProperty>true</GeneratePathProperty>
 			<IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
 			<ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
 		</PackageReference>
@@ -38,21 +38,24 @@
   <ItemDefinitionGroup>
     <ProjectReference>
       <Pack>true</Pack>
+      <CopyLocal>true</CopyLocal>
+			<GeneratePathProperty>true</GeneratePathProperty>
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 			<SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
 		</ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
-    <SourceGenerator Visible="false" />
-    <IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
-    <ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
+    <SourceGenerator Visible="false">
+      <IncludeAssets>Build; BuildMultitargeting; BuildTransitive;Analyzers</IncludeAssets>
+      <ExcludeAssets>Compile; Runtime; ContentFiles; Native</ExcludeAssets>
+    </SourceGenerator>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <UsingsPackageReference>
       <Pack>true</Pack>
-      <GeneratePathProperty>true</GeneratePathProperty>
       <CopyLocal>true</CopyLocal>
+			<GeneratePathProperty>true</GeneratePathProperty>
       <IncludeAssets>Build; BuildMultitargeting; BuildTransitive;</IncludeAssets>
       <ExcludeAssets>Compile; Runtime; Analyzers; Native; ContentFiles</ExcludeAssets>
     </UsingsPackageReference>

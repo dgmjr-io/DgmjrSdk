@@ -1,11 +1,11 @@
 <!--
  * RemoveDuplicatePackageReferences.targets
- * 
+ *
  *   Created: 2022-11-27-12:58:57
  *   Modified: 2022-11-27-01:34:20
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -17,7 +17,7 @@
 		<PackDependsOn>RemoveDuplicatePackageReferences;$(PackDependsOn)</PackDependsOn>
 		<BuildDependsOn>RemoveDuplicatePackageReferences;$(BuildDependsOn)</BuildDependsOn>
 	</PropertyGroup>
-	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="Build;Restore;Pack">
+	<Target Name="RemoveDuplicatePackageReferences" BeforeTargets="CheckPackageReferences;Build;Restore;Pack">
 		<RemoveDuplicates Inputs="@(PackageReference)">
 			<Output TaskParameter="Filtered" ItemName="DistinctPackageReference" />
 		</RemoveDuplicates>
