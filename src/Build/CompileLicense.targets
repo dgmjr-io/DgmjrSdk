@@ -1,0 +1,16 @@
+<Project>
+  <Target Name="CompileLicense" BeforeTargets="Build">
+    <LC
+      Sources="LICENSE.md"
+      LicenseTarget="$(TargetFileName)"
+      OutputDirectory="$(IntermediateOutputPath)"
+      OutputLicenses="$(IntermediateOutputPath)$(TargetFileName).licenses"
+      ReferencedAssemblies="@(ReferencePath);@(ReferenceDependencyPaths)"
+      Condition="Exists('LICENSE.md')">
+
+      <Output
+          TaskParameter="OutputLicenses"
+          ItemName="CompiledLicenseFile"/>
+    </LC>
+  </Target>
+</Project>
