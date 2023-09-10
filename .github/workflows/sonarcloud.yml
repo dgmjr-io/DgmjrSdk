@@ -15,9 +15,15 @@ jobs:
         with:
           java-version: 11
           distribution: 'zulu' # Alternative distribution options are available.
-      - uses: actions/checkout@v3
+      - name: Checkout the repository being compiled
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          path: Repo
+      - name: Checkout the Packages repository alongside the one being compiled
+        uses: actions/checkout@v3
+        with:
+          repository: dgmjr-io/Packages
+          path: Packages
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
@@ -37,6 +43,13 @@ jobs:
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Run setup-dgmjrsdk
+        uses: dgmjr-actions/setup-dgmjrsdk@main
+        with:
+          git-token: ${{ secrets.GITHUB_TOKEN }}
+          environment: Release
+          git-nuget-endpoint: ${{ vars.GIT_NUGET_ENDPOINT }}
+          private-nuget-endpoint: ${{ vars.DGMJR_IO_NUGET_ENDPOINT }}
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -44,5 +57,6 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"dgmjr-io_DgmjrSdk" /o:"dgmjr-io" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet pack src/DgmjrSdk.nuproj -c:Release
+          dotnet restore Repo/src/DgmjrSdk.nuproj -c:Release
+          dotnet build Repo/src/DgmjrSdk.nuproj --no-restore -c:Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
