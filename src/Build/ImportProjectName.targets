@@ -1,11 +1,11 @@
 <!--
  * PackageBuildPropsFile.props
- * 
+ *
  *   Created: 2022-11-11-01:13:41
  *   Modified: 2022-11-12-02:09:27
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -14,7 +14,7 @@
   <Import Project="$(MSBuildProjectDirectory)/$(MSBuildProjectName).targets"
       Condition="Exists('$(MSBuildProjectDirectory)/$(MSBuildProjectName).targets')" />
   <PropertyGroup>
-    <ProjectReferenceImportTargets>@(ProjectReference->'%(RootDir)%(Directory)%(Filename).targets')</ProjectReferenceImportTargets>
+    <ProjectReferenceImportTargets>@(ProjectReference-%3e'%(RootDir)%(Directory)%(Filename).targets')</ProjectReferenceImportTargets>
   </PropertyGroup>
-  <Import Project="$(ProjectReferenceImportProps)" Condition="Exists($(ProjectReferenceImportProps))" />
+  <Import Project="$(ProjectReferenceImportTargets)" Condition="Exists($(ProjectReferenceImportTargets))" />
 </Project>

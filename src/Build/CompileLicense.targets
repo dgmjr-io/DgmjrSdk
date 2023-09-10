@@ -4,13 +4,8 @@
       Sources="LICENSE.md"
       LicenseTarget="$(TargetFileName)"
       OutputDirectory="$(IntermediateOutputPath)"
-      OutputLicenses="$(IntermediateOutputPath)$(TargetFileName).licenses"
       ReferencedAssemblies="@(ReferencePath);@(ReferenceDependencyPaths)"
-      Condition="Exists('LICENSE.md')">
-
-      <Output
-          TaskParameter="OutputLicenses"
-          ItemName="CompiledLicenseFile"/>
-    </LC>
+      Condition="Exists('LICENSE.md') And '$(TargetFramewok)' != ''"
+      TargetFrameworkVersion="$(TargetFramewok)" />
   </Target>
 </Project>

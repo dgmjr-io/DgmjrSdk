@@ -1,5 +1,5 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B283EBC2-E01F-412D-9339-FD56EF114549}" 
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B283EBC2-E01F-412D-9339-FD56EF114549}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\Packages\Versions.props = ..\..\..\..\Packages\Versions.props
 		..\..\..\..\Packages\Versions.Local.json = ..\..\..\..\Packages\Versions.Local.json
@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\..\Packages\Packages\Azure.pkgs = ..\..\..\..\Packages\Packages\Azure.pkgs
 		..\..\..\..\Packages\Packages\AzureFunctions.pkgs = ..\..\..\..\Packages\Packages\AzureFunctions.pkgs
 		..\..\..\..\Packages\Packages\DDD.pkgs = ..\..\..\..\Packages\Packages\DDD.pkgs
-		..\..\..\..\Packages\Packages\EFCore.pkgs = ..\..\..\..\Packages\Packages\EFCore.pkgs
 		..\..\..\..\Packages\Packages\GlobalBuild.pkgs = ..\..\..\..\Packages\Packages\GlobalBuild.pkgs
 		..\..\..\..\Packages\Packages\GlobalCodeGenerators.pkgs = ..\..\..\..\Packages\Packages\GlobalCodeGenerators.pkgs
 		..\..\..\..\Packages\Packages\Images.pkgs = ..\..\..\..\Packages\Packages\Images.pkgs
 		..\..\..\..\Packages\Packages\McMaster.CommandLineUtils.pkgs = ..\..\..\..\Packages\Packages\McMaster.CommandLineUtils.pkgs
 		..\..\..\..\Packages\Packages\MediatR.pkgs = ..\..\..\..\Packages\Packages\MediatR.pkgs
 		..\..\..\..\Packages\Packages\Microsoft.AspNetCore.pkgs = ..\..\..\..\Packages\Packages\Microsoft.AspNetCore.pkgs
+		..\..\..\..\Packages\Packages\Microsoft.EntityFrameworkCore.pkgs = ..\..\..\..\Packages\Packages\Microsoft.EntityFrameworkCore.pkgs
 		..\..\..\..\Packages\Packages\Microsoft.Extensions.pkgs = ..\..\..\..\Packages\Packages\Microsoft.Extensions.pkgs
 		..\..\..\..\Packages\Packages\Microsoft.Identity.pkgs = ..\..\..\..\Packages\Packages\Microsoft.Identity.pkgs
 		..\..\..\..\Packages\Packages\Microsoft.VisualStudio.Shell.Interop.pkgs = ..\..\..\..\Packages\Packages\Microsoft.VisualStudio.Shell.Interop.pkgs
@@ -44,12 +44,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\..\Packages\Versions\EFCore.props = ..\..\..\..\Packages\Versions\EFCore.props
 		..\..\..\..\Packages\Versions\JsonPatch.props = ..\..\..\..\Packages\Versions\JsonPatch.props
 		..\..\..\..\Packages\Versions\MediatR.props = ..\..\..\..\Packages\Versions\MediatR.props
+		..\..\..\..\Packages\Versions\Microsoft.Build.props = ..\..\..\..\Packages\Versions\Microsoft.Build.props
 		..\..\..\..\Packages\Versions\Microsoft.CodeAnalysis.props = ..\..\..\..\Packages\Versions\Microsoft.CodeAnalysis.props
 		..\..\..\..\Packages\Versions\Microsoft.Extensions.Logging.props = ..\..\..\..\Packages\Versions\Microsoft.Extensions.Logging.props
-		..\..\..\..\Packages\Versions\MSBuild.props = ..\..\..\..\Packages\Versions\MSBuild.props
 		..\..\..\..\Packages\Versions\PowerShell.props = ..\..\..\..\Packages\Versions\PowerShell.props
 	EndProjectSection
 EndProject
+Project("")
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Local|Any CPU = Local|Any CPU
@@ -65,6 +66,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5A2B8373-C8BE-4758-BFEF-FF1FE55BD912}
+		SolutionGuid = {ED8647BC-278B-4150-9378-9D2924A1A1DD}
 	EndGlobalSection
 EndGlobal

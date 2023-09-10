@@ -13,6 +13,8 @@
 <Project>
 	<PropertyGroup>
 		<IncludeInSolutionFile Condition="'$(MSBuildProjectExtension)' == '.slnproj'">false</IncludeInSolutionFile>
+    <SlnGenLaunchVisualStudio>false</SlnGenLaunchVisualStudio>
+    <SlnGenProjectName>$(MSbuildProjectName)</SlnGenProjectName>
 	</PropertyGroup>
   <ItemGroup>
     <SlnGenCustomProjectTypeGuid Include=".aproj" ProjectTypeGuid="4cd4fd5b-0f23-4623-ba3f-b31cc4ab93ef" />

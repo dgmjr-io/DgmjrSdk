@@ -11,40 +11,40 @@
 -->
 
 <Project Sdk="Microsoft.Build.NoTargets">
-    <PropertyGroup>
-        <ImoprtMinVer>true</ImoprtMinVer>
-        <ProjectGuid>eb008c4c-9c3a-4498-a19d-34a42b6e2ce1</ProjectGuid>
-        <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
-    </PropertyGroup>
-    <PropertyGroup>
-        <Title>The DGMJR-IO SDK</Title>
-        <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
-        <!-- <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks> -->
-        <TargetFramework>netstandard1.0</TargetFramework>
-        <PackageId>$(MSbuildProjectName)</PackageId>
-        <LangVersion>preview</LangVersion>
-        <PackageType>MSBuildSdk</PackageType>
-        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-        <IncludeInSolutionFile>true</IncludeInSolutionFile>
-        <DevelopmentDependency>true</DevelopmentDependency>
-        <NoWarn>$(NoWarn);MSB4011</NoWarn>
-        <PackageIcon>Icon.png</PackageIcon>
-        <IsUsingNETSDK>true</IsUsingNETSDK>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
-        <PackageFile Include="./Build/*.cs" PackagePath="Build/%(Filename)%(Extension)" />
-        <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
-        <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
-        <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
-        <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-        <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
-    </ItemGroup>
-    <Target Name="PrepareGitConstants" />
-    <Target Name="GitInfo" />
-    <ItemGroup>
-        <PackageTag Include="sdk" Visible="false" />
-        <PackageTag Include="build-defaults" Visible="false" />
-        <PackageTag Include="dgmjrsdk" Visible="false" />
-    </ItemGroup>
+  <PropertyGroup>
+    <ProjectGuid>eb008c4c-9c3a-4498-a19d-34a42b6e2ce1</ProjectGuid>
+    <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>The DGMJR-IO SDK</Title>
+    <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
+    <!-- <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks> -->
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <PackageId>$(MSbuildProjectName)</PackageId>
+    <LangVersion>preview</LangVersion>
+    <PackageType>MSBuildSdk</PackageType>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IncludeInSolutionFile>true</IncludeInSolutionFile>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoWarn>$(NoWarn);MSB4011</NoWarn>
+    <PackageIcon>Icon.png</PackageIcon>
+    <IsUsingNETSDK>true</IsUsingNETSDK>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/*.cs" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
+    <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
+    <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
+    <PackageFile Include="./LICENSE.md" PackagePath="ContentFiles/%(Filename)%(Extension)" />
+  </ItemGroup>
+  <Target Name="PrepareGitConstants" />
+  <Target Name="GitInfo" />
+  <ItemGroup>
+    <PackageTag Include="sdk" Visible="false" />
+    <PackageTag Include="build-defaults" Visible="false" />
+    <PackageTag Include="dgmjrsdk" Visible="false" />
+  </ItemGroup>
 </Project>

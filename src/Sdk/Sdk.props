@@ -1,18 +1,18 @@
 <!--
  * Sdk.props
- * 
+ *
  *   Created: 2022-12-19-01:17:17
  *   Modified: 2022-12-19-01:17:19
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project Condition="'$(DgmjrSdkProps)' == ''">
   <PropertyGroup>
-    <UsingDgmjrSdk>true</UsingDgmjrSdk>
+    <IsUsingDgmjrSdk>true</IsUsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
   </PropertyGroup>
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.props" />

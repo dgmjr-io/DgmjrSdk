@@ -57,15 +57,16 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 
 ## Targets
 
-* `EnsurePackageReadme`, which ensures the package contains a `README.md` file at the root; if not, it generates one from the `Title` and `Description` properties and embeds it into the NuGet package
-* `EnsurePackageIcon`, which ensures the package contains an icon file; if theres no file named `Icon.(png/jpg/jpeg)` at the root, it will use a [default icon](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/Icon.png)
-* `RemoveDuplicateUsings`, which removes any duplicate `Using` items from the project
-* `PackageProjectName.targets` - a file that packages any file in the root directory named `[MSBuildProjectName].targets` into the `build` folder of the NuGet package
-* `PackageProjectName.props` - a file that packages any file in the root directory named `[MSBuildProjectName].props` into the `build` folder of the NuGet package
+* [`EnsurePackageReadme`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/PackageReadme.targets), which ensures the package contains a `README.md` file at the root; if not, it generates one from the `Title` and `Description` properties and embeds it into the NuGet package
+* [`EnsurePackageIcon`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/PackageIcon.targets), which ensures the package contains an icon file; if theres no file named `Icon.(png/jpg/jpeg)` at the root, it will use a [default icon](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/Icon.png)
+* [`RemoveDuplicateUsings`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/RemoveDuplicateUsings.targets), which removes any duplicate `Using` items from the project
+* [`RemoveDuplicatePackageReferences`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/RemoveDuplicatePackageReferences.targets), which removes any duplicate `Using` items from the project
+* [`PackageProjectName.targets`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/PackageProjectName.targets) - a file that packages any file in the root directory named `[MSBuildProjectName].targets` into the `build` folder of the NuGet package
+* [`PackageProjectName.props`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/PackageProjectName.targets) - a file that packages any file in the root directory named `[MSBuildProjectName].props` into the `build` folder of the NuGet package
 
 ## Properties
 
-* `PackageVersionOverride`, which allows you to override the package version calculated by `MinVer`
+* [`PackageVersionOverride`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/PackageVersionOverride.props), which allows you to override the package version calculated by `MinVer`
 * A default `UserSecrets` property
 * Default `AssetTargetFallback`s for all .NET versions from .NETStandard 2.0 through .NET 8.0
 * Default values for generating XML documentation as well as pulling the XML docs from referenced packages
@@ -76,6 +77,6 @@ Then compile and run your project and it will have all the DGMJR-IO SDK defaults
 # Miscellaneous
 
 * Assembly signing - ensures the assembly is signed by a key called [`dgmjr.snk`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/dgmjr.snk) located in the [`Assets`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets) folder.  There's also [`dgmjr.pub`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/dgmjr.pub) (the binary version of the public key) and [`dgmjr.pub.asc`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/dgmjr.pub.asc), which contains the plain text public key and token.
-* TestingLocal - Overrides the `AssemblyVersion` attribute to always be `0.0.1-Local` when the `Configuration` is set to `Local`
+* [`TestingLocal`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Build/TestingLocal.targets) - Overrides the `AssemblyVersion` attribute to always be `0.0.1-Local` when the `Configuration` is set to `Local`
 * [`Icon.png`](https://github.com/dgmjr-io/DgmjrSdk/blob/main/src/Assets/Icon.png), a default icon file, which will be applied to any package that doesn't have one.
 * [`NuGetizer`](https://github.com/devlooped/nugetizer) enabled by default
