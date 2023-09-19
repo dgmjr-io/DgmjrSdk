@@ -12,7 +12,7 @@
 
 <Project Sdk="Microsoft.Build.NoTargets">
   <PropertyGroup>
-    <ProjectGuid>eb008c4c-9c3a-4498-a19d-34a42b6e2ce1</ProjectGuid>
+    <ProjectGuid>EB008C4C-9C3A-4498-A19D-34A42B6E2CE1</ProjectGuid>
     <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
   </PropertyGroup>
   <PropertyGroup>
