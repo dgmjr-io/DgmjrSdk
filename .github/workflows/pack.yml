@@ -65,7 +65,10 @@ jobs:
         name: DgmjrSdk-NuGetPackage
     - name: Publish NuGet to GitHub
       shell: bash
-      run: dotnet nuget push **/*.nupkg --source ${{ vars.GIT_NUGET_ENDPOINT }} --api-key ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push **/*.nupkg --source GitHub --api-key ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish NuGet DGMJR-IO private feed
+      shell: bash
+      run: dotnet nuget push **/*.nupkg --source dgmjr-io --api-key ${{ secrets.PROGET_API_KEY }}
       
 
   
