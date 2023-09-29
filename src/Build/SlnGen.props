@@ -12,7 +12,7 @@
 
 <Project>
 	<PropertyGroup>
-		<IncludeInSolutionFile Condition="'$(MSBuildProjectExtension)' == '.slnproj'">false</IncludeInSolutionFile>
+		<IncludeInSolutionFile>$('$(MSBuildProjectExtension)' != '.csproj')</IncludeInSolutionFile>
     <SlnGenLaunchVisualStudio>false</SlnGenLaunchVisualStudio>
     <SlnGenProjectName>$(MSbuildProjectName)</SlnGenProjectName>
 	</PropertyGroup>

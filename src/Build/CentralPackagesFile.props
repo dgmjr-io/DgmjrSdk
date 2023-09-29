@@ -1,11 +1,11 @@
 <!--
  * CentralPackagesFile.props
- * 
+ *
  *   Created: 2022-11-23-07:50:14
  *   Modified: 2022-11-23-07:50:14
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -15,7 +15,7 @@
 		<CentralPackagesFileName>Packages.pkgs</CentralPackagesFileName>
     <CentralPackagesFile>$([MSBuild]::GetDirectoryNameOfFileAbove("$(MSBuildProjectDirectory)", "Packages/$(CentralPackagesFileName)"))/Packages/$(CentralPackagesFileName)</CentralPackagesFile>
     <CustomBeforeCentralPackageVersionsProps>$(CustomBeforeCentralPackageVersionsProps);</CustomBeforeCentralPackageVersionsProps>
-	</PropertyGroup>  
+	</PropertyGroup>
 	<Target Name="DisplayCentralPackagesFile">
     <Message Text="CentralPackagesFile: $(CentralPackagesFile)" Importance="High" />
     <Message Text="Build Configuration: $(Configuration)" Importance="High" />

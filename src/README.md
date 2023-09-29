@@ -1,21 +1,21 @@
 ---
 title: DGMJR-IO SDK
 authors:
-  - dgmjr
+- dgmjr
 type: readme
 slug: dgmjr-io-sdk
 project: shared
 description: An SDK that sets a whole boatload of default values and does a shit ton of stuff automagically.
-version: 0.0.1
+version: 0.0.1-Local
 lastmod: 2023-07-14T07:49:58.705Z
 date: 2023-07-14T07:49:16.139Z
 license: MIT
 keywords:
-  - dotnet
-  - sdk
-  - dgmjrsdk
-  - defaults
-  - default-values
+- dotnet
+- sdk
+- dgmjrsdk
+- defaults
+- default-values
 ---
 
 # DGMJR-IO SDK

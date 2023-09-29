@@ -1,16 +1,16 @@
 <!--
  * Copyright.targets
- * 
+ *
  *   Created: 2023-06-30-09:31:22
  *   Modified: 2023-06-30-09:32:54
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project> 
+<Project>
  <PropertyGroup>
     <Copyright_targets>Imported</Copyright_targets>
     <GetPackageMetadataDependsOn>
