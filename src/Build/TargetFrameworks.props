@@ -1,17 +1,19 @@
 <!--
  * TargetFrameworks.props
- * 
+ *
  *   Created: 2022-11-19-03:03:12
  *   Modified: 2022-11-19-03:03:12
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
     <PropertyGroup>
+      <TargetFramework Condition="'$(UsingMicrosoftNoTargetsSdk' =='true'">netstandard1.0</TargetFramework>
+
       <NetStandardTargetFrameworks></NetStandardTargetFrameworks>
       <NetStandard1TargetFrameworks>netstandard1.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6</NetStandard1TargetFrameworks>
       <NetStandard2TargetFrameworks>netstandard2.0;netstandard2.1</NetStandard2TargetFrameworks>
