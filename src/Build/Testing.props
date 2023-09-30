@@ -11,6 +11,9 @@
 -->
 
 <Project>
+  <ItemGroup>
+    <PackageReference Remove="NuGetizer" Condition="'$(IsTestProject)' == 'true'" />
+  </ItemGroup>
   <PropertyGroup>
     <PackageReferences>@(PackageReference)</PackageReferences>
     <Configuration Condition="'$(IsTestProject)' == 'true'">Testing</Configuration>
