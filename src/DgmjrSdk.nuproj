@@ -29,6 +29,7 @@
     <NoWarn>$(NoWarn);MSB4011</NoWarn>
     <PackageIcon>Icon.png</PackageIcon>
     <IsUsingNETSDK>true</IsUsingNETSDK>
+    <PackageVersionOverride>0.0.23</PackageVersionOverride>
   </PropertyGroup>
   <ItemGroup>
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
