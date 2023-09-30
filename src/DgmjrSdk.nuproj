@@ -29,7 +29,7 @@
     <NoWarn>$(NoWarn);MSB4011</NoWarn>
     <PackageIcon>Icon.png</PackageIcon>
     <IsUsingNETSDK>true</IsUsingNETSDK>
-    <PackageVersionOverride>0.0.23</PackageVersionOverride>
+    <PackageVersionOverride Condition="'$(PackageVersionOverride)' == ''">0.0.23</PackageVersionOverride>
   </PropertyGroup>
   <ItemGroup>
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
@@ -41,8 +41,8 @@
     <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     <PackageFile Include="./LICENSE.md" PackagePath="ContentFiles/%(Filename)%(Extension)" />
   </ItemGroup>
-  <!-- <Target Name="PrepareGitConstants" />
-  <Target Name="GitInfo" /> -->
+  <Target Name="PrepareGitConstants" />
+  <Target Name="GitInfo" />
   <ItemGroup>
     <PackageTag Include="sdk" Visible="false" />
     <PackageTag Include="build-defaults" Visible="false" />
