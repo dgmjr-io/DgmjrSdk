@@ -35,7 +35,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore Repo/src/DgmjrSdk.nuproj
     - name: Build
-      run: dotnet build Repo/src/DgmjrSdk.nuproj --no-restore -c:Release -v:diag
+      run: dotnet build Repo/src/DgmjrSdk.nuproj --no-restore -c:Release
     - name: Upload the NuGet Package
       uses: actions/upload-artifact@v3.1.2
       with:
