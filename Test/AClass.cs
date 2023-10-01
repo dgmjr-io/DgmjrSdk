@@ -11,6 +11,7 @@
  */
 
 namespace TestingDgmjrSdk;
+
 /// <summary>This is a summary of the class.</summary>
 public class AClass
 {

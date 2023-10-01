@@ -1,16 +1,17 @@
-/* 
+/*
  * AnEnum.cs
- * 
+ *
  *   Created: 2023-03-28-02:15:28
  *   Modified: 2023-03-28-03:18:18
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
  */
 
 namespace TestingDgmjrSdk;
+
 using System.ComponentModel.DataAnnotations;
 
 [GenerateEnumerationRecordStruct("AnEnumeration", "TestingDgmjrSdk")]
