@@ -32,6 +32,8 @@ namespace System.Reflection { }
 
 namespace System.Security.Claims { }
 
+namespace System.Security.Cryptography { }
+
 namespace System.Text.RegularExpressions { }
 
 namespace System.Threading { }

@@ -35,6 +35,7 @@
     <Using Include="System.Numerics.BigInteger" Alias="bigint" Condition="!$(TargetFramework.Contains('NETSTANDARD'))" />
     <Using Include="System.Reflection" />
     <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Security.Cryptography" />
     <Using Include="System.String" Static="true" />
     <Using Include="System.StringComparison" Static="true" />
     <Using Include="System.Threading.Tasks" />
