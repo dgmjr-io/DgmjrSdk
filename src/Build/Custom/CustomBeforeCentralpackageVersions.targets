@@ -11,23 +11,31 @@
 -->
 
 <Project>
-  <!-- Transforms <SourceGenerator /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <!-- Transforms <SourceGeneratorPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
-    <PackageReference Include="@(SourceGenerator)">
+    <PackageReference Include="@(SourceGeneratorPackageReference)">
       <IncludeAssets>Analyzers;Build</IncludeAssets>
       <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <SourceGenerator Remove="@(SourceGenerator)" />
+    <SourceGeneratorPackageReference Remove="@(SourceGeneratorPackageReference)" />
   </ItemGroup>
-  <!-- Transforms <SourceCodeReference /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <!-- Transforms <SourceGeneratorProjectReference /> items into <ProjectReference /> items with appropriate properties -->
   <ItemGroup>
-    <PackageReference Include="@(SourceCodeReference)">
+    <ProjectReference Include="@(SourceGeneratorProjectReference)">
+      <OutputItemType>Analyzer</OutputItemType>
+      <Targets>Restore;Build;Pack</Targets>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- Transforms <SourceCodePackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <ItemGroup>
+    <PackageReference Include="@(SourceCodePackageReference)">
       <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
       <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <SourceCodeReference Remove="@(SourceCodeReference)" />
+    <SourceCodePackageReference Remove="@(SourceCodePackageReference)" />
   </ItemGroup>
   <!-- Transforms <UsingsPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
@@ -36,5 +44,6 @@
       <ExcludeAssets>ContentFiles;Native;Compile</ExcludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
+    <UsingsPackageReference Remove="@(UsingsPackageReference)" />
   </ItemGroup>
 </Project>
