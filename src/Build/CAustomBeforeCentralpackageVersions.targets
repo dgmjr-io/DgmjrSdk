@@ -14,8 +14,8 @@
   <!-- Transforms <SourceGenerator /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(SourceGenerator)">
-      <IncludeAssets>Analyzers;Build;Compile</IncludeAssets>
-      <ExcludeAssets>Runtime;ContentFiles;Native</ExcludeAssets>
+      <IncludeAssets>Analyzers;Build</IncludeAssets>
+      <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceGenerator Remove="@(SourceGenerator)" />
@@ -23,7 +23,7 @@
   <!-- Transforms <SourceCodeReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(SourceCodeReference)">
-      <IncludeAssets>ContentFiles;Build</IncludeAssets>
+      <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
       <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
@@ -32,7 +32,7 @@
   <!-- Transforms <UsingsPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(UsingsPackageReference)">
-      <IncludeAssets>Build;BuildMultitargeting;Runtime</IncludeAssets>
+      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime</IncludeAssets>
       <ExcludeAssets>ContentFiles;Native;Compile</ExcludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
