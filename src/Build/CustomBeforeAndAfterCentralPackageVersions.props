@@ -12,13 +12,15 @@
 
 <Project>
   <PropertyGroup>
-    <CustomBeforeCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeCentralPackageVersions.props')))">
+    <CustomBeforeCentralPackageVersionsProps>
       $(CustomBeforeCentralPackageVersionsProps);
+      $(MSBuildThisFileDirectory)Custom/CustomBeforeCentralpackageVersions.props;
+    </CustomBeforeCentralPackageVersionsProps>
+    <CustomBeforeCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeCentralPackageVersions.props')))">
       $([MSBuild]::GetPathOfFileAbove("Directory.CustomBeforeCentralPackageVersions.props"))
     </CustomBeforeCentralPackageVersionsProps>
     <CustomAfterCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomAfterCentralPackageVersions.props')))">
       $(CustomAfterCentralPackageVersionsProps);
-      $(MSBuildThisFilePath)/Custom/CustomBeforeCentralPackageVersions.targets;
       $([MSBuild]::GetPathOfFileAbove("Directory.CustomAfterCentralPackageVersions.props"))
     </CustomAfterCentralPackageVersionsProps>
   </PropertyGroup>

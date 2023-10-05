@@ -32,14 +32,15 @@
     <PackageVersionOverride Condition="'$(PackageVersionOverride)' == '' And '$(Configuration)' != 'Local'">0.0.23</PackageVersionOverride>
   </PropertyGroup>
   <ItemGroup>
-    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     <PackageFile Include="./Build/*.cs" PackagePath="Build/%(Filename)%(Extension)" />
     <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
     <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/Custom/*.*" PackagePath="Build/Custom/%(Filename)%(Extension)" />
     <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
-    <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-    <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     <PackageFile Include="./LICENSE.md" PackagePath="ContentFiles/%(Filename)%(Extension)" />
+    <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
+    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />
