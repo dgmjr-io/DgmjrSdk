@@ -14,8 +14,11 @@
   <!-- Transforms <SourceGeneratorPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(SourceGeneratorPackageReference)">
-      <IncludeAssets>Analyzers;Build</IncludeAssets>
+			<GeneratePathProperty>true</GeneratePathProperty>
+      <CopyLocal>true</CopyLocal>
       <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
+      <IncludeAssets>Analyzers;Build</IncludeAssets>
+      <Pack>true</Pack>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceGeneratorPackageReference Remove="@(SourceGeneratorPackageReference)" />
@@ -23,16 +26,25 @@
   <!-- Transforms <SourceGeneratorProjectReference /> items into <ProjectReference /> items with appropriate properties -->
   <ItemGroup>
     <ProjectReference Include="@(SourceGeneratorProjectReference)">
+      <CopyLocal>true</CopyLocal>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+			<GeneratePathProperty>true</GeneratePathProperty>
       <OutputItemType>Analyzer</OutputItemType>
-      <Targets>Restore;Build;Pack</Targets>
+      <Pack>true</Pack>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <Targets>Restore;Build;Pack</Targets>
     </ProjectReference>
   </ItemGroup>
   <!-- Transforms <SourceCodePackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(SourceCodePackageReference)">
-      <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
+      <CopyLocal>true</CopyLocal>
       <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
+			<GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
+      <Pack>true</Pack>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceCodePackageReference Remove="@(SourceCodePackageReference)" />
@@ -40,8 +52,8 @@
   <!-- Transforms <UsingsPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(UsingsPackageReference)">
-      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime</IncludeAssets>
       <ExcludeAssets>ContentFiles;Native;Compile</ExcludeAssets>
+      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
     <UsingsPackageReference Remove="@(UsingsPackageReference)" />

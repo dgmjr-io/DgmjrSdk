@@ -46,10 +46,7 @@
 		</ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
-    <SourceGenerator Visible="false">
-      <IncludeAssets>Build; BuildMultitargeting; BuildTransitive;Analyzers</IncludeAssets>
-      <ExcludeAssets>Compile; Runtime; ContentFiles; Native</ExcludeAssets>
-    </SourceGenerator>
+    <SourceGeneratorPackageReference Visible="false" />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <UsingsPackageReference>
