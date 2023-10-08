@@ -1,0 +1,6 @@
+<Project>
+  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack" Condition="!$(LicenseFileExists)">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../LICENSE.md"
+          DestinationFolder="$(MSBuildProjectDirectory)" />
+  </Target>
+</Project>

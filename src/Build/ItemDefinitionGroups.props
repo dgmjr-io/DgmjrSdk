@@ -27,9 +27,9 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <PackageReference>
-      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
       <Pack>true</Pack>
       <CopyLocal>true</CopyLocal>
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
 			<GeneratePathProperty>true</GeneratePathProperty>
 			<IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
 			<ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
@@ -39,6 +39,7 @@
     <ProjectReference>
       <Pack>true</Pack>
       <CopyLocal>true</CopyLocal>
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
 			<GeneratePathProperty>true</GeneratePathProperty>
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
@@ -47,6 +48,17 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <SourceGeneratorPackageReference Visible="false" />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <SourceCodePackageReference>
+      <Pack>true</Pack>
+      <CopyLocal>true</CopyLocal>
+      <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>ContentFiles</IncludeAssets>
+      <IncludeAssets>ContentFiles</IncludeAssets>
+      <ExcludeAssets>Build; BuildMultitargeting; BuildTransitive; Compile; Runtime; Analyzers; Native</ExcludeAssets>
+    </SourceCodePackageReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <UsingsPackageReference>

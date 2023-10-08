@@ -1,11 +1,11 @@
 <!--
  * DevelopmentDependencies.props
- * 
+ *
  *   Created: 2022-11-11-01:49:17
  *   Modified: 2022-11-11-01:49:17
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -37,7 +37,6 @@
       OutputItemType="Analyzer"
       ReferenceOutputAssembly="false"  />
   </ItemGroup>
-
       <!-- <ProjectReference Include="@(DevelopmentDependency)"
       Condition="('$(Configuration)' == 'Testing' Or '$(Configuration)' == 'Local') And '%(DevelopmentDependency.IsCodeGenerator)' == 'true'"
       TreatAsPackageReference="true"

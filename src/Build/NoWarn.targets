@@ -40,7 +40,7 @@
   </ItemGroup>
   <Target Name="NoWarn" BeforeTargets="SetGitExe;Restore">
     <PropertyGroup Condition="'$(DisableMostAnnoyingWarnings)' != 'false'">
-      <NoWarn>$(NoWarn);@(NoWarn->'%(Identity)');</NoWarn>
+      <NoWarn>$(NoWarn);@(NoWarn);</NoWarn>
     </PropertyGroup>
     <Message Text="NoWarn=$(NoWarn)" />
   </Target>

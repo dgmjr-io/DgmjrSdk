@@ -38,7 +38,7 @@
     <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
     <PackageFile Include="./Build/Custom/*.*" PackagePath="Build/Custom/%(Filename)%(Extension)" />
     <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
-    <PackageFile Include="./LICENSE.md" PackagePath="ContentFiles/%(Filename)%(Extension)" />
+    <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
   </ItemGroup>

@@ -52,8 +52,8 @@
   <!-- Transforms <UsingsPackageReference /> items into <PackageReference /> items with appropriate includes/excludes -->
   <ItemGroup>
     <PackageReference Include="@(UsingsPackageReference)">
-      <ExcludeAssets>ContentFiles;Native;Compile</ExcludeAssets>
-      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime</IncludeAssets>
+      <ExcludeAssets>ContentFiles;Native;Analyzers</ExcludeAssets>
+      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime;Compile</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
     <UsingsPackageReference Remove="@(UsingsPackageReference)" />

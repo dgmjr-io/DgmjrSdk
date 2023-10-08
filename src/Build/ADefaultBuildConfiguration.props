@@ -10,10 +10,16 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-
 <Project>
 	<PropertyGroup>
 		<Configurations>Local;Debug;Staging;Release;Testing</Configurations>
     <Configuration Condition="'$(Configuration)' == ''">Local</Configuration>
 	</PropertyGroup>
+  <ItemGroup>
+    <ProjectConfiguration Include="Local" Platform="Any" />
+    <ProjectConfiguration Include="Debug" Platform="Any" />
+    <ProjectConfiguration Include="Staging" Platform="Any" />
+    <ProjectConfiguration Include="Release" Platform="Any" />
+    <ProjectConfiguration Include="Testing" Platform="Any" />
+  </ItemGroup>
 </Project>

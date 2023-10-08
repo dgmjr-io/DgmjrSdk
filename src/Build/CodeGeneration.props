@@ -16,7 +16,4 @@
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <CompilerGeneratedFilesOutputPath>$(MSBuildProjectDirectory)/$(BaseIntermediateOutputPath)/GeneratedFiles</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
-  <ItemDefinitionGroup>
-    <SourceGenerator />
-  </ItemDefinitionGroup>
 </Project>
