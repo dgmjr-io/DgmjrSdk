@@ -15,6 +15,9 @@
 		<IncludeInSolutionFile>$('$(MSBuildProjectExtension)' != '.csproj')</IncludeInSolutionFile>
     <SlnGenLaunchVisualStudio>false</SlnGenLaunchVisualStudio>
     <SlnGenProjectName>$(MSbuildProjectName)</SlnGenProjectName>
+    <DirectoryBuildProps>$([MSBuild]::EnsureTrailingSlash($([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), "Directory.Build.props"))))Directory.Build.props</DirectoryBuildProps>
+    <DirectoryBuildTargets>$([MSBuild]::EnsureTrailingSlash($([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), "Directory.Build.targets"))))Directory.Build.targets</DirectoryBuildTargets>
+    <GlobalJson>$([MSBuild]::EnsureTrailingSlash($([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory), "global.json"))))global.json</GlobalJson>
 	</PropertyGroup>
   <ItemGroup>
     <SlnGenCustomProjectTypeGuid Include=".aproj" ProjectTypeGuid="4cd4fd5b-0f23-4623-ba3f-b31cc4ab93ef" />
@@ -45,6 +48,11 @@
     <SlnGenCustomProjectTypeGuid Include=".vfproj" ProjectTypeGuid="aab86bce-e4cc-4bb0-bbc5-83b1a081b6bb" />
     <SlnGenCustomProjectTypeGuid Include=".xcodeproj" ProjectTypeGuid="98925c4f-9b71-41de-bc6a-267f44ff1f4a" />
     <SlnGenCustomProjectTypeGuid Include=".xsproj" ProjectTypeGuid="60ca03d9-d475-4da7-85b4-dbe70d7f5ae1" />
+  </ItemGroup>
+  <ItemGroup>
+    <SlnGenSolutionItem Include="$(DirectoryBuildProps)" />
+    <SlnGenSolutionItem Include="$(DirectoryBuildTargets)" />
+    <SlnGenSolutionItem Include="$(GlobalJson)" />
   </ItemGroup>
   <PropertyGroup>
     <SlnGenFolders>true</SlnGenFolders>

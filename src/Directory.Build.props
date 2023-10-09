@@ -40,7 +40,6 @@
     <Import Project="./Build/ProjectMetadata.props" />
     <Import Project="./Build/ProjectTypeInfo.props" />
     <Import Project="./Build/SlnGen.props" />
-    <Import Project="./Build/SourceCodeReference.props" />
     <Import Project="./Build/SourceLinkPatch.props" />
     <Import Project="./Build/TargetFrameworks.props" />
     <Import Project="./Build/Testing.props" />
