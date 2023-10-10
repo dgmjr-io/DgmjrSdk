@@ -22,15 +22,13 @@
       <GeneratedPackageReadmeFileContents>
 ---;
 title: $(Title);
-lastmod: $(Date:yyyy-MMTdd-HH:mm:ssZ);
-date: $(Date:yyyy-MM-ddTHH:mm:ssZ);
+lastmod: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
+date: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
 license: $(PackageLicenseExpression);
 slug: $(MSBuildProjectName)-readme;
 version: $(PackageVersion);
-type: readme;
-authors:;
-@(PackageAuthor->'  - %(Initials);');
-description: $(Description);
+authors:; @(Author->'  - %(Initials);');
+description: $(MSBuildProjectName) Readme #TODO: write description for $(MSBuildProjectName) Readme;
 keywords:;
 - $(MSBuildProjectName);
 @(PackageTag->'  - %(Identity)');
@@ -38,8 +36,7 @@ type: readme
 ---;
 ;
 # $(MSBuildProjectName) Readme;
-
-<!-- TODO: Write the contents of the $(MSBuildProjectName) Readme file -->
+%3c!-- TODO: Write the contents of the $(MSBuildProjectName) Readme file --%3e
 ;
 ## Package Description;
 ;
