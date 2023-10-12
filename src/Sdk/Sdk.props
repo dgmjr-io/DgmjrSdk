@@ -12,8 +12,12 @@
 
 <Project Condition="'$(DgmjrSdkProps)' == ''">
   <PropertyGroup>
-    <IsUsingDgmjrSdk>true</IsUsingDgmjrSdk>
+    <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
+    <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
+    <IsMultiTargeting>true</IsMultiTargeting>
   </PropertyGroup>
   <Import Project="$(MSBuildThisFileDirectory)/../Build/*.props" />
 </Project>

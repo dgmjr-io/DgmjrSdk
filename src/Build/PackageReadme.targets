@@ -11,6 +11,7 @@
 -->
 
 <Project>
+  <Import Project="./PackageReadme.props" Condition="'$(PackageReadme_props)' == ''" />
 	<PropertyGroup>
       <IntermediateOutputPath Condition="'$(IntermediateOutputPath)' == ''">obj/</IntermediateOutputPath>
       <PackageReadmeFileHintPath>$(MSBuildProjectDirectory)/README.md</PackageReadmeFileHintPath>
@@ -18,44 +19,6 @@
       <GeneratedPackageReadmeFileHintPath>$(MSBuildProjectDirectory)/$(PackageReadmeFile)</GeneratedPackageReadmeFileHintPath>
 	</PropertyGroup>
 	<Target Name="CheckReadmeExists" BeforeTargets="EnsurePackageReadme" Condition="'$(IsOuterBuild)' != 'false'">
-    <PropertyGroup>
-      <GeneratedPackageReadmeFileContents>
----;
-title: $(Title);
-lastmod: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
-date: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
-license: $(PackageLicenseExpression);
-slug: $(MSBuildProjectName)-readme;
-version: $(PackageVersion);
-authors:; @(Author->'  - %(Initials);');
-description: $(MSBuildProjectName) Readme #TODO: write description for $(MSBuildProjectName) Readme;
-keywords:;
-- $(MSBuildProjectName);
-@(PackageTag->'  - %(Identity)');
-type: readme
----;
-;
-# $(MSBuildProjectName) Readme;
-%3c!-- TODO: Write the contents of the $(MSBuildProjectName) Readme file --%3e
-;
-## Package Description;
-;
-$(Description);
-;
-## Getting Started;
-;
-## Prerequisites;
-;
-## Installation;
-;
-## Usage;
-;
-## Contributing;
-;
-## Versioning;
-      </GeneratedPackageReadmeFileContents>
-    </PropertyGroup>
-
     <Warning Condition="!Exists('$(PackageReadmeFileHintPath)')"
       Code="READMENOTFOUND001"
       File="$(MSBuildProjectDirectory)/README.md"

@@ -1,3 +1,39 @@
-<Project>
-
+<Project Condition="'$(PackageReadme_props)' == ''">
+    <PropertyGroup>
+      <GeneratedPackageReadmeFileContents>
+---;
+title: $(Title);
+lastmod: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
+date: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
+license: $(PackageLicenseExpression);
+slug: $(MSBuildProjectName)-readme;
+version: $(PackageVersion);
+authors:; @(Author->'  - %(Initials);');
+description: $(MSBuildProjectName) Readme #TODO: write description for $(MSBuildProjectName) Readme;
+keywords:;
+- $(MSBuildProjectName);
+@(PackageTag->'  - %(Identity)');
+type: readme
+---;
+;
+# $(MSBuildProjectName) Readme;
+%3c!-- TODO: Write the contents of the $(MSBuildProjectName) Readme file --%3e
+;
+## Package Description;
+;
+$(Description);
+;
+## Getting Started;
+;
+## Prerequisites;
+;
+## Installation;
+;
+## Usage;
+;
+## Contributing;
+;
+## Versioning;
+      </GeneratedPackageReadmeFileContents>
+    </PropertyGroup>
 </Project>
