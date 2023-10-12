@@ -1,6 +1,19 @@
+<!--
+ * PackageReadme.props
+ *
+ *   Created: 2023-07-01-12:30:30
+ *   Modified: 2023-10-12-08:20:42
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
 <Project Condition="'$(PackageReadme_props)' == ''">
-    <PropertyGroup>
-      <GeneratedPackageReadmeFileContents>
+  <PropertyGroup>
+    <PackageReadme_props>imported</PackageReadme_props>
+    <GeneratedPackageReadmeFileContents>
 ---;
 title: $(Title);
 lastmod: $([System.DateTimeOffset]::Now.ToString("yyyy-MM-ddTHH:mm:ss.ppppZ"));
@@ -34,6 +47,6 @@ $(Description);
 ## Contributing;
 ;
 ## Versioning;
-      </GeneratedPackageReadmeFileContents>
-    </PropertyGroup>
+    </GeneratedPackageReadmeFileContents>
+  </PropertyGroup>
 </Project>

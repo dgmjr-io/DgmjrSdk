@@ -29,6 +29,6 @@
       <AssemblyVersion Condition="'$(PackageVersion)' != ''">$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersion)", "\-.*", "")).0</AssemblyVersion>
       <Version Condition="'$(PackageVersion)' != ''">$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersion)", "\-.*", "")).0</Version>
     </PropertyGroup>
-    <Message Importance	="High" Text="AssemblyVersion: $(AssemblyVersion)" />
+    <Message Text="AssemblyVersion: $(AssemblyVersion)" />
   </Target>
 </Project>

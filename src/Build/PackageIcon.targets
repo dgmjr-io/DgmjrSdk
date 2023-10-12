@@ -11,28 +11,28 @@
 -->
 
 <Project>
-    <Import Project="PackageIcon.props"  Condition="'$(PackageIcon_props)' == ''" />
-	<PropertyGroup>
-		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIconFile>
-		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIconFile>
-		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIconFile>
-		<PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists($(FallbackPackageIconFilePath))">$(FallbackPackageIconFilePath)</PackageIconFile>
-	</PropertyGroup>
-	<Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false'">
-		<!-- copy the icon file from wherever it is to ./Icon.(png/jpg/jpeg) -->
-		<Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.png" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png')) And !Exists('$(MSBuildProjectDirectory)Icon.png')" />
-		<Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.jpg" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg')) And !Exists('$(MSBuildProjectDirectory)Icon.jpg')" />
-		<Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.jpeg" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg')) And !Exists('$(MSBuildProjectDirectory)Icon.jpeg')" />
-		<ItemGroup>
-			<PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png'))" PackagePath="Icon.png" Pack="true" IsPackageIcon="true" />
-			<PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg'))" PackagePath="Icon.jpeg" Pack="true" IsPackageIcon="true" />
-			<PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg'))" PackagePath="Icon.jpg" Pack="true" IsPackageIcon="true" />
-		</ItemGroup>
-		<PropertyGroup>
-			<PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png'))">Icon.png</PackageIcon>
-			<PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg'))">Icon.jpg</PackageIcon>
-			<PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg'))">Icon.jpeg</PackageIcon>
-		</PropertyGroup>
-		<Message Text="PackageIcon: $(PackageIconFile)" />
-	</Target>
+  <Import Project="PackageIcon.props" Condition="'$(PackageIcon_props)' == ''" />
+  <PropertyGroup>
+    <PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIconFile>
+    <PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpeg')">$(MSBuildProjectDirectory)/Icon.jpeg</PackageIconFile>
+    <PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.png')">$(MSBuildProjectDirectory)/Icon.png</PackageIconFile>
+    <PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists($(FallbackPackageIconFilePath))">$(FallbackPackageIconFilePath)</PackageIconFile>
+  </PropertyGroup>
+  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false'">
+    <!-- copy the icon file from wherever it is to ./Icon.(png/jpg/jpeg) -->
+    <Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.png" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png')) And !Exists('$(MSBuildProjectDirectory)Icon.png')" />
+    <Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.jpg" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg')) And !Exists('$(MSBuildProjectDirectory)Icon.jpg')" />
+    <Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.jpeg" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg')) And !Exists('$(MSBuildProjectDirectory)Icon.jpeg')" />
+    <ItemGroup>
+      <PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png'))" PackagePath="Icon.png" Pack="true" IsPackageIcon="true" />
+      <PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg'))" PackagePath="Icon.jpeg" Pack="true" IsPackageIcon="true" />
+      <PackageFile Include="$(PackageIconFile)" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg'))" PackagePath="Icon.jpg" Pack="true" IsPackageIcon="true" />
+    </ItemGroup>
+    <PropertyGroup>
+      <PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png'))">Icon.png</PackageIcon>
+      <PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg'))">Icon.jpg</PackageIcon>
+      <PackageIcon Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpeg'))">Icon.jpeg</PackageIcon>
+    </PropertyGroup>
+    <Message Text="PackageIcon: $(PackageIconFile)" />
+  </Target>
 </Project>

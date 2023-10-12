@@ -1,3 +1,15 @@
+<!--
+ * EnsureLicense.props
+ *
+ *   Created: 2023-10-08-10:20:34
+ *   Modified: 2023-10-12-08:23:37
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
 <Project Condition="'$(EnsureLicense_props)' == ''">
   <PropertyGroup>
     <EnsureLicense_props>included</EnsureLicense_props>

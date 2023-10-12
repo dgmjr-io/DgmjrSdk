@@ -21,7 +21,7 @@
 		<RemoveDuplicates Inputs="@(PackageReference)">
 			<Output TaskParameter="Filtered" ItemName="DistinctPackageReference" />
 		</RemoveDuplicates>
-		<Message  Importance="High" Text="Removed the following duplicate package references: @(DistinctPackageReference)" />
+		<Message Text="Removed the following duplicate package references: @(DistinctPackageReference)" />
 		<ItemGroup>
 			<PackageReference Remove="@(PackageReference)" />
 			<PackageReference Include="@(DistinctPackageReference)" />

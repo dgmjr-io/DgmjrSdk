@@ -44,6 +44,10 @@ namespace System.Diagnostics.CodeAnalysis { }
 
 namespace System.Net.Http { }
 
+namespace System.ComponentModel { }
+
+namespace System.CodeDom.Compiler { }
+
 #pragma warning restore S3261 // Namespaces should not be empty
 #pragma warning restore CD1607 // The file needs documentation headers.
 #pragma warning restore RCS1072 // Remove empty namespace declaration.

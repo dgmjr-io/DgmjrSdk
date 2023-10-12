@@ -12,6 +12,7 @@
 <Project>
   <ItemGroup>
     <!-- For the This Asssemgly code generator -->
+    <ProjectProperty Include="AssemblyName" />
     <ProjectProperty Include="AssemblyVersion" />
     <ProjectProperty Include="AssetTargetFallback" />
     <ProjectProperty Include="Authors" />

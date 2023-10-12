@@ -17,7 +17,7 @@
     <CustomBeforeCentralPackageVersionsProps>$(CustomBeforeCentralPackageVersionsProps);</CustomBeforeCentralPackageVersionsProps>
 	</PropertyGroup>
 	<Target Name="DisplayCentralPackagesFile">
-    <Message Text="CentralPackagesFile: $(CentralPackagesFile)" Importance="High" />
-    <Message Text="Build Configuration: $(Configuration)" Importance="High" />
+    <Message Text="CentralPackagesFile: $(CentralPackagesFile)" />
+    <Message Text="Build Configuration: $(Configuration)" />
   </Target>
 </Project>

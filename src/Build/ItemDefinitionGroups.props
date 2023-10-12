@@ -1,16 +1,19 @@
 <!--
- ItemDefinitionGroups.props
-
-   Created: 2022-10-24-08:10:51
-   Modified: 2022-10-29-02:47:46
-
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * ItemDefinitionGroups.props
+ *
+ *   Created: 2022-10-24-08:10:51
+ *   Modified: 2023-10-12-08:22:44
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
+  <PropertyGroup>
+    <ItemDefinitionGroups_props>imported</ItemDefinitionGroups_props>
+  </PropertyGroup>
   <ItemDefinitionGroup>
       <Using Visible="false" />
       <PackageTag Visible="false" />

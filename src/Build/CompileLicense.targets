@@ -1,3 +1,15 @@
+<!--
+ * CompileLicense.targets
+ *
+ *   Created: 2023-09-07-04:13:00
+ *   Modified: 2023-10-12-08:25:45
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
 <Project>
   <Target Name="CompileLicense" BeforeTargets="Build">
     <LC

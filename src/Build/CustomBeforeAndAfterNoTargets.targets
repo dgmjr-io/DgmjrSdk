@@ -1,17 +1,17 @@
 <!--
- CustomBeforeAndAfterNoTargets.props
- 
-   Created: 2022-10-21-11:40:42
-   Modified: 2022-10-29-02:47:39
- 
-   Author: David G. Moore, Jr. <david@dgmjr.io>
-   
-   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
-      License: MIT (https://opensource.org/licenses/MIT)
+ * CustomBeforeAndAfterNoTargets.targets
+ *
+ *   Created: 2022-10-21-11:40:42
+ *   Modified: 2023-10-12-08:24:25
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
- <PropertyGroup>  
+  <PropertyGroup>
     <CustomBeforeNoTargets Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeNoTargets.targets')))">
       $(CustomAfterNoTargets);
       $([MSBuild]::GetPathOfFileAbove("Directory.CustomBeforeNoTargets.targets"))
@@ -20,5 +20,5 @@
       $(CustomAfterNoTargets);
       $([MSBuild]::GetPathOfFileAbove("Directory.CustomAfterNoTargets.targets"))
     </CustomAfterNoTargets>
- </PropertyGroup>
+  </PropertyGroup>
 </Project>
