@@ -23,6 +23,7 @@
     <Import Project="./Build/CentralPackageVersions.props" />
     <Import Project="./Build/CompilerVisibleProperties.props" />
     <Import Project="./Build/CopyLocalLockFileAssemblies.props" />
+    <Import Project="./Build/CustomBeforeAndAfterNoTargets.props" />
     <Import Project="./Build/Deterministic.props" />
     <Import Project="./Build/EnsureLicense.props" />
     <Import Project="./Build/EmbeddedResourcesStringExtensions.props" />
