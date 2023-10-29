@@ -9,11 +9,10 @@
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-<!-- This doesn't do anything right now, but the idea is to allow the programmer the option to buikd a project from its source code or use the NuGet package -->
 <Project>
-  <!-- <ItemGroup Condition="'$(BuildFromSource)' != 'true'">
-    <PackageReference Include="$([System.Text.RegularExpressions.Regex]::Replace((%(ProjectReference.Identity), '(?:.+[\/\\])+(.*)\.csproj', '$1'))" />
-    <PropsFile Include="$([System.String]::Copy(%(ProjectReference.Identity)).Replace('.csproj', '.props'))"  />
-    <TargetsFile Include="$([System.String]::Copy(%(ProjectReference.Identity)).Replace('.csproj', '.targets'))"  />
-  </ItemGroup> -->
+  <ItemGroup>
+    <!-- <PackageReference Include="$([System.Text.RegularExpressions.Regex]::Replace((%(ProjectReference.FullPath), '(?:.+[\/\\])+(.*)\.csproj', '$1'))" /> -->
+    <PropsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props')))" />
+    <TargetsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.targets'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.targets')))" />
+  </ItemGroup>
 </Project>
