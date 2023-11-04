@@ -23,7 +23,6 @@
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <DebugType>portable</DebugType>
     <IsPackagingFile>true</IsPackagingFile>
-    <GeneratePackageOnBuild Condition="'$(OutputType)' == 'Exe'">true</GeneratePackageOnBuild>
     <EmitNuspec>true</EmitNuspec>
     <ImplicitUsings>enable</ImplicitUsings>
     <SwaggerTheme>Monokai</SwaggerTheme>

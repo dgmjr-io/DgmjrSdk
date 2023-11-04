@@ -1,11 +1,11 @@
 <!--
  NuGetizer.targets
- 
+
    Created: 2022-10-21-11:40:42
    Modified: 2022-10-29-02:48:11
- 
+
    Author: David G. Moore, Jr. <david@dgmjr.io>
-   
+
    Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
       License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -16,4 +16,11 @@
       <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
   </Target>
+  <PropertyGroup>
+    <IsWebApp>$('$(UsingMicrosoftNETSdkWeb)' == 'true')</IsWebApp>
+    <GeneratePackageOnBuild Condition="'$(OutputType)' != 'Exe' And '$(IsWebApp)' != 'true'">true</GeneratePackageOnBuild>
+    <IsNuGetized Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsNuGetized>
+    <IsPackagingFile Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsPackagingFile>
+    <IsPackable Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsPackable>
+  </PropertyGroup>
 </Project>
