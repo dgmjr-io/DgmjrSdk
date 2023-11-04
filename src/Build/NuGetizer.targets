@@ -23,4 +23,5 @@
     <IsPackagingFile Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsPackagingFile>
     <IsPackable Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsPackable>
   </PropertyGroup>
+  <Target Condition="!$(GeneratePackageOnBuild)" Name="Pack" />
 </Project>
