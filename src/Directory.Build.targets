@@ -12,5 +12,5 @@
 
 
 <Project>
-    <Import Project="./Build/*.targets" />
+  <Import Project="./Build/*.targets" />
 </Project>

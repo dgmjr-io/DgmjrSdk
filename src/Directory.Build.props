@@ -11,39 +11,40 @@
 -->
 
 <Project>
-    <!-- <Import Project="./Build/TargetFraneworks.props" /> -->
-    <Import Project="./Build/AIsMultiTargeting.props" />
-    <Import Project="./Build/AAGitRoot.props" />
-    <Import Project="./Build/ADefaultBuildConfiguration.props" />
-    <Import Project="./Build/AssemblySigning.props" />
-    <Import Project="./Build/Authors-Owners.props" />
-    <Import Project="./Build/BuildConfigurations.props" />
-    <Import Project="./Build/CentralPackages.props" />
-    <Import Project="./Build/CentralPackagesFile.props" />
-    <Import Project="./Build/CentralPackageVersions.props" />
-    <Import Project="./Build/CompilerVisibleProperties.props" />
-    <Import Project="./Build/CopyLocalLockFileAssemblies.props" />
-    <Import Project="./Build/CustomBeforeAndAfterNoTargets.props" />
-    <Import Project="./Build/Deterministic.props" />
-    <Import Project="./Build/EnsureLicense.props" />
-    <Import Project="./Build/EmbeddedResourcesStringExtensions.props" />
-    <Import Project="./Build/EmitNuspec.props" />
-    <Import Project="./Build/EnablePreviewFeatures.props" />
-    <Import Project="./Build/MinVer.props" />
-    <Import Project="./Build/NuGetizer.props" />
-    <Import Project="./Build/NuGetOutputs.props" />
-    <Import Project="./Build/PackageIcon.props" />
-    <Import Project="./Build/PackageMetadata.props" />
-    <Import Project="./Build/PackageProjectUrl.props" />
-    <Import Project="./Build/PackageReadme.props" />
-    <Import Project="./Build/PackageTags.props" />
-    <Import Project="./Build/PackageVersionOverride.props" />
-    <Import Project="./Build/ProjectMetadata.props" />
-    <Import Project="./Build/ProjectTypeInfo.props" />
-    <Import Project="./Build/SlnGen.props" />
-    <Import Project="./Build/SourceLinkPatch.props" />
-    <Import Project="./Build/TargetFrameworks.props" />
-    <Import Project="./Build/Testing.props" />
-    <Import Project="./Build/TestingLocal.props" />
-    <Import Project="./Build/UserSecrets.props" />
+    <!-- <Import Project="./Build/TargetFraneworks.props" Condition="Exists('./Build/TargetFraneworks.props')" /> -->
+    <Import Project="./Build/AIsMultiTargeting.props" Condition="Exists('./Build/AIsMultiTargeting.props')" />
+    <Import Project="./Build/AAGitRoot.props" Condition="Exists('./Build/AAGitRoot.props')" />
+    <Import Project="./Build/ADefaultBuildConfiguration.props" Condition="Exists('./Build/ADefaultBuildConfiguration.props')" />
+    <Import Project="./Build/AssemblySigning.props" Condition="Exists('./Build/AssemblySigning.props')" />
+    <Import Project="./Build/Authors-Owners.props" Condition="Exists('./Build/Authors-Owners.props')" />
+    <Import Project="./Build/BuildConfigurations.props" Condition="Exists('./Build/BuildConfigurations.props')" />
+    <Import Project="./Build/BuildFromSource.props" Condition="Exists('./Build/BuildFromSource.props')" />
+    <Import Project="./Build/CentralPackages.props" Condition="Exists('./Build/CentralPackages.props')" />
+    <Import Project="./Build/CentralPackagesFile.props" Condition="Exists('./Build/CentralPackagesFile.props')" />
+    <Import Project="./Build/CentralPackageVersions.props" Condition="Exists('./Build/CentralPackageVersions.props')" />
+    <Import Project="./Build/CompilerVisibleProperties.props" Condition="Exists('./Build/CompilerVisibleProperties.props')" />
+    <Import Project="./Build/CopyLocalLockFileAssemblies.props" Condition="Exists('./Build/CopyLocalLockFileAssemblies.props')" />
+    <Import Project="./Build/CustomBeforeAndAfterNoTargets.props" Condition="Exists('./Build/CustomBeforeAndAfterNoTargets.props')" />
+    <Import Project="./Build/Deterministic.props" Condition="Exists('./Build/Deterministic.props')" />
+    <Import Project="./Build/EnsureLicense.props" Condition="Exists('./Build/EnsureLicense.props')" />
+    <Import Project="./Build/EmbeddedResourcesStringExtensions.props" Condition="Exists('./Build/EmbeddedResourcesStringExtensions.props')" />
+    <Import Project="./Build/EmitNuspec.props" Condition="Exists('./Build/EmitNuspec.props')" />
+    <Import Project="./Build/EnablePreviewFeatures.props" Condition="Exists('./Build/EnablePreviewFeatures.props')" />
+    <Import Project="./Build/MinVer.props" Condition="Exists('./Build/MinVer.props')" />
+    <Import Project="./Build/NuGetizer.props" Condition="Exists('./Build/NuGetizer.props')" />
+    <Import Project="./Build/NuGetOutputs.props" Condition="Exists('./Build/NuGetOutputs.props')" />
+    <Import Project="./Build/PackageIcon.props" Condition="Exists('./Build/PackageIcon.props')" />
+    <Import Project="./Build/PackageMetadata.props" Condition="Exists('./Build/PackageMetadata.props')" />
+    <Import Project="./Build/PackageProjectUrl.props" Condition="Exists('./Build/PackageProjectUrl.props')" />
+    <Import Project="./Build/PackageReadme.props" Condition="Exists('./Build/PackageReadme.props')" />
+    <Import Project="./Build/PackageTags.props" Condition="Exists('./Build/PackageTags.props')" />
+    <Import Project="./Build/PackageVersionOverride.props" Condition="Exists('./Build/PackageVersionOverride.props')" />
+    <Import Project="./Build/ProjectMetadata.props" Condition="Exists('./Build/ProjectMetadata.props')" />
+    <Import Project="./Build/ProjectTypeInfo.props" Condition="Exists('./Build/ProjectTypeInfo.props')" />
+    <Import Project="./Build/SlnGen.props" Condition="Exists('./Build/SlnGen.props')" />
+    <Import Project="./Build/SourceLinkPatch.props" Condition="Exists('./Build/SourceLinkPatch.props')" />
+    <Import Project="./Build/TargetFrameworks.props" Condition="Exists('./Build/TargetFrameworks.props')" />
+    <Import Project="./Build/Testing.props" Condition="Exists('./Build/Testing.props')" />
+    <Import Project="./Build/TestingLocal.props" Condition="Exists('./Build/TestingLocal.props')" />
+    <Import Project="./Build/UserSecrets.props" Condition="Exists('./Build/UserSecrets.props')" />
 </Project>

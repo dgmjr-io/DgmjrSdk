@@ -9,8 +9,15 @@
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-<!-- This doesn't do anything right now, but the idea is to allow the programmer the option to buikd a project from its source code or use the NuGet package -->
-<Project>
+
+<Project Condition="'$(BuildFromSourceProps)' == ''">
+  <PropertyGroup>
+    <BuildFromSource Condition="'$(BuildFromSource)' == ''">true</BuildFromSource>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props')))" />
+    <TargetsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.targets'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.targets')))" />
+  </ItemGroup>
   <PropertyGroup>
     <TempFile>$([System.IO.Path]::GetTempFileName())</TempFile>
     <TempPropsFile>$(TempFile).props</TempPropsFile>

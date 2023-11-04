@@ -1,11 +1,11 @@
 <!--
  * PackageMetadata.props
- * 
+ *
  *   Created: 2022-10-22-01:38:14
  *   Modified: 2022-11-19-04:05:24
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -23,7 +23,7 @@
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <DebugType>portable</DebugType>
     <IsPackagingFile>true</IsPackagingFile>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild Condition="'$(OutputType)' == 'Exe'">true</GeneratePackageOnBuild>
     <EmitNuspec>true</EmitNuspec>
     <ImplicitUsings>enable</ImplicitUsings>
     <SwaggerTheme>Monokai</SwaggerTheme>

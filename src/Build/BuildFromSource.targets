@@ -9,10 +9,19 @@
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-<Project>
-  <ItemGroup>
-    <!-- <PackageReference Include="$([System.Text.RegularExpressions.Regex]::Replace((%(ProjectReference.FullPath), '(?:.+[\/\\])+(.*)\.csproj', '$1'))" /> -->
-    <PropsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props')))" />
-    <TargetsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.targets'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.targets')))" />
+<Project InitialTargets="WritePropsAndTargetsFiles" Condition="'$(BuildFromSourceTargets)' == ''">
+  <PropertyGroup>
+    <BuildFromSourceTargets>imported</BuildFromSourceTargets>
+  </PropertyGroup>
+  <Target Name="WritePropsAndTargetsFiles" BeforeTargets="Build">
+    <WriteLinesToFile File="$(TempPropsFile)" Lines="@(PropsFile->'%(FullPath)')" Overwrite="true" />
+    <WriteLinesToFile File="$(TempTargetsFile)" Lines="@(TargetsFile->'%(FullPath)')" Overwrite="true" />
+  </Target>
+  <Import Project="$(TempPropsFile)" Condition="Exists($(TempPropsFile))" />
+  <Import Project="$(TempTargetsFile)" Condition="Exists($(TempTargetsFile))" />
+  <ItemGroup Condition="!$(BuildFromSource)">
+    <!-- remove all existing `ProjectReference`s and replace them with `PackageReference`s -->
+    <PackageReference Include="@(ProjectReference->'%(Filename)')" />
+    <ProjectReference Remove="@(ProjectReference)" />
   </ItemGroup>
 </Project>
