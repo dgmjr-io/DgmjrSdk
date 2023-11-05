@@ -16,5 +16,5 @@
   <PropertyGroup>
     <ProjectReferenceImportTargets>@(ProjectReference-%3e'%(RootDir)%(Directory)%(Filename).targets')</ProjectReferenceImportTargets>
   </PropertyGroup>
-  <Import Project="$(ProjectReferenceImportTargets)" Condition="Exists($(ProjectReferenceImportTargets))" />
+  <Import Project="$(ProjectReferenceImportTargets)" Condition="Exists('$(ProjectReferenceImportTargets)')" />
 </Project>
