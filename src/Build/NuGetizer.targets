@@ -18,10 +18,9 @@
   </Target>
   <PropertyGroup>
     <IsWebApp>$('$(UsingMicrosoftNETSdkWeb)' == 'true')</IsWebApp>
-    <GeneratePackageOnBuild Condition="'$(OutputType)' != 'Exe' And '$(IsWebApp)' != 'true'">true</GeneratePackageOnBuild>
-    <IsNuGetized Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsNuGetized>
-    <IsPackagingFile Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsPackagingFile>
-    <IsPackable Condition="!$(GeneratePackageOnBuild)">$(GeneratePackageOnBuild)</IsPackable>
+    <GeneratePackageOnBuild Condition="'$(OutputType)' != 'Exe' And '$(UsingMicrosoftNETSdkWeb)' != 'true'">true</GeneratePackageOnBuild>
+    <IsNuGetized>$(GeneratePackageOnBuild)</IsNuGetized>
+    <IsPackagingFile>$(GeneratePackageOnBuild)</IsPackagingFile>
+    <IsPackable>$(GeneratePackageOnBuild)</IsPackable>
   </PropertyGroup>
-  <Target Condition="!$(GeneratePackageOnBuild)" Name="Pack" />
 </Project>
