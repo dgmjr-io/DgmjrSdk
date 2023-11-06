@@ -21,7 +21,7 @@
   <Import Project="$(TempTargetsFile)" Condition="Exists($(TempTargetsFile))" />
   <ItemGroup Condition="!$(BuildFromSource)">
     <!-- remove all existing `ProjectReference`s and replace them with `PackageReference`s -->
-    <PackageReference Include="@(ProjectReference->'%(Filename)')" />
-    <ProjectReference Remove="@(ProjectReference)" />
+    <!-- <PackageReference Include="@(ProjectReference->'%(Filename)')" /> -->
+    <!-- <ProjectReference Remove="@(ProjectReference)" /> -->
   </ItemGroup>
 </Project>

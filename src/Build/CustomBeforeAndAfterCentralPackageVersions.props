@@ -14,14 +14,13 @@
   <PropertyGroup>
     <CustomBeforeCentralPackageVersionsProps>
       $(CustomBeforeCentralPackageVersionsProps);
-      $(MSBuildThisFileDirectory)Custom/CustomBeforeCentralpackageVersions.props;
     </CustomBeforeCentralPackageVersionsProps>
-    <CustomBeforeCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeCentralPackageVersions.props')))">
-      $([MSBuild]::GetPathOfFileAbove("Directory.CustomBeforeCentralPackageVersions.props"))
+    <CustomBeforeCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeCentralPackageVersions.props', '$(MSBuildProjectDirectory)')))">
+      $([MSBuild]::GetPathOfFileAbove("Directory.CustomBeforeCentralPackageVersions.props", "$(MSBuildProjectDirectory)"))
     </CustomBeforeCentralPackageVersionsProps>
-    <CustomAfterCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomAfterCentralPackageVersions.props')))">
+    <CustomAfterCentralPackageVersionsProps Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomAfterCentralPackageVersions.props', '$(MSBuildProjectDirectory)')))">
       $(CustomAfterCentralPackageVersionsProps);
-      $([MSBuild]::GetPathOfFileAbove("Directory.CustomAfterCentralPackageVersions.props"))
+      $([MSBuild]::GetPathOfFileAbove("Directory.CustomAfterCentralPackageVersions.props", "$(MSBuildProjectDirectory)"))
     </CustomAfterCentralPackageVersionsProps>
   </PropertyGroup>
 </Project>

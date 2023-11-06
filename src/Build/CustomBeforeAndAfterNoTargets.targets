@@ -12,14 +12,14 @@
 
 <Project>
   <PropertyGroup>
-    <CustomBeforeNoTargets Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeNoTargets.targets')))">
+    <CustomBeforeNoTargets Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomBeforeNoTargets.targets', '$(MSBuildProjectDirectory)')))">
       $(CustomAfterNoTargets);
-      $([MSBuild]::GetPathOfFileAbove("Directory.CustomBeforeNoTargets.targets"));
+      $([MSBuild]::GetPathOfFileAbove("Directory.CustomBeforeNoTargets.targets", "$(MSBuildProjectDirectory)"));
       $(MSBuildThisFileDirectory)Custom/CustomBeforeNoTargets.targets
     </CustomBeforeNoTargets>
-    <CustomAfterNoTargets Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomAfterNoTargets.targets')))">
+    <CustomAfterNoTargets Condition="Exists($([MSBuild]::GetPathOfFileAbove('Directory.CustomAfterNoTargets.targets', '$(MSBuildProjectDirectory)')))">
       $(CustomAfterNoTargets);
-      $([MSBuild]::GetPathOfFileAbove("Directory.CustomAfterNoTargets.targets"))
+      $([MSBuild]::GetPathOfFileAbove("Directory.CustomAfterNoTargets.targets", "$(MSBuildProjectDirectory)"))
     </CustomAfterNoTargets>
   </PropertyGroup>
 </Project>

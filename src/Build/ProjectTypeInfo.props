@@ -18,6 +18,6 @@
   <ItemGroup Condition="$(IsTestProject)">
     <Using Include="Xunit" />
     <Using Include="FluentAssertions" />
-    <Usings Include="FluentAssertions.Usings" />
+    <PackageReference Include="FluentAssertions.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
   </ItemGroup>
 </Project>

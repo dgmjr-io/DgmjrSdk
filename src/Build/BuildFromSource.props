@@ -12,7 +12,8 @@
 
 <Project Condition="'$(BuildFromSourceProps)' == ''">
   <PropertyGroup>
-    <BuildFromSource Condition="'$(BuildFromSource)' == ''">true</BuildFromSource>
+    <BuildFromSource>true</BuildFromSource>
+    <BuildFromSourceProps>imported</BuildFromSourceProps>
   </PropertyGroup>
   <ItemGroup>
     <PropsFile Include="$([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props'))" Condition="Exists($([System.String]::Copy(%(ProjectReference.FullPath)).Replace('.csproj', '.props')))" />
@@ -22,6 +23,5 @@
     <TempFile>$([System.IO.Path]::GetTempFileName())</TempFile>
     <TempPropsFile>$(TempFile).props</TempPropsFile>
     <TempTargetsFile>$(TempFile).targets</TempTargetsFile>
-    <BuildFromSource>false</BuildFromSource>
   </PropertyGroup>
 </Project>
