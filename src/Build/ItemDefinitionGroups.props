@@ -49,7 +49,7 @@
       <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
       <OutputItemType>true</OutputItemType>
-      <Name>@(ProjectReference->'%(Filename)')</Name>
+      <Private>false</Private>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
