@@ -9,11 +9,11 @@
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-<Project InitialTargets="WritePropsAndTargetsFiles" Condition="'$(BuildFromSourceTargets)' == ''">
-  <PropertyGroup>
+<Project InitialTargets="WritePropsAndTargetsFiles">
+  <PropertyGroup Condition="'$(BuildFromSourceTargets)' == ''">
     <BuildFromSourceTargets>imported</BuildFromSourceTargets>
   </PropertyGroup>
-  <Target Name="WritePropsAndTargetsFiles" BeforeTargets="Build">
+  <Target Name="WritePropsAndTargetsFiles" BeforeTargets="Build" Condition="'$(BuildFromSourceTargets)' == ''">
     <WriteLinesToFile File="$(TempPropsFile)" Lines="@(PropsFile->'%(FullPath)')" Overwrite="true" />
     <WriteLinesToFile File="$(TempTargetsFile)" Lines="@(TargetsFile->'%(FullPath)')" Overwrite="true" />
   </Target>
@@ -21,7 +21,7 @@
   <Import Project="$(TempTargetsFile)" Condition="Exists($(TempTargetsFile))" />
   <ItemGroup Condition="!$(BuildFromSource)">
     <!-- remove all existing `ProjectReference`s and replace them with `PackageReference`s -->
-    <!-- <PackageReference Include="@(ProjectReference->'%(Filename)')" /> -->
-    <!-- <ProjectReference Remove="@(ProjectReference)" /> -->
+    <PackageReference Include="@(ProjectReference->'%(Filename)')" />
+    <ProjectReference Remove="@(ProjectReference)" />
   </ItemGroup>
 </Project>
