@@ -12,7 +12,7 @@
 
 <Project>
   <PropertyGroup Condition="'$(BuildFromSourceProps)' == ''">
-    <BuildFromSource>true</BuildFromSource>
+    <BuildFromSource Condition="'$(BuildFromSource)' == ''">true</BuildFromSource>
     <BuildFromSourceProps>imported</BuildFromSourceProps>
   </PropertyGroup>
   <ItemGroup Condition="'$(BuildFromSourceProps)' == ''">
