@@ -64,7 +64,7 @@
       <IncludeAssets>ContentFiles</IncludeAssets>
       <IncludeAssets>ContentFiles</IncludeAssets>
       <ExcludeAssets>Build; BuildMultitargeting; BuildTransitive; Compile; Runtime; Analyzers; Native</ExcludeAssets>
-    </SourceCodePackageReference>
+    </SourceCode>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
     <Usings>
