@@ -14,9 +14,9 @@
   <PropertyGroup>
     <ProjectGuid>EB008C4C-9C3A-4498-A19D-34A42B6E2CE1</ProjectGuid>
     <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
-    <TargetFramework>netstandard1.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IsNuGetized>true</IsNuGetized>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
   <PropertyGroup>
     <Title>The DGMJR-IO SDK</Title>

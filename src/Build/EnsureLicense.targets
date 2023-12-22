@@ -14,5 +14,8 @@
   <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack" Condition="!$(LicenseFileExists)">
     <Copy SourceFiles="$(MSBuildThisFileDirectory)../LICENSE.md"
           DestinationFolder="$(MSBuildProjectDirectory)" />
+    <PropertyGroup>
+      <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    </PropertyGroup>
   </Target>
 </Project>

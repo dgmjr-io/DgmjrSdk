@@ -2,7 +2,7 @@
   <PropertyGroup>
     <DisableMostAnnoyingWarnings>true</DisableMostAnnoyingWarnings>
     <RestoreDependsOn>$(RestoreDependsOn);NoWarn</RestoreDependsOn>
-    <NoWarn>$(NoWarn);CA2252;CS8335;NU1603;CS8981;NU1605;S3604;</NoWarn>
+    <NoWarn>$(NoWarn);CA2252;CS8335;NU1603;CS8981;NU1605;S3604;RCS1139;</NoWarn>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <NoWarn>
