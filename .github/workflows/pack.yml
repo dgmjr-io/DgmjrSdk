@@ -53,7 +53,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Run setup-dgmjrsdk
+    - name: Run nuget-push
       uses: dgmjr-actions/nuget-push@main
       with:
         git-token: ${{ secrets.GITHUB_TOKEN }}
