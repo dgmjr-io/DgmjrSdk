@@ -54,20 +54,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run setup-dgmjrsdk
-      uses: dgmjr-actions/setup-dgmjrsdk@main
+      uses: dgmjr-actions/nuget-push@main
       with:
         git-token: ${{ secrets.GITHUB_TOKEN }}
         environment: Release
         git-nuget-endpoint: ${{ vars.GIT_NUGET_ENDPOINT }}
         private-nuget-endpoint: ${{ vars.PROGET_ENDPOINT_URL }}
         private-nuget-api-key: ${{ secrets.PROGET_API_KEY }}
-    - name: Download NuGet Package
-      uses: actions/download-artifact@v2.1.1
-      with:
-        name: DgmjrSdk-NuGetPackage
-    # - name: Publish NuGet to GitHub
-    #   shell: bash
-    #   run: dotnet nuget push **/*.nupkg --source GitHub --api-key ${{ secrets.GITHUB_TOKEN }}
-    - name: Publish NuGet DGMJR-IO private feed
-      shell: bash
-      run: dotnet nuget push **/*.nupkg --source dgmjr-io --api-key ${{ secrets.PROGET_API_KEY }}
+        repo: dgmjr-io/DgmjrSdk
+        push-github: true
+        push-dgmjr-io: false
+        push-nuget: false
