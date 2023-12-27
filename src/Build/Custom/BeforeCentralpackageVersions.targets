@@ -1,0 +1,64 @@
+<!--
+ * CAustomBeforeCentralpackageVersions.targets
+ *
+ *   Created: 2023-03-09-10:04:41
+ *   Modified: 2023-03-09-10:04:41
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <!-- Transforms <SourceGenerator /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <ItemGroup>
+    <PackageReference Include="@(SourceGeneratorPackageReference)">
+      <CopyLocal>true</CopyLocal>
+      <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>Analyzers;Build</IncludeAssets>
+      <Pack>true</Pack>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <SourceGenerator Remove="@(SourceGeneratorPackageReference)" />
+  </ItemGroup>
+  <!-- Transforms <SourceGeneratorProjectReference /> items into <ProjectReference /> items with appropriate properties -->
+  <ItemGroup>
+    <ProjectReference Include="@(SourceGeneratorProjectReference)">
+      <CopyLocal>true</CopyLocal>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <OutputItemType>Analyzer</OutputItemType>
+      <Pack>true</Pack>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <Targets>Restore;Build;Pack</Targets>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- Transforms <SourceCode /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <ItemGroup>
+    <PackageReference Include="@(SourceCodePackageReference)">
+      <CopyLocal>true</CopyLocal>
+      <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
+      <Pack>true</Pack>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <SourceCode Remove="@(SourceCodePackageReference)" />
+  </ItemGroup>
+  <!-- Transforms <Usings /> items into <PackageReference /> items with appropriate includes/excludes -->
+  <ItemGroup>
+    <PackageReference Include="@(UsingsPackageReference)">
+      <CopyLocal>true</CopyLocal>
+      <ExcludeAssets>ContentFiles;Native;Analyzers</ExcludeAssets>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime;Compile</IncludeAssets>
+      <Pack>true</Pack>
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+    <Usings Remove="@(UsingsPackageReference)" />
+  </ItemGroup>
+</Project>
