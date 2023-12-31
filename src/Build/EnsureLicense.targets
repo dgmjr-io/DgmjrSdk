@@ -12,10 +12,12 @@
 
 <Project>
   <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack" Condition="!$(LicenseFileExists)">
-    <Copy SourceFiles="$(MSBuildThisFileDirectory)../LICENSE.md"
-          DestinationFolder="$(MSBuildProjectDirectory)" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../LICENSE.md" DestinationFolder="$(MSBuildProjectDirectory)" />
     <PropertyGroup>
       <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     </PropertyGroup>
   </Target>
+  <ItemGroup>
+    <EmbeddedResource Include="$(PackageLicenseFile)" />
+  </ItemGroup>
 </Project>

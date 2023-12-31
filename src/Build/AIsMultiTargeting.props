@@ -11,7 +11,7 @@
 -->
 
 <Project>
-    <PropertyGroup>
-        <IsMultitargeting>$('$(TargetFrameworks)' != '' And '$(TargetFramework)' == '')</IsMultitargeting>
-    </PropertyGroup>
+  <PropertyGroup>
+    <IsMultitargeting>$('$(TargetFrameworks)' != '' And '$(TargetFramework)' == '')</IsMultitargeting>
+  </PropertyGroup>
 </Project>

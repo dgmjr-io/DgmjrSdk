@@ -1,0 +1,3 @@
+<Project Condition="!$(GeneratePackageOnBuild)">
+  <Target Name="Pack" DependsOnTargets="$(PackDependsOn)" AfterTargets="$(PackDependsOn)" />
+</Project>

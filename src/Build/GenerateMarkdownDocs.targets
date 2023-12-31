@@ -1,11 +1,11 @@
 <!--
  * GenerateMarkdownDocs.targets
- * 
+ *
  *   Created: 2023-01-03-03:19:47
  *   Modified: 2023-01-03-03:19:47
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -17,23 +17,23 @@
   <ItemGroup>
     <DocsParameter Include="generate-doc" />
     <DocsParameter Include="'$(MSBuildProjectFullPath)'" />
-    <DocsParameter Include="==additional-xml-documentation './**/*.xml'" /> 
-    <DocsParameter Include="==file-log '$(FileLog)'" /> 
-    <DocsParameter Include="==file-log-verbosity diagnostic" /> 
-    <DocsParameter Include="==verbosity diagnostic" /> 
+    <DocsParameter Include="==additional-xml-documentation './**/*.xml'" />
+    <DocsParameter Include="==file-log '$(FileLog)'" />
+    <DocsParameter Include="==file-log-verbosity diagnostic" />
+    <DocsParameter Include="==verbosity diagnostic" />
     <DocsParameter Include="==files-layout flat-namespaces" />
-    <DocsParameter Include="==group-by-common-namespace" /> 
-    <DocsParameter Include="==heading '$(Title)'" /> 
-    <DocsParameter Include="==inheritance-style horizontal" /> 
-    <DocsParameter Include="==host github" /> 
-    <DocsParameter Include="==ignored-names 'ThisAssembly'" /> 
-    <DocsParameter Include="==include-all-derived-types" /> 
-    <DocsParameter Include="==include-containing-namespace all" /> 
-    <DocsParameter Include="==include-ienumerable" /> 
-    <DocsParameter Include="==include-inherited-interface-members" /> 
-    <DocsParameter Include="==include-system-namespace" /> 
-    <DocsParameter Include="==max-derived-types 100" /> 
-    <DocsParameter Include="==output '$(DocsDir)'" /> 
+    <DocsParameter Include="==group-by-common-namespace" />
+    <DocsParameter Include="==heading '$(Title)'" />
+    <DocsParameter Include="==inheritance-style horizontal" />
+    <DocsParameter Include="==host github" />
+    <DocsParameter Include="==ignored-names 'ThisAssembly'" />
+    <DocsParameter Include="==include-all-derived-types" />
+    <DocsParameter Include="==include-containing-namespace all" />
+    <DocsParameter Include="==include-ienumerable" />
+    <DocsParameter Include="==include-inherited-interface-members" />
+    <DocsParameter Include="==include-system-namespace" />
+    <DocsParameter Include="==max-derived-types 100" />
+    <DocsParameter Include="==output '$(DocsDir)'" />
   </ItemGroup>
   <Target Name="GenDocs">
     <MakeDir Directories="$(DocsDir)" />
