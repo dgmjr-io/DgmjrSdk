@@ -1,4 +1,4 @@
-<Project InitialTargets="MakeProjectReferenceItemsFromCustomItemReferenceTypes">
+<Project>
   <ItemDefinitionGroup>
     <SourceGeneratorPackageReference>
       <CopyLocal>true</CopyLocal>

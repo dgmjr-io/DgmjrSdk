@@ -9,10 +9,11 @@
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
+<Project />
 
-<Project>
+<!-- <Project> -->
   <!-- Transforms <SourceGenerator /> items into <PackageReference /> items with appropriate includes/excludes -->
-  <ItemGroup>
+  <!-- <ItemGroup>
     <PackageReference Include="@(SourceGeneratorPackageReference)">
       <CopyLocal>true</CopyLocal>
       <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
@@ -22,9 +23,9 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceGenerator Remove="@(SourceGeneratorPackageReference)" />
-  </ItemGroup>
+  </ItemGroup> -->
   <!-- Transforms <SourceGeneratorProjectReference /> items into <ProjectReference /> items with appropriate properties -->
-  <ItemGroup>
+  <!-- <ItemGroup>
     <ProjectReference Include="@(SourceGeneratorProjectReference)">
       <CopyLocal>true</CopyLocal>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -36,9 +37,9 @@
       <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
       <Targets>Restore;Build;Pack</Targets>
     </ProjectReference>
-  </ItemGroup>
+  </ItemGroup> -->
   <!-- Transforms <SourceCode /> items into <PackageReference /> items with appropriate includes/excludes -->
-  <ItemGroup>
+  <!-- <ItemGroup>
     <PackageReference Include="@(SourceCodePackageReference)">
       <CopyLocal>true</CopyLocal>
       <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
@@ -48,9 +49,9 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <SourceCode Remove="@(SourceCodePackageReference)" />
-  </ItemGroup>
+  </ItemGroup> -->
   <!-- Transforms <Usings /> items into <PackageReference /> items with appropriate includes/excludes -->
-  <ItemGroup>
+  <!-- <ItemGroup>
     <PackageReference Include="@(UsingsPackageReference)">
       <CopyLocal>true</CopyLocal>
       <ExcludeAssets>ContentFiles;Native;Analyzers</ExcludeAssets>
@@ -61,4 +62,4 @@
     </PackageReference>
     <Usings Remove="@(UsingsPackageReference)" />
   </ItemGroup>
-</Project>
+</Project> -->

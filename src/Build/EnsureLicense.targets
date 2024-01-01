@@ -19,5 +19,6 @@
   </Target>
   <ItemGroup>
     <EmbeddedResource Include="$(PackageLicenseFile)" />
+    <PackageFile Include="$(PackageLicenseFile)" Pack="true" PackagePath="LICENSE.md" />
   </ItemGroup>
 </Project>
