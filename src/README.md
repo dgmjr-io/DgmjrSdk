@@ -5,7 +5,7 @@ authors:
 type: readme
 slug: dgmjr-io-sdk
 project: shared
-description: An SDK that sets a whole boatload of default values and does a shit ton of stuff automagically.
+description: The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.  It sets a whole boatload of default values and does a shit ton of stuff automagically.
 version: 0.0.1-Local
 lastmod: 2023-07-14T07:49:58.705Z
 date: 2023-07-14T07:49:16.139Z
@@ -20,7 +20,7 @@ keywords:
 
 # DGMJR-IO SDK
 
-An SDK that sets a whole boatload of default values and does a shit ton of stuff automagically.
+The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.  It sets a whole boatload of default values and does a shit ton of stuff automagically.
 
 # Getting Started
 
