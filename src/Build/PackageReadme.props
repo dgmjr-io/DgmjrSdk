@@ -13,40 +13,10 @@
 <Project Condition="'$(PackageReadme_props)' == ''">
   <PropertyGroup>
     <PackageReadme_props>imported</PackageReadme_props>
-    <GeneratedPackageReadmeFileContents>
----;
-title: $(Title);
-lastmod: $([System.DateTimeOffset]::Now.ToString("yyyy-mm-ddTHH:mm:ss.ffffzzzZ"));
-date: $([System.DateTimeOffset]::Now.ToString("yyyy-mm-ddTHH:mm:ss.ffffzzzZ"));
-license: $(PackageLicenseExpression);
-slug: $(MSBuildProjectName)-readme;
-version: $(PackageVersion);
-authors:; @(Author->'  - %(Initials);');
-description: $(MSBuildProjectName) Readme #TODO: write description for $(MSBuildProjectName) Readme;
-keywords:;
-- $(MSBuildProjectName);
-@(PackageTag->'  - %(Identity)');
-type: readme
----;
-;
-# $(MSBuildProjectName) Readme;
-%3c!-- TODO: Write the contents of the $(MSBuildProjectName) Readme file --%3e
-;
-## Package Description;
-;
-$(Description);
-;
-## Getting Started;
-;
-## Prerequisites;
-;
-## Installation;
-;
-## Usage;
-;
-## Contributing;
-;
-## Versioning;
-    </GeneratedPackageReadmeFileContents>
+    <DgmjrSdkDll>$(MSBuildThisFileDirectory)/../lib/netstandard2.0/DgmjrSdk.dll</DgmjrSdkDll>
+    <PackDependsOn>
+      $(PackDependsOn);
+      EnsurePackageReadme;
+    </PackDependsOn>
   </PropertyGroup>
 </Project>

@@ -10,15 +10,25 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
-  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack" Condition="!$(LicenseFileExists)">
-    <Copy SourceFiles="$(MSBuildThisFileDirectory)../LICENSE.md" DestinationFolder="$(MSBuildProjectDirectory)" />
+<Project InitialTargets="EnsureLicenseFileExists">
+  <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsureLicenseFileExists" AssemblyFile="$(DgmjrSdkDll)" />
+
+  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents">
+    <EnsureLicenseFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
+    <!-- <GetFileHash Files="$(MSBuildThisFileDirectory)../LICENSE.md">
+      <Output TaskParameter="Hash" PropertyName="SdkLicenseFileHash" />
+    </GetFileHash>
+    <GetFileHash Files="$(MSBuildProjectDirectory)/LICENSE.md" Condition="Exists('$(MSBuildProjectDirectory)/LICENSE.md')">
+      <Output TaskParameter="Hash" PropertyName="ProjectLicenseFileHash" />
+    </GetFileHash>
+    <Warning Condition="'$(SdkLicenseFileHash)' != '$(ProjectLicenseFileHash)'" Text="The LICENSE.md file in the project root (hash $(ProjectLicenseFileHash)) does not match the SDK license file (hash $(SdkLicenseFileHash)); updating it to match." />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../LICENSE.md" DestinationFolder="$(MSBuildProjectDirectory)" Condition="'$(SdkLicenseFileHash)' != '$(ProjectLicenseFileHash)'" />
     <PropertyGroup>
-      <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+      <_PackageLicenseFile>LICENSE.md</_PackageLicenseFile>
     </PropertyGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="$(_PackageLicenseFile)" />
+      <PackageFile Include="$(_PackageLicenseFile)" Pack="true" PackagePath="LICENSE.md" />
+    </ItemGroup> -->
   </Target>
-  <ItemGroup>
-    <EmbeddedResource Include="$(PackageLicenseFile)" />
-    <PackageFile Include="$(PackageLicenseFile)" Pack="true" PackagePath="LICENSE.md" />
-  </ItemGroup>
 </Project>

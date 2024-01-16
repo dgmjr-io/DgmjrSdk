@@ -14,22 +14,22 @@
     <PropertyGroup>
       <TargetFramework Condition="'$(UsingMicrosoftNoTargetsSdk' =='true'">netstandard1.0</TargetFramework>
 
-      <NetStandardTargetFrameworks></NetStandardTargetFrameworks>
-      <NetStandard1TargetFrameworks>netstandard1.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6</NetStandard1TargetFrameworks>
-      <NetStandard2TargetFrameworks>netstandard2.0;netstandard2.1</NetStandard2TargetFrameworks>
-      <NetStandardTargetFrameworks>$(NetStandard1TargetFrameworks);$(NetStandard2TargetFrameworks)</NetStandardTargetFrameworks>
-      <NetCoreApp1TargetFrameworks>netcoreapp1.0;netcoreapp1.1</NetCoreApp1TargetFrameworks>
-      <NetCoreApp2TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2</NetCoreApp2TargetFrameworks>
-      <NetCoreApp3TargetFrameworks>netcoreapp3.0;netcoreapp3.1</NetCoreApp3TargetFrameworks>
+      <DotNetStandardTargetFrameworks></DotNetStandardTargetFrameworks>
+      <DotNetStandard1TargetFrameworks>netstandard1.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6</DotNetStandard1TargetFrameworks>
+      <DotNetStandard2TargetFrameworks>netstandard2.0;netstandard2.1</DotNetStandard2TargetFrameworks>
+      <DotNetStandardTargetFrameworks>$(NetStandard1TargetFrameworks);$(NetStandard2TargetFrameworks)</DotNetStandardTargetFrameworks>
+      <DotNetCoreApp1TargetFrameworks>netcoreapp1.0;netcoreapp1.1</DotNetCoreApp1TargetFrameworks>
+      <DotNetCoreApp2TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2</DotNetCoreApp2TargetFrameworks>
+      <DotNetCoreApp3TargetFrameworks>netcoreapp3.0;netcoreapp3.1</DotNetCoreApp3TargetFrameworks>
       <DotNetTargetFrameworks>net5.0;net6.0;net7.0</DotNetTargetFrameworks>
 
-      <TargetedNetStandard1Frameworks>netstandard1.3;netstandard1.5</TargetedNetStandard1Frameworks>
-      <TargetedNetStandard2Frameworks>netstandard2.0;netstandard2.1</TargetedNetStandard2Frameworks>
-      <TargetedNetStandardFrameworks>$(TargetedNetStandard1Frameworks);$(TargetedNetStandard2Frameworks)</TargetedNetStandardFrameworks>
-      <TargetedNetCoreAppFrameworks>netcoreapp3.1</TargetedNetCoreAppFrameworks>
-      <TargetedDotNetFrameworks>net6.0;net7.0</TargetedDotNetFrameworks>
+      <TargetedDotNetStandard1Frameworks />
+      <TargetedDotNetStandard2Frameworks>netstandard2.0;netstandard2.1</TargetedDotNetStandard2Frameworks>
+      <TargetedDotNetStandardFrameworks>$(TargetedDotNetStandard1Frameworks);$(TargetedDotNetStandard2Frameworks)</TargetedDotNetStandardFrameworks>
+      <TargetedDotNetCoreAppFrameworks>netcoreapp3.1</TargetedDotNetCoreAppFrameworks>
+      <TargetedDotNetFrameworks>net6.0;net8.0</TargetedDotNetFrameworks>
 
-      <TargetedFrameworks>$(TargetedNetStandardFrameworks);$(TargetedNetCoreAppFrameworks);$(TargetedDotNetFrameworks)</TargetedFrameworks>
+      <TargetedFrameworks>$(TargetedDotNetStandardFrameworks);$(TargetedDotNetCoreAppFrameworks);$(TargetedDotNetFrameworks)</TargetedFrameworks>
       <!-- <TargetFramework Condition="'$(TargetFramework)' == '' And '$(TargetFrameworks)' == ''">netstandard2.0</TargetFramework> -->
       <!-- <TargetFrameworks Condition="'$(TargetFrameworks)' == ''">$(TargetFramework)</TargetFrameworks> -->
     </PropertyGroup>

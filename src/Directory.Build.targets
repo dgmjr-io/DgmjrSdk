@@ -12,5 +12,25 @@
 
 
 <Project>
-  <Import Project="./Build/*.targets" />
+  <Import Project="./Build/AssemblyVersion.targets" />
+  <Import Project="./Build/Authors-Owners.targets" />
+  <Import Project="./Build/CentralPackageVersions.targets" />
+  <Import Project="./Build/DoNotCleanCachedPackageId.targets" />
+  <Import Project="./Build/GetPackageVersion.targets" />
+  <Import Project="./Build/GetPackageContents.targets" />
+  <Import Project="./Build/JustInTimeVersioning.targets" />
+  <Import Project="./Build/MinVer.targets" />
+  <Import Project="./Build/NuGetizer.targets" />
+  <Import Project="./Build/NuGetPush.targets" />
+  <Import Project="./Build/PackageDescription.targets" />
+  <Import Project="./Build/PackageMetadata.targets" />
+  <Import Project="./Build/PackageProjectName.targets" />
+  <Import Project="./Build/PackageIcon.targets" />
+  <Import Project="./Build/PackageProjectUrl.targets" />
+  <Import Project="./Build/PackageVersionOverride.targets" />
+  <Import Project="./Build/PackageTags.targets" />
+  <Import Project="./Build/PackOverride.targets" />
+  <Import Project="./Build/ReleaseNotes.targets" />
+  <Import Project="./Build/PushToAzureBlobs.targets" />
+  <Import Project="./Build/TestingLocal.targets" />
 </Project>
