@@ -21,7 +21,7 @@ public class EnsurePackageReadmeFileExists : MSBTask
 
     public override bool Execute()
     {
-        if(!Exists(PackageReadmePath))
+        if (!Exists(PackageReadmePath))
         {
             // Log.LogMessage($"Creating {README_MD}...");
             // WriteAllText(PackageReadmePath, GetReadmeContent());
