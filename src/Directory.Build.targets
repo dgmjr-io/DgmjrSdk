@@ -25,7 +25,7 @@
   <Import Project="./Build/PackageDescription.targets" />
   <Import Project="./Build/PackageMetadata.targets" />
   <Import Project="./Build/PackageProjectName.targets" />
-  <Import Project="./Build/PackageIcon.targets" />
+  <!-- <Import Project="./Build/PackageIcon.targets" /> -->
   <Import Project="./Build/PackageProjectUrl.targets" />
   <Import Project="./Build/PackageVersionOverride.targets" />
   <Import Project="./Build/PackageTags.targets" />

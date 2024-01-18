@@ -57,13 +57,14 @@
     <EmbeddedResource Include="./LICENSE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./frontmatter_teplate.yml" LogicalName="%(Filename)%(Extension)" />
+    <EmbeddedResource Include="./Assets/Icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="YamlDotNet" />
     <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
   </ItemGroup>
   <ItemGroup>
-    <PackageFile Include="./bin/$(Configuration)/$(TargetFramework)/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)(%Extension)" />
+    <PackageFile Include="./bin/$(Configuration)/$(TargetFramework)/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />
@@ -71,6 +72,7 @@
     <Using Include="System.Collections.Generic.KeyValuePair&lt;string,string&gt;" Alias="StrKvp" />
     <Using Include="Dgmjr.Sdk.Models" />
     <Using Include="System.Text.RegularExpressions" />
+    <Using Include="System.String" Static="true" />
     <Using Include="System.IO.File" Static="true" />
     <Using Include="System.IO.Path" Static="true" />
     <Using Include="Microsoft.Build.Framework" />

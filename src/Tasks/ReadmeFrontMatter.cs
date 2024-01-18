@@ -1,3 +1,5 @@
+using YamlDotNet.Core;
+using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
 
 namespace Dgmjr.Sdk.Models;
@@ -37,7 +39,7 @@ public class ReadmeFrontMatter
     [YamlMember(Alias = "license", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
     public string LicenseExpression { get; set; } = string.Empty;
 
-    [YamlMember(Alias = "projectUrl", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
+    [YamlMember(Alias = "projectUrl", DefaultValuesHandling = DefaultValuesHandling.OmitNull, SerializeAs = typeof(string))]
     public Uri? ProjectUrl { get; set; }
 
     [YamlMember(Alias = "summary", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
@@ -50,4 +52,35 @@ public class ReadmeFrontMatter
 
     // [YamlMember(Alias = "additionalValues", DefaultValuesHandling = DefaultValuesHandling.OmitNull)]
     // public IStringDictionary AdditionalValues { get; set; } = new Dictionary<string, string>();
+}
+
+public static class ReadmeFrontMatterExtensions
+{
+    public static string ToYaml(this ReadmeFrontMatter frontMatter)
+    {
+        var serializer = new SerializerBuilder()
+            .Build();
+        return serializer.Serialize(frontMatter);
+    }
+}
+
+public class UrlYamlConverter : IYamlTypeConverter
+{
+    public bool Accepts(Type type) => type == typeof(Uri);
+
+    public object ReadYaml(IParser parser, Type type)
+    {
+        var value = parser.Consume<Scalar>().Value;
+        return Uri.TryCreate(value, UriKind.Absolute, out var uri)
+            ? uri
+            : null;
+    }
+
+    public void WriteYaml(IEmitter emitter, object? value, Type type)
+    {
+        if (value is Uri uri)
+        {
+            emitter.Emit(new Scalar(null, null, uri.ToString(), ScalarStyle.Any, true, false));
+        }
+    }
 }
