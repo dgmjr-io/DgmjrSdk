@@ -19,6 +19,8 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IsNuGetized>true</IsNuGetized>
     <IsPackable>true</IsPackable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <Title>The DGMJR-IO SDK</Title>
@@ -45,6 +47,7 @@
     <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />
@@ -64,7 +67,7 @@
     <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
   </ItemGroup>
   <ItemGroup>
-    <PackageFile Include="./bin/$(Configuration)/$(TargetFramework)/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
+    <PackageFile Include="./bin/Local/$(TargetFramework)/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />

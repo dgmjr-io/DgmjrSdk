@@ -14,6 +14,7 @@
   <PropertyGroup>
     <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
+    <DgmjrSdkDll>$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
     <IsCrossTargetingBuild>true</IsCrossTargetingBuild>

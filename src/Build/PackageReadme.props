@@ -13,7 +13,7 @@
 <Project Condition="'$(PackageReadme_props)' == ''">
   <PropertyGroup>
     <PackageReadme_props>imported</PackageReadme_props>
-    <DgmjrSdkDll>$(MSBuildThisFileDirectory)/../lib/netstandard2.0/DgmjrSdk.dll</DgmjrSdkDll>
+    <!-- <DgmjrSdkDll>$(MSBuildThisFileDirectory)/../lib/netstandard2.0/DgmjrSdk.dll</DgmjrSdkDll> -->
     <PackDependsOn>
       $(PackDependsOn);
       EnsurePackageReadme;

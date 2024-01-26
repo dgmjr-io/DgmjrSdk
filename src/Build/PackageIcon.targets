@@ -11,7 +11,7 @@
 -->
 
 <Project>
-  <Import Project="PackageIcon.props" Condition="'$(PackageIcon_props)' == ''" />
+  <!-- <Import Project="PackageIcon.props" Condition="'$(PackageIcon_props)' == ''" /> -->
   <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsurePackageIcon" AssemblyFile="$(DgmjrSdkDll)" />
   <PropertyGroup>
     <PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists('$(MSBuildProjectDirectory)/Icon.jpg')">$(MSBuildProjectDirectory)/Icon.jpg</PackageIconFile>
@@ -20,7 +20,7 @@
     <PackageIconFile Condition="'$(PackageIcon)' == '' And '$(PackageIconFile)' == '' And !Exists('$(PackageIcon)') And Exists($(FallbackPackageIconFilePath))">$(FallbackPackageIconFilePath)</PackageIconFile>
   </PropertyGroup>
   <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false'">
-
+    <EnsurePackageIcon MSBuildProjectFullPath="$(MSBuildProjectFullPath)"  />
     <!-- copy the icon file from wherever it is to ./Icon.(png/jpg/jpeg) -->
     <!-- <Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.png" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.png')) And !Exists('$(MSBuildProjectDirectory)Icon.png')" />
     <Copy SourceFiles="$(PackageIconFile)" DestinationFiles="Icon.jpg" Condition="Exists($(PackageIconFile)) And $(PackageIconFile.EndsWith('.jpg')) And !Exists('$(MSBuildProjectDirectory)Icon.jpg')" />
