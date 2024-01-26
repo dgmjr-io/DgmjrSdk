@@ -67,7 +67,7 @@
     <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
   </ItemGroup>
   <ItemGroup>
-    <PackageFile Include="./bin/Local/$(TargetFramework)/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
+    <PackageFile Include="./$(OutputPath)/**/*.dll" Pack="true" PackagePath="lib/%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />

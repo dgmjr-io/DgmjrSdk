@@ -9,7 +9,7 @@ public class EnsureLicenseFileExists : MSBTask
 
     private string LicenseFilePath => Combine(ProjectDirectory, LICENSE_MD);
 
-    protected virtual Stream LicenseFileContent =>
+    protected virtual Stream OpenLicenseFileStream() =>
         typeof(EnsureLicenseFileExists).Assembly.GetManifestResourceStream(LICENSE_MD);
 
     [Required]
@@ -23,7 +23,7 @@ public class EnsureLicenseFileExists : MSBTask
                 $"License file '{LICENSE_MD}' not found in project directory: {ProjectDirectory}; adding it."
             );
             using var fs = File.Create(LicenseFilePath);
-            using var licenseFileStream = LicenseFileContent;
+            using var licenseFileStream = OpenLicenseFileStream();
             licenseFileStream.CopyTo(fs);
         }
 
