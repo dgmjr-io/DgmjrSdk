@@ -1,6 +1,8 @@
 namespace Dgmjr.Sdk.Tasks;
 
 using Microsoft.Build.Framework;
+using static System.IO.Path;
+using static System.IO.File;
 
 public class EnsureLicenseFileExists : MSBTask
 {
@@ -10,22 +12,23 @@ public class EnsureLicenseFileExists : MSBTask
     private string LicenseFilePath => Combine(ProjectDirectory, LICENSE_MD);
 
     protected virtual Stream OpenLicenseFileStream() =>
-        typeof(EnsureLicenseFileExists).Assembly.GetManifestResourceStream(LICENSE_MD);
+        GetType().Assembly.GetManifestResourceStream(LICENSE_MD);
+
+    protected virtual Stream OpenCreateStream() =>
+        Create(LicenseFilePath);
 
     [Required]
     public string MSBuildProjectFullPath { get; set; }
 
     public override bool Execute()
     {
-        if (!File.Exists(LicenseFilePath))
-        {
-            Log.LogWarning(
-                $"License file '{LICENSE_MD}' not found in project directory: {ProjectDirectory}; adding it."
-            );
-            using var fs = File.Create(LicenseFilePath);
-            using var licenseFileStream = OpenLicenseFileStream();
-            licenseFileStream.CopyTo(fs);
-        }
+
+        Log.LogWarning(
+            $"License file '{LICENSE_MD}' being copied from {GetType().FullName}."
+        );
+        using var fs = OpenCreateStream();
+        using var licenseFileStream = OpenLicenseFileStream();
+        licenseFileStream.CopyTo(fs);
 
         return true;
     }

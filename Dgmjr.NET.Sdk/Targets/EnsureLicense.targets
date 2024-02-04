@@ -11,10 +11,10 @@
 -->
 
 <Project InitialTargets="EnsureLicenseFileExists">
-  <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsureDgmjrSdkLicenseFileExists" AssemblyFile="$(DgmjrSdkDll)" />
+  <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsureLicenseFileExists" AssemblyFile="$(DgmjrSdkDll)" />
 
   <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents">
     <Message Importance="High" Text="Ensuring DGMJR-SDK license file exists" />
-    <EnsureDgmjrSdkLicenseFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
+    <Dgmjr.Sdk.Tasks.EnsureLicenseFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
   </Target>
 </Project>

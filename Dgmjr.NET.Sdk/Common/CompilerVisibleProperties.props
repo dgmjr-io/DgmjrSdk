@@ -1,0 +1,63 @@
+<!--
+ * CompilerVisibleProperties.props
+ *
+ *   Created: 2022-11-04-10:42:35
+ *   Modified: 2022-11-04-10:42:36
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+<Project>
+  <ItemGroup>
+    <!-- For the This Asssemgly code generator -->
+    <ProjectProperty Include="AssemblyName" />
+    <ProjectProperty Include="AssemblyVersion" />
+    <ProjectProperty Include="AssetTargetFallback" />
+    <ProjectProperty Include="Authors" />
+    <ProjectProperty Include="Company" />
+    <ProjectProperty Include="Configuration" />
+    <ProjectProperty Include="Configurations" />
+    <ProjectProperty Include="ContactEmail" />
+    <ProjectProperty Include="Copyright" />
+    <ProjectProperty Include="Description" />
+    <ProjectProperty Include="FileVersion" />
+    <ProjectProperty Include="IsMultitargeting" />
+    <ProjectProperty Include="Owners" />
+    <ProjectProperty Include="PackageLicenseExpression" />
+    <ProjectProperty Include="PackageProjectUrl" />
+    <ProjectProperty Include="PackageTags" />
+    <ProjectProperty Include="PackageVersion" />
+    <ProjectProperty Include="RepositoryUrl" />
+    <ProjectProperty Include="SwaggerTheme" />
+    <ProjectProperty Include="TargetFramework" />
+    <ProjectProperty Include="TargetFrameworks" />
+    <ProjectProperty Include="TermsOfServiceUrl" />
+    <ProjectProperty Include="Title" />
+    <ProjectProperty Include="Version" />
+  </ItemGroup>
+  <ItemGroup>
+    <CompilerVisibleProperty Include="@(ProjectProperty)" />
+  </ItemGroup>
+  <ItemGroup>
+    <CompilerVisibleItemMetadata Include="Author" MetadataName="Email" />
+    <CompilerVisibleItemMetadata Include="Author" MetadataName="Identity" />
+    <CompilerVisibleItemMetadata Include="Author" MetadataName="Initials" />
+    <CompilerVisibleItemMetadata Include="Author" MetadataName="GitHubId" />
+    <CompilerVisibleItemMetadata Include="Owner" MetadataName="Email" />
+    <CompilerVisibleItemMetadata Include="Owner" MetadataName="Identity" />
+    <CompilerVisibleItemMetadata Include="Owner" MetadataName="Initials" />
+    <CompilerVisibleItemMetadata Include="Owner" MetadataName="GitHubId" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="IncludeAssets" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="ExcludeAssets" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="PrivateAssets" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="Version" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="VersionOverride" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="Pack" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="GeneratePathProperty" />
+    <CompilerVisibleItemMetadata Include="PackageReference" MetadataName="CopyLocal" />
+    <CompilerVisibleItemMetadata Include="Using" MetadataName="Alias" />
+    <CompilerVisibleItemMetadata Include="Using" MetadataName="IsStatic" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+﻿<!--
+ * DoNotCleanCachedPackageId.targets
+ *
+ *   Created: 2023-02-25-05:39:49
+ *   Modified: 2023-02-25-11:43:39
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<!-- For some reasnon on Windows only, it kept deleting my locally-registered NuGet packages; this stops that from happening -->
+
+<Project>
+  <Target Name="DoNotCleanCachedPackageId" BeforeTargets="CleanCachedPackageId">
+    <PropertyGroup>
+      <_PackageId>$(PackageId)</_PackageId>
+      <PackageId>foo</PackageId>
+    </PropertyGroup>
+    <Message Text="Not cleaning cached package id" />
+  </Target>
+  <Target Name="RestorePackageId" AfterTargets="CleanCachedPackageId">
+    <PropertyGroup>
+      <PackageId>$(_PackageId)</PackageId>
+      <_PackageId />
+    </PropertyGroup>
+    <Message Text="Restoring package id" />
+  </Target>
+</Project>

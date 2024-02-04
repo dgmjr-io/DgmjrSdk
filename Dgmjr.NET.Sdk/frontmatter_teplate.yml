@@ -1,0 +1,13 @@
+---
+authors: {{author}}
+date: {{date}}
+description: {{description}}
+keywords: {{keywords}}
+lastmod: {{lastmod}}
+license: {{license}}
+slug: {{slug}}
+tags: {{tags}}
+title: {{title}}
+type: readme
+version: {{version}}
+---

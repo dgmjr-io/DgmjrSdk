@@ -1,6 +1,15 @@
 namespace Dgmjr.Sdk.Tasks;
 
 using static System.Text.RegularExpressions.RegexOptions;
+using MSBTask = Microsoft.Build.Utilities.Task;
+using System.Text.RegularExpressions;
+using Microsoft.Build.Framework;
+using static System.IO.Path;
+using System.Reflection;
+using Microsoft.Build.Execution;
+using static System.IO.File;
+using static System.String;
+using Dgmjr.Sdk.Models;
 
 public class EnsurePackageReadmeFileExists : MSBTask
 {

@@ -1,0 +1,30 @@
+<!--
+ * PackageMetadata.props
+ *
+ *   Created: 2022-10-22-01:38:14
+ *   Modified: 2022-11-19-04:05:24
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <RootNamespace Condition="'$(RootNamespace)' == ''">$(MSBuildProjectName)</RootNamespace>
+    <AssemblyName Condition="'$(AssemblyName)' == ''">$(MSBuildProjectName)</AssemblyName>
+    <AssemblyTitle Condition="'$(AssemblyTitle)' == ''">$(MSBuildProjectName)</AssemblyTitle>
+    <Title Condition="'$(Title)' == ''">$(AssemblyTitle)</Title>
+    <DefaultLanguage>en</DefaultLanguage>
+    <NeutralLanguage>en</NeutralLanguage>
+    <LangVersion>preview</LangVersion>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <DebugType>portable</DebugType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPublishable>true</IsPublishable>
+    <RollForward>LatestPatch</RollForward>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+</Project>

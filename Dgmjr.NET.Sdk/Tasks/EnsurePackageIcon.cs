@@ -1,24 +1,26 @@
-using Internal;
-
 namespace Dgmjr.Sdk.Tasks;
+using Internal;
+using Microsoft.Build.Framework;
+using static System.IO.Path;
+using static System.IO.File;
 
 public class EnsurePackageIcon : MSBTask
 {
-    private const string Icon = "icon";
-    private const string _png = ".png";
-    private const string _jpg = ".jpg";
-    private const string _svg = ".svg";
-    private static readonly string[] _extensions = { _png, _jpg, _svg };
+    protected const string Icon = "icon";
+    protected const string _png = ".png";
+    protected const string _jpg = ".jpg";
+    protected const string _svg = ".svg";
+    protected static readonly string[] _extensions = { _png, _jpg, _svg };
 
     const string DEFAULT_PACKAGE_ICON_PNG = "DEFAULT_PACKAGE_ICON.png";
-    private string ProjectDirectory => GetDirectoryName(MSBuildProjectFullPath);
+    protected string ProjectDirectory => GetDirectoryName(MSBuildProjectFullPath);
 
-    private string PackageIconPath => Combine(ProjectDirectory, Icon);
+    protected string PackageIconPath => Combine(ProjectDirectory, Icon);
 
     protected virtual string? GetPackageIconPath() =>
         _extensions
             .Select(ext => Combine(ProjectDirectory, $"{Icon}{ext}"))
-            .FirstOrDefault(File.Exists);
+            .FirstOrDefault(Exists);
 
     [Output]
     public string? PackageIcon => GetFileName(GetPackageIconPath());
@@ -32,14 +34,14 @@ public class EnsurePackageIcon : MSBTask
         Create(Combine(ProjectDirectory, $"{Icon}{DefaultPackageIconExtension}"));
 
     protected virtual Stream OpenDefaultIconStream() =>
-        typeof(EnsurePackageIcon).Assembly.GetManifestResourceStream(DEFAULT_PACKAGE_ICON_PNG);
+        GetType().Assembly.GetManifestResourceStream(DEFAULT_PACKAGE_ICON_PNG);
 
     public override bool Execute()
     {
         if (PackageIcon is null)
         {
             Log.LogWarning(
-                $"Package icon '{Icon}({_png}/{_jpg}/{_svg}' not found in project directory: {ProjectDirectory}; adding it as {Icon}{DefaultPackageIconExtension}."
+                $"Package icon '{Icon}({_png}/{_jpg}/{_svg}' not found in project directory: {ProjectDirectory}; adding it as {Icon}{DefaultPackageIconExtension} from {GetType().Assembly.FullName}."
             );
             using var fs = OpenCreateIconStream();
             using var defaultIconStream = OpenDefaultIconStream();

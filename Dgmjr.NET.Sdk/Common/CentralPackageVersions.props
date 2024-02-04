@@ -1,0 +1,21 @@
+<!--
+ * CentralPackageVersions.props
+ *
+ *   Created: 2022-11-23-06:09:04
+ *   Modified: 2022-11-23-06:09:04
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <CentralPackageVersionsProps>$(MSBuildThisFileDirectory)Imported</CentralPackageVersionsProps>
+    <EnableCentralPackageVersions>true</EnableCentralPackageVersions>
+    <EnableGlobalPackageReferences>true</EnableGlobalPackageReferences>
+    <EnablePackageVersionOverride>true</EnablePackageVersionOverride>
+    <EnablePackageVersionOverrideWithoutCentralVersion>true</EnablePackageVersionOverrideWithoutCentralVersion>
+  </PropertyGroup>
+</Project>

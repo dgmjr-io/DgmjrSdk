@@ -1,0 +1,30 @@
+<!--
+ * Sdk.props
+ *
+ *   Created: 2022-12-19-01:17:17
+ *   Modified: 2022-12-19-01:17:19
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <UsingDgmjrSdk>true</UsingDgmjrSdk>
+    <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
+    <DgmjrSdkDll>$(MSBuildThisFileDirectory)../lib/Dgmjr.NET.Sdk.dll</DgmjrSdkDll>
+    <IsNotDgmjrSdk>!$(MSBuildProjectName.Equals('Dgmjr.NET.Sdk'))</IsNotDgmjrSdk>
+    <UsingMicrosoftNETSdk Condition="'$(UsingMicrosoftNETSdk)' == ''">false</UsingMicrosoftNETSdk>
+    <MicrosoftBuildTasksGitAssemblyFile>$(PkgMicrosoft_Build_Tasks_Git)/tools/core/Microsoft.Build.Tasks.Git.dll</MicrosoftBuildTasksGitAssemblyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
+    <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
+    <IsMultiTargeting>true</IsMultiTargeting>
+  </PropertyGroup>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Git.LocateRepository" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="$(IsNotDgmjrSdk)" />
+  <Import Project="$(MSBuildThisFileDirectory)/../Common/*.props" />
+</Project>
