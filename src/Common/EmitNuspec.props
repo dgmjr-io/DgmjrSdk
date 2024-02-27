@@ -1,8 +1,8 @@
 <!--
- * Directory.Build.props
+ * EmitNuspec.props
  *
- *   Created: 2022-12-19-11:45:28
- *   Modified: 2022-12-19-11:45:28
+ *   Created: 2023-01-13-03:16:35
+ *   Modified: 2023-01-13-03:16:35
  *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *
@@ -11,5 +11,7 @@
 -->
 
 <Project>
-  <!-- <Import Project="Sdk.props" Condition="Exists('Sdk.props')" Sdk="Dgmjr.NET.Sdk" /> -->
+  <PropertyGroup>
+    <EmitNuspec>true</EmitNuspec>
+  </PropertyGroup>
 </Project>

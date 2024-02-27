@@ -10,7 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project>
+<Project InitialTargets="WritePkgMicrosoft_Build_Tasks_Git">
   <PropertyGroup>
     <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
@@ -25,6 +25,16 @@
   </PropertyGroup>
   <UsingTask TaskName="Microsoft.Build.Tasks.Git.LocateRepository" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
   <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
-  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="$(IsNotDgmjrSdk)" />
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
   <Import Project="$(MSBuildThisFileDirectory)/../Common/*.props" />
+
+  <Target Name="WritePkgMicrosoft_Build_Tasks_Git" BeforeTargets="Build">
+    <Message Text="PkgMicrosoft_Build_Tasks_Git: $(PkgMicrosoft_Build_Tasks_Git)" Importance="high" />
+    <PropertyGroup>
+      <MicrosoftBuildTasksGitAssemblyFile Condition="'$(MSBuildRuntimeType)' != 'Core'">$(PkgMicrosoft_Build_Tasks_Git)/tools/net472/Microsoft.Build.Tasks.Git.dll</MicrosoftBuildTasksGitAssemblyFile>
+      <MicrosoftBuildTasksGitAssemblyFile Condition="'$(MSBuildRuntimeType)' == 'Core'">$(PkgMicrosoft_Build_Tasks_Git)/tools/core/Microsoft.Build.Tasks.Git.dll</MicrosoftBuildTasksGitAssemblyFile>
+    </PropertyGroup>
+  </Target>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Git.LocateRepository" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
 </Project>

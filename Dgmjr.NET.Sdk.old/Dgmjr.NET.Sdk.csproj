@@ -53,7 +53,7 @@
     <PackageFile Include="./icon.png" PackagePath="%(Filename)%(Extension)" />
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
-    <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
+    <PackageFile Include="./bin/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />
@@ -90,8 +90,5 @@
   <ItemGroup>
     <Compile Include="./Tasks/*.cs" />
   </ItemGroup>
-  <Target Name="WritePkgMicrosoft_Build_Tasks_Git" BeforeTargets="Build">
-    <Message Text="PkgMicrosoft_Build_Tasks_Git: $(PkgMicrosoft_Build_Tasks_Git)" Importance="high" />
-  </Target>
   <!-- <Import Project="./Sdk/Sdk.targets" /> -->
 </Project>

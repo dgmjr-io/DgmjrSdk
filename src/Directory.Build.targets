@@ -12,25 +12,25 @@
 
 
 <Project>
-  <Import Project="./Build/AssemblyVersion.targets" />
-  <Import Project="./Build/Authors-Owners.targets" />
-  <Import Project="./Build/CentralPackageVersions.targets" />
-  <Import Project="./Build/DoNotCleanCachedPackageId.targets" />
-  <Import Project="./Build/GetPackageVersion.targets" />
-  <Import Project="./Build/GetPackageContents.targets" />
-  <Import Project="./Build/JustInTimeVersioning.targets" />
-  <Import Project="./Build/MinVer.targets" />
-  <Import Project="./Build/NuGetizer.targets" />
-  <Import Project="./Build/NuGetPush.targets" />
-  <Import Project="./Build/PackageDescription.targets" />
-  <Import Project="./Build/PackageMetadata.targets" />
-  <Import Project="./Build/PackageProjectName.targets" />
-  <!-- <Import Project="./Build/PackageIcon.targets" /> -->
-  <Import Project="./Build/PackageProjectUrl.targets" />
-  <Import Project="./Build/PackageVersionOverride.targets" />
-  <Import Project="./Build/PackageTags.targets" />
-  <Import Project="./Build/PackOverride.targets" />
-  <Import Project="./Build/ReleaseNotes.targets" />
-  <Import Project="./Build/PushToAzureBlobs.targets" />
-  <Import Project="./Build/TestingLocal.targets" />
+  <Import Project="./Targets/AssemblyVersion.targets" />
+  <Import Project="./Targets/Authors-Owners.targets" />
+  <Import Project="./Targets/CentralPackageVersions.targets" />
+  <Import Project="./Targets/DoNotCleanCachedPackageId.targets" />
+  <Import Project="./Targets/GetPackageVersion.targets" />
+  <Import Project="./Targets/GetPackageContents.targets" />
+  <Import Project="./Targets/JustInTimeVersioning.targets" />
+  <Import Project="./Targets/MinVer.targets" />
+  <Import Project="./Targets/NuGetizer.targets" />
+  <Import Project="./Targets/NuGetPush.targets" />
+  <Import Project="./Targets/PackageDescription.targets" />
+  <Import Project="./Targets/PackageMetadata.targets" />
+  <Import Project="./Targets/PackageProjectName.targets" />
+  <!-- <Import Project="./Targets/PackageIcon.targets" /> -->
+  <Import Project="./Targets/PackageProjectUrl.targets" />
+  <Import Project="./Targets/PackageVersionOverride.targets" />
+  <Import Project="./Targets/PackageTags.targets" />
+  <Import Project="./Targets/PackOverride.targets" />
+  <Import Project="./Targets/ReleaseNotes.targets" />
+  <Import Project="./Targets/PushToAzureBlobs.targets" />
+  <Import Project="./Targets/TestingLocal.targets" />
 </Project>

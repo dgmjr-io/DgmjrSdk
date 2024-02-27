@@ -1,0 +1,91 @@
+<Project>
+<!-- <Project InitialTargets="RestoreSourceGeneratorPackageReferences;RestoreSourceGeneratorProjectReferences;RestoreSourceCodePackageReferences;RestoreUsingsPackageReferences"> -->
+  <!-- <Target Name="RestoreSourceGeneratorPackageReferences" BeforeTargets="Restore" Inputs="%(SourceGeneratorPackageReference.Identity)" Outputs="@(PackageReference)">
+    <ItemGroup>
+      <PackageReference Include="%(SourceGeneratorPackageReference.Identity)">
+        <CopyLocal>true</CopyLocal>
+        <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
+        <GeneratePathProperty>true</GeneratePathProperty>
+        <IncludeAssets>Analyzers;Build</IncludeAssets>
+        <Pack>true</Pack>
+        <PrivateAssets>All</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+  </Target>
+  <Target Name="RestoreSourceGeneratorProjectReferences" BeforeTargets="Restore" Inputs="%(SourceGeneratorProjectReference.Identity)" Outputs="@(ProjectReference)">
+    <ItemGroup>
+      <ProjectReference Include="%(SourceGeneratorProjectReference.Identity)">
+        <CopyLocal>true</CopyLocal>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        <GeneratePathProperty>true</GeneratePathProperty>
+        <OutputItemType>Analyzer</OutputItemType>
+        <Pack>true</Pack>
+        <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+        <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+        <Targets>Restore;Build;Pack</Targets>
+      </ProjectReference>
+    </ItemGroup>
+  </Target>
+  <Target Name="RestoreSourceCodePackageReferences" BeforeTargets="Restore" Inputs="%(SourceCodePackageReference.Identity)" Outputs="@(PackageReference)">
+    <ItemGroup>
+      <PackageReference Include="%(SourceCodePackageReference.Identity)">
+        <CopyLocal>true</CopyLocal>
+        <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
+        <GeneratePathProperty>true</GeneratePathProperty>
+        <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
+        <Pack>true</Pack>
+        <PrivateAssets>All</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+  </Target>
+  <Target Name="RestoreUsingsPackageReferences" BeforeTargets="Restore" Inputs="%(UsingsPackageReference.Identity)" Outputs="@(PackageReference)">
+    <ItemGroup>
+      <PackageReference Include="%(UsingsPackageReference.Identity)">
+        <CopyLocal>true</CopyLocal>
+        <ExcludeAssets>ContentFiles;Native;Analyzers</ExcludeAssets>
+        <GeneratePathProperty>true</GeneratePathProperty>
+        <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime;Compile</IncludeAssets>
+        <Pack>true</Pack>
+        <PrivateAssets>None</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+  </Target> -->
+  <ItemGroup>
+    <PackageReference Include="@(SourceGeneratorPackageReference)">
+      <CopyLocal>true</CopyLocal>
+      <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>Analyzers;Build</IncludeAssets>
+      <Pack>true</Pack>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <ProjectReference Include="@(SourceGeneratorProjectReference)">
+      <CopyLocal>true</CopyLocal>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <OutputItemType>Analyzer</OutputItemType>
+      <Pack>true</Pack>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <Targets>Restore;Build;Pack</Targets>
+    </ProjectReference>
+    <PackageReference Include="@(SourceCodePackageReference)">
+      <CopyLocal>true</CopyLocal>
+      <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>ContentFiles;Build;BuildTransitive;BuildMultitargeting</IncludeAssets>
+      <Pack>true</Pack>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="@(UsingsPackageReference)">
+      <CopyLocal>true</CopyLocal>
+      <ExcludeAssets>ContentFiles;Native;Analyzers</ExcludeAssets>
+      <GeneratePathProperty>true</GeneratePathProperty>
+      <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime;Compile</IncludeAssets>
+      <Pack>true</Pack>
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

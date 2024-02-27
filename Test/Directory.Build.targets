@@ -11,5 +11,5 @@
 -->
 
 <Project>
-  <Import Project="Sdk.targets" Condition="Exists('Sdk.targets')" Sdk="DgmjrSdk" />
+  <!-- <Import Project="Sdk.targets" Condition="Exists('Sdk.targets')" Sdk="Dgmjr.NET.Sdk" /> -->
 </Project>

@@ -14,5 +14,5 @@
   <PropertyGroup>
     <DgmjrSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</DgmjrSdkTargets>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)/../Build/*.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)/../Targets/*.targets" />
 </Project>

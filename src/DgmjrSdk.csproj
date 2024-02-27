@@ -20,7 +20,7 @@
     <IsNuGetized>true</IsNuGetized>
     <IsPackable>true</IsPackable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath>
+    <!-- <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath> -->
   </PropertyGroup>
   <PropertyGroup>
     <Title>The DGMJR-IO SDK</Title>
@@ -33,17 +33,21 @@
     <IncludeInSolutionFile>true</IncludeInSolutionFile>
     <DevelopmentDependency>true</DevelopmentDependency>
     <NoWarn>$(NoWarn);MSB4011</NoWarn>
-    <PackageIcon>Icon.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <IsUsingNETSDK>true</IsUsingNETSDK>
     <PackageVersionOverride Condition="'$(PackageVersionOverride)' == '' And '$(Configuration)' != 'Local'">0.0.23</PackageVersionOverride>
   </PropertyGroup>
   <ItemGroup>
     <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
-    <PackageFile Include="./Build/*.cs" PackagePath="Build/%(Filename)%(Extension)" />
-    <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./Common/*.cs" PackagePath="Common/%(Filename)%(Extension)" />
+    <!-- <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
     <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
     <PackageFile Include="./Build/Custom/*.*" PackagePath="Build/Custom/%(Filename)%(Extension)" />
-    <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
+    <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />    -->
+    <PackageFile Include="./Common/*.props" PackagePath="Common/%(Filename)%(Extension)" />
+    <PackageFile Include="./Targets/*.targets" PackagePath="Targets/%(Filename)%(Extension)" />
+    <!-- <PackageFile Include="./Build/Custom/*.*" PackagePath="Build/Custom/%(Filename)%(Extension)" /> -->
+    <!-- <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" /> -->
     <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
@@ -60,14 +64,14 @@
     <EmbeddedResource Include="./LICENSE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./frontmatter_teplate.yml" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./Assets/Icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
+    <EmbeddedResource Include="./Assets/icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="YamlDotNet" />
     <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
   </ItemGroup>
   <ItemGroup>
-    <PackageFile Include="./$(OutputPath)/**/*.dll" Pack="true" PackagePath="lib/%(RecursiveDir)%(Filename)%(Extension)" />
+    <PackageFile Include="./$(OutputPath)/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />

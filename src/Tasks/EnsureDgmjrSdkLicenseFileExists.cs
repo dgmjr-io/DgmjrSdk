@@ -2,7 +2,7 @@ namespace Dgmjr.Sdk.Tasks;
 
 using Microsoft.Build.Framework;
 
-public class EnsureDgmjrSdkLicenseFileExists : MSBTask
+public class EnsureLicenseFileExists : MSBTask
 {
     const string LICENSE_MD = "LICENSE.md";
     private string ProjectDirectory => GetDirectoryName(MSBuildProjectFullPath);

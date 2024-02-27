@@ -20,5 +20,5 @@
     <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
     <IsMultiTargeting>true</IsMultiTargeting>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)/../Build/*.props" />
+  <Import Project="$(MSBuildThisFileDirectory)/../Common/*.props" />
 </Project>

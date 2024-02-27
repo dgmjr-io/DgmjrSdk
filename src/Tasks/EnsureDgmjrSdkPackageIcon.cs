@@ -1,7 +1,7 @@
 namespace Dgmjr.Sdk.Tasks;
 using Internal;
 
-public class EnsureDgmjrSdkPackageIcon : MSBTask
+public class EnsurePackageIcon : MSBTask
 {
     protected const string Icon = "icon";
     protected const string _png = ".png";

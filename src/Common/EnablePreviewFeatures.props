@@ -1,15 +1,16 @@
 <!--
- * Directory.Build.props
+ * EnablePreviewFeatures.props
  *
- *   Created: 2022-12-19-11:45:28
- *   Modified: 2022-12-19-11:45:28
+ *   Created: 2022-12-21-05:20:38
+ *   Modified: 2022-12-21-05:20:39
  *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
  *
  *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
-
 <Project>
-  <!-- <Import Project="Sdk.props" Condition="Exists('Sdk.props')" Sdk="Dgmjr.NET.Sdk" /> -->
+  <PropertyGroup>
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
+  </PropertyGroup>
 </Project>

@@ -1,0 +1,3 @@
+[submodule "Dgmjr.NET.Sdk"]
+	path = Dgmjr.NET.Sdk
+	url = https://github.com/novotnyllc/MSBuildSdkExtras.git
