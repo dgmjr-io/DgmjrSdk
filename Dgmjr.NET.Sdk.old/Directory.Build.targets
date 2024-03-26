@@ -10,7 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-
 <Project>
-  <Import Project="./Sdk/Sdk.targets" />
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+  <Import Project="./Sdk/Sdk.targets" Condition="'$(DgmjrSdkTargets)' == ''" />
 </Project>

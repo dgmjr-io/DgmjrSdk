@@ -11,5 +11,5 @@
 -->
 
 <Project>
-  <!-- <Import Project="Sdk.props" Condition="Exists('Sdk.props')" Sdk="Dgmjr.NET.Sdk" /> -->
+  <!-- <Import Project="Sdk.props" Sdk="DgmjrSdk" /> -->
 </Project>

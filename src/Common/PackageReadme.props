@@ -14,7 +14,7 @@
   <PropertyGroup>
     <PackageReadme_props>imported</PackageReadme_props>
     <!-- <DgmjrSdkDll>$(MSBuildThisFileDirectory)/../lib/netstandard2.0/DgmjrSdk.dll</DgmjrSdkDll> -->
-    <PackDependsOn Condition="'$(MSBuildProjectName)' != 'Dgmjr.NET.Sdk'">
+    <PackDependsOn Condition="!$(IsDgmjrSdk)">
       $(PackDependsOn);
       EnsurePackageReadme;
     </PackDependsOn>

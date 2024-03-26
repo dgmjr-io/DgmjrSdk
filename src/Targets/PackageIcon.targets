@@ -13,10 +13,11 @@
 <Project InitialTargets="EnsurePackageIcon">
   <Import Project="../Common/DgmjrSdkDll.props" Condition="'$(DgmjrSdkDll)' == ''" />
   <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsurePackageIcon" AssemblyFile="$(DgmjrSdkDll)" />
-  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false'">
+  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="$(IsDgmjrSdk)" />
+  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false' And !$(IsDgmjrSdk)">
     <Message Importance="High" Text="Ensuring DGMJR-SDK icon file exists" />
-    <Dgmjr.Sdk.Tasks.EnsurePackageIcon MSBuildProjectFullPath="$(MSBuildProjectFullPath)">
+    <EnsurePackageIcon MSBuildProjectFullPath="$(MSBuildProjectFullPath)">
       <Output TaskParameter="PackageIcon" PropertyName="PackageIcon" />
-    </Dgmjr.Sdk.Tasks.EnsurePackageIcon>
+    </EnsurePackageIcon>
   </Target>
 </Project>

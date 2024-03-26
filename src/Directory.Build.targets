@@ -12,7 +12,9 @@
 
 
 <Project>
-  <Import Project="./Targets/AssemblyVersion.targets" />
+  <Import Project="Sdk/Common.targets" />
+  <!-- <Import Project="./Sdk/Sdk.targets" /> -->
+  <!-- <Import Project="./Targets/AssemblyVersion.targets" />
   <Import Project="./Targets/Authors-Owners.targets" />
   <Import Project="./Targets/CentralPackageVersions.targets" />
   <Import Project="./Targets/DoNotCleanCachedPackageId.targets" />
@@ -25,12 +27,12 @@
   <Import Project="./Targets/PackageDescription.targets" />
   <Import Project="./Targets/PackageMetadata.targets" />
   <Import Project="./Targets/PackageProjectName.targets" />
-  <!-- <Import Project="./Targets/PackageIcon.targets" /> -->
+  <Import Project="./Targets/PackageIcon.targets" />
   <Import Project="./Targets/PackageProjectUrl.targets" />
   <Import Project="./Targets/PackageVersionOverride.targets" />
   <Import Project="./Targets/PackageTags.targets" />
   <Import Project="./Targets/PackOverride.targets" />
   <Import Project="./Targets/ReleaseNotes.targets" />
   <Import Project="./Targets/PushToAzureBlobs.targets" />
-  <Import Project="./Targets/TestingLocal.targets" />
+  <Import Project="./Targets/TestingLocal.targets" /> -->
 </Project>

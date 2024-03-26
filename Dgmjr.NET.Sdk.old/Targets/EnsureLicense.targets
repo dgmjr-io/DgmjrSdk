@@ -11,6 +11,7 @@
 -->
 
 <Project InitialTargets="EnsureLicenseFileExists">
+  <!-- <Import Project="../Common/*.props" /> -->
   <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsureLicenseFileExists" AssemblyFile="$(DgmjrSdkDll)" />
 
   <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents">

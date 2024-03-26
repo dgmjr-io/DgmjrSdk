@@ -1,4 +1,5 @@
-///<summary>Namespace for tasks related to ensuring the existence of license files.</summary>
+using Microsoft.Build.Framework;
+
 namespace Dgmjr.Sdk.Tasks
 {
     ///<summary>Task to ensure that a license file exists within the project directory.</summary>

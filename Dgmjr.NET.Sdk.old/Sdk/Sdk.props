@@ -10,11 +10,11 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project InitialTargets="WritePkgMicrosoft_Build_Tasks_Git">
+<Project>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="'$(UsingMicrosoftNetSdk)' != 'true'" />
   <PropertyGroup>
     <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
-    <DgmjrSdkDll>$(MSBuildThisFileDirectory)../lib/Dgmjr.NET.Sdk.dll</DgmjrSdkDll>
     <IsNotDgmjrSdk>!$(MSBuildProjectName.Equals('Dgmjr.NET.Sdk'))</IsNotDgmjrSdk>
     <UsingMicrosoftNETSdk Condition="'$(UsingMicrosoftNETSdk)' == ''">false</UsingMicrosoftNETSdk>
     <MicrosoftBuildTasksGitAssemblyFile>$(PkgMicrosoft_Build_Tasks_Git)/tools/core/Microsoft.Build.Tasks.Git.dll</MicrosoftBuildTasksGitAssemblyFile>
@@ -23,12 +23,11 @@
     <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
     <IsMultiTargeting>true</IsMultiTargeting>
   </PropertyGroup>
-  <UsingTask TaskName="Microsoft.Build.Tasks.Git.LocateRepository" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
-  <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
-  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <!-- <UsingTask TaskName="Microsoft.Build.Tasks.Git.LocateRepository" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/> -->
   <Import Project="$(MSBuildThisFileDirectory)/../Common/*.props" />
 
-  <Target Name="WritePkgMicrosoft_Build_Tasks_Git" BeforeTargets="Build">
+  <!-- <Target Name="WritePkgMicrosoft_Build_Tasks_Git" BeforeTargets="Build">
     <Message Text="PkgMicrosoft_Build_Tasks_Git: $(PkgMicrosoft_Build_Tasks_Git)" Importance="high" />
     <PropertyGroup>
       <MicrosoftBuildTasksGitAssemblyFile Condition="'$(MSBuildRuntimeType)' != 'Core'">$(PkgMicrosoft_Build_Tasks_Git)/tools/net472/Microsoft.Build.Tasks.Git.dll</MicrosoftBuildTasksGitAssemblyFile>
@@ -36,5 +35,5 @@
     </PropertyGroup>
   </Target>
   <UsingTask TaskName="Microsoft.Build.Tasks.Git.LocateRepository" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
-  <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Git.GetUntrackedFiles" AssemblyFile="$(MicrosoftBuildTasksGitAssemblyFile)"/> -->
 </Project>

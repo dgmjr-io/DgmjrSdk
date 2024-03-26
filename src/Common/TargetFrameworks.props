@@ -17,7 +17,7 @@
       <DotNetStandardTargetFrameworks></DotNetStandardTargetFrameworks>
       <DotNetStandard1TargetFrameworks>netstandard1.0;netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.4;netstandard1.5;netstandard1.6</DotNetStandard1TargetFrameworks>
       <DotNetStandard2TargetFrameworks>netstandard2.0;netstandard2.1</DotNetStandard2TargetFrameworks>
-      <DotNetStandardTargetFrameworks>$(NetStandard1TargetFrameworks);$(NetStandard2TargetFrameworks)</DotNetStandardTargetFrameworks>
+      <DotNetStandardTargetFrameworks>$(DotNetStandard1TargetFrameworks);$(DotNetStandard2TargetFrameworks)</DotNetStandardTargetFrameworks>
       <DotNetCoreApp1TargetFrameworks>netcoreapp1.0;netcoreapp1.1</DotNetCoreApp1TargetFrameworks>
       <DotNetCoreApp2TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2</DotNetCoreApp2TargetFrameworks>
       <DotNetCoreApp3TargetFrameworks>netcoreapp3.0;netcoreapp3.1</DotNetCoreApp3TargetFrameworks>
@@ -29,8 +29,10 @@
       <TargetedDotNetCoreAppFrameworks>netcoreapp3.1</TargetedDotNetCoreAppFrameworks>
       <TargetedDotNetFrameworks>net6.0;net8.0</TargetedDotNetFrameworks>
 
-      <TargetedFrameworks>$(TargetedDotNetStandardFrameworks);$(TargetedDotNetCoreAppFrameworks);$(TargetedDotNetFrameworks)</TargetedFrameworks>
+      <TargetedFrameworks>$(TargetedDotNetStandardFrameworks);$(TargetedDotNetFrameworks)</TargetedFrameworks>
       <!-- <TargetFramework Condition="'$(TargetFramework)' == '' And '$(TargetFrameworks)' == ''">netstandard2.0</TargetFramework> -->
       <!-- <TargetFrameworks Condition="'$(TargetFrameworks)' == ''">$(TargetFramework)</TargetFrameworks> -->
+      <DefaultTargetFrameworks>$(TargetedFrameworks)</DefaultTargetFrameworks>
+      <DefaultTargetFramework>net8.0</DefaultTargetFramework>
     </PropertyGroup>
 </Project>

@@ -11,7 +11,9 @@
 -->
 
 <Project>
-  <!-- <Import Project="./Common/TargetFraneworks.props" /> -->
+  <Import Project="Sdk/Common.props" />
+  <!-- <Import Project="./Sdk/Sdk.props" /> -->
+  <!-- <Import Project="./Common/TargetFraneworks.props" />
   <Import Project="./Common/AIsMultiTargeting.props" />
   <Import Project="./Common/AAGitRoot.props" />
   <Import Project="./Common/ADefaultBuildConfiguration.props" />
@@ -36,7 +38,7 @@
   <Import Project="./Common/PackageIcon.props" />
   <Import Project="./Common/PackageMetadata.props" />
   <Import Project="./Common/PackageProjectUrl.props" />
-  <!-- <Import Project="./Common/PackageReadme.props" /> -->
+  <Import Project="./Common/PackageReadme.props" />
   <Import Project="./Common/PackageTags.props" />
   <Import Project="./Common/PackageVersionOverride.props" />
   <Import Project="./Common/ProjectMetadata.props" />
@@ -46,5 +48,5 @@
   <Import Project="./Common/TargetFrameworks.props" />
   <Import Project="./Common/Testing.props" />
   <Import Project="./Common/TestingLocal.props" />
-  <Import Project="./Common/UserSecrets.props" />
+  <Import Project="./Common/UserSecrets.props" /> -->
 </Project>

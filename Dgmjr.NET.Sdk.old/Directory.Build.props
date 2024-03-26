@@ -11,5 +11,6 @@
 -->
 
 <Project>
-  <Import Project="./Sdk/Sdk.props" />
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="'$(UsingMicrosoftNetSdk)' != 'true'" />
+  <Import Project="./Sdk/Sdk.props" Condition="'$(UsingDgmjrSdk)' == ''" />
 </Project>

@@ -14,5 +14,7 @@
   <PropertyGroup>
     <DgmjrSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</DgmjrSdkTargets>
   </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)/../Targets/*.targets" />
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" Condition="$(ImportMicrosoftNetSdk)" />
+  <Import Project="$(MSBuildThisFileDirectory)Common.targets" />
 </Project>

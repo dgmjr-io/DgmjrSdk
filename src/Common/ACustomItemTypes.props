@@ -18,6 +18,7 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
       <Targets>Restore;Build;Pack</Targets>
+      <PrivateAssets>All</PrivateAssets>
     </SourceGeneratorProjectReference>
     <SourceCodePackageReference>
       <CopyLocal>true</CopyLocal>
@@ -33,7 +34,7 @@
       <GeneratePathProperty>true</GeneratePathProperty>
       <IncludeAssets>Build;BuildTransitive;BuildMultitargeting;Runtime;Compile</IncludeAssets>
       <Pack>true</Pack>
-      <PrivateAssets>None</PrivateAssets>
+      <PrivateAssets>All</PrivateAssets>
     </UsingsPackageReference>
   </ItemDefinitionGroup>
 </Project>

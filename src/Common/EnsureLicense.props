@@ -10,7 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Condition="'$(EnsureLicense_props)' == ''">
+<Project>
   <PropertyGroup>
     <EnsureLicense_props>included</EnsureLicense_props>
     <DgmjrSdkDll>$(MSBuildThisFileDirectory)/../lib/netstandard2.0/DgmjrSdk.dll</DgmjrSdkDll>

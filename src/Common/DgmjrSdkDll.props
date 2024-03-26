@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
-        <DgmjrSdkDll>$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
+        <DgmjrSdkDll Condition="$(IsDgmjrSdk)">$(MSBuildThisFileDirectory)../bin/DgmjrSdk.dll</DgmjrSdkDll>
+        <DgmjrSdkDll Condition="!$(IsDgmjrSdk)">$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
     </PropertyGroup>
 </Project>

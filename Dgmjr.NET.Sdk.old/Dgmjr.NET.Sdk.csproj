@@ -10,8 +10,7 @@
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Microsoft.NET.Sdk" InitialTargets="WritePkgMicrosoft_Build_Tasks_Git">
-  <!-- <Import Project="./Sdk/Sdk.props" /> -->
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProjectGuid>EB008C4C-9C3A-4498-A19D-34A42B6E2CE1</ProjectGuid>
@@ -43,17 +42,17 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
-    <PackageFile Include="./Common/*.cs" PackagePath="Common/%(Filename)%(Extension)" />
-    <PackageFile Include="./Common/*.props" PackagePath="Common/%(Filename)%(Extension)" />
-    <PackageFile Include="./Targets/*.targets" PackagePath="Targets/%(Filename)%(Extension)" />
-    <PackageFile Include="./Common/Custom/*.*" PackagePath="Common/Custom/%(Filename)%(Extension)" />
-    <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
-    <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
-    <PackageFile Include="./icon.png" PackagePath="%(Filename)%(Extension)" />
-    <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
-    <PackageFile Include="./bin/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
+    <Content Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
+    <Content Include="./Common/*.cs" PackagePath="Common/%(Filename)%(Extension)" />
+    <Content Include="./Common/*.props" PackagePath="Common/%(Filename)%(Extension)" />
+    <Content Include="./Targets/*.targets" PackagePath="Targets/%(Filename)%(Extension)" />
+    <Content Include="./Common/Custom/*.*" PackagePath="Common/Custom/%(Filename)%(Extension)" />
+    <Content Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />
+    <Content Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
+    <Content Include="./icon.png" PackagePath="%(Filename)%(Extension)" />
+    <Content Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
+    <Content Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <Content Include="./bin/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />
@@ -63,10 +62,10 @@
     <PackageTag Include="dgmjrsdk" Visible="false" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="./LICENSE.md" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./frontmatter_teplate.yml" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./Assets/DefaultPackageIcon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
+    <EmbeddedResource Include="./LICENSE.md" LogicalName="LICENSE.md" />
+    <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="README_TEMPLATE.md" />
+    <EmbeddedResource Include="./frontmatter_teplate.yml" LogicalName="frontmatter_teplate.yml" />
+    <EmbeddedResource Include="./Assets/DefaultPackageIcon.png" LogicalName="DEFAULT_PACKAGE_ICON.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="YamlDotNet" />
@@ -90,5 +89,4 @@
   <ItemGroup>
     <Compile Include="./Tasks/*.cs" />
   </ItemGroup>
-  <!-- <Import Project="./Sdk/Sdk.targets" /> -->
 </Project>

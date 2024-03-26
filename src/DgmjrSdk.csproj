@@ -20,7 +20,7 @@
     <IsNuGetized>true</IsNuGetized>
     <IsPackable>true</IsPackable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <!-- <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath> -->
+    <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <Title>The DGMJR-IO SDK</Title>
@@ -52,6 +52,8 @@
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
     <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
+    <PackageFile Include="./lib/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
+    <PackageFile Include="./lib/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />
@@ -63,7 +65,7 @@
   <ItemGroup>
     <EmbeddedResource Include="./LICENSE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./frontmatter_teplate.yml" LogicalName="%(Filename)%(Extension)" />
+    <EmbeddedResource Include="./frontmatter_template.yml" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./Assets/icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
   </ItemGroup>
   <ItemGroup>
@@ -71,13 +73,21 @@
     <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
   </ItemGroup>
   <ItemGroup>
-    <PackageFile Include="./$(OutputPath)/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />
     <Using Include="System.Collections.Generic.Dictionary&lt;string,string&gt;" Alias="StringDictionary" />
     <Using Include="System.Collections.Generic.KeyValuePair&lt;string,string&gt;" Alias="StrKvp" />
     <Using Include="Dgmjr.Sdk.Models" />
+    <Using Include="System.Text.RegularExpressions" />
+    <Using Include="System.String" Static="true" />
+    <Using Include="System.IO.File" Static="true" />
+    <Using Include="System.IO.Path" Static="true" />
+    <Using Include="Microsoft.Build.Framework" />
+    <Using Include="Microsoft.Build.Execution" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Diagnostics" />
     <Using Include="System.Text.RegularExpressions" />
     <Using Include="System.String" Static="true" />
     <Using Include="System.IO.File" Static="true" />

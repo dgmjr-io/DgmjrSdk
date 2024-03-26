@@ -11,11 +11,11 @@
 -->
 
 <Project Condition="'$(DgmjrSdkTargets)' == ''">
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" Condition="'$(DgmjrSdkTargets)' == ''" />
   <PropertyGroup>
     <DgmjrSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</DgmjrSdkTargets>
     <IsNotDgmjrSdk>!$(MSBuildProjectName.Equals("Dgmjr.NET.Sdk"))</IsNotDgmjrSdk>
   </PropertyGroup>
-  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <Import Project="../Targets/AssemblyVersion.targets" />
   <Import Project="../Targets/Authors-Owners.targets" />
   <Import Project="../Targets/BuildFromSource.targets" Condition="$(IsNotDgmjrSdk)" />

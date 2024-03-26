@@ -10,6 +10,8 @@ using Microsoft.Build.Execution;
 using static System.IO.File;
 using static System.String;
 using Dgmjr.Sdk.Models;
+using System.IO;
+using System;
 
 public class EnsurePackageReadmeFileExists : MSBTask
 {

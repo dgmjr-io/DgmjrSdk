@@ -12,13 +12,9 @@
 
 <Project Condition="'$(DgmjrSdkProps)' == ''">
   <PropertyGroup>
-    <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
-    <DgmjrSdkDll>$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
+    <ImportMicrosoftNetSdk>!$(UsingMicrosoftNETSdk.Equals("true"))</ImportMicrosoftNetSdk>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
-    <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
-    <IsMultiTargeting>true</IsMultiTargeting>
-  </PropertyGroup>
-  <Import Project="$(MSBuildThisFileDirectory)/../Common/*.props" />
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="$(ImportMicrosoftNetSdk)" />
+  <Import Project="$(MSBuildThisFileDirectory)Common.props" />
 </Project>
