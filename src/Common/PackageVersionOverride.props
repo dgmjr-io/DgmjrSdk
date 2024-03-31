@@ -1,11 +1,11 @@
 <!--
  * PackageVersionOverride.props
- * 
+ *
  *   Created: 2023-06-30-09:44:03
  *   Modified: 2023-06-30-09:44:27
- * 
+ *
  *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *   
+ *
  *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
  *      License: MIT (https://opensource.org/licenses/MIT)
 -->
@@ -19,7 +19,7 @@
 		<Version>$([System.Text.RegularExpressions.Regex]::Replace("$(PackageVersionOverride)", "\-.*", ""))</Version>
 		<PackageVersion>$(PackageVersionOverride)</PackageVersion>
 	</PropertyGroup>
-    <PropertyGroup>
+  <PropertyGroup>
 		<GetPackageMetadataDependsOn>
 			$(GetPackageMetadataDependsOn);
 			GetPackageVersionOverride;
@@ -38,5 +38,5 @@
 			GetPackageVersion;
 			GetPackageMetadata;
 		</PackDependsOn>
-    </PropertyGroup>
+  </PropertyGroup>
 </Project>
