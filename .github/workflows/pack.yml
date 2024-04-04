@@ -20,11 +20,11 @@ jobs:
 
     steps:
     - name: Checkout the repository being compiled
-      uses: actions/checkout@v3
+      uses: dgmjr-actions/git-checkout@main
       with:
         path: Repo
     - name: Checkout the Packages repository alongside the one being compiled
-      uses: actions/checkout@v3
+      uses: dgmjr-actions/git-checkout@main
       with:
         repository: dgmjr-io/Packages
         path: Packages
@@ -63,5 +63,5 @@ jobs:
         private-nuget-api-key: ${{ secrets.PROGET_API_KEY }}
         repo: dgmjr-io/DgmjrSdk
         push-github: true
-        push-dgmjr-io: false
+        push-dgmjr-io: true
         push-nuget: false
