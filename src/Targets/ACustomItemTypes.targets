@@ -52,7 +52,7 @@
     </ItemGroup>
   </Target> -->
   <ItemGroup>
-    <PackageReference Include="@(SourceGeneratorPackageReference)">
+    <PackageReference Include="@(SourceGeneratorPackageReference->'%(Identity)')">
       <CopyLocal>true</CopyLocal>
       <ExcludeAssets>Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime</ExcludeAssets>
       <GeneratePathProperty>true</GeneratePathProperty>
@@ -60,7 +60,7 @@
       <Pack>true</Pack>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <ProjectReference Include="@(SourceGeneratorProjectReference)">
+    <ProjectReference Include="@(SourceGeneratorProjectReference->'%(Identity)')">
       <CopyLocal>true</CopyLocal>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <CopyToPublishDirectory>Always</CopyToPublishDirectory>
@@ -71,7 +71,7 @@
       <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
       <Targets>Restore;Build;Pack</Targets>
     </ProjectReference>
-    <PackageReference Include="@(SourceCodePackageReference)">
+    <PackageReference Include="@(SourceCodePackageReference->'%(Identity)')">
       <CopyLocal>true</CopyLocal>
       <ExcludeAssets>Analyzers;Runtime;Native</ExcludeAssets>
       <GeneratePathProperty>true</GeneratePathProperty>
@@ -79,7 +79,7 @@
       <Pack>true</Pack>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="@(UsingsPackageReference)">
+    <PackageReference Include="@(UsingsPackageReference->'%(Identity)')">
       <CopyLocal>true</CopyLocal>
       <ExcludeAssets>ContentFiles;Native;Analyzers</ExcludeAssets>
       <GeneratePathProperty>true</GeneratePathProperty>
