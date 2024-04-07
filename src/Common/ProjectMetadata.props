@@ -25,6 +25,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPublishable>true</IsPublishable>
     <RollForward>LatestPatch</RollForward>
-    <OutputType>Library</OutputType>
+    <OutputType Condition="'$(OutputType)' == ''">Library</OutputType>
   </PropertyGroup>
 </Project>

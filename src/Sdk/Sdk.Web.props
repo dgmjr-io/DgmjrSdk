@@ -13,9 +13,9 @@
 <Project Condition="'$(DgmjrSdkProps)' == ''">
   <PropertyGroup>
     <DgmjrSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrSdkProps>
-    <ImportMicrosoftNetSdk>!$(UsingMicrosoftNETSdk.Equals("true"))</ImportMicrosoftNetSdk>
+    <ImportMicrosoftNetSdkWeb>!$(UsingMicrosoftNETSdkWeb.Equals("true"))</ImportMicrosoftNetSdkWeb>
     <UsingDgmjrNetSdk>true</UsingDgmjrNetSdk>
   </PropertyGroup>
-  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="$(ImportMicrosoftNetSdk)" />
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk.Web" Condition="$(ImportMicrosoftNetSdk)" />
   <Import Project="$(MSBuildThisFileDirectory)Common.props" />
 </Project>

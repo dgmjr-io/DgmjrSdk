@@ -23,11 +23,13 @@ jobs:
       uses: dgmjr-actions/git-checkout@main
       with:
         path: Repo
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Checkout the Packages repository alongside the one being compiled
       uses: dgmjr-actions/git-checkout@main
       with:
         repository: dgmjr-io/Packages
         path: Packages
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Run setup-dgmjrsdk
       uses: dgmjr-actions/setup-dgmjrsdk@main
       with:

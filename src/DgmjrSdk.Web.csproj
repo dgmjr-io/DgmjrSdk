@@ -47,7 +47,9 @@
     <!-- <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" /> -->
     <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-    <PackageFile Include="./Sdk/*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <PackageFile Include="./Sdk/Sdk.Web.props" PackagePath="Sdk/Sdk%(Extension)" />
+    <PackageFile Include="./Sdk/Sdk.Web.targets" PackagePath="Sdk/Sdk%(Extension)" />
+    <PackageFile Include="./Sdk/Common.*" PackagePath="Sdk/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />

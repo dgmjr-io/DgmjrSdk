@@ -1,13 +1,10 @@
 /*
- * DgmjrNamespace.cs
- *
- *   Created: 2023-01-10-10:37:17
- *   Modified: 2023-01-10-10:37:17
- *
- *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *
- *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
- *      License: MIT (https://opensource.org/licenses/MIT)
+ * GlobalUsings.cs
+ *     Created: 2024-02-10T11:07:06-05:00
+ *    Modified: 2024-04-24T21:20:28-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
  */
 
 #pragma warning disable CD1607 // The file needs documentation headers.

@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <IsDgmjrSdk>$(MSBuildProjectName.Equals('DgmjrSdk'))</IsDgmjrSdk>
+    <IsDgmjrSdk>$(MSBuildProjectName.StartsWith('DgmjrSdk'))</IsDgmjrSdk>
     <UsingDgmjrSdk>true</UsingDgmjrSdk>
     <DgmjrSdkDll>$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
   </PropertyGroup>
@@ -11,6 +11,7 @@
 
   <Import Project="$(MSBuildThisFileDirectory)../Common/TargetFrameworks.props" />
   <Import Project="$(MSBuildThisFileDirectory)../Common/AAGitRoot.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ACustomItemTypes.props" />
   <Import Project="$(MSBuildThisFileDirectory)../Common/ADefaultBuildConfiguration.props" />
   <Import Project="$(MSBuildThisFileDirectory)../Common/AIsMultiTargeting.props" />
   <Import Project="$(MSBuildThisFileDirectory)../Common/AssemblySigning.props" />

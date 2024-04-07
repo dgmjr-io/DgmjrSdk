@@ -20,9 +20,9 @@
   <Import Project="../Common/DgmjrSdkDll.props" Condition="'$(DgmjrSdkDll)' == ''" />
   <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsurePackageReadmeFileExists" AssemblyFile="$(DgmjrSdkDll)" />
 
-  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="$(IsDgmjrSdk)" />
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="$(MSBuildProjectName.StartsWith('DgmjrSdk'))" />
 
-  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false' And !$(IsDgmjrSdk)">
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false' And !$(MSBuildProjectName.StartsWith('DgmjrSdk'))">
     <EnsurePackageReadmeFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
   </Target>
 </Project>

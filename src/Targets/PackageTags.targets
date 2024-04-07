@@ -15,10 +15,16 @@
   <PropertyGroup>
     <PackageTags_targets>Imported</PackageTags_targets>
   </PropertyGroup>
-  <Target Name="SetPackageTags" BeforeTargets="GetPackageMetadata;GenerateMSBuildEditorConfigFileShouldRun" Condition="'$(PackageTags_targets)' == ''">
-    <PropertyGroup>
-      <PackageTags>@(PackageTag->Distinct(), ' ')</PackageTags>
-      <PackageTags>$(PackageTags.ToLower())</PackageTags>
-    </PropertyGroup>
-  </Target>
+  <ItemGroup>
+    <PackageTag Include="dgmjr" />
+    <PackageTag Include="dgmjrmoore" />
+    <PackageTag Include="dgmjr" />
+  </ItemGroup>
+  <ItemGroup>
+    <DistinctPackageTag Include="@(PackageTag->Distinct())" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PackageTags>$(@(DistinctPackageTag, ' '))</PackageTags>
+    <PackageTags>$(PackageTags.ToLower())</PackageTags>
+  </PropertyGroup>
 </Project>

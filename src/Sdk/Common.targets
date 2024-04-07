@@ -1,4 +1,5 @@
 <Project>
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/ACustomItemTypes.targets" />
   <Import Project="$(MSBuildThisFileDirectory)../Targets/AssemblyVersion.targets" />
   <Import Project="$(MSBuildThisFileDirectory)../Targets/Authors-Owners.targets" />
   <Import Project="$(MSBuildThisFileDirectory)../Targets/BuildFromSource.targets" />
