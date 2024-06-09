@@ -12,7 +12,6 @@ using System.Linq;
 /// </summary>
 public class EnsurePackageIcon : MSBTask
 {
-
     /// <summary>the "<inheritdoc cref="Icon" path="/value" />" extension</summary>
     /// <value>.svg</value>
     protected const string Icon = "icon";
@@ -24,10 +23,13 @@ public class EnsurePackageIcon : MSBTask
     /// <summary>the "<inheritdoc cref="_jpg" path="/value" />" extension</summary>
     /// <value>.svg</value>
     protected const string _jpg = ".jpg";
+
     /// <summary>the "<inheritdoc cref="_svg" path="/value" />" extension</summary>
     /// <value>.svg</value>
     protected const string _svg = ".svg";
+
     private const string DEFAULT_PACKAGE_ICON_PNG = "DEFAULT_PACKAGE_ICON.png";
+
     /// <summary>
     /// Supported icon extensions
     /// </summary>

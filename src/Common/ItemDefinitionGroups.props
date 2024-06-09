@@ -1,13 +1,10 @@
 <!--
  * ItemDefinitionGroups.props
- *
- *   Created: 2022-10-24-08:10:51
- *   Modified: 2023-10-12-08:22:44
- *
- *   Author: David G. Moore, Jr. <david@dgmjr.io>
- *
- *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
- *      License: MIT (https://opensource.org/licenses/MIT)
+ *     Created: 2024-02-10T11:07:06-05:00
+ *    Modified: 2024-04-24T21:17:27-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
 -->
 
 <Project>
@@ -21,7 +18,7 @@
       <!-- Generate "PKG_Package_Id" properties, which point to the package's restored location on disk -->
       <GeneratePathProperty>true</GeneratePathProperty>
       <IncludeAssets>Compile; Runtime; Build; BuildMultitargeting; BuildTransitive; Native</IncludeAssets>
-      <ExcludeAssets>ContentFiles; Analyzers</ExcludeAssets>
+      <ExcludeAssets>ContentFiles; Analyzers; Native</ExcludeAssets>
     </PackageReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>

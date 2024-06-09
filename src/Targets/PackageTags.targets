@@ -24,7 +24,7 @@
     <DistinctPackageTag Include="@(PackageTag->Distinct())" />
   </ItemGroup>
   <PropertyGroup>
-    <PackageTags>@(DistinctPackageTag, ' ')</PackageTags>
+    <PackageTags>$(@(DistinctPackageTag, ' '))</PackageTags>
     <PackageTags>$(PackageTags.ToLower())</PackageTags>
   </PropertyGroup>
 </Project>
