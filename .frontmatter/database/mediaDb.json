@@ -1,1 +1,13 @@
-{"users":{"justin":{"github":{"bots":{"whatruin2v3bot":{"whatruin2v3bot":{}}}}}}}
+{
+  "users": {
+    "justin": {
+      "github": {
+        "bots": {
+          "whatruin2v3bot": {
+            "whatruin2v3bot": { }
+          }
+        }
+      }
+    }
+  }
+}
