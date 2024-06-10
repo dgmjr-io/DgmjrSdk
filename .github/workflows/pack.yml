@@ -36,7 +36,7 @@ jobs:
         git-token: ${{ secrets.GITHUB_TOKEN }}
         environment: Release
         git-nuget-endpoint: ${{ vars.GIT_NUGET_ENDPOINT }}
-        private-nuget-endpoint: ${{ vars.FEEDZ_IO_ENDPOINT }}
+        private-nuget-endpoint: ${{ vars.FEEDZ_IO_ENDPOINT_URL }}
         private-nuget-api-key: ${{ secrets.FEEDZ_IO_TOKEN }}
         repo: dgmjr-io/DgmjrSdk
     - name: Pack
@@ -62,7 +62,7 @@ jobs:
         git-token: ${{ secrets.GITHUB_TOKEN }}
         environment: Release
         git-nuget-endpoint: ${{ vars.GIT_NUGET_ENDPOINT }}
-        private-nuget-endpoint: ${{ vars.FEEDZ_IO_ENDPOINT }}
+        private-nuget-endpoint: ${{ vars.FEEDZ_IO_ENDPOINT_URL }}
         private-nuget-api-key: ${{ secrets.FEEDZ_IO_TOKEN }}
         repo: dgmjr-io/DgmjrSdk
         push-github: true
