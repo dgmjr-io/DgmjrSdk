@@ -36,8 +36,8 @@ jobs:
         git-token: ${{ secrets.GITHUB_TOKEN }}
         environment: Release
         git-nuget-endpoint: ${{ vars.GIT_NUGET_ENDPOINT }}
-        private-nuget-endpoint: ${{ vars.PROGET_ENDPOINT_URL }}
-        private-nuget-api-key: ${{ secrets.PROGET_API_KEY }}
+        private-nuget-endpoint: ${{ vars.FEEDZ_IO_ENDPOINT }}
+        private-nuget-api-key: ${{ secrets.FEEDZ_IO_TOKEN }}
         repo: dgmjr-io/DgmjrSdk
     - name: Pack
       run: dotnet build Repo/src/DgmjrSdk.nuproj -c:Release
