@@ -1,7 +1,7 @@
 <Project>
     <PropertyGroup>
-        <IsDgmjrSdk>$(MSBuildProjectName.StartsWith('DgmjrSdk'))</IsDgmjrSdk>
-        <DgmjrSdkDll Condition="$(MSBuildProjectName.StartsWith('DgmjrSdk'))">$(MSBuildThisFileDirectory)../bin/DgmjrSdk.dll</DgmjrSdkDll>
-        <DgmjrSdkDll Condition="!$(MSBuildProjectName.StartsWith('DgmjrSdk'))">$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
+        <IsDgmjrSdk>($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))</IsDgmjrSdk>
+        <DgmjrSdkDll Condition="($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))">$(MSBuildThisFileDirectory)../bin/DgmjrSdk.dll</DgmjrSdkDll>
+        <DgmjrSdkDll Condition="!($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))">$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
     </PropertyGroup>
 </Project>

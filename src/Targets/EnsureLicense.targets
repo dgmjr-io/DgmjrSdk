@@ -14,9 +14,9 @@
   <Import Project="../Common/DgmjrSdkDll.props" Condition="'$(DgmjrSdkDll)' == ''" />
   <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsureLicenseFileExists" AssemblyFile="$(DgmjrSdkDll)" />
 
-  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents" Condition="!$(IsDgmjrSdk)">
+  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents" Condition="!($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))">
     <Message Importance="High" Text="Ensuring DGMJR-SDK license file exists" />
     <EnsureLicenseFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
   </Target>
-  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents" Condition="$(IsDgmjrSdk)" />
+  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents" Condition="($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))" />
 </Project>

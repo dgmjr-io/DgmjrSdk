@@ -56,6 +56,12 @@
       <GeneratePathProperty>true</GeneratePathProperty>
       <IncludeAssets>Build; BuildMultitargeting; BuildTransitive;</IncludeAssets>
       <ExcludeAssets>Compile; Runtime; Analyzers; Native; ContentFiles</ExcludeAssets>
+      <Visible>false</Visible>
     </Usings>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <Using>
+      <Visible>false</Visible>
+    </Using>
   </ItemDefinitionGroup>
 </Project>

@@ -14,7 +14,7 @@
   <PropertyGroup>
     <EnsureLicense_props>included</EnsureLicense_props>
     <DgmjrSdkDll>$(MSBuildThisFileDirectory)/../lib/netstandard2.0/DgmjrSdk.dll</DgmjrSdkDll>
-    <PackDependsOn Condition="!$(MSBuildProjectName.StartsWith('DgmjrSdk'))">
+    <PackDependsOn Condition="!($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))">
       $(PackDependsOn);
       EnsureLicenseFileExists
     </PackDependsOn>

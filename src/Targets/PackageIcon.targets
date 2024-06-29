@@ -13,8 +13,8 @@
 <Project InitialTargets="EnsurePackageIcon">
   <Import Project="../Common/DgmjrSdkDll.props" Condition="'$(DgmjrSdkDll)' == ''" />
   <UsingTask TaskName="Dgmjr.Sdk.Tasks.EnsurePackageIcon" AssemblyFile="$(DgmjrSdkDll)" />
-  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="$(MSBuildProjectName.StartsWith('DgmjrSdk'))" />
-  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false' And !$(MSBuildProjectName.StartsWith('DgmjrSdk'))">
+  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))" />
+  <Target Name="EnsurePackageIcon" BeforeTargets="GetPackageMetadata" Condition="'$(IsOuterBuild)' != 'false' And !($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))">
     <Message Importance="High" Text="Ensuring DGMJR-SDK icon file exists" />
     <EnsurePackageIcon MSBuildProjectFullPath="$(MSBuildProjectFullPath)">
       <Output TaskParameter="PackageIcon" PropertyName="PackageIcon" />
