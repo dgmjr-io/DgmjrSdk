@@ -1,0 +1,15 @@
+<!--
+ * DgmjrNoTargetsSdkDll.props
+ *     Created: 2024-06-28T23:51:08-04:00
+ *    Modified: 2024-06-29T00:53:32-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <DgmjrNoTargetsSdkDll Condition="$(IsDgmjrNoTargetsSdk)">$(MSBuildThisFileDirectory)../bin/Dgmjr.NoTargets.Sdk.dll</DgmjrNoTargetsSdkDll>
+    <DgmjrNoTargetsSdkDll Condition="!$(IsDgmjrNoTargetsSdk)">$(MSBuildThisFileDirectory)../lib/Dgmjr.NoTargets.Sdk.dll</DgmjrNoTargetsSdkDll>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,30 @@
+<!--
+ * PackageTags.targets
+ *
+ *   Created: 2023-06-30-09:41:55
+ *   Modified: 2023-06-30-09:44:18
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+
+<Project>
+  <PropertyGroup>
+    <PackageTags_targets>Imported</PackageTags_targets>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageTag Include="dgmjr" />
+    <PackageTag Include="dgmjrmoore" />
+    <PackageTag Include="dgmjr" />
+  </ItemGroup>
+  <ItemGroup>
+    <DistinctPackageTag Include="@(PackageTag->Distinct())" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PackageTags>$(@(DistinctPackageTag, ' '))</PackageTags>
+    <PackageTags>$(PackageTags.ToLower())</PackageTags>
+  </PropertyGroup>
+</Project>

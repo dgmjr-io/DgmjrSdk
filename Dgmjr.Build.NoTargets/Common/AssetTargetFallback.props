@@ -1,0 +1,29 @@
+<!--
+ * AssetTargetFallback.props
+ *
+ *   Created: 2022-12-10-05:32:34
+ *   Modified: 2022-12-10-05:32:34
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <NetStd1TargetFrameworks>netstandard1.6;netstandard1.5;netstandard1.3;netstandard1.0;netstandard1.0</NetStd1TargetFrameworks>
+    <NetStd20TargetFrameworks>netstandard2.0;$(NetStd1TargetFrameworks)</NetStd20TargetFrameworks>
+    <NetStd21TargetFrameworks>netstandard2.1;$(NetStd20TargetFrameworks)</NetStd21TargetFrameworks>
+    <NetCoreApp22TargetFrameworks>netcoreapp2.2;netcoreapp2.1;netcoreapp2.0</NetCoreApp22TargetFrameworks>
+    <NetCoreApp31TargetFrameworks>netcoreapp3.1;$(NetCoreApp22TargetFrameworks)</NetCoreApp31TargetFrameworks>
+    <Net60TargetFrameworks>net6.0;$(NetStd21TargetFrameworks)</Net60TargetFrameworks>
+    <Net70TargetFrameworks>net7.0;$(Net60TargetFrameworks)</Net70TargetFrameworks>
+    <Net80TargetFrameworks>net8.0;$(Net70TargetFrameworks)</Net80TargetFrameworks>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net8.0'">$(Net70TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net7.0'">(Net60TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'net6.0'">$(NetStd21TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'netstandard2.1'">$(NetStd21TargetFrameworks);$(NetCoreApp31TargetFrameworks);$(NetCoreApp22TargetFrameworks)</AssetTargetFallback>
+    <AssetTargetFallback Condition="'$(TargetFramework)' == 'netstandard2.0'">$(NetStd20TargetFrameworks);$(NetStd1TargetFrameworks);$(NetCoreApp22TargetFrameworks)</AssetTargetFallback>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,54 @@
+<!--
+ * Sdk.props
+ *
+ *   Created: 2022-12-19-01:17:17
+ *   Modified: 2022-12-19-01:17:19
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Condition="'$(DgmjrSdkTargets)' == ''">
+  <PropertyGroup>
+    <DgmjrNoTargetsSdkTargets>$(MSBuildThisFileDirectory)Sdk.targets</DgmjrNoTargetsSdkTargets>
+  </PropertyGroup>
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.Build.NoTargets/3.7.56" Condition="'$(ImportMicrosoftNetSdk)' == 'true'" />
+
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/ACustomItemTypes.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/AssemblyVersion.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/Authors-Owners.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/BuildFromSource.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/CentralPackageVersions.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/CompileLicense.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/Copyright.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/CustomBeforeAndAfterCentralPackageVersions.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/CustomBeforeAndAfterNoTargets.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/CustomBeforeAndAfterTraversal.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/DoNotCleanCachedPackageId.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/GetPackageContents.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/EnsureLicense.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/Format.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/GenerateMarkdownDocs.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/GetPackageVersion.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/ImportProjectName.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/JustInTimeVersioning.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/MinVer.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/NoWarn.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/NuGetizer.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/NuGetPush.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageDescription.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageIcon.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageMetadata.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageProjectName.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageProjectUrl.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageReadme.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageTags.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackageVersionOverride.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PackOverride.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/PushToAzureBlobs.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/ReleaseNotes.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/RemoveDuplicateUsings.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)../Targets/TestingLocal.targets" /></Project>

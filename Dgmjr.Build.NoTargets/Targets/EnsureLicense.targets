@@ -1,0 +1,22 @@
+<!--
+ * EnsureLicense.targets
+ *
+ *   Created: 2023-10-08-10:19:13
+ *   Modified: 2023-10-12-08:23:32
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project InitialTargets="EnsureLicenseFileExists">
+  <Import Project="../Common/DgmjrNoTargetsSdkDll.props" Condition="'$(DgmjrNoTargetsSdkDll)' == ''" />
+  <UsingTask TaskName="Dgmjr.NoTargets.Sdk.Tasks.EnsureLicenseFileExists" AssemblyFile="$(DgmjrNoTargetsSdkDll)" />
+
+  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents" Condition="!$(IsDgmjrNoTargetsSdk)">
+    <Message Importance="High" Text="Ensuring DGMJR-SDK license file exists" />
+    <EnsureLicenseFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
+  </Target>
+  <Target Name="EnsureLicenseFileExists" BeforeTargets="Pack;GetPackageContents" Condition="$(IsDgmjrNoTargetsSdk)" />
+</Project>

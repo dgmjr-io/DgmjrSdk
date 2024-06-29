@@ -1,0 +1,83 @@
+<!--
+ * Sdk.props
+ *
+ *   Created: 2022-12-19-01:17:17
+ *   Modified: 2022-12-19-01:17:19
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Condition="'$(DgmjrSdkProps)' == ''">
+  <PropertyGroup>
+    <DgmjrNoTargetsSdkProps>$(MSBuildThisFileDirectory)Sdk.props</DgmjrNoTargetsSdkProps>
+    <ImportMicrosoftNetSdk>!$(UsingMicrosoftNETSdk.Equals("true"))</ImportMicrosoftNetSdk>
+    <UsingDgmjrNoTargetsSdk>true</UsingDgmjrNoTargetsSdk>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.Build.NoTargets/3.7.56" Condition="$(ImportMicrosoftNetSdk)" />
+
+  <PropertyGroup>
+    <IsDgmjrNoTargetsSdk Condition="'$(MSBuildProjectName)' == 'Dgmjr.NoTargets.Sdk'">true</IsDgmjrNoTargetsSdk>
+    <IsDgmjrNoTargetsSdk Condition="'$(IsDgmjrNoTargetsSdk)' == ''">false</IsDgmjrNoTargetsSdk>
+    <UsingDgmjrNoTargetsSdk>true</UsingDgmjrNoTargetsSdk>
+    <DgmjrNoTargetsSdkDll Condition="$(IsDgmjrNoTargetsSdk)">$(MSBuildThisFileDirectory)../lib/Dgmjr.NET.Sdk.dll</DgmjrNoTargetsSdkDll>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
+    <IsCrossTargetingBuild>true</IsCrossTargetingBuild>
+    <IsMultiTargeting>true</IsMultiTargeting>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)../Common/TargetFrameworks.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/AAGitRoot.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ACustomItemTypes.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ADefaultBuildConfiguration.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/AIsMultiTargeting.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/AssemblySigning.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/AssetTargetFallback.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/Authors-Owners.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/BuildConfigurations.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/BuildFromSource.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CentralPackages.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CentralPackagesFile.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CentralPackageVersions.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CodeDocumentation.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CodeGeneration.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CompilerVisibleProperties.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CopyFilesAndSymbolsFromPackages.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CopyLocalLockFileAssemblies.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CustomBeforeAndAfterCentralPackageVersions.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CustomBeforeAndAfterNoTargets.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/CustomBeforeAndAfterTraversal.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/Deterministic.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/DevelopmentDependencies.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/DgmjrNoTargetsSdkDll.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/EmbeddedResourcesStringExtensions.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/EmitNuspec.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/EnablePreviewFeatures.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/EnsureLicense.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/GenerateMarkdownDocs.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/GlobalUsings.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ImplicitUsings.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ImportProjectName.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ItemDefinitionGroups.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/MinVer.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/NuGetizer.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/NuGetOutputs.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageIcon.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageMetadata.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageOutputPath.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageProjectName.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageProjectUrl.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageReadme.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageTags.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/PackageVersionOverride.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ProjectMetadata.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/ProjectTypeInfo.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/SlnGen.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/SourceLinkPatch.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/Testing.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/TestingLocal.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../Common/UserSecrets.props" />
+</Project>

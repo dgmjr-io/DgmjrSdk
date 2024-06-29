@@ -1,0 +1,28 @@
+<!--
+ * PackageReadme.targets
+ *
+ *   Created: 2022-10-21-11:40:42
+ *   Modified: 2022-11-12-03:55:06
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+  <PropertyGroup>
+    <PackageReadme_targets>imported</PackageReadme_targets>
+  </PropertyGroup>
+
+  <Import Project="../Common/PackageReadme.props" Condition="'$(PackageReadme_props)' == ''" />
+
+  <Import Project="../Common/DgmjrNoTargetsSdkDll.props" Condition="'$(DgmjrNoTargetsSdkDll)' == ''" />
+  <UsingTask TaskName="Dgmjr.NoTargets.Sdk.Tasks.EnsurePackageReadmeFileExists" AssemblyFile="$(DgmjrNoTargetsSdkDll)" />
+
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="$(IsDgmjrNoTargetsSdk)" />
+
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false' And !$(IsDgmjrNoTargetsSdk)">
+    <EnsurePackageReadmeFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
+  </Target>
+</Project>

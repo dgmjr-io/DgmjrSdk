@@ -1,0 +1,12 @@
+<Project>
+  <ItemGroup>
+    <PackageReference Include="@(SourceGeneratorPackageReference)" CopyLocal="true" GeneratePathProperty="true" ExcludeAssets="Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime" IncludeAssets="Analyzers;Build" Pack="true" PrivateAssets="All" />
+    <ProjectReference Include="@(SourceGeneratorProjectReference)" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" OutputItemType="Analyzer" ReferenceOutputAssembly="false" SetConfiguration="Configuration='$(Configuration)'" Targets="Restore;Build;Pack" CopyLocal="true" GeneratePathProperty="true" ExcludeAssets="Native;BuildTransitive;BuildMultitargeting;ContentFiles;Compile;Runtime" IncludeAssets="Analyzers;Build" Pack="true" PrivateAssets="All" />
+    <PackageReference Include="@(SourceCodePackageReference)" CopyLocal="true" GeneratePathProperty="true" ExcludeAssets="Analyzers;Runtime;Native" IncludeAssets="ContentFiles;Build;BuildTransitive;BuildMultitargeting" Pack="true" PrivateAssets="All" />
+    <PackageReference Include="@(UsingsPackageReference)"  CopyLocal="true" GeneratePathProperty="true" ExcludeAssets="ContentFiles;Native;Analyzers" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" Pack="true" PrivateAssets="All" />
+    <!-- <SourceGeneratorPackageReference Remove="@(SourceGeneratorPackageReference)" />
+    <SourceGeneratorProjectReference Remove="@(SourceGeneratorProjectReference)" />
+    <SourceCodePackageReference Remove="@(SourceCodePackageReference)" />
+    <UsingsPackageReference Remove="@(UsingsPackageReference)" /> -->
+  </ItemGroup>
+</Project>

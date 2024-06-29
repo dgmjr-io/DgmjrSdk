@@ -1,0 +1,21 @@
+#
+# frontmatter_template.yml
+#     Created: 2024-06-25T18:02:42-04:00
+#    Modified: 2024-06-25T18:02:42-04:00
+#      Author: David G. Moore, Jr. <david@dgmjr.io>
+#   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+#     License: MIT (https://opensource.org/licenses/MIT)
+#
+
+---
+authors:
+  - authors
+description: description
+keywords: keywords
+license: license
+slug: slug
+tags: targ
+title: title
+type: readme
+version: version
+---

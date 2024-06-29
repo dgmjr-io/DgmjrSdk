@@ -1,0 +1,27 @@
+<!--
+ * BuildFromSource.targets
+ *
+ *   Created: 2022-12-26-10:35:33
+ *   Modified: 2022-12-26-10:35:33
+ *
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *
+ *   Copyright © 2022-2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+<Project InitialTargets="WritePropsAndTargetsFiles">
+  <PropertyGroup Condition="'$(BuildFromSourceTargets)' == ''">
+    <BuildFromSourceTargets>imported</BuildFromSourceTargets>
+  </PropertyGroup>
+  <Target Name="WritePropsAndTargetsFiles" BeforeTargets="Build" Condition="'$(BuildFromSourceTargets)' == ''">
+    <WriteLinesToFile File="$(TempPropsFile)" Lines="@(PropsFile->'%(FullPath)')" Overwrite="true" />
+    <WriteLinesToFile File="$(TempTargetsFile)" Lines="@(TargetsFile->'%(FullPath)')" Overwrite="true" />
+  </Target>
+  <Import Project="$(TempPropsFile)" Condition="Exists($(TempPropsFile))" />
+  <Import Project="$(TempTargetsFile)" Condition="Exists($(TempTargetsFile))" />
+  <ItemGroup Condition="'$(BuildFromSource)' != 'true'">
+    <!-- remove all existing `ProjectReference`s and replace them with `PackageReference`s -->
+    <PackageReference Include="@(ProjectReference->'%(Filename)')" />
+    <ProjectReference Remove="@(ProjectReference)" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,20 @@
+<!--
+ * GetPackageVersion.targets
+ * 
+ *   Created: 2023-06-11-06:07:59
+ *   Modified: 2023-06-11-06:07:59
+ * 
+ *   Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   
+ *   Copyright © 2022 - 2023 David G. Moore, Jr., All Rights Reserved
+ *      License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project>
+    <Target Name="GetPackageVersion" Outputs="PackageVersion" DependsOnTargets="GitInfo" Condition="'$(GetPackageVersion_targets)' == ''">
+        <PropertyGroup>
+            <GetPackageVersion_targets>Imported</GetPackageVersion_targets>
+            <PackageVersion Condition="'$(PackageVersion)' == ''">$([System.Text.RegularExpressions.Regex]::Match($(GitVersionInformation), 'PackageVersion: (.*)').Groups[1].Value)</PackageVersion>
+        </PropertyGroup>
+    </Target>
+</Project>
