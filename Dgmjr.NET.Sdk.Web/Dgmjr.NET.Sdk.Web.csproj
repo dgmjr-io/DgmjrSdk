@@ -1,0 +1,100 @@
+<!--
+ * DgmjrSdk.csproj
+ *     Created: 2023-12-21T23:17:07-05:00
+ *    Modified: 2024-04-30T19:56:29-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Dgmjr.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProjectGuid>EB008C4C-9C3A-4498-A19D-34A42B6E2CE1</ProjectGuid>
+    <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IsNuGetized>true</IsNuGetized>
+    <IsPackable>true</IsPackable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>The DGMJR-IO SDK</Title>
+    <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
+    <!-- <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks> -->
+    <PackageId>$(MSbuildProjectName)</PackageId>
+    <LangVersion>preview</LangVersion>
+    <PackageType>MSBuildSdk</PackageType>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IncludeInSolutionFile>true</IncludeInSolutionFile>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoWarn>$(NoWarn);MSB4011</NoWarn>
+    <PackageIcon>icon.png</PackageIcon>
+    <IsUsingNETSDK>true</IsUsingNETSDK>
+    <!-- <PackageVersionOverride Condition="'$(PackageVersionOverride)' == '' And '$(Configuration)' != 'Local'">0.0.23</PackageVersionOverride> -->
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
+    <PackageFile Include="./Common/*.cs" PackagePath="Common/%(Filename)%(Extension)" />
+    <!-- <PackageFile Include="./Build/*.props" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/*.targets" PackagePath="Build/%(Filename)%(Extension)" />
+    <PackageFile Include="./Build/Custom/*.*" PackagePath="Build/Custom/%(Filename)%(Extension)" />
+    <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" />    -->
+    <PackageFile Include="./Common/*.props" PackagePath="Common/%(Filename)%(Extension)" />
+    <PackageFile Include="./Targets/*.targets" PackagePath="Targets/%(Filename)%(Extension)" />
+    <!-- <PackageFile Include="./Build/Custom/*.*" PackagePath="Build/Custom/%(Filename)%(Extension)" /> -->
+    <!-- <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" /> -->
+    <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
+    <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
+    <PackageFile Include="./Sdk/Sdk.Web.props" PackagePath="Sdk/Sdk%(Extension)" />
+    <PackageFile Include="./Sdk/Sdk.Web.targets" PackagePath="Sdk/Sdk%(Extension)" />
+    <PackageFile Include="./Sdk/Common.*" PackagePath="Sdk/%(Filename)%(Extension)" />
+    <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
+    <PackageFile Include="./lib/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
+    <PackageFile Include="./lib/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />
+  </ItemGroup>
+  <Target Name="PrepareGitConstants" />
+  <Target Name="GitInfo" />
+  <ItemGroup>
+    <PackageTag Include="sdk" Visible="false" />
+    <PackageTag Include="build-defaults" Visible="false" />
+    <PackageTag Include="dgmjrsdk" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="./LICENSE.md" LogicalName="%(Filename)%(Extension)" />
+    <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
+    <EmbeddedResource Include="./frontmatter_template.yml" LogicalName="%(Filename)%(Extension)" />
+    <EmbeddedResource Include="./Assets/icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="YamlDotNet" />
+    <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />
+    <Using Include="System.Collections.Generic.Dictionary&lt;string,string&gt;" Alias="StringDictionary" />
+    <Using Include="System.Collections.Generic.KeyValuePair&lt;string,string&gt;" Alias="StrKvp" />
+    <Using Include="Dgmjr.Sdk.Models" />
+    <Using Include="System.Text.RegularExpressions" />
+    <Using Include="System.String" Static="true" />
+    <Using Include="System.IO.File" Static="true" />
+    <Using Include="System.IO.Path" Static="true" />
+    <Using Include="Microsoft.Build.Framework" />
+    <Using Include="Microsoft.Build.Execution" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Text.RegularExpressions" />
+    <Using Include="System.String" Static="true" />
+    <Using Include="System.IO.File" Static="true" />
+    <Using Include="System.IO.Path" Static="true" />
+    <Using Include="Microsoft.Build.Framework" />
+    <Using Include="Microsoft.Build.Execution" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Diagnostics" />
+  </ItemGroup>
+</Project>
