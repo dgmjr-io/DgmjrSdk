@@ -11,7 +11,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProjectGuid>05edc8d8-c836-4eca-aec7-16e8a7c89e0b</ProjectGuid>
-    <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
+    <ProjectTypeGuid>fae04ec0-301f-11d3-bf4b-00c04f79efbc</ProjectTypeGuid>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IsNuGetized>true</IsNuGetized>
@@ -20,8 +20,8 @@
     <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
-    <Title>The DGMJR-IO SDK</Title>
-    <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
+    <Title>The DGMJR-IO NoTargets SDK</Title>
+    <Description>The DGMJR-IO NoTargets SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR "no-targets" projects.</Description>
     <!-- <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks> -->
     <PackageId>$(MSbuildProjectName)</PackageId>
     <LangVersion>preview</LangVersion>
@@ -44,6 +44,7 @@
     <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />
+    <PackageFile Include="./global.json" Pack="true" PackagePath="%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />

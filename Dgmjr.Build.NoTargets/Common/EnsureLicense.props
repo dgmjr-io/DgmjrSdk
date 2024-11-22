@@ -13,7 +13,7 @@
 <Project>
   <PropertyGroup>
     <EnsureLicense_props>included</EnsureLicense_props>
-    <PackDependsOn Condition="!$(IsDgmjrNoTargetsSdk)">
+    <PackDependsOn Condition="!('$(IsDgmjrNoTargetsSdk)' == 'true')">
       $(PackDependsOn);
       EnsureLicenseFileExists
     </PackDependsOn>

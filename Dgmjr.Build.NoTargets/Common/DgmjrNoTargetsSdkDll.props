@@ -9,7 +9,7 @@
 
 <Project>
   <PropertyGroup>
-    <DgmjrNoTargetsSdkDll Condition="$(IsDgmjrNoTargetsSdk)">$(MSBuildThisFileDirectory)../bin/Dgmjr.NoTargets.Sdk.dll</DgmjrNoTargetsSdkDll>
-    <DgmjrNoTargetsSdkDll Condition="!$(IsDgmjrNoTargetsSdk)">$(MSBuildThisFileDirectory)../lib/Dgmjr.NoTargets.Sdk.dll</DgmjrNoTargetsSdkDll>
+    <DgmjrNoTargetsSdkDll Condition="'$(IsDgmjrNoTargetsSdk)' == 'true'">$(MSBuildThisFileDirectory)../bin/netstandard2.0/Dgmjr.Build.NoTargets.dll</DgmjrNoTargetsSdkDll>
+    <DgmjrNoTargetsSdkDll Condition="!('$(IsDgmjrNoTargetsSdk)' == 'true')">$(MSBuildThisFileDirectory)../lib/netstandard2.0/Dgmjr.Build.NoTargets.dll</DgmjrNoTargetsSdkDll>
   </PropertyGroup>
 </Project>

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <IsDgmjrSdk>($(MSBuildProjectName.StartsWith('DgmjrSdk')) || $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))</IsDgmjrSdk>
     <UsingDgmjrSdk>true</UsingDgmjrSdk>
-    <DgmjrSdkDll Condition="'$(MSBuildProjectName)'">$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
+    <DgmjrSdkDll Condition="'$(IsDgmjrSdk)' == 'true'">$(MSBuildThisFileDirectory)../lib/DgmjrSdk.dll</DgmjrSdkDll>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFrameworks)' != '' and '$(TargetFramework)' == ''">
     <IsCrossTargetingBuild>true</IsCrossTargetingBuild>

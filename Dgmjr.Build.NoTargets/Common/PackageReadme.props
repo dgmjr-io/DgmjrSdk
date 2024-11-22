@@ -13,7 +13,7 @@
 <Project Condition="'$(PackageReadme_props)' == ''">
   <PropertyGroup>
     <PackageReadme_props>imported</PackageReadme_props>
-    <PackDependsOn Condition="!$(IsDgmjrNoTargetsSdk)">
+    <PackDependsOn Condition="!('$(IsDgmjrNoTargetsSdk)' == 'true')">
       $(PackDependsOn);
       EnsurePackageReadme;
     </PackDependsOn>

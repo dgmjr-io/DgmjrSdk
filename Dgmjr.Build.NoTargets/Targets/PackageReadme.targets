@@ -20,7 +20,7 @@
   <Import Project="../Common/DgmjrNoTargetsSdkDll.props" Condition="'$(DgmjrNoTargetsSdkDll)' == ''" />
   <UsingTask TaskName="Dgmjr.NoTargets.Sdk.Tasks.EnsurePackageReadmeFileExists" AssemblyFile="$(DgmjrNoTargetsSdkDll)" />
 
-  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="$(IsDgmjrNoTargetsSdk)" />
+  <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="'$(IsDgmjrNoTargetsSdk)' == 'true'" />
 
   <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false' And !$(IsDgmjrNoTargetsSdk)">
     <EnsurePackageReadmeFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />

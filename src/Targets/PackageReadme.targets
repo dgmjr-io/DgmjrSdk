@@ -25,4 +25,8 @@
   <Target Name="EnsurePackageReadme" BeforeTargets="GetPackageContents" DependsOnTargets="GitInfo;GetPackageMetadata;SetPackageDescription" Condition="'$(IsOuterBuild)' != 'false' And !($(MSBuildProjectName.StartsWith('DgmjrSdk')) Or $(MSBuildProjectName.StartsWith('Dgmjr.Sdk')))">
     <EnsurePackageReadmeFileExists MSBuildProjectFullPath="$(MSBuildProjectFullPath)" />
   </Target>
+
+  <ItemGroup>
+    <PackageFile Include="README.md" PackagePath="readme.md" Pack="true" />
+  </ItemGroup>
 </Project>

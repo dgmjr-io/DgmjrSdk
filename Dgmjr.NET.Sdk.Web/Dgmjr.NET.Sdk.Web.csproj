@@ -1,5 +1,5 @@
 <!--
- * DgmjrSdk.csproj
+ * DgmjrNetWebSdk.csproj
  *     Created: 2023-12-21T23:17:07-05:00
  *    Modified: 2024-04-30T19:56:29-04:00
  *      Author: David G. Moore, Jr. <david@dgmjr.io>
@@ -47,8 +47,8 @@
     <!-- <PackageFile Include="./BuildMultiTargeting/*" PackagePath="BuildMultiTargeting/%(Filename)%(Extension)" /> -->
     <PackageFile Include="./LICENSE.md" PackagePath="%(Filename)%(Extension)" />
     <PackageFile Include="./Scripts/*" PackagePath="Scripts/%(Filename)%(Extension)" />
-    <PackageFile Include="./Sdk/Sdk.Web.props" PackagePath="Sdk/Sdk%(Extension)" />
-    <PackageFile Include="./Sdk/Sdk.Web.targets" PackagePath="Sdk/Sdk%(Extension)" />
+    <PackageFile Include="./Sdk/Sdk.props" PackagePath="Sdk/Sdk%(Extension)" />
+    <PackageFile Include="./Sdk/Sdk.targets" PackagePath="Sdk/Sdk%(Extension)" />
     <PackageFile Include="./Sdk/Common.*" PackagePath="Sdk/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
@@ -59,13 +59,13 @@
   <ItemGroup>
     <PackageTag Include="sdk" Visible="false" />
     <PackageTag Include="build-defaults" Visible="false" />
-    <PackageTag Include="dgmjrsdk" Visible="false" />
+    <PackageTag Include="DgmjrNetWebSdk" Visible="false" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="./LICENSE.md" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
+    <!--<EmbeddedResource Include="./README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./frontmatter_template.yml" LogicalName="%(Filename)%(Extension)" />
-    <EmbeddedResource Include="./Assets/icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
+    <EmbeddedResource Include="./Assets/icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" /> -->
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="YamlDotNet" />
@@ -74,10 +74,10 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />
+    <!-- <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />
     <Using Include="System.Collections.Generic.Dictionary&lt;string,string&gt;" Alias="StringDictionary" />
-    <Using Include="System.Collections.Generic.KeyValuePair&lt;string,string&gt;" Alias="StrKvp" />
-    <Using Include="Dgmjr.Sdk.Models" />
+    <Using Include="System.Collections.Generic.KeyValuePair&lt;string,string&gt;" Alias="StrKvp" /> -->
+    <!-- <Using Include="Dgmjr.Sdk.Models" /> -->
     <Using Include="System.Text.RegularExpressions" />
     <Using Include="System.String" Static="true" />
     <Using Include="System.IO.File" Static="true" />
