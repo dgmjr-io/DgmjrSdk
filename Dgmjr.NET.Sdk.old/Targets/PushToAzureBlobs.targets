@@ -1,6 +1,0 @@
-<Project>
-	<Target Name="PushToAzureBlobs" DependsOnTargets="Pack;GetPackageVersion">
-		<Warning Text="Pushing to Azure Blobs Feed..." />
-		<Exec Command="sleet push '$(PackageTargetPath)' -f" />
-	</Target>
-</Project>
