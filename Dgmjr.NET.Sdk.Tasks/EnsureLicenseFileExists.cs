@@ -1,6 +1,6 @@
 using Microsoft.Build.Framework;
 
-namespace Dgmjr.NoTargets.Sdk.Tasks
+namespace Dgmjr.Sdk.Tasks
 {
     ///<summary>Task to ensure that a license file exists within the project directory.</summary>
     public class EnsureLicenseFileExists : MSBTask

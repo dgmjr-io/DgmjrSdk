@@ -1,17 +1,17 @@
 <!--
- * Dgmjr.NET.Sdk.csproj
- *     Created: 2024-04-30T19:48:21-04:00
- *    Modified: 2024-04-30T19:56:07-04:00
+ * Dgmjr.NET.Sdk.Tasks.csproj
+ *     Created: 2024-11-27T02:20:59-05:00
+ *    Modified: 2024-11-27T02:20:59-05:00
  *      Author: David G. Moore, Jr. <david@dgmjr.io>
  *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
  *     License: MIT (https://opensource.org/licenses/MIT)
 -->
 
-<Project Sdk="Dgmjr.NET.Sdk">
-  <PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <ProjectGuid>05edc8d8-c836-4eca-aec7-16e8a7c89e0b</ProjectGuid>
-    <ProjectTypeGuid>fae04ec0-301f-11d3-bf4b-00c04f79efbc</ProjectTypeGuid>
+    <ProjectGuid>EB008C4C-9C3A-4498-A19D-34A42B6E2CE1</ProjectGuid>
+    <ProjectTypeGuid>FAE04EC0-301F-11D3-BF4B-00C04F79EFBC</ProjectTypeGuid>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IsNuGetized>true</IsNuGetized>
@@ -20,8 +20,8 @@
     <OutputPath>$(MSBuildThisFileDirectory)lib</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
-    <Title>The DGMJR-IO NoTargets SDK</Title>
-    <Description>The DGMJR-IO NoTargets SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR "no-targets" projects.</Description>
+    <Title>The DGMJR-IO SDK</Title>
+    <Description>The DGMJR-IO SDK is a collection of `.props` and `.targets` files that are used to build and package the DGMJR projects.</Description>
     <!-- <TargetFrameworks>netstandard1.0;netstandard2.0;netstandard2.1;netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks> -->
     <PackageId>$(MSbuildProjectName)</PackageId>
     <LangVersion>preview</LangVersion>
@@ -35,9 +35,6 @@
     <!-- <PackageVersionOverride Condition="'$(PackageVersionOverride)' == '' And '$(Configuration)' != 'Local'">0.0.23</PackageVersionOverride> -->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Dgmjr.NET.Sdk.Tasks" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageFile Include="./Assets/*" PackagePath="Assets/%(Filename)%(Extension)" />
     <PackageFile Include="./Common/*.cs" PackagePath="Common/%(Filename)%(Extension)" />
     <PackageFile Include="./Common/*.props" PackagePath="Common/%(Filename)%(Extension)" />
@@ -47,7 +44,6 @@
     <PackageFile Include="./lib/*.dll" PackagePath="lib/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/%(Filename)%(Extension)" />
     <PackageFile Include="./lib/**/*.dll" Pack="true" PackagePath="lib/netstandard2.0/%(Filename)%(Extension)" />
-    <PackageFile Include="./global.json" Pack="true" PackagePath="%(Filename)%(Extension)" />
   </ItemGroup>
   <Target Name="PrepareGitConstants" />
   <Target Name="GitInfo" />
@@ -61,11 +57,10 @@
     <EmbeddedResource Include="./Assets/README_TEMPLATE.md" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./Assets/frontmatter_template.yml" LogicalName="%(Filename)%(Extension)" />
     <EmbeddedResource Include="./Assets/icon.png"  LogicalName="DEFAULT_PACKAGE_ICON.png" />
-    <EmbeddedResource Include="./Assets/README.md"  LogicalName="%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="YamlDotNet" />
-    <PackageReference Include="MSBuild.Usings" IncludeAssets="Build;BuildTransitive;BuildMultitargeting;Runtime;Compile" ExcludeAssets="ContentFiles;Native;Analyzers" PrivateAssets="None" />
+    <UsingsPackageReference Include="MSBuild.Usings" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
@@ -73,16 +68,7 @@
     <!-- <Using Include="System.Collections.Generic.IDictionary&lt;string,string&gt;" Alias="IStringDictionary" />
     <Using Include="System.Collections.Generic.Dictionary&lt;string,string&gt;" Alias="StringDictionary" />
     <Using Include="System.Collections.Generic.KeyValuePair&lt;string,string&gt;" Alias="StrKvp" /> -->
-    <Using Include="Dgmjr.NoTargets.Sdk.Models" />
-    <Using Include="System.Text.RegularExpressions" />
-    <Using Include="System.String" Static="true" />
-    <Using Include="System.IO.File" Static="true" />
-    <Using Include="System.IO.Path" Static="true" />
-    <Using Include="Microsoft.Build.Framework" />
-    <Using Include="Microsoft.Build.Execution" />
-    <Using Include="System.Runtime.CompilerServices" />
-    <Using Include="System.Reflection" />
-    <Using Include="System.Diagnostics" />
+    <Using Include="Dgmjr.Sdk.Models" />
     <Using Include="System.Text.RegularExpressions" />
     <Using Include="System.String" Static="true" />
     <Using Include="System.IO.File" Static="true" />
@@ -93,4 +79,8 @@
     <Using Include="System.Reflection" />
     <Using Include="System.Diagnostics" />
   </ItemGroup>
+  <PropertyGroup>
+    <PushLocalIsEnabled>true</PushLocalIsEnabled>
+    <PushFaGetIsEnabled>true</PushFaGetIsEnabled>
+  </PropertyGroup>
 </Project>

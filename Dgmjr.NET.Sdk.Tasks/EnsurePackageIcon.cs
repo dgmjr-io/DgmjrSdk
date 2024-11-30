@@ -1,4 +1,4 @@
-namespace Dgmjr.NoTargets.Sdk.Tasks;
+namespace Dgmjr.Sdk.Tasks;
 
 using Internal;
 using Microsoft.Build.Framework;

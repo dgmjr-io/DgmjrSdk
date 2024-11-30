@@ -1,4 +1,4 @@
-namespace Dgmjr.NoTargets.Sdk.Models;
+namespace Dgmjr.Sdk.Models;
 using YamlDotNet.Core;
 using YamlDotNet.Core.Events;
 using YamlDotNet.Serialization;
@@ -106,6 +106,10 @@ public class ReadmeFrontMatter
     [YamlMember(Alias = "type", DefaultValuesHandling = OmitNull | OmitEmptyCollections)]
     public string DocumentType { get; set; } = "readme";
 
+    ///<summary>the document's copyright notice</summary>
+    [YamlMember(Alias = "copyright", DefaultValuesHandling = OmitNull | OmitEmptyCollections)]
+    public string Copyright { get; set; } = "© " + DateTimeOffset.UtcNow.Year;
+
     // [YamlMember(Alias = "additionalValues", DefaultValuesHandling = OmitNull | OmitEmptyCollections)]
     // public IStringDictionary AdditionalValues { get; set; } = new Dictionary<string, string>();
 }
@@ -134,8 +138,24 @@ public class UrlYamlConverter : IYamlTypeConverter
             : null;
     }
 
+    public object? ReadYaml(IParser parser, type type, ObjectDeserializer rootDeserializer)
+    {
+        var value = parser.Consume<Scalar>().Value;
+        return Uri.TryCreate(value, UriKind.Absolute, out var uri)
+            ? uri
+            : null;
+    }
+
     /// <inheritdoc />
     public void WriteYaml(IEmitter emitter, object? value, Type type)
+    {
+        if (value is Uri uri)
+        {
+            emitter.Emit(new Scalar(null, null, uri.ToString(), ScalarStyle.Any, true, false));
+        }
+    }
+
+    public void WriteYaml(IEmitter emitter, object? value, type type, ObjectSerializer serializer)
     {
         if (value is Uri uri)
         {

@@ -1,4 +1,4 @@
-namespace Dgmjr.NoTargets.Sdk.Tasks;
+namespace Dgmjr.Sdk.Tasks;
 
 using static System.Text.RegularExpressions.RegexOptions;
 using MSBTask = Microsoft.Build.Utilities.Task;
@@ -9,7 +9,7 @@ using System.Reflection;
 using Microsoft.Build.Execution;
 using static System.IO.File;
 using static System.String;
-using Dgmjr.NoTargets.Sdk.Models;
+using Dgmjr.Sdk.Models;
 using System.IO;
 using System;
 
@@ -40,13 +40,13 @@ public class EnsurePackageReadmeFileExists : MSBTask
     {
         if (!Exists(PackageReadmePath))
         {
-            // Log.LogMessage($"Creating {README_MD}...");
-            // WriteAllText(PackageReadmePath, GetReadmeContent());
+            Log.LogMessage($"Creating {README_MD}...");
+            WriteAllText(PackageReadmePath, GetReadmeContent());
         }
         else
         {
-            // Log.LogMessage($"Updating {README_MD}...");
-            // WriteAllText(PackageReadmePath, GetReadmeContent());
+            Log.LogMessage($"Updating {README_MD}...");
+            WriteAllText(PackageReadmePath, GetReadmeContent());
         }
         return true;
     }
@@ -102,7 +102,7 @@ public class EnsurePackageReadmeFileExists : MSBTask
         return readmeMarkdown.Replace(frontmatterYaml, newFrontmatterYaml);
     }
 
-    private string GetFrontMatter(string readmeMarkdown)
+    private static string GetFrontMatter(string readmeMarkdown)
     {
         return FrontmatterRegex.Match(readmeMarkdown).Groups["frontmatter"].Value;
     }
